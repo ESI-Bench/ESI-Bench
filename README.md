@@ -42,10 +42,6 @@ Spatial intelligence unfolds through a perception-action loop: agents act to acq
 
 **ESI-Bench** moves beyond prior formulations of spatial intelligence that assume oracle observations by recasting the observer as an actor. We introduce a comprehensive benchmark for embodied spatial intelligence spanning **10 task categories** and **29 subcategories** built on [OmniGibson](https://behavior.stanford.edu/omnigibson/), grounded in Spelke's core knowledge systems. Agents must decide what abilities to deploy — perception, locomotion, and manipulation — and how to sequence them to actively accumulate task-relevant evidence.
 
-<p align="center">
-  <img src="docs/figs/qualitative.png" width="90%" alt="ESI-Bench Qualitative Results">
-</p>
-
 ### Key Findings
 
 - **Active exploration substantially outperforms passive counterparts**, with agents spontaneously discovering emergent spatial strategies without explicit instruction.
