@@ -1,0 +1,1157 @@
+{
+  "scene": "house_double_floor_upper",
+  "room": "bathroom_0",
+  "floor_name": "floors_tfuahz_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "current_state_reasoning",
+  "question_index": 1,
+  "question_id": "current_state_reasoning/q_001",
+  "question_data": {
+    "task_type": "current_state_reasoning",
+    "question": "Which box changed from Phase 1 to Phase 2: the brown box, the red box, or the yellow box?",
+    "options": [
+      "brown box",
+      "red box",
+      "yellow box"
+    ],
+    "answer": "yellow box",
+    "candidate_index": 1,
+    "box_count": 3,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "brown",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "trophy",
+          "display_name": "trophy",
+          "model": "ayuubt",
+          "bbox_size_m": [
+            0.09568890762329102,
+            0.1144270362854004,
+            0.23745752716064453
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "trophy",
+          "display_name": "trophy",
+          "model": "ayuubt",
+          "bbox_size_m": [
+            0.09568890762329102,
+            0.1144270362854004,
+            0.23745752716064453
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_cedar_chest",
+          "category": "cedar_chest",
+          "model": "fwstpx",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -1.4531100158691412,
+              2.707343017578125,
+              0.14395552921295168
+            ]
+          },
+          "bbox": [
+            [
+              -1.6520427465438843,
+              2.4371676445007324,
+              -3.9711594581604004e-05
+            ],
+            [
+              -1.2487542629241943,
+              2.977285385131836,
+              0.26349520683288574
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 1,
+        "position_label": "red",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "bottle_of_lacquer",
+          "display_name": "bottle of lacquer",
+          "model": "cykzcp",
+          "bbox_size_m": [
+            0.07728010940551758,
+            0.07694855880737304,
+            0.16014446544647218
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "bottle_of_lacquer",
+          "display_name": "bottle of lacquer",
+          "model": "cykzcp",
+          "bbox_size_m": [
+            0.07728010940551758,
+            0.07694855880737304,
+            0.16014446544647218
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_1_cedar_chest",
+          "category": "cedar_chest",
+          "model": "gbdzls",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -1.8031100158691413,
+              1.4863338851928707,
+              0.0862039493918419
+            ]
+          },
+          "bbox": [
+            [
+              -2.0043206214904785,
+              1.3881707191467285,
+              -4.716217517852783e-06
+            ],
+            [
+              -1.6024223566055298,
+              1.5839323997497559,
+              0.14491014182567596
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 2,
+        "position_label": "yellow",
+        "change_type": "add",
+        "phase1_content": null,
+        "phase2_content": {
+          "category": "tupperware",
+          "display_name": "tupperware",
+          "model": "mkstwr",
+          "bbox_size_m": [
+            0.21893255615234375,
+            0.21893255615234375,
+            0.136045168924521
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_2_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              1.6127434768676747,
+              1.5471958847045895,
+              0.10838363647460937
+            ]
+          },
+          "bbox": [
+            [
+              1.4965035915374756,
+              1.3920352458953857,
+              -1.4901161193847656e-08
+            ],
+            [
+              1.7269909381866455,
+              1.7064263820648193,
+              0.18676632642745972
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "changed_box_index": 2
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -0.04250000000000115,
+              1.9467499999999998,
+              1.25
+            ],
+            "quaternion_xyzw": [
+              0.14047590982451222,
+              0.14983391604955087,
+              0.7139684077437835,
+              0.6693768961534587
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 66.29572961611431,
+            "look_target": [
+              -0.5473408897717794,
+              1.9141695102055867,
+              0.09778123001257578
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -2.392500000000001,
+            1.3499999999999996,
+            2.1825,
+            4.062500000000001
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  -0.26826045337255094,
+                  -0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  -0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  -0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  0.26826045337255094,
+                  0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -0.7487542103586334,
+                  2.7072272708284135,
+                  0.8515650664317485
+                ],
+                "quaternion_xyzw": [
+                  0.270606988220781,
+                  0.2705891116301696,
+                  0.6532599031280427,
+                  0.6533030610355457
+                ]
+              },
+              "look_target": [
+                -1.4500767588615417,
+                2.7072736024856567,
+                0.15024251639842987
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.1024715529339237,
+                  1.4860375707141227,
+                  0.7654450608974309
+                ],
+                "quaternion_xyzw": [
+                  0.27059890949944976,
+                  0.2705971906440177,
+                  0.6532794075928456,
+                  0.6532835572769412
+                ]
+              },
+              "look_target": [
+                -1.803344964981079,
+                1.4860420227050781,
+                0.06457164883613586
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  0.996503439882132,
+                  1.5836548442548513,
+                  0.780729378423366
+                ],
+                "quaternion_xyzw": [
+                  0.2705980318335579,
+                  -0.2705980683126379,
+                  -0.6532815264723316,
+                  0.653281438404042
+                ]
+              },
+              "look_target": [
+                1.6117472052574158,
+                1.583654761314392,
+                0.16548561304807663
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -0.04250000000000115,
+              1.9467499999999998,
+              1.25
+            ],
+            "quaternion_xyzw": [
+              0.1404799031159557,
+              0.14983829333117687,
+              0.7139677636531754,
+              0.6693757652740466
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 66.29503592170104,
+            "look_target": [
+              -0.5473574995994568,
+              1.9141680399576824,
+              0.09778116047382356
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -2.392500000000001,
+            1.3499999999999996,
+            2.1825,
+            4.062500000000001
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  -0.26826045337255094,
+                  -0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  -0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  -0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  0.26826045337255094,
+                  0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -0.7487491210230811,
+                  2.7072412374474855,
+                  0.8515705304929471
+                ],
+                "quaternion_xyzw": [
+                  0.27060429381120493,
+                  0.2705918061909217,
+                  0.6532664083731552,
+                  0.6532965561554046
+                ]
+              },
+              "look_target": [
+                -1.4500769972801208,
+                2.7072736024856567,
+                0.15024265348911284
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.1024711052495462,
+                  1.4860381967360896,
+                  0.7654940625119363
+                ],
+                "quaternion_xyzw": [
+                  0.270597868161465,
+                  0.2705982319846097,
+                  0.6532819216114257,
+                  0.6532810432646555
+                ]
+              },
+              "look_target": [
+                -1.8033949136734009,
+                1.486037254333496,
+                0.06457025408744811
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  0.9965034674637642,
+                  1.5492315380083368,
+                  0.6759520445331085
+                ],
+                "quaternion_xyzw": [
+                  0.2705988083840026,
+                  -0.27059729176006947,
+                  -0.653279651708589,
+                  0.6532833131626572
+                ]
+              },
+              "look_target": [
+                1.6117531657218933,
+                1.5492349863052368,
+                0.06070234626531601
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -2.392500000000001,
+            1.3499999999999996,
+            2.1825,
+            4.062500000000001
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  -0.26826045337255094,
+                  -0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  -0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  -0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  0.26826045337255094,
+                  0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -2.392500000000001,
+            1.3499999999999996,
+            2.1825,
+            4.062500000000001
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  -0.26826045337255094,
+                  -0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -2.042500000000001,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  -0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  -0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  1.6999999999999997,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.4416043389671594,
+                  0.26826045337255094,
+                  0.4445057172172572,
+                  0.7317353376207161
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  1.8325,
+                  3.712500000000001,
+                  2.2
+                ],
+                "quaternion_xyzw": [
+                  0.26826045337255094,
+                  0.4416043389671594,
+                  0.7317353376207161,
+                  0.4445057172172572
+                ]
+              },
+              "target": [
+                -0.10500000000000043,
+                2.7062500000000003,
+                1.05
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -0.7487542103586334,
+                  2.7072272708284135,
+                  0.8515650664317485
+                ],
+                "quaternion_xyzw": [
+                  0.270606988220781,
+                  0.2705891116301696,
+                  0.6532599031280427,
+                  0.6533030610355457
+                ]
+              },
+              "look_target": [
+                -1.4500767588615417,
+                2.7072736024856567,
+                0.15024251639842987
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.1024715529339237,
+                  1.4860375707141227,
+                  0.7654450608974309
+                ],
+                "quaternion_xyzw": [
+                  0.27059890949944976,
+                  0.2705971906440177,
+                  0.6532794075928456,
+                  0.6532835572769412
+                ]
+              },
+              "look_target": [
+                -1.803344964981079,
+                1.4860420227050781,
+                0.06457164883613586
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  0.996503439882132,
+                  1.5836548442548513,
+                  0.780729378423366
+                ],
+                "quaternion_xyzw": [
+                  0.2705980318335579,
+                  -0.2705980683126379,
+                  -0.6532815264723316,
+                  0.653281438404042
+                ]
+              },
+              "look_target": [
+                1.6117472052574158,
+                1.583654761314392,
+                0.16548561304807663
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_upper/bathroom_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -0.7487491210230811,
+                  2.7072412374474855,
+                  0.8515705304929471
+                ],
+                "quaternion_xyzw": [
+                  0.27060429381120493,
+                  0.2705918061909217,
+                  0.6532664083731552,
+                  0.6532965561554046
+                ]
+              },
+              "look_target": [
+                -1.4500769972801208,
+                2.7072736024856567,
+                0.15024265348911284
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.1024711052495462,
+                  1.4860381967360896,
+                  0.7654940625119363
+                ],
+                "quaternion_xyzw": [
+                  0.270597868161465,
+                  0.2705982319846097,
+                  0.6532819216114257,
+                  0.6532810432646555
+                ]
+              },
+              "look_target": [
+                -1.8033949136734009,
+                1.486037254333496,
+                0.06457025408744811
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  0.9965034674637642,
+                  1.5492315380083368,
+                  0.6759520445331085
+                ],
+                "quaternion_xyzw": [
+                  0.2705988083840026,
+                  -0.27059729176006947,
+                  -0.653279651708589,
+                  0.6532833131626572
+                ]
+              },
+              "look_target": [
+                1.6117531657218933,
+                1.5492349863052368,
+                0.06070234626531601
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "bathroom_0",
+        "room_id": 2,
+        "bbox_map_rc": [
+          8,
+          5,
+          10,
+          8
+        ],
+        "bbox_world_xy": [
+          -1.5,
+          1.5,
+          1.5,
+          3.5
+        ],
+        "expanded_bbox_world_xy": [
+          -2.392500000000001,
+          1.3499999999999996,
+          2.1825,
+          4.062500000000001
+        ],
+        "bbox_area_m2": 6.0,
+        "expanded_bbox_area_m2": 12.40968750000001,
+        "pixel_count": 12,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image1_box_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_double_floor_upper/bathroom_0/q_001/gt_view/image2_box_02.png"
+  ]
+}

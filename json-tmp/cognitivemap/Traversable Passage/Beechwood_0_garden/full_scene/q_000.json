@@ -1,0 +1,3328 @@
+{
+  "scene": "Beechwood_0_garden",
+  "room": null,
+  "floor_name": null,
+  "seed": 1,
+  "trav_map_basename": "floor_trav_no_door",
+  "task_family": "Traversable Passage",
+  "task_type": "shortest_path_via_region",
+  "question_index": 0,
+  "question_id": "Traversable Passage/q_000",
+  "question_data": {
+    "case_id": "shortest_path_via_region__living_room_0__living_room_1__corridor_0",
+    "case_type": "shortest_path_via_region",
+    "question": "On the shortest path from living_room_0 to living_room_1, which intermediate room do you pass through among these options: storage_room_0, kitchen_0, storage_room_1, living_room_1?",
+    "answer": "kitchen_0",
+    "answer_bool": true,
+    "source_region": "living_room_0",
+    "target_region": "living_room_1",
+    "via_region": "corridor_0",
+    "required_regions": [
+      "storage_room_0",
+      "kitchen_0",
+      "storage_room_1",
+      "living_room_1"
+    ],
+    "source_room_type": "living_room",
+    "target_room_type": "living_room",
+    "via_room_type": "corridor",
+    "verification": {
+      "method": "scene.get_shortest_path + room_sequence_projection",
+      "shortest_region_path": [
+        "living_room_0",
+        "kitchen_0",
+        "corridor_0",
+        "living_room_1"
+      ],
+      "shortest_path_info": {
+        "source_region": "living_room_0",
+        "target_region": "living_room_1",
+        "blocked_regions": [],
+        "source_xy": [
+          3.5,
+          14.0
+        ],
+        "target_xy": [
+          -3.0,
+          21.0
+        ],
+        "room_sequence": [
+          "living_room_0",
+          "kitchen_0",
+          "corridor_0",
+          "living_room_1"
+        ],
+        "path_world_xy": [
+          [
+            3.5,
+            14.0
+          ],
+          [
+            3.299999952316284,
+            14.199999809265137
+          ],
+          [
+            3.1000001430511475,
+            14.40000057220459
+          ],
+          [
+            2.9000000953674316,
+            14.600000381469727
+          ],
+          [
+            2.700000047683716,
+            14.800000190734863
+          ],
+          [
+            2.5,
+            15.0
+          ],
+          [
+            2.299999952316284,
+            15.199999809265137
+          ],
+          [
+            2.1000001430511475,
+            15.40000057220459
+          ],
+          [
+            1.899999976158142,
+            15.5
+          ],
+          [
+            1.7000000476837158,
+            15.699999809265137
+          ],
+          [
+            1.5,
+            15.800000190734863
+          ],
+          [
+            1.3000000715255737,
+            15.800000190734863
+          ],
+          [
+            1.100000023841858,
+            15.800000190734863
+          ],
+          [
+            0.9000000357627869,
+            15.90000057220459
+          ],
+          [
+            0.699999988079071,
+            16.100000381469727
+          ],
+          [
+            0.5,
+            16.30000114440918
+          ],
+          [
+            0.30000001192092896,
+            16.5
+          ],
+          [
+            0.10000000149011612,
+            16.700000762939453
+          ],
+          [
+            0.10000000149011612,
+            16.899999618530273
+          ],
+          [
+            0.10000000149011612,
+            17.100000381469727
+          ],
+          [
+            0.10000000149011612,
+            17.30000114440918
+          ],
+          [
+            0.10000000149011612,
+            17.5
+          ],
+          [
+            0.10000000149011612,
+            17.700000762939453
+          ],
+          [
+            0.10000000149011612,
+            17.899999618530273
+          ],
+          [
+            0.10000000149011612,
+            18.100000381469727
+          ],
+          [
+            0.10000000149011612,
+            18.30000114440918
+          ],
+          [
+            0.10000000149011612,
+            18.5
+          ],
+          [
+            0.10000000149011612,
+            18.700000762939453
+          ],
+          [
+            -0.10000000149011612,
+            18.899999618530273
+          ],
+          [
+            -0.30000001192092896,
+            19.100000381469727
+          ],
+          [
+            -0.5,
+            19.30000114440918
+          ],
+          [
+            -0.699999988079071,
+            19.5
+          ],
+          [
+            -0.9000000357627869,
+            19.700000762939453
+          ],
+          [
+            -1.100000023841858,
+            19.899999618530273
+          ],
+          [
+            -1.3000000715255737,
+            20.100000381469727
+          ],
+          [
+            -1.5,
+            20.30000114440918
+          ],
+          [
+            -1.7000000476837158,
+            20.399999618530273
+          ],
+          [
+            -1.899999976158142,
+            20.5
+          ],
+          [
+            -2.1000001430511475,
+            20.600000381469727
+          ],
+          [
+            -2.299999952316284,
+            20.700000762939453
+          ],
+          [
+            -2.5,
+            20.80000114440918
+          ],
+          [
+            -2.700000047683716,
+            20.899999618530273
+          ],
+          [
+            -2.9000000953674316,
+            20.899999618530273
+          ]
+        ],
+        "path_length_steps": 43,
+        "path_distance": 10.571067810058594
+      },
+      "via_region_on_shortest_path": true,
+      "selected_correct_region": "kitchen_0",
+      "available_correct_regions": [
+        "kitchen_0",
+        "corridor_0"
+      ],
+      "mcq_has_unique_correct_option": true
+    },
+    "visualization": {
+      "map_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/shortest_path_via_region__living_room_0__living_room_1__corridor_0.png"
+    },
+    "initial_view": {
+      "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/shortest_path_via_region__living_room_0__living_room_1__corridor_0__initial.png",
+      "camera_pose": {
+        "position": [
+          3.200000047683716,
+          14.600000381469727,
+          1.35
+        ],
+        "quaternion_xyzw": [
+          0.47541903072228275,
+          0.4975198824760893,
+          0.5245739327436788,
+          0.501271284689133
+        ],
+        "target": [
+          -3.4000000953674316,
+          14.300000190734863,
+          1.0
+        ]
+      },
+      "success": true,
+      "room_instance": "living_room_0",
+      "render_xy": [
+        3.200000047683716,
+        14.600000381469727
+      ],
+      "selection_debug": {
+        "room_instance": "living_room_0",
+        "selected_by": "center_near_free_xy",
+        "clearance_px": 10.0,
+        "center_distance_px": 6.7082037925720215,
+        "selected_map_rc": [
+          450,
+          336
+        ]
+      },
+      "ray_debug": {
+        "angle_deg": 183.0,
+        "angle_rad": 3.193952531149623,
+        "ray_length_px": 66.06814575195312,
+        "start_map_rc": [
+          450,
+          336
+        ],
+        "end_map_rc": [
+          447,
+          270
+        ],
+        "start_xy": [
+          3.200000047683716,
+          14.600000381469727
+        ],
+        "target_xy": [
+          -3.4000000953674316,
+          14.300000190734863
+        ],
+        "success": true
+      }
+    },
+    "room_views": {
+      "storage_room_0": {
+        "success": true,
+        "room_instance": "storage_room_0",
+        "center_xy": [
+          -1.5,
+          16.5
+        ],
+        "corner_render_xy": [
+          [
+            -1.65,
+            16.35
+          ],
+          [
+            -1.65,
+            16.65
+          ],
+          [
+            -1.35,
+            16.35
+          ],
+          [
+            -1.35,
+            16.65
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -1.65,
+                16.35,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.24860248026993637,
+                -0.10297451896739807,
+                -0.36856866097127794,
+                0.8898034599825447
+              ],
+              "target": [
+                -1.5,
+                16.5,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -1.65,
+              16.35
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -1.65,
+                16.65,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.10297451896739807,
+                0.24860248026993637,
+                0.8898034599825447,
+                -0.36856866097127794
+              ],
+              "target": [
+                -1.5,
+                16.5,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -1.65,
+              16.65
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                -1.35,
+                16.35,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.24860248026993637,
+                0.10297451896739807,
+                0.36856866097127794,
+                0.8898034599825447
+              ],
+              "target": [
+                -1.5,
+                16.5,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              -1.35,
+              16.35
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                -1.35,
+                16.65,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.10297451896739807,
+                0.24860248026993637,
+                0.8898034599825447,
+                0.36856866097127794
+              ],
+              "target": [
+                -1.5,
+                16.5,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              -1.35,
+              16.65
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -1.5,
+              16.700000762939453,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.2705980500730984,
+              0.6532814824381884,
+              0.6532814824381883,
+              -0.2705980500730984
+            ],
+            "target": [
+              -0.7928932188134526,
+              15.992893981752905,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "electric_switch_wseglt_0",
+              "object_category": "electric_switch",
+              "semantic_pixels": 838,
+              "instance_pixels": 838,
+              "assigned_region": "garden_0"
+            }
+          ]
+        }
+      },
+      "kitchen_0": {
+        "success": true,
+        "room_instance": "kitchen_0",
+        "center_xy": [
+          -1.5,
+          13.5
+        ],
+        "corner_render_xy": [
+          [
+            -3.6,
+            11.4
+          ],
+          [
+            -3.6,
+            15.6
+          ],
+          [
+            0.6,
+            11.4
+          ],
+          [
+            0.6,
+            15.6
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -3.6,
+                11.4,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6138617607267494,
+                -0.2542698667152474,
+                -0.2859955319359668,
+                0.6904542919779185
+              ],
+              "target": [
+                -1.5,
+                13.5,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -3.6,
+              11.4
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -3.6,
+                15.6,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.2542698667152474,
+                0.6138617607267494,
+                0.6904542919779185,
+                -0.2859955319359668
+              ],
+              "target": [
+                -1.5,
+                13.5,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -3.6,
+              15.6
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                0.6,
+                11.4,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6138617607267494,
+                0.2542698667152474,
+                0.2859955319359668,
+                0.6904542919779185
+              ],
+              "target": [
+                -1.5,
+                13.5,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              0.6,
+              11.4
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                0.6,
+                15.6,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.2542698667152474,
+                0.6138617607267494,
+                0.6904542919779185,
+                0.2859955319359668
+              ],
+              "target": [
+                -1.5,
+                13.5,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              0.6,
+              15.6
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/kitchen_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              0.0,
+              12.300000190734863,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.6532814824381884,
+              -0.27059805007309845,
+              -0.27059805007309845,
+              0.6532814824381883
+            ],
+            "target": [
+              0.7071067811865476,
+              13.007106971921411,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "sofa_xhxdqf_0",
+              "object_category": "sofa",
+              "semantic_pixels": 54885,
+              "instance_pixels": 54885,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "rail_fence_qmsnld_0",
+              "object_category": "rail_fence",
+              "semantic_pixels": 38325,
+              "instance_pixels": 38325,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "wood_fireplace_gpnsij_0",
+              "object_category": "wood_fireplace",
+              "semantic_pixels": 30958,
+              "instance_pixels": 30958,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "top_cabinet_dmwxyl_1",
+              "object_category": "top_cabinet",
+              "semantic_pixels": 25344,
+              "instance_pixels": 25344,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "bottom_cabinet_no_top_qohxjq_0",
+              "object_category": "bottom_cabinet_no_top",
+              "semantic_pixels": 21573,
+              "instance_pixels": 21573,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "coffee_table_qlmqyy_0",
+              "object_category": "coffee_table",
+              "semantic_pixels": 14060,
+              "instance_pixels": 14060,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "breakfast_table_skczfi_0",
+              "object_category": "breakfast_table",
+              "semantic_pixels": 11786,
+              "instance_pixels": 11786,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "bottom_cabinet_immwzb_1",
+              "object_category": "bottom_cabinet",
+              "semantic_pixels": 9021,
+              "instance_pixels": 9021,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "toilet_kfmkbm_0",
+              "object_category": "toilet",
+              "semantic_pixels": 1254,
+              "instance_pixels": 1254,
+              "assigned_region": "garden_0"
+            }
+          ]
+        }
+      },
+      "storage_room_1": {
+        "success": true,
+        "room_instance": "storage_room_1",
+        "center_xy": [
+          5.0,
+          21.0
+        ],
+        "corner_render_xy": [
+          [
+            5.3495,
+            21.312
+          ],
+          [
+            5.3495,
+            21.400500000000026
+          ],
+          [
+            5.325499999999994,
+            21.312
+          ],
+          [
+            5.325499999999994,
+            21.400500000000026
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                5.3495,
+                21.312,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.1831138666550182,
+                0.4089292239620066,
+                0.8159368607995454,
+                0.36536726839861083
+              ],
+              "target": [
+                5.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              5.3495,
+              21.312
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                5.3495,
+                21.400500000000026,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.16655542418466884,
+                0.4441739105318453,
+                0.8242782143252884,
+                0.30908615832195946
+              ],
+              "target": [
+                5.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              5.3495,
+              21.400500000000026
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                5.325499999999994,
+                21.312,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.1725873579696372,
+                0.40449685426006515,
+                0.8260575664514636,
+                0.352455381106684
+              ],
+              "target": [
+                5.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              5.325499999999994,
+              21.312
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                5.325499999999994,
+                21.400500000000026,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.1567347273979406,
+                0.44135707695702825,
+                0.8325962257090204,
+                0.2956715758786009
+              ],
+              "target": [
+                5.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              5.325499999999994,
+              21.400500000000026
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_1__open_view.png",
+          "camera_pose": {
+            "position": [
+              5.300000190734863,
+              21.30000114440918,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              6.300000190734863,
+              21.30000114440918,
+              1.35
+            ]
+          },
+          "visible_objects": []
+        }
+      },
+      "living_room_1": {
+        "success": true,
+        "room_instance": "living_room_1",
+        "center_xy": [
+          -3.0,
+          21.0
+        ],
+        "corner_render_xy": [
+          [
+            -5.65,
+            19.35
+          ],
+          [
+            -5.65,
+            22.65
+          ],
+          [
+            -0.35,
+            19.35
+          ],
+          [
+            -0.35,
+            22.65
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -5.65,
+                19.35,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5827190470618994,
+                -0.3236175868519715,
+                -0.3619287652392479,
+                0.6517037199247615
+              ],
+              "target": [
+                -3.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -5.65,
+              19.35
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -5.65,
+                22.65,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.3236175868519715,
+                0.5827190470618994,
+                0.6517037199247615,
+                -0.3619287652392479
+              ],
+              "target": [
+                -3.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -5.65,
+              22.65
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                -0.35,
+                19.35,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5827190470618994,
+                0.3236175868519715,
+                0.3619287652392479,
+                0.6517037199247615
+              ],
+              "target": [
+                -3.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              -0.35,
+              19.35
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                -0.35,
+                22.65,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.3236175868519715,
+                0.5827190470618994,
+                0.6517037199247615,
+                0.3619287652392479
+              ],
+              "target": [
+                -3.0,
+                21.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              -0.35,
+              22.65
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/living_room_1__open_view.png",
+          "camera_pose": {
+            "position": [
+              -4.599999904632568,
+              20.600000381469727,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              -3.5999999046325684,
+              20.600000381469727,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "piano_bnxcvw_0",
+              "object_category": "piano",
+              "semantic_pixels": 78890,
+              "instance_pixels": 78890,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "straight_chair_amgwaw_0",
+              "object_category": "straight_chair",
+              "semantic_pixels": 13456,
+              "instance_pixels": 13456,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "armchair_vzhxuf_0",
+              "object_category": "armchair",
+              "semantic_pixels": 12089,
+              "instance_pixels": 12089,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "breakfast_table_skczfi_2",
+              "object_category": "breakfast_table",
+              "semantic_pixels": 9772,
+              "instance_pixels": 9772,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "ottoman_miftfy_0",
+              "object_category": "ottoman",
+              "semantic_pixels": 3776,
+              "instance_pixels": 3776,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "openable_window_ulnafj_4",
+              "object_category": "openable_window",
+              "semantic_pixels": 1962,
+              "instance_pixels": 1962,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "swivel_chair_qtqitn_0",
+              "object_category": "swivel_chair",
+              "semantic_pixels": 576,
+              "instance_pixels": 576,
+              "assigned_region": "private_office_0"
+            },
+            {
+              "object_name": "desk_rzyfxk_1",
+              "object_category": "desk",
+              "semantic_pixels": 288,
+              "instance_pixels": 288,
+              "assigned_region": "garden_0"
+            }
+          ]
+        }
+      }
+    },
+    "path_views": {
+      "success": true,
+      "sample_spacing_m": 1.0,
+      "path_length_m": 10.269,
+      "sample_count": 12,
+      "views": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_000.png",
+          "camera_pose": {
+            "position": [
+              3.5,
+              14.0,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345940162237517,
+              0.22143627854013864,
+              0.3121102284248326,
+              0.7535001112651889
+            ],
+            "target": [
+              2.7928927973449422,
+              14.707106359717786,
+              1.0
+            ]
+          },
+          "sample_index": 0,
+          "distance_along_path_m": 0.0,
+          "yaw_rad": 2.3561950862390058
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_001.png",
+          "camera_pose": {
+            "position": [
+              2.792893393392136,
+              14.707106955763914,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345940162237517,
+              0.22143627854013864,
+              0.3121102284248326,
+              0.7535001112651889
+            ],
+            "target": [
+              2.0857861907370783,
+              15.4142133154817,
+              1.0
+            ]
+          },
+          "sample_index": 1,
+          "distance_along_path_m": 1.0,
+          "yaw_rad": 2.3561950862390058
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_002.png",
+          "camera_pose": {
+            "position": [
+              2.0820214985923857,
+              15.408989835495431,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.49222058031340943,
+              0.3042099405868872,
+              0.4287781327957403,
+              0.6937755582320925
+            ],
+            "target": [
+              1.1875931347306565,
+              15.856201085264074,
+              1.0
+            ]
+          },
+          "sample_index": 2,
+          "distance_along_path_m": 2.0,
+          "yaw_rad": 2.6779476671946076
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_003.png",
+          "camera_pose": {
+            "position": [
+              1.2099555199349852,
+              15.800000190734863,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.4091605966096607,
+              0.4091605966096607,
+              0.576704088924317,
+              0.576704088924317
+            ],
+            "target": [
+              0.20995551993498518,
+              15.800000190734863,
+              1.0
+            ]
+          },
+          "sample_index": 3,
+          "distance_along_path_m": 3.0,
+          "yaw_rad": 3.141592653589793
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_004.png",
+          "camera_pose": {
+            "position": [
+              0.42875759411150827,
+              16.37124314689171,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345937687482096,
+              0.22143687599750148,
+              0.31211107052963666,
+              0.7534997624531126
+            ],
+            "target": [
+              -0.2783511890532968,
+              17.078347926094334,
+              1.0
+            ]
+          },
+          "sample_index": 4,
+          "distance_along_path_m": 4.0,
+          "yaw_rad": 2.3561973214211562
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_005.png",
+          "camera_pose": {
+            "position": [
+              0.10000000149011612,
+              17.235067300154988,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5786404649140492,
+              -1.6060499178184562e-17,
+              -2.2636968522804183e-17,
+              0.8155827440327885
+            ],
+            "target": [
+              0.10000000149011617,
+              18.235067300154988,
+              1.0
+            ]
+          },
+          "sample_index": 5,
+          "distance_along_path_m": 5.0,
+          "yaw_rad": 1.5707963267948966
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_006.png",
+          "camera_pose": {
+            "position": [
+              0.10000000149011612,
+              18.23506730015499,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5786404649140492,
+              -1.6060499178184562e-17,
+              -2.2636968522804183e-17,
+              0.8155827440327885
+            ],
+            "target": [
+              0.10000000149011617,
+              19.23506730015499,
+              1.0
+            ]
+          },
+          "sample_index": 6,
+          "distance_along_path_m": 6.0,
+          "yaw_rad": 1.5707963267948966
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_007.png",
+          "camera_pose": {
+            "position": [
+              -0.2783494135308964,
+              19.078349701618386,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345942905070071,
+              0.2214356163611817,
+              0.3121092950961709,
+              0.7535004978622274
+            ],
+            "target": [
+              -0.9854548644588585,
+              19.785457813061015,
+              1.0
+            ]
+          },
+          "sample_index": 7,
+          "distance_along_path_m": 7.0,
+          "yaw_rad": 2.3561926089243816
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_008.png",
+          "camera_pose": {
+            "position": [
+              -0.9854562171162962,
+              19.785456460402326,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345937687482096,
+              0.22143687599750148,
+              0.31211107052963666,
+              0.7534997624531126
+            ],
+            "target": [
+              -1.6925650002811012,
+              20.49256123960495,
+              1.0
+            ]
+          },
+          "sample_index": 8,
+          "distance_along_path_m": 8.0,
+          "yaw_rad": 2.3561973214211562
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_009.png",
+          "camera_pose": {
+            "position": [
+              -1.7435750806839432,
+              20.421787225935024,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.49222123307606147,
+              0.30420888439529264,
+              0.4287766441137501,
+              0.6937764782886514
+            ],
+            "target": [
+              -2.6380015253147593,
+              20.869002314170068,
+              1.0
+            ]
+          },
+          "sample_index": 9,
+          "distance_along_path_m": 9.0,
+          "yaw_rad": 2.677943375659729
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_010.png",
+          "camera_pose": {
+            "position": [
+              -2.638002115883215,
+              20.86900113302732,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.49222003634035144,
+              0.3042108207494434,
+              0.42877937336814465,
+              0.6937747915124002
+            ],
+            "target": [
+              -3.5324320790986574,
+              21.316209184053264,
+              1.0
+            ]
+          },
+          "sample_index": 10,
+          "distance_along_path_m": 10.0,
+          "yaw_rad": 2.6779512434897788
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_011.png",
+          "camera_pose": {
+            "position": [
+              -2.9000000953674316,
+              20.899999618530273,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.4091605966096607,
+              0.4091605966096607,
+              0.576704088924317,
+              0.576704088924317
+            ],
+            "target": [
+              -3.9000000953674316,
+              20.899999618530273,
+              1.0
+            ]
+          },
+          "sample_index": 11,
+          "distance_along_path_m": 10.269,
+          "yaw_rad": 3.141592653589793
+        }
+      ],
+      "selected_target_region": "living_room_1",
+      "selection_reason": "direct_path",
+      "room_sequence": [
+        "living_room_0",
+        "kitchen_0",
+        "corridor_0",
+        "living_room_1"
+      ],
+      "path_world_xy": [
+        [
+          3.5,
+          14.0
+        ],
+        [
+          3.299999952316284,
+          14.199999809265137
+        ],
+        [
+          3.1000001430511475,
+          14.40000057220459
+        ],
+        [
+          2.9000000953674316,
+          14.600000381469727
+        ],
+        [
+          2.700000047683716,
+          14.800000190734863
+        ],
+        [
+          2.5,
+          15.0
+        ],
+        [
+          2.299999952316284,
+          15.199999809265137
+        ],
+        [
+          2.1000001430511475,
+          15.40000057220459
+        ],
+        [
+          1.899999976158142,
+          15.5
+        ],
+        [
+          1.7000000476837158,
+          15.699999809265137
+        ],
+        [
+          1.5,
+          15.800000190734863
+        ],
+        [
+          1.3000000715255737,
+          15.800000190734863
+        ],
+        [
+          1.100000023841858,
+          15.800000190734863
+        ],
+        [
+          0.9000000357627869,
+          15.90000057220459
+        ],
+        [
+          0.699999988079071,
+          16.100000381469727
+        ],
+        [
+          0.5,
+          16.30000114440918
+        ],
+        [
+          0.30000001192092896,
+          16.5
+        ],
+        [
+          0.10000000149011612,
+          16.700000762939453
+        ],
+        [
+          0.10000000149011612,
+          16.899999618530273
+        ],
+        [
+          0.10000000149011612,
+          17.100000381469727
+        ],
+        [
+          0.10000000149011612,
+          17.30000114440918
+        ],
+        [
+          0.10000000149011612,
+          17.5
+        ],
+        [
+          0.10000000149011612,
+          17.700000762939453
+        ],
+        [
+          0.10000000149011612,
+          17.899999618530273
+        ],
+        [
+          0.10000000149011612,
+          18.100000381469727
+        ],
+        [
+          0.10000000149011612,
+          18.30000114440918
+        ],
+        [
+          0.10000000149011612,
+          18.5
+        ],
+        [
+          0.10000000149011612,
+          18.700000762939453
+        ],
+        [
+          -0.10000000149011612,
+          18.899999618530273
+        ],
+        [
+          -0.30000001192092896,
+          19.100000381469727
+        ],
+        [
+          -0.5,
+          19.30000114440918
+        ],
+        [
+          -0.699999988079071,
+          19.5
+        ],
+        [
+          -0.9000000357627869,
+          19.700000762939453
+        ],
+        [
+          -1.100000023841858,
+          19.899999618530273
+        ],
+        [
+          -1.3000000715255737,
+          20.100000381469727
+        ],
+        [
+          -1.5,
+          20.30000114440918
+        ],
+        [
+          -1.7000000476837158,
+          20.399999618530273
+        ],
+        [
+          -1.899999976158142,
+          20.5
+        ],
+        [
+          -2.1000001430511475,
+          20.600000381469727
+        ],
+        [
+          -2.299999952316284,
+          20.700000762939453
+        ],
+        [
+          -2.5,
+          20.80000114440918
+        ],
+        [
+          -2.700000047683716,
+          20.899999618530273
+        ],
+        [
+          -2.9000000953674316,
+          20.899999618530273
+        ]
+      ]
+    },
+    "task_type": "shortest_path_via_region",
+    "options": [
+      "storage_room_0",
+      "kitchen_0",
+      "storage_room_1",
+      "living_room_1"
+    ],
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/shortest_path_via_region__living_room_0__living_room_1__corridor_0__initial.png",
+      "kind": "start_room_longest_ray_view",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/shortest_path_via_region__living_room_0__living_room_1__corridor_0.png",
+      "initial_view": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/shortest_path_via_region__living_room_0__living_room_1__corridor_0__initial.png",
+        "camera_pose": {
+          "position": [
+            3.200000047683716,
+            14.600000381469727,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.47541903072228275,
+            0.4975198824760893,
+            0.5245739327436788,
+            0.501271284689133
+          ],
+          "target": [
+            -3.4000000953674316,
+            14.300000190734863,
+            1.0
+          ]
+        },
+        "success": true,
+        "room_instance": "living_room_0",
+        "render_xy": [
+          3.200000047683716,
+          14.600000381469727
+        ],
+        "selection_debug": {
+          "room_instance": "living_room_0",
+          "selected_by": "center_near_free_xy",
+          "clearance_px": 10.0,
+          "center_distance_px": 6.7082037925720215,
+          "selected_map_rc": [
+            450,
+            336
+          ]
+        },
+        "ray_debug": {
+          "angle_deg": 183.0,
+          "angle_rad": 3.193952531149623,
+          "ray_length_px": 66.06814575195312,
+          "start_map_rc": [
+            450,
+            336
+          ],
+          "end_map_rc": [
+            447,
+            270
+          ],
+          "start_xy": [
+            3.200000047683716,
+            14.600000381469727
+          ],
+          "target_xy": [
+            -3.4000000953674316,
+            14.300000190734863
+          ],
+          "success": true
+        }
+      },
+      "room_views": {
+        "storage_room_0": {
+          "success": true,
+          "room_instance": "storage_room_0",
+          "center_xy": [
+            -1.5,
+            16.5
+          ],
+          "corner_render_xy": [
+            [
+              -1.65,
+              16.35
+            ],
+            [
+              -1.65,
+              16.65
+            ],
+            [
+              -1.35,
+              16.35
+            ],
+            [
+              -1.35,
+              16.65
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -1.65,
+                  16.35,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.24860248026993637,
+                  -0.10297451896739807,
+                  -0.36856866097127794,
+                  0.8898034599825447
+                ],
+                "target": [
+                  -1.5,
+                  16.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -1.65,
+                16.35
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -1.65,
+                  16.65,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.10297451896739807,
+                  0.24860248026993637,
+                  0.8898034599825447,
+                  -0.36856866097127794
+                ],
+                "target": [
+                  -1.5,
+                  16.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -1.65,
+                16.65
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  -1.35,
+                  16.35,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.24860248026993637,
+                  0.10297451896739807,
+                  0.36856866097127794,
+                  0.8898034599825447
+                ],
+                "target": [
+                  -1.5,
+                  16.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                -1.35,
+                16.35
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  -1.35,
+                  16.65,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.10297451896739807,
+                  0.24860248026993637,
+                  0.8898034599825447,
+                  0.36856866097127794
+                ],
+                "target": [
+                  -1.5,
+                  16.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                -1.35,
+                16.65
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -1.5,
+                16.700000762939453,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.2705980500730984,
+                0.6532814824381884,
+                0.6532814824381883,
+                -0.2705980500730984
+              ],
+              "target": [
+                -0.7928932188134526,
+                15.992893981752905,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "electric_switch_wseglt_0",
+                "object_category": "electric_switch",
+                "semantic_pixels": 838,
+                "instance_pixels": 838,
+                "assigned_region": "garden_0"
+              }
+            ]
+          }
+        },
+        "kitchen_0": {
+          "success": true,
+          "room_instance": "kitchen_0",
+          "center_xy": [
+            -1.5,
+            13.5
+          ],
+          "corner_render_xy": [
+            [
+              -3.6,
+              11.4
+            ],
+            [
+              -3.6,
+              15.6
+            ],
+            [
+              0.6,
+              11.4
+            ],
+            [
+              0.6,
+              15.6
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -3.6,
+                  11.4,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6138617607267494,
+                  -0.2542698667152474,
+                  -0.2859955319359668,
+                  0.6904542919779185
+                ],
+                "target": [
+                  -1.5,
+                  13.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -3.6,
+                11.4
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -3.6,
+                  15.6,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.2542698667152474,
+                  0.6138617607267494,
+                  0.6904542919779185,
+                  -0.2859955319359668
+                ],
+                "target": [
+                  -1.5,
+                  13.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -3.6,
+                15.6
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  0.6,
+                  11.4,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6138617607267494,
+                  0.2542698667152474,
+                  0.2859955319359668,
+                  0.6904542919779185
+                ],
+                "target": [
+                  -1.5,
+                  13.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                0.6,
+                11.4
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  0.6,
+                  15.6,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.2542698667152474,
+                  0.6138617607267494,
+                  0.6904542919779185,
+                  0.2859955319359668
+                ],
+                "target": [
+                  -1.5,
+                  13.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                0.6,
+                15.6
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/kitchen_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                0.0,
+                12.300000190734863,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6532814824381884,
+                -0.27059805007309845,
+                -0.27059805007309845,
+                0.6532814824381883
+              ],
+              "target": [
+                0.7071067811865476,
+                13.007106971921411,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "sofa_xhxdqf_0",
+                "object_category": "sofa",
+                "semantic_pixels": 54885,
+                "instance_pixels": 54885,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "rail_fence_qmsnld_0",
+                "object_category": "rail_fence",
+                "semantic_pixels": 38325,
+                "instance_pixels": 38325,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "wood_fireplace_gpnsij_0",
+                "object_category": "wood_fireplace",
+                "semantic_pixels": 30958,
+                "instance_pixels": 30958,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "top_cabinet_dmwxyl_1",
+                "object_category": "top_cabinet",
+                "semantic_pixels": 25344,
+                "instance_pixels": 25344,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "bottom_cabinet_no_top_qohxjq_0",
+                "object_category": "bottom_cabinet_no_top",
+                "semantic_pixels": 21573,
+                "instance_pixels": 21573,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "coffee_table_qlmqyy_0",
+                "object_category": "coffee_table",
+                "semantic_pixels": 14060,
+                "instance_pixels": 14060,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "breakfast_table_skczfi_0",
+                "object_category": "breakfast_table",
+                "semantic_pixels": 11786,
+                "instance_pixels": 11786,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "bottom_cabinet_immwzb_1",
+                "object_category": "bottom_cabinet",
+                "semantic_pixels": 9021,
+                "instance_pixels": 9021,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "toilet_kfmkbm_0",
+                "object_category": "toilet",
+                "semantic_pixels": 1254,
+                "instance_pixels": 1254,
+                "assigned_region": "garden_0"
+              }
+            ]
+          }
+        },
+        "storage_room_1": {
+          "success": true,
+          "room_instance": "storage_room_1",
+          "center_xy": [
+            5.0,
+            21.0
+          ],
+          "corner_render_xy": [
+            [
+              5.3495,
+              21.312
+            ],
+            [
+              5.3495,
+              21.400500000000026
+            ],
+            [
+              5.325499999999994,
+              21.312
+            ],
+            [
+              5.325499999999994,
+              21.400500000000026
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  5.3495,
+                  21.312,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.1831138666550182,
+                  0.4089292239620066,
+                  0.8159368607995454,
+                  0.36536726839861083
+                ],
+                "target": [
+                  5.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                5.3495,
+                21.312
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  5.3495,
+                  21.400500000000026,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.16655542418466884,
+                  0.4441739105318453,
+                  0.8242782143252884,
+                  0.30908615832195946
+                ],
+                "target": [
+                  5.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                5.3495,
+                21.400500000000026
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  5.325499999999994,
+                  21.312,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.1725873579696372,
+                  0.40449685426006515,
+                  0.8260575664514636,
+                  0.352455381106684
+                ],
+                "target": [
+                  5.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                5.325499999999994,
+                21.312
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  5.325499999999994,
+                  21.400500000000026,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.1567347273979406,
+                  0.44135707695702825,
+                  0.8325962257090204,
+                  0.2956715758786009
+                ],
+                "target": [
+                  5.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                5.325499999999994,
+                21.400500000000026
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_1__open_view.png",
+            "camera_pose": {
+              "position": [
+                5.300000190734863,
+                21.30000114440918,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.5,
+                0.5,
+                0.5,
+                -0.5
+              ],
+              "target": [
+                6.300000190734863,
+                21.30000114440918,
+                1.35
+              ]
+            },
+            "visible_objects": []
+          }
+        },
+        "living_room_1": {
+          "success": true,
+          "room_instance": "living_room_1",
+          "center_xy": [
+            -3.0,
+            21.0
+          ],
+          "corner_render_xy": [
+            [
+              -5.65,
+              19.35
+            ],
+            [
+              -5.65,
+              22.65
+            ],
+            [
+              -0.35,
+              19.35
+            ],
+            [
+              -0.35,
+              22.65
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  19.35,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5827190470618994,
+                  -0.3236175868519715,
+                  -0.3619287652392479,
+                  0.6517037199247615
+                ],
+                "target": [
+                  -3.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -5.65,
+                19.35
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  22.65,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.3236175868519715,
+                  0.5827190470618994,
+                  0.6517037199247615,
+                  -0.3619287652392479
+                ],
+                "target": [
+                  -3.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -5.65,
+                22.65
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  19.35,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5827190470618994,
+                  0.3236175868519715,
+                  0.3619287652392479,
+                  0.6517037199247615
+                ],
+                "target": [
+                  -3.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                -0.35,
+                19.35
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  22.65,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.3236175868519715,
+                  0.5827190470618994,
+                  0.6517037199247615,
+                  0.3619287652392479
+                ],
+                "target": [
+                  -3.0,
+                  21.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                -0.35,
+                22.65
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/living_room_1__open_view.png",
+            "camera_pose": {
+              "position": [
+                -4.599999904632568,
+                20.600000381469727,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.5,
+                0.5,
+                0.5,
+                -0.5
+              ],
+              "target": [
+                -3.5999999046325684,
+                20.600000381469727,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "piano_bnxcvw_0",
+                "object_category": "piano",
+                "semantic_pixels": 78890,
+                "instance_pixels": 78890,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "straight_chair_amgwaw_0",
+                "object_category": "straight_chair",
+                "semantic_pixels": 13456,
+                "instance_pixels": 13456,
+                "assigned_region": "living_room_1"
+              },
+              {
+                "object_name": "armchair_vzhxuf_0",
+                "object_category": "armchair",
+                "semantic_pixels": 12089,
+                "instance_pixels": 12089,
+                "assigned_region": "living_room_1"
+              },
+              {
+                "object_name": "breakfast_table_skczfi_2",
+                "object_category": "breakfast_table",
+                "semantic_pixels": 9772,
+                "instance_pixels": 9772,
+                "assigned_region": "living_room_1"
+              },
+              {
+                "object_name": "ottoman_miftfy_0",
+                "object_category": "ottoman",
+                "semantic_pixels": 3776,
+                "instance_pixels": 3776,
+                "assigned_region": "living_room_1"
+              },
+              {
+                "object_name": "openable_window_ulnafj_4",
+                "object_category": "openable_window",
+                "semantic_pixels": 1962,
+                "instance_pixels": 1962,
+                "assigned_region": "garden_0"
+              },
+              {
+                "object_name": "swivel_chair_qtqitn_0",
+                "object_category": "swivel_chair",
+                "semantic_pixels": 576,
+                "instance_pixels": 576,
+                "assigned_region": "private_office_0"
+              },
+              {
+                "object_name": "desk_rzyfxk_1",
+                "object_category": "desk",
+                "semantic_pixels": 288,
+                "instance_pixels": 288,
+                "assigned_region": "garden_0"
+              }
+            ]
+          }
+        }
+      },
+      "path_views": {
+        "success": true,
+        "sample_spacing_m": 1.0,
+        "path_length_m": 10.269,
+        "sample_count": 12,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_000.png",
+            "camera_pose": {
+              "position": [
+                3.5,
+                14.0,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345940162237517,
+                0.22143627854013864,
+                0.3121102284248326,
+                0.7535001112651889
+              ],
+              "target": [
+                2.7928927973449422,
+                14.707106359717786,
+                1.0
+              ]
+            },
+            "sample_index": 0,
+            "distance_along_path_m": 0.0,
+            "yaw_rad": 2.3561950862390058
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_001.png",
+            "camera_pose": {
+              "position": [
+                2.792893393392136,
+                14.707106955763914,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345940162237517,
+                0.22143627854013864,
+                0.3121102284248326,
+                0.7535001112651889
+              ],
+              "target": [
+                2.0857861907370783,
+                15.4142133154817,
+                1.0
+              ]
+            },
+            "sample_index": 1,
+            "distance_along_path_m": 1.0,
+            "yaw_rad": 2.3561950862390058
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_002.png",
+            "camera_pose": {
+              "position": [
+                2.0820214985923857,
+                15.408989835495431,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.49222058031340943,
+                0.3042099405868872,
+                0.4287781327957403,
+                0.6937755582320925
+              ],
+              "target": [
+                1.1875931347306565,
+                15.856201085264074,
+                1.0
+              ]
+            },
+            "sample_index": 2,
+            "distance_along_path_m": 2.0,
+            "yaw_rad": 2.6779476671946076
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_003.png",
+            "camera_pose": {
+              "position": [
+                1.2099555199349852,
+                15.800000190734863,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.4091605966096607,
+                0.4091605966096607,
+                0.576704088924317,
+                0.576704088924317
+              ],
+              "target": [
+                0.20995551993498518,
+                15.800000190734863,
+                1.0
+              ]
+            },
+            "sample_index": 3,
+            "distance_along_path_m": 3.0,
+            "yaw_rad": 3.141592653589793
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_004.png",
+            "camera_pose": {
+              "position": [
+                0.42875759411150827,
+                16.37124314689171,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345937687482096,
+                0.22143687599750148,
+                0.31211107052963666,
+                0.7534997624531126
+              ],
+              "target": [
+                -0.2783511890532968,
+                17.078347926094334,
+                1.0
+              ]
+            },
+            "sample_index": 4,
+            "distance_along_path_m": 4.0,
+            "yaw_rad": 2.3561973214211562
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_005.png",
+            "camera_pose": {
+              "position": [
+                0.10000000149011612,
+                17.235067300154988,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5786404649140492,
+                -1.6060499178184562e-17,
+                -2.2636968522804183e-17,
+                0.8155827440327885
+              ],
+              "target": [
+                0.10000000149011617,
+                18.235067300154988,
+                1.0
+              ]
+            },
+            "sample_index": 5,
+            "distance_along_path_m": 5.0,
+            "yaw_rad": 1.5707963267948966
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_006.png",
+            "camera_pose": {
+              "position": [
+                0.10000000149011612,
+                18.23506730015499,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5786404649140492,
+                -1.6060499178184562e-17,
+                -2.2636968522804183e-17,
+                0.8155827440327885
+              ],
+              "target": [
+                0.10000000149011617,
+                19.23506730015499,
+                1.0
+              ]
+            },
+            "sample_index": 6,
+            "distance_along_path_m": 6.0,
+            "yaw_rad": 1.5707963267948966
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_007.png",
+            "camera_pose": {
+              "position": [
+                -0.2783494135308964,
+                19.078349701618386,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345942905070071,
+                0.2214356163611817,
+                0.3121092950961709,
+                0.7535004978622274
+              ],
+              "target": [
+                -0.9854548644588585,
+                19.785457813061015,
+                1.0
+              ]
+            },
+            "sample_index": 7,
+            "distance_along_path_m": 7.0,
+            "yaw_rad": 2.3561926089243816
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_008.png",
+            "camera_pose": {
+              "position": [
+                -0.9854562171162962,
+                19.785456460402326,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345937687482096,
+                0.22143687599750148,
+                0.31211107052963666,
+                0.7534997624531126
+              ],
+              "target": [
+                -1.6925650002811012,
+                20.49256123960495,
+                1.0
+              ]
+            },
+            "sample_index": 8,
+            "distance_along_path_m": 8.0,
+            "yaw_rad": 2.3561973214211562
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_009.png",
+            "camera_pose": {
+              "position": [
+                -1.7435750806839432,
+                20.421787225935024,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.49222123307606147,
+                0.30420888439529264,
+                0.4287766441137501,
+                0.6937764782886514
+              ],
+              "target": [
+                -2.6380015253147593,
+                20.869002314170068,
+                1.0
+              ]
+            },
+            "sample_index": 9,
+            "distance_along_path_m": 9.0,
+            "yaw_rad": 2.677943375659729
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_010.png",
+            "camera_pose": {
+              "position": [
+                -2.638002115883215,
+                20.86900113302732,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.49222003634035144,
+                0.3042108207494434,
+                0.42877937336814465,
+                0.6937747915124002
+              ],
+              "target": [
+                -3.5324320790986574,
+                21.316209184053264,
+                1.0
+              ]
+            },
+            "sample_index": 10,
+            "distance_along_path_m": 10.0,
+            "yaw_rad": 2.6779512434897788
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_011.png",
+            "camera_pose": {
+              "position": [
+                -2.9000000953674316,
+                20.899999618530273,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.4091605966096607,
+                0.4091605966096607,
+                0.576704088924317,
+                0.576704088924317
+              ],
+              "target": [
+                -3.9000000953674316,
+                20.899999618530273,
+                1.0
+              ]
+            },
+            "sample_index": 11,
+            "distance_along_path_m": 10.269,
+            "yaw_rad": 3.141592653589793
+          }
+        ],
+        "selected_target_region": "living_room_1",
+        "selection_reason": "direct_path",
+        "room_sequence": [
+          "living_room_0",
+          "kitchen_0",
+          "corridor_0",
+          "living_room_1"
+        ],
+        "path_world_xy": [
+          [
+            3.5,
+            14.0
+          ],
+          [
+            3.299999952316284,
+            14.199999809265137
+          ],
+          [
+            3.1000001430511475,
+            14.40000057220459
+          ],
+          [
+            2.9000000953674316,
+            14.600000381469727
+          ],
+          [
+            2.700000047683716,
+            14.800000190734863
+          ],
+          [
+            2.5,
+            15.0
+          ],
+          [
+            2.299999952316284,
+            15.199999809265137
+          ],
+          [
+            2.1000001430511475,
+            15.40000057220459
+          ],
+          [
+            1.899999976158142,
+            15.5
+          ],
+          [
+            1.7000000476837158,
+            15.699999809265137
+          ],
+          [
+            1.5,
+            15.800000190734863
+          ],
+          [
+            1.3000000715255737,
+            15.800000190734863
+          ],
+          [
+            1.100000023841858,
+            15.800000190734863
+          ],
+          [
+            0.9000000357627869,
+            15.90000057220459
+          ],
+          [
+            0.699999988079071,
+            16.100000381469727
+          ],
+          [
+            0.5,
+            16.30000114440918
+          ],
+          [
+            0.30000001192092896,
+            16.5
+          ],
+          [
+            0.10000000149011612,
+            16.700000762939453
+          ],
+          [
+            0.10000000149011612,
+            16.899999618530273
+          ],
+          [
+            0.10000000149011612,
+            17.100000381469727
+          ],
+          [
+            0.10000000149011612,
+            17.30000114440918
+          ],
+          [
+            0.10000000149011612,
+            17.5
+          ],
+          [
+            0.10000000149011612,
+            17.700000762939453
+          ],
+          [
+            0.10000000149011612,
+            17.899999618530273
+          ],
+          [
+            0.10000000149011612,
+            18.100000381469727
+          ],
+          [
+            0.10000000149011612,
+            18.30000114440918
+          ],
+          [
+            0.10000000149011612,
+            18.5
+          ],
+          [
+            0.10000000149011612,
+            18.700000762939453
+          ],
+          [
+            -0.10000000149011612,
+            18.899999618530273
+          ],
+          [
+            -0.30000001192092896,
+            19.100000381469727
+          ],
+          [
+            -0.5,
+            19.30000114440918
+          ],
+          [
+            -0.699999988079071,
+            19.5
+          ],
+          [
+            -0.9000000357627869,
+            19.700000762939453
+          ],
+          [
+            -1.100000023841858,
+            19.899999618530273
+          ],
+          [
+            -1.3000000715255737,
+            20.100000381469727
+          ],
+          [
+            -1.5,
+            20.30000114440918
+          ],
+          [
+            -1.7000000476837158,
+            20.399999618530273
+          ],
+          [
+            -1.899999976158142,
+            20.5
+          ],
+          [
+            -2.1000001430511475,
+            20.600000381469727
+          ],
+          [
+            -2.299999952316284,
+            20.700000762939453
+          ],
+          [
+            -2.5,
+            20.80000114440918
+          ],
+          [
+            -2.700000047683716,
+            20.899999618530273
+          ],
+          [
+            -2.9000000953674316,
+            20.899999618530273
+          ]
+        ]
+      },
+      "gt_region_views": {
+        "storage_room_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -1.5,
+              16.700000762939453,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.2705980500730984,
+              0.6532814824381884,
+              0.6532814824381883,
+              -0.2705980500730984
+            ],
+            "target": [
+              -0.7928932188134526,
+              15.992893981752905,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "electric_switch_wseglt_0",
+              "object_category": "electric_switch",
+              "semantic_pixels": 838,
+              "instance_pixels": 838,
+              "assigned_region": "garden_0"
+            }
+          ]
+        },
+        "kitchen_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/kitchen_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              0.0,
+              12.300000190734863,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.6532814824381884,
+              -0.27059805007309845,
+              -0.27059805007309845,
+              0.6532814824381883
+            ],
+            "target": [
+              0.7071067811865476,
+              13.007106971921411,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "sofa_xhxdqf_0",
+              "object_category": "sofa",
+              "semantic_pixels": 54885,
+              "instance_pixels": 54885,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "rail_fence_qmsnld_0",
+              "object_category": "rail_fence",
+              "semantic_pixels": 38325,
+              "instance_pixels": 38325,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "wood_fireplace_gpnsij_0",
+              "object_category": "wood_fireplace",
+              "semantic_pixels": 30958,
+              "instance_pixels": 30958,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "top_cabinet_dmwxyl_1",
+              "object_category": "top_cabinet",
+              "semantic_pixels": 25344,
+              "instance_pixels": 25344,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "bottom_cabinet_no_top_qohxjq_0",
+              "object_category": "bottom_cabinet_no_top",
+              "semantic_pixels": 21573,
+              "instance_pixels": 21573,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "coffee_table_qlmqyy_0",
+              "object_category": "coffee_table",
+              "semantic_pixels": 14060,
+              "instance_pixels": 14060,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "breakfast_table_skczfi_0",
+              "object_category": "breakfast_table",
+              "semantic_pixels": 11786,
+              "instance_pixels": 11786,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "bottom_cabinet_immwzb_1",
+              "object_category": "bottom_cabinet",
+              "semantic_pixels": 9021,
+              "instance_pixels": 9021,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "toilet_kfmkbm_0",
+              "object_category": "toilet",
+              "semantic_pixels": 1254,
+              "instance_pixels": 1254,
+              "assigned_region": "garden_0"
+            }
+          ]
+        },
+        "storage_room_1": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_1__open_view.png",
+          "camera_pose": {
+            "position": [
+              5.300000190734863,
+              21.30000114440918,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              6.300000190734863,
+              21.30000114440918,
+              1.35
+            ]
+          },
+          "visible_objects": []
+        },
+        "living_room_1": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/living_room_1__open_view.png",
+          "camera_pose": {
+            "position": [
+              -4.599999904632568,
+              20.600000381469727,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              -3.5999999046325684,
+              20.600000381469727,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "piano_bnxcvw_0",
+              "object_category": "piano",
+              "semantic_pixels": 78890,
+              "instance_pixels": 78890,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "straight_chair_amgwaw_0",
+              "object_category": "straight_chair",
+              "semantic_pixels": 13456,
+              "instance_pixels": 13456,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "armchair_vzhxuf_0",
+              "object_category": "armchair",
+              "semantic_pixels": 12089,
+              "instance_pixels": 12089,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "breakfast_table_skczfi_2",
+              "object_category": "breakfast_table",
+              "semantic_pixels": 9772,
+              "instance_pixels": 9772,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "ottoman_miftfy_0",
+              "object_category": "ottoman",
+              "semantic_pixels": 3776,
+              "instance_pixels": 3776,
+              "assigned_region": "living_room_1"
+            },
+            {
+              "object_name": "openable_window_ulnafj_4",
+              "object_category": "openable_window",
+              "semantic_pixels": 1962,
+              "instance_pixels": 1962,
+              "assigned_region": "garden_0"
+            },
+            {
+              "object_name": "swivel_chair_qtqitn_0",
+              "object_category": "swivel_chair",
+              "semantic_pixels": 576,
+              "instance_pixels": 576,
+              "assigned_region": "private_office_0"
+            },
+            {
+              "object_name": "desk_rzyfxk_1",
+              "object_category": "desk",
+              "semantic_pixels": 288,
+              "instance_pixels": 288,
+              "assigned_region": "garden_0"
+            }
+          ]
+        }
+      }
+    },
+    "legacy_binary_question": {
+      "question": "On the shortest path from living_room_0 to living_room_1, do you need to pass through corridor_0?",
+      "answer": "Yes",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required_regions": [
+        "living_room_0",
+        "living_room_1",
+        "corridor_0"
+      ],
+      "via_region": "corridor_0",
+      "answer_bool": true
+    },
+    "question_format": "single_choice_room_mcq",
+    "option_count": 4,
+    "correct_region": "kitchen_0",
+    "answer_region": "kitchen_0",
+    "shortest_path_regions": [
+      "living_room_0",
+      "kitchen_0",
+      "corridor_0",
+      "living_room_1"
+    ],
+    "internal_shortest_path_regions": [
+      "kitchen_0",
+      "corridor_0"
+    ],
+    "gt_region_views": {
+      "storage_room_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -1.5,
+            16.700000762939453,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            -0.2705980500730984,
+            0.6532814824381884,
+            0.6532814824381883,
+            -0.2705980500730984
+          ],
+          "target": [
+            -0.7928932188134526,
+            15.992893981752905,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "electric_switch_wseglt_0",
+            "object_category": "electric_switch",
+            "semantic_pixels": 838,
+            "instance_pixels": 838,
+            "assigned_region": "garden_0"
+          }
+        ]
+      },
+      "kitchen_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/kitchen_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            0.0,
+            12.300000190734863,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.6532814824381884,
+            -0.27059805007309845,
+            -0.27059805007309845,
+            0.6532814824381883
+          ],
+          "target": [
+            0.7071067811865476,
+            13.007106971921411,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "sofa_xhxdqf_0",
+            "object_category": "sofa",
+            "semantic_pixels": 54885,
+            "instance_pixels": 54885,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "rail_fence_qmsnld_0",
+            "object_category": "rail_fence",
+            "semantic_pixels": 38325,
+            "instance_pixels": 38325,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "wood_fireplace_gpnsij_0",
+            "object_category": "wood_fireplace",
+            "semantic_pixels": 30958,
+            "instance_pixels": 30958,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "top_cabinet_dmwxyl_1",
+            "object_category": "top_cabinet",
+            "semantic_pixels": 25344,
+            "instance_pixels": 25344,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "bottom_cabinet_no_top_qohxjq_0",
+            "object_category": "bottom_cabinet_no_top",
+            "semantic_pixels": 21573,
+            "instance_pixels": 21573,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "coffee_table_qlmqyy_0",
+            "object_category": "coffee_table",
+            "semantic_pixels": 14060,
+            "instance_pixels": 14060,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "breakfast_table_skczfi_0",
+            "object_category": "breakfast_table",
+            "semantic_pixels": 11786,
+            "instance_pixels": 11786,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "bottom_cabinet_immwzb_1",
+            "object_category": "bottom_cabinet",
+            "semantic_pixels": 9021,
+            "instance_pixels": 9021,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "toilet_kfmkbm_0",
+            "object_category": "toilet",
+            "semantic_pixels": 1254,
+            "instance_pixels": 1254,
+            "assigned_region": "garden_0"
+          }
+        ]
+      },
+      "storage_room_1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_1__open_view.png",
+        "camera_pose": {
+          "position": [
+            5.300000190734863,
+            21.30000114440918,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            -0.5,
+            0.5,
+            0.5,
+            -0.5
+          ],
+          "target": [
+            6.300000190734863,
+            21.30000114440918,
+            1.35
+          ]
+        },
+        "visible_objects": []
+      },
+      "living_room_1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/living_room_1__open_view.png",
+        "camera_pose": {
+          "position": [
+            -4.599999904632568,
+            20.600000381469727,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            -0.5,
+            0.5,
+            0.5,
+            -0.5
+          ],
+          "target": [
+            -3.5999999046325684,
+            20.600000381469727,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "piano_bnxcvw_0",
+            "object_category": "piano",
+            "semantic_pixels": 78890,
+            "instance_pixels": 78890,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "straight_chair_amgwaw_0",
+            "object_category": "straight_chair",
+            "semantic_pixels": 13456,
+            "instance_pixels": 13456,
+            "assigned_region": "living_room_1"
+          },
+          {
+            "object_name": "armchair_vzhxuf_0",
+            "object_category": "armchair",
+            "semantic_pixels": 12089,
+            "instance_pixels": 12089,
+            "assigned_region": "living_room_1"
+          },
+          {
+            "object_name": "breakfast_table_skczfi_2",
+            "object_category": "breakfast_table",
+            "semantic_pixels": 9772,
+            "instance_pixels": 9772,
+            "assigned_region": "living_room_1"
+          },
+          {
+            "object_name": "ottoman_miftfy_0",
+            "object_category": "ottoman",
+            "semantic_pixels": 3776,
+            "instance_pixels": 3776,
+            "assigned_region": "living_room_1"
+          },
+          {
+            "object_name": "openable_window_ulnafj_4",
+            "object_category": "openable_window",
+            "semantic_pixels": 1962,
+            "instance_pixels": 1962,
+            "assigned_region": "garden_0"
+          },
+          {
+            "object_name": "swivel_chair_qtqitn_0",
+            "object_category": "swivel_chair",
+            "semantic_pixels": 576,
+            "instance_pixels": 576,
+            "assigned_region": "private_office_0"
+          },
+          {
+            "object_name": "desk_rzyfxk_1",
+            "object_category": "desk",
+            "semantic_pixels": 288,
+            "instance_pixels": 288,
+            "assigned_region": "garden_0"
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/shortest_path_via_region__living_room_0__living_room_1__corridor_0__initial.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/shortest_path_via_region__living_room_0__living_room_1__corridor_0.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/shortest_path_via_region__living_room_0__living_room_1__corridor_0.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/kitchen_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/storage_room_1__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/living_room_1__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_003.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_005.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_006.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_007.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_008.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_009.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_010.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Beechwood_0_garden/full_scene/q_000/gt_views/path_view_011.png"
+  ]
+}

@@ -1,0 +1,761 @@
+{
+  "scene": "Benevolence_1_int",
+  "room": "living_room_0",
+  "floor_name": "floors_buiarh_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "observation_merged",
+  "question_index": 1,
+  "question_id": "observation_merged/q_001",
+  "question_data": {
+    "task_type": "observation_merged",
+    "question": "Considering both images, how many objects of category \"boxed_ink_cartridge\" are present in this scene?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "case": "observation_merged",
+    "candidate_index": 1,
+    "count_target": "boxed_ink_cartridge",
+    "count_object": {
+      "category": "boxed_ink_cartridge",
+      "estimated_volume": 0.00018977483046488455,
+      "characteristic_size_m": 0.057466251698532346,
+      "display_name": "boxed ink cartridge",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 5
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        2.8950000000000005,
+        2.245,
+        0.034000012874603275
+      ],
+      [
+        2.950095332760351,
+        2.158144787288821,
+        0.034000012874603275
+      ],
+      [
+        2.950095332760351,
+        2.158144787288821,
+        0.10800001287460329
+      ],
+      [
+        2.9483301621806515,
+        2.319676268151767,
+        0.034000012874603275
+      ],
+      [
+        2.8894821731648848,
+        2.1081214236523285,
+        0.034000012874603275
+      ]
+    ],
+    "object_positions": [
+      [
+        2.8950000000000005,
+        2.245,
+        0.034000012874603275
+      ],
+      [
+        2.950095332760351,
+        2.158144787288821,
+        0.034000012874603275
+      ],
+      [
+        2.950095332760351,
+        2.158144787288821,
+        0.10800001287460329
+      ],
+      [
+        2.9483301621806515,
+        2.319676268151767,
+        0.034000012874603275
+      ],
+      [
+        2.8894821731648848,
+        2.1081214236523285,
+        0.034000012874603275
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 1,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              2.8950000000000005,
+              2.245,
+              0.034000012874603275
+            ],
+            [
+              2.950095332760351,
+              2.158144787288821,
+              0.034000012874603275
+            ],
+            [
+              2.950095332760351,
+              2.158144787288821,
+              0.10800001287460329
+            ],
+            [
+              2.9483301621806515,
+              2.319676268151767,
+              0.034000012874603275
+            ],
+            [
+              2.8894821731648848,
+              2.1081214236523285,
+              0.034000012874603275
+            ]
+          ],
+          "metadata": {
+            "merge_pattern": "random_compact_stacked_cluster",
+            "count_object": {
+              "category": "boxed_ink_cartridge",
+              "estimated_volume": 0.00018977483046488455,
+              "characteristic_size_m": 0.057466251698532346,
+              "display_name": "boxed ink cartridge",
+              "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001.png"
+      ],
+      "camera_poses": {
+        "q_001.png": {
+          "position": [
+            2.34,
+            4.550000000000002,
+            1.2490000128746033
+          ],
+          "quaternion_xyzw": [
+            0.10454087993812142,
+            0.651487624522919,
+            0.7419307687500496,
+            0.11905382773018197
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 7.427419645511125,
+          "look_target": [
+            1.5,
+            2.0,
+            0.8990000128746033
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/Benevolence_1_int/living_room_0/candidate_renders/observation_merged/q_001",
+      "room_bbox": {
+        "room_instance": "living_room_0",
+        "room_id": 5,
+        "bbox_map_rc": [
+          8,
+          9,
+          14,
+          12
+        ],
+        "bbox_world_xy": [
+          0.0,
+          -1.0,
+          3.0,
+          5.0
+        ],
+        "expanded_bbox_world_xy": [
+          0.0,
+          -1.0,
+          3.0,
+          5.0
+        ],
+        "bbox_area_m2": 18.0,
+        "expanded_bbox_area_m2": 18.0,
+        "pixel_count": 23,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "living_room_0",
+        "room_bbox_world_xy": [
+          0.0,
+          -1.0,
+          3.0,
+          5.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                0.35,
+                -0.65,
+                2.1990000128746034
+              ],
+              "quaternion_xyzw": [
+                0.5495885412176251,
+                -0.11410957064939922,
+                -0.1682453575531005,
+                0.8103239728098397
+              ]
+            },
+            "target": [
+              1.5,
+              2.0,
+              1.0490000128746033
+            ],
+            "view_id": "corner_00",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                0.35,
+                4.65,
+                2.1990000128746034
+              ],
+              "quaternion_xyzw": [
+                -0.1141095706493992,
+                0.5495885412176252,
+                0.8103239728098397,
+                -0.16824535755310047
+              ]
+            },
+            "target": [
+              1.5,
+              2.0,
+              1.0490000128746033
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                2.65,
+                -0.65,
+                2.1990000128746034
+              ],
+              "quaternion_xyzw": [
+                0.5495885412176251,
+                0.11410957064939922,
+                0.1682453575531005,
+                0.8103239728098397
+              ]
+            },
+            "target": [
+              1.5,
+              2.0,
+              1.0490000128746033
+            ],
+            "view_id": "corner_02",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                2.65,
+                4.65,
+                2.1990000128746034
+              ],
+              "quaternion_xyzw": [
+                0.1141095706493992,
+                0.5495885412176252,
+                0.8103239728098397,
+                0.16824535755310047
+              ]
+            },
+            "target": [
+              1.5,
+              2.0,
+              1.0490000128746033
+            ],
+            "view_id": "corner_03",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            2.8949999809265137,
+            2.244999885559082,
+            0.03400001302361488
+          ],
+          "camera_pose": {
+            "position": [
+              2.752504274559689,
+              2.6390809387244665,
+              0.119
+            ],
+            "quaternion_xyzw": [
+              -0.11154175740929548,
+              0.6325847409235466,
+              0.7547733805213613,
+              -0.13308691130645295
+            ]
+          },
+          "look_target": [
+            2.8961527347564697,
+            2.2444100379943848,
+            0.04444042593240738
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 14765,
+            "centered_score": 0.9007,
+            "bbox_xyxy": [
+              509,
+              312,
+              777,
+              460
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            2.9500954151153564,
+            2.15814471244812,
+            0.03400001302361488
+          ],
+          "camera_pose": {
+            "position": [
+              2.5312481689453126,
+              2.157554864883423,
+              0.119
+            ],
+            "quaternion_xyzw": [
+              0.45420535999438877,
+              -0.4542053599943887,
+              -0.5419386413168633,
+              0.5419386413168632
+            ]
+          },
+          "look_target": [
+            2.9512481689453125,
+            2.157554864883423,
+            0.04444042593240738
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 16,
+            "centered_score": 0.967,
+            "bbox_xyxy": [
+              633,
+              335,
+              643,
+              336
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            2.9500954151153564,
+            2.15814471244812,
+            0.1080000102519989
+          ],
+          "camera_pose": {
+            "position": [
+              2.8075997087485316,
+              2.5522257656135046,
+              0.1484
+            ],
+            "quaternion_xyzw": [
+              -0.11833893747140022,
+              0.6711334646344291,
+              0.7207122747953872,
+              -0.12708101937420016
+            ]
+          },
+          "look_target": [
+            2.9512481689453125,
+            2.157554864883423,
+            0.11844042241573333
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 6836,
+            "centered_score": 0.962,
+            "bbox_xyxy": [
+              491,
+              319,
+              779,
+              439
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_003.png",
+          "target_name": "render_count_target_club_sandwich_3",
+          "target_position": [
+            2.9483301639556885,
+            2.319676160812378,
+            0.03400001302361488
+          ],
+          "camera_pose": {
+            "position": [
+              2.8058344575888636,
+              2.7137572139777624,
+              0.119
+            ],
+            "quaternion_xyzw": [
+              -0.11154175740929548,
+              0.6325847409235466,
+              0.7547733805213613,
+              -0.13308691130645295
+            ]
+          },
+          "look_target": [
+            2.9494829177856445,
+            2.3190863132476807,
+            0.04444042593240738
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_3",
+            "visible_pixels": 6614,
+            "centered_score": 0.9853,
+            "bbox_xyxy": [
+              514,
+              313,
+              772,
+              460
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_3",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_004.png",
+          "target_name": "render_count_target_club_sandwich_4",
+          "target_position": [
+            2.889482259750366,
+            2.108121395111084,
+            0.03400001302361488
+          ],
+          "camera_pose": {
+            "position": [
+              2.7469865533835414,
+              2.5022024482764684,
+              0.119
+            ],
+            "quaternion_xyzw": [
+              -0.11154175740929548,
+              0.6325847409235466,
+              0.7547733805213613,
+              -0.13308691130645295
+            ]
+          },
+          "look_target": [
+            2.8906350135803223,
+            2.1075315475463867,
+            0.04444042593240738
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_4",
+            "visible_pixels": 6228,
+            "centered_score": 0.8731,
+            "bbox_xyxy": [
+              653,
+              311,
+              777,
+              458
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_4",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.8949999809265137,
+              2.244999885559082,
+              0.03400001302361488
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.7901782989501953,
+                2.1438591480255127,
+                -0.006463408470153809
+              ],
+              [
+                3.002127170562744,
+                2.344960927963257,
+                0.07837631553411484
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.8950000000000005,
+              2.245,
+              0.034000012874603275
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "boxed_ink_cartridge",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.9500954151153564,
+              2.15814471244812,
+              0.03400001302361488
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.845273733139038,
+                2.057003974914551,
+                -0.006463408470153809
+              ],
+              [
+                3.057222604751587,
+                2.258105754852295,
+                0.07837631553411484
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.950095332760351,
+              2.158144787288821,
+              0.034000012874603275
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "boxed_ink_cartridge",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.9500954151153564,
+              2.15814471244812,
+              0.1080000102519989
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.845273733139038,
+                2.057003974914551,
+                0.06753659248352051
+              ],
+              [
+                3.057222604751587,
+                2.258105754852295,
+                0.15237630903720856
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.950095332760351,
+              2.158144787288821,
+              0.10800001287460329
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "boxed_ink_cartridge",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_2"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_3",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.9483301639556885,
+              2.319676160812378,
+              0.03400001302361488
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.84350848197937,
+                2.2185354232788086,
+                -0.006463408470153809
+              ],
+              [
+                3.055457353591919,
+                2.4196372032165527,
+                0.07837631553411484
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.9483301621806515,
+              2.319676268151767,
+              0.034000012874603275
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "boxed_ink_cartridge",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_3"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_4",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.889482259750366,
+              2.108121395111084,
+              0.03400001302361488
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.784660577774048,
+                2.0069806575775146,
+                -0.006463408470153809
+              ],
+              [
+                2.9966094493865967,
+                2.208082437515259,
+                0.07837631553411484
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.8894821731648848,
+              2.1081214236523285,
+              0.034000012874603275
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "boxed_ink_cartridge",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_4"
+          }
+        ],
+        "confusers": [],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 4169042,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/q_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_003.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Benevolence_1_int/living_room_0/q_001/target_closeups/target_closeup_004.png"
+  ]
+}

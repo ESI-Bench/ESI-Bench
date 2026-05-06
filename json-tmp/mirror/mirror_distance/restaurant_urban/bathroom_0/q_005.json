@@ -1,0 +1,1260 @@
+{
+  "scene": "restaurant_urban",
+  "room": "bathroom_0",
+  "floor_name": "floors_mlogeo_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 70.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "render_view_groups": {
+      "single_view": "observer_view",
+      "multi_view": {
+        "type": "arc_around_mirror_center",
+        "angle_range_deg": [
+          -45,
+          45
+        ],
+        "step_deg": 5
+      },
+      "gt_view": {
+        "type": "observer_perpendicular_side_views",
+        "side_offset_m": 1.0,
+        "look_target": "observer_position"
+      }
+    }
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 2.0
+  },
+  "task_type": "mirror_distance",
+  "question_index": 5,
+  "question_id": "mirror_distance/q_005",
+  "question_data": {
+    "task_type": "mirror_distance",
+    "question": "In the mirror, you can see two reflected objects: object A (bottle of pesticide) and object B (pumpkin). In the real world, which object is closer to the observation position, A or B?",
+    "answer": "B",
+    "placement": [
+      {
+        "name": "render_item_010",
+        "alias": "A",
+        "category": "bottle_of_pesticide",
+        "model": "yyrecb",
+        "real_position": [
+          -9.335261383056643,
+          -14.884055938720703,
+          0.11372543334960937
+        ],
+        "mirror_position": [
+          -8.25079309623489,
+          -17.655375124106953,
+          0.11372543334960937
+        ],
+        "real_u": 0.9211023976176517,
+        "mirror_u": 0.9211023976176508,
+        "mirror_hit_xy": [
+          -8.26515496735177,
+          -16.063149379880624
+        ]
+      },
+      {
+        "name": "render_item_011",
+        "alias": "B",
+        "category": "pumpkin",
+        "model": "apitmi",
+        "real_position": [
+          -7.935261383056645,
+          -14.884055938720703,
+          0.07276321411132812
+        ],
+        "mirror_position": [
+          -7.222619590815412,
+          -16.705186067785313,
+          0.07276321411132812
+        ],
+        "real_u": -0.3826312614529549,
+        "mirror_u": -0.38263126145295406,
+        "mirror_hit_xy": [
+          -7.562074098587686,
+          -15.788020874558539
+        ]
+      }
+    ],
+    "evidence": {
+      "mirror_relation": "right",
+      "observation_position": [
+        -8.285261383056644,
+        -13.834055938720704,
+        0.8
+      ],
+      "real_a_name": "render_item_010",
+      "real_b_name": "render_item_011",
+      "real_a_label": "bottle of pesticide",
+      "real_b_label": "pumpkin",
+      "closer_real_name": "render_item_011",
+      "closer_real_label": "pumpkin",
+      "closer_object": "B",
+      "a_distance_to_observer": 1.6358400841253333,
+      "b_distance_to_observer": 1.324338832304514,
+      "a_real_u": 0.9211023976176517,
+      "b_real_u": -0.3826312614529549,
+      "a_mirror_u": 0.9211023976176508,
+      "b_mirror_u": -0.38263126145295406
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          -8.285261383056644,
+          -13.834055938720704,
+          0.8
+        ],
+        "forward_xy": [
+          0.1643989873053573,
+          -0.9863939238321436
+        ],
+        "quaternion_xyzw": [
+          -0.05832254317126497,
+          0.7046974393014607,
+          0.7046974393014608,
+          -0.05832254317126498
+        ]
+      },
+      "render_views": {
+        "single_view": {
+          "position": [
+            -8.285261383056644,
+            -13.834055938720704,
+            0.8
+          ],
+          "target": [
+            -7.935261383056645,
+            -15.934055938720702,
+            0.8
+          ],
+          "forward_xy": [
+            0.1643989873053573,
+            -0.9863939238321436
+          ],
+          "quaternion_xyzw": [
+            -0.05832254317126497,
+            0.7046974393014607,
+            0.7046974393014608,
+            -0.05832254317126498
+          ]
+        },
+        "multi_view": [
+          {
+            "position": [
+              -6.697824515980188,
+              -14.201644324813662,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.5812381937190962,
+              -0.813733471206735
+            ],
+            "quaternion_xyzw": [
+              0.21579303093083482,
+              0.6733746117887752,
+              0.6733746117887752,
+              0.21579303093083485
+            ],
+            "relative_angle_deg": -45.0
+          },
+          {
+            "position": [
+              -6.853522957806556,
+              -14.100386944780562,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.5081048618297337,
+              -0.8612952161628364
+            ],
+            "quaternion_xyzw": [
+              0.1862154557476121,
+              0.6821464681728617,
+              0.6821464681728618,
+              0.1862154557476121
+            ],
+            "relative_angle_deg": -40.0
+          },
+          {
+            "position": [
+              -7.017454082220596,
+              -14.013084892990955,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.4311045451397426,
+              -0.9023019844596684
+            ],
+            "quaternion_xyzw": [
+              0.156283408860579,
+              0.6896198199841106,
+              0.6896198199841106,
+              0.156283408860579
+            ],
+            "relative_angle_deg": -35.0
+          },
+          {
+            "position": [
+              -7.1883702743811995,
+              -13.940402590773383,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.35082326255319685,
+              -0.9364416898299278
+            ],
+            "quaternion_xyzw": [
+              0.12605386762221163,
+              0.6957804412725914,
+              0.6957804412725913,
+              0.12605386762221163
+            ],
+            "relative_angle_deg": -30.0
+          },
+          {
+            "position": [
+              -7.364970758864004,
+              -13.882893194334494,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.2678720031057438,
+              -0.9634545085016295
+            ],
+            "quaternion_xyzw": [
+              0.0955843756823919,
+              0.7006166049455347,
+              0.7006166049455347,
+              0.0955843756823919
+            ],
+            "relative_angle_deg": -25.0
+          },
+          {
+            "position": [
+              -7.545911499347809,
+              -13.840994384906313,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.18288207596911818,
+              -0.9831348566138959
+            ],
+            "quaternion_xyzw": [
+              0.0649329334508,
+              0.7041191050905194,
+              0.7041191050905194,
+              0.06493293345079999
+            ],
+            "relative_angle_deg": -20.0
+          },
+          {
+            "position": [
+              -7.729815427542525,
+              -13.815025037727779,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.09650030580715076,
+              -0.9953329548342738
+            ],
+            "quaternion_xyzw": [
+              0.03415788768983773,
+              0.7062812744994508,
+              0.7062812744994507,
+              0.03415788768983773
+            ],
+            "relative_angle_deg": -15.0
+          },
+          {
+            "position": [
+              -7.915282923510364,
+              -13.805182795211643,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              -0.009384110049513322,
+              -0.9999559682698927
+            ],
+            "quaternion_xyzw": [
+              0.003317820448250499,
+              0.7070989973599687,
+              0.7070989973599688,
+              0.003317820448250499
+            ],
+            "relative_angle_deg": -10.0
+          },
+          {
+            "position": [
+              -8.100902467618674,
+              -13.811542562766357,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.07780350445188196,
+              -0.9969687129970558
+            ],
+            "quaternion_xyzw": [
+              -0.027528562453132732,
+              0.7065707170901324,
+              0.7065707170901324,
+              -0.027528562453132736
+            ],
+            "relative_angle_deg": -5.0
+          },
+          {
+            "position": [
+              -8.285261383056644,
+              -13.834055938720704,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.1643989873053573,
+              -0.9863939238321436
+            ],
+            "quaternion_xyzw": [
+              -0.05832254317126497,
+              0.7046974393014607,
+              0.7046974393014608,
+              -0.05832254317126498
+            ],
+            "relative_angle_deg": 0.0
+          },
+          {
+            "position": [
+              -8.466956587158837,
+              -13.872551582689718,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.2497432945986163,
+              -0.9683120813059336
+            ],
+            "quaternion_xyzw": [
+              -0.08900550361363406,
+              0.7014827298846945,
+              0.7014827298846946,
+              -0.08900550361363406
+            ],
+            "relative_angle_deg": 5.0
+          },
+          {
+            "position": [
+              -8.644605269711471,
+              -13.926736519578492,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.3331869046208563,
+              -0.9428607991581645
+            ],
+            "quaternion_xyzw": [
+              -0.11951903702113276,
+              0.6969327082219209,
+              0.6969327082219209,
+              -0.11951903702113276
+            ],
+            "relative_angle_deg": 10.0
+          },
+          {
+            "position": [
+              -8.81685541697311,
+              -13.996198369299542,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.41409476111517685,
+              -0.910233777013886
+            ],
+            "quaternion_xyzw": [
+              -0.1498050591486433,
+              0.6910560355379812,
+              0.6910560355379811,
+              -0.1498050591486433
+            ],
+            "relative_angle_deg": 15.0
+          },
+          {
+            "position": [
+              -8.982396101315617,
+              -14.08040848523428,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.4918511064401592,
+              -0.8706793262123496
+            ],
+            "quaternion_xyzw": [
+              -0.17980591883170194,
+              0.6838638984133373,
+              0.6838638984133374,
+              -0.17980591883170197
+            ],
+            "relative_angle_deg": 20.0
+          },
+          {
+            "position": [
+              -9.13996745817494,
+              -14.178725977552983,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.565864167857313,
+              -0.8244984800077867
+            ],
+            "quaternion_xyzw": [
+              -0.2094645077287637,
+              0.6753699874897807,
+              0.6753699874897808,
+              -0.2094645077287637
+            ],
+            "relative_angle_deg": 25.0
+          },
+          {
+            "position": [
+              -9.288370274381197,
+              -14.290402590773382,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.6355706612789469,
+              -0.7720427025245704
+            ],
+            "quaternion_xyzw": [
+              -0.2387243690301797,
+              0.6655904714095167,
+              0.6655904714095167,
+              -0.2387243690301797
+            ],
+            "relative_angle_deg": 30.0
+          },
+          {
+            "position": [
+              -9.426475114894988,
+              -14.414588398436686,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.7004400782001897,
+              -0.7137112139030128
+            ],
+            "quaternion_xyzw": [
+              -0.26752980492694045,
+              0.6545439660372352,
+              0.6545439660372351,
+              -0.26752980492694045
+            ],
+            "relative_angle_deg": 35.0
+          },
+          {
+            "position": [
+              -9.55323091849002,
+              -14.550338271561138,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.7599787231890466,
+              -0.6499479519930397
+            ],
+            "quaternion_xyzw": [
+              -0.2958259826346227,
+              0.6422514990237546,
+              0.6422514990237547,
+              -0.2958259826346227
+            ],
+            "relative_angle_deg": 40.0
+          },
+          {
+            "position": [
+              -9.667672996963685,
+              -14.696619071644244,
+              0.8
+            ],
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              0.8
+            ],
+            "forward_xy": [
+              0.8137334712067348,
+              -0.5812381937190966
+            ],
+            "quaternion_xyzw": [
+              -0.32355903877071,
+              0.6287364697786937,
+              0.6287364697786937,
+              -0.3235590387707101
+            ],
+            "relative_angle_deg": 45.0
+          }
+        ],
+        "gt_view": [
+          {
+            "position": [
+              -9.271655306888787,
+              -13.998454926026062,
+              0.8
+            ],
+            "target": [
+              -8.285261383056644,
+              -13.834055938720704,
+              0.8
+            ],
+            "forward_xy": [
+              0.9863939238321436,
+              0.16439898730535787
+            ],
+            "quaternion_xyzw": [
+              0.5395366037873051,
+              -0.4570560722424115,
+              -0.4570560722424115,
+              0.5395366037873052
+            ],
+            "side": "left",
+            "offset_m": 1.0
+          },
+          {
+            "position": [
+              -7.298867459224501,
+              -13.669656951415346,
+              0.8
+            ],
+            "target": [
+              -8.285261383056644,
+              -13.834055938720704,
+              0.8
+            ],
+            "forward_xy": [
+              -0.9863939238321437,
+              -0.16439898730535774
+            ],
+            "quaternion_xyzw": [
+              0.4570560722424117,
+              0.5395366037873052,
+              0.5395366037873051,
+              0.4570560722424117
+            ],
+            "side": "right",
+            "offset_m": 1.0
+          }
+        ]
+      },
+      "mirror": {
+        "position": [
+          -7.935261383056645,
+          -15.934055938720702,
+          1.1413247680664063
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.825957240174481,
+          0.5637327712696456
+        ],
+        "normal_xy": [
+          -0.36441072519329076,
+          0.931238327907577
+        ],
+        "tangent_xy": [
+          -0.931238327907577,
+          -0.36441072519329076
+        ],
+        "half_width_m": 0.4519355297088623,
+        "normal_yaw_offset_deg": -6.398782615809626
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005.png",
+      "camera_pose": {
+        "position": [
+          -8.285261383056644,
+          -13.834055938720704,
+          0.8
+        ],
+        "quaternion_xyzw": [
+          -0.05832254317126497,
+          0.7046974393014607,
+          0.7046974393014608,
+          -0.05832254317126498
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -7.935261383056645,
+          -15.934055938720702,
+          1.1413247680664063
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.825957240174481,
+          0.5637327712696456
+        ],
+        "normal_xy": [
+          -0.36441072519329076,
+          0.931238327907577
+        ],
+        "tangent_xy": [
+          -0.931238327907577,
+          -0.36441072519329076
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_map.png",
+      "multi_image_input": {
+        "room_instance": "bathroom_0",
+        "room_bbox_world_xy": [
+          -12.0,
+          -16.0,
+          -6.0,
+          -12.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -11.65,
+                -15.65,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5723782686234286,
+                -0.31787475455345315,
+                -0.3669828525218606,
+                0.6608043159515126
+              ]
+            },
+            "target": [
+              -9.0,
+              -14.0,
+              0.9
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -11.65,
+                -12.35,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.31787475455345315,
+                0.5723782686234286,
+                0.6608043159515126,
+                -0.3669828525218606
+              ]
+            },
+            "target": [
+              -9.0,
+              -14.0,
+              0.9
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                -6.35,
+                -15.65,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5723782686234286,
+                0.31787475455345315,
+                0.3669828525218606,
+                0.6608043159515126
+              ]
+            },
+            "target": [
+              -9.0,
+              -14.0,
+              0.9
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                -6.35,
+                -12.35,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.31787475455345315,
+                0.5723782686234286,
+                0.6608043159515126,
+                0.3669828525218606
+              ]
+            },
+            "target": [
+              -9.0,
+              -14.0,
+              0.9
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          -7.935261383056645,
+          -15.934055938720702,
+          1.1413247680664063
+        ],
+        "orbit_radius_xy_m": 2.128966885604375,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-45.png",
+            "camera_pose": {
+              "position": [
+                -6.697824515980188,
+                -14.201644324813662,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.23224609533377086,
+                0.7247158242796171,
+                0.6177812797763321,
+                0.19797731081830935
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -45
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-40.png",
+            "camera_pose": {
+              "position": [
+                -6.853522957806556,
+                -14.100386944780562,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.20041338824349308,
+                0.7341564877952321,
+                0.62582893789724,
+                0.17084163933697386
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-35.png",
+            "camera_pose": {
+              "position": [
+                -7.017454082220596,
+                -14.013084892990955,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.16819918287794128,
+                0.7421996427096019,
+                0.6326852950650691,
+                0.14338076108515632
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-30.png",
+            "camera_pose": {
+              "position": [
+                -7.1883702743811995,
+                -13.940402590773383,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.1356648008079648,
+                0.7488299784202039,
+                0.6383372998142604,
+                0.1156469494053835
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-25.png",
+            "camera_pose": {
+              "position": [
+                -7.364970758864004,
+                -13.882893194334494,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.10287217307896722,
+                0.7540348737061694,
+                0.6427741932325348,
+                0.08769299718447467
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-20.png",
+            "camera_pose": {
+              "position": [
+                -7.545911499347809,
+                -13.840994384906313,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.0698837223216417,
+                0.7578044207534946,
+                0.6459875294410942,
+                0.05957211635928106
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-15.png",
+            "camera_pose": {
+              "position": [
+                -7.729815427542525,
+                -13.815025037727779,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.03676224392694572,
+                0.7601314440151279,
+                0.6479711916718315,
+                0.031337836624739726
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-10.png",
+            "camera_pose": {
+              "position": [
+                -7.915282923510364,
+                -13.805182795211643,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.003570786511505526,
+                0.7610115138700315,
+                0.6487214039109463,
+                0.003043903537057059
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-05.png",
+            "camera_pose": {
+              "position": [
+                -8.100902467618674,
+                -13.811542562766357,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.02962746809900974,
+                0.7604429550552164,
+                0.6482367380868027,
+                -0.025255823794012717
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": -5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                -8.285261383056644,
+                -13.834055938720704,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.06276932514008307,
+                0.7584268498547018,
+                0.6465181167883429,
+                -0.05350747522904317
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                -8.466956587158837,
+                -13.872551582689718,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.09579169720317707,
+                0.7549670360393244,
+                0.6435688115088892,
+                -0.08165727214380908
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+10.png",
+            "camera_pose": {
+              "position": [
+                -8.644605269711471,
+                -13.926736519578492,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.1286317243262009,
+                0.7500700995613251,
+                0.639394436418668,
+                -0.10965162979995353
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+15.png",
+            "camera_pose": {
+              "position": [
+                -8.81685541697311,
+                -13.996198369299542,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.1612268936510201,
+                0.7437453620176131,
+                0.63400293767792,
+                -0.13743725934658216
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+20.png",
+            "camera_pose": {
+              "position": [
+                -8.982396101315617,
+                -14.08040848523428,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.1935151584202376,
+                0.7360048629055775,
+                0.6274045783109308,
+                -0.1649612692586219
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+25.png",
+            "camera_pose": {
+              "position": [
+                -9.13996745817494,
+                -14.178725977552983,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.22543505608671913,
+                0.7268633367052196,
+                0.6196119186697814,
+                -0.19217126601884188
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+30.png",
+            "camera_pose": {
+              "position": [
+                -9.288370274381197,
+                -14.290402590773382,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.2569258253110488,
+                0.7163381848312319,
+                0.6106397925250049,
+                -0.2190154538518944
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+35.png",
+            "camera_pose": {
+              "position": [
+                -9.426475114894988,
+                -14.414588398436686,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.2879275216241895,
+                0.7044494425084171,
+                0.60050527882866,
+                -0.24544273332051508
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                -9.55323091849002,
+                -14.550338271561138,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.3183811315351881,
+                0.6912197406334986,
+                0.589227669203576,
+                -0.27140279859620725
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                -9.667672996963685,
+                -14.696619071644244,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                -0.34822868486670866,
+                0.6766742626959225,
+                0.5768284312206516,
+                -0.29684623321924464
+              ]
+            },
+            "target": [
+              -7.935261383056645,
+              -15.934055938720702,
+              1.1413247680664063
+            ],
+            "offset_deg": 45
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-45.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_-05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/restaurant_urban/bathroom_0/q_005_gt_orbit/orbit_+45.png"
+  ]
+}

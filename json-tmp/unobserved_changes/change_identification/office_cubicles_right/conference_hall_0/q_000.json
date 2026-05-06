@@ -1,0 +1,798 @@
+{
+  "scene": "office_cubicles_right",
+  "room": "conference_hall_0",
+  "floor_name": "floors_vxanqe_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_identification",
+  "question_index": 0,
+  "question_id": "change_identification/q_000",
+  "question_data": {
+    "task_type": "change_identification",
+    "question": "What happened to the contents of the box from Phase 1 to Phase 2?",
+    "options": [
+      "replace",
+      "remove",
+      "add",
+      "no_change"
+    ],
+    "answer": "add",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "add",
+        "phase1_content": null,
+        "phase2_content": {
+          "category": "orange",
+          "display_name": "orange",
+          "model": "ucstpm",
+          "bbox_size_m": [
+            0.08310174179077148,
+            0.08534467315673828,
+            0.0849715633392334
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              1.9552434768676763,
+              12.097195884704588,
+              0.10837364823553798
+            ]
+          },
+          "bbox": [
+            [
+              1.839003324508667,
+              11.942036628723145,
+              -1.008063554763794e-05
+            ],
+            [
+              2.069490671157837,
+              12.256427764892578,
+              0.18675625324249268
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "target_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -0.5499999999999989,
+              15.18,
+              1.2499900117609286
+            ],
+            "quaternion_xyzw": [
+              -0.20085146000105958,
+              0.5655171111737439,
+              0.7537759354608794,
+              -0.2677142639181228
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 16.24219173902013,
+            "look_target": [
+              1.954246997833252,
+              12.099232196807861,
+              0.09337308630347252
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "conference_hall_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            10.5,
+            3.5,
+            16.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  -0.2786569298482159,
+                  -0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  -0.2786569298482159,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  -0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  0.27865692984821594,
+                  0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.27865692984821594,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.5694905786995013,
+                  12.099232768079201,
+                  0.7086168403959859
+                ],
+                "quaternion_xyzw": [
+                  0.27059792444407427,
+                  0.2705981757020644,
+                  0.6532817857333416,
+                  0.6532811791428941
+                ]
+              },
+              "look_target": [
+                1.9542468190193176,
+                12.099232196807861,
+                0.09337308071553707
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -0.5499999999999989,
+              15.18,
+              1.2499900117609286
+            ],
+            "quaternion_xyzw": [
+              -0.20085146197129153,
+              0.5655170905788662,
+              0.753775944812128,
+              -0.26771427961502764
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 16.242194424759955,
+            "look_target": [
+              1.9542467594146729,
+              12.09923267364502,
+              0.09337303601205349
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "conference_hall_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            10.5,
+            3.5,
+            16.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  -0.2786569298482159,
+                  -0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  -0.2786569298482159,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  -0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  0.27865692984821594,
+                  0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.27865692984821594,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.5694911996075374,
+                  12.15818656383699,
+                  0.7256819918075412
+                ],
+                "quaternion_xyzw": [
+                  0.24471647477399078,
+                  0.2942115843757974,
+                  0.7102895972073264,
+                  0.5907978323355019
+                ]
+              },
+              "look_target": [
+                1.9102411270141602,
+                12.036065578460693,
+                0.05521633774042129
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "conference_hall_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            10.5,
+            3.5,
+            16.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  -0.2786569298482159,
+                  -0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  -0.2786569298482159,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  -0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  0.27865692984821594,
+                  0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.27865692984821594,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "conference_hall_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            10.5,
+            3.5,
+            16.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  -0.2786569298482159,
+                  -0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  -0.2786569298482159,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  -0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  10.98,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.5421986658407971,
+                  0.27865692984821594,
+                  0.36234564339633507,
+                  0.7050365642431051
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  3.02,
+                  16.02,
+                  2.199990011760929
+                ],
+                "quaternion_xyzw": [
+                  0.27865692984821594,
+                  0.5421986658407971,
+                  0.7050365642431051,
+                  0.36234564339633507
+                ]
+              },
+              "target": [
+                -0.5,
+                13.5,
+                1.0499900117609287
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.5694905786995013,
+                  12.099232768079201,
+                  0.7086168403959859
+                ],
+                "quaternion_xyzw": [
+                  0.27059792444407427,
+                  0.2705981757020644,
+                  0.6532817857333416,
+                  0.6532811791428941
+                ]
+              },
+              "look_target": [
+                1.9542468190193176,
+                12.099232196807861,
+                0.09337308071553707
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_right/conference_hall_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.5694911996075374,
+                  12.15818656383699,
+                  0.7256819918075412
+                ],
+                "quaternion_xyzw": [
+                  0.24471647477399078,
+                  0.2942115843757974,
+                  0.7102895972073264,
+                  0.5907978323355019
+                ]
+              },
+              "look_target": [
+                1.9102411270141602,
+                12.036065578460693,
+                0.05521633774042129
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "conference_hall_0",
+        "room_id": 3,
+        "bbox_map_rc": [
+          32,
+          17,
+          38,
+          25
+        ],
+        "bbox_world_xy": [
+          -4.5,
+          10.5,
+          3.5,
+          16.5
+        ],
+        "expanded_bbox_world_xy": [
+          -4.5,
+          10.5,
+          3.5,
+          16.5
+        ],
+        "bbox_area_m2": 48.0,
+        "expanded_bbox_area_m2": 48.0,
+        "pixel_count": 61,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/office_cubicles_right/conference_hall_0/q_000/gt_view/image2_box_00.png"
+  ]
+}

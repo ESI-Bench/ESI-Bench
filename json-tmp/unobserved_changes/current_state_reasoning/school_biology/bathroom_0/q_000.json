@@ -1,0 +1,1157 @@
+{
+  "scene": "school_biology",
+  "room": "bathroom_0",
+  "floor_name": "floors_krgyyj_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "current_state_reasoning",
+  "question_index": 0,
+  "question_id": "current_state_reasoning/q_000",
+  "question_data": {
+    "task_type": "current_state_reasoning",
+    "question": "Which box changed from Phase 1 to Phase 2: the brown box, the red box, or the yellow box?",
+    "options": [
+      "brown box",
+      "red box",
+      "yellow box"
+    ],
+    "answer": "brown box",
+    "candidate_index": 0,
+    "box_count": 3,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "brown",
+        "change_type": "add",
+        "phase1_content": null,
+        "phase2_content": {
+          "category": "sugar_cookie",
+          "display_name": "sugar cookie",
+          "model": "feirtr",
+          "bbox_size_m": [
+            0.07504296875,
+            0.07262216949462891,
+            0.012738761901855468
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_cedar_chest",
+          "category": "cedar_chest",
+          "model": "fwstpx",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -6.2606100158691405,
+              2.107343017578126,
+              0.14954708564281466
+            ]
+          },
+          "bbox": [
+            [
+              -6.459606647491455,
+              1.8371683359146118,
+              0.005552008748054504
+            ],
+            [
+              -6.056307315826416,
+              2.377284288406372,
+              0.2690868675708771
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 1,
+        "position_label": "red",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "syringe",
+          "display_name": "syringe",
+          "model": "gagwke",
+          "bbox_size_m": [
+            0.11789281451702117,
+            0.02878796672821045,
+            0.01839199638366699
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "syringe",
+          "display_name": "syringe",
+          "model": "gagwke",
+          "bbox_size_m": [
+            0.11789281451702117,
+            0.02878796672821045,
+            0.01839199638366699
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_1_cedar_chest",
+          "category": "cedar_chest",
+          "model": "gbdzls",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -3.8106100158691425,
+              2.286333885192872,
+              0.09179550582170487
+            ]
+          },
+          "bbox": [
+            [
+              -4.011816501617432,
+              2.188169479370117,
+              0.005586706101894379
+            ],
+            [
+              -3.6099185943603516,
+              2.3839311599731445,
+              0.15050108730793
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 2,
+        "position_label": "yellow",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "french_toast",
+          "display_name": "french toast",
+          "model": "jfgasl",
+          "bbox_size_m": [
+            0.17887090301513672,
+            0.15124948120117188,
+            0.012330196380615234
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "french_toast",
+          "display_name": "french toast",
+          "model": "jfgasl",
+          "bbox_size_m": [
+            0.17887090301513672,
+            0.15124948120117188,
+            0.012330196380615234
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_2_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -6.344756523132324,
+              1.2971958847045908,
+              0.11397519290447235
+            ]
+          },
+          "bbox": [
+            [
+              -6.460996150970459,
+              1.142034888267517,
+              0.005591545253992081
+            ],
+            [
+              -6.2305097579956055,
+              1.4564253091812134,
+              0.1923578977584839
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "changed_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -6.02,
+              -3.1499999999999995,
+              1.255591556429863
+            ],
+            "quaternion_xyzw": [
+              0.623060892385558,
+              -0.03375235379255957,
+              -0.042270321129953825,
+              0.7803006618892134
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 12.786093352990225,
+            "look_target": [
+              -5.471525549888611,
+              1.897501826286316,
+              0.10337276905775071
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -6.5,
+            -4.5,
+            -3.5,
+            2.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057056,
+                  -0.10120589445563223,
+                  -0.14169935432937675,
+                  0.8013229747037878
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  -0.10120589445563223,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  -0.14169935432937675
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057055,
+                  0.10120589445563216,
+                  0.14169935432937666,
+                  0.8013229747037879
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.1012058944556322,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  0.1416993543293767
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.556367363400226,
+                  2.107061346240274,
+                  0.8391289358575895
+                ],
+                "quaternion_xyzw": [
+                  0.2706595043227974,
+                  0.2705365818636435,
+                  0.6531330850532673,
+                  0.6534298461212766
+                ]
+              },
+              "look_target": [
+                -6.258176803588867,
+                2.1073801517486572,
+                0.1373194232583046
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -4.511973725741409,
+                  2.286057472459337,
+                  0.8015077703275183
+                ],
+                "quaternion_xyzw": [
+                  0.2659462948157168,
+                  -0.27517117886965936,
+                  -0.6643219920013245,
+                  0.6420511518069771
+                ]
+              },
+              "look_target": [
+                -3.75510835647583,
+                2.260244131088257,
+                0.04420233935117722
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.730509013526492,
+                  1.2992322972681036,
+                  0.6493477814196419
+                ],
+                "quaternion_xyzw": [
+                  0.2627743802564212,
+                  0.2782017873551139,
+                  0.6716385281091518,
+                  0.6343934726592368
+                ]
+              },
+              "look_target": [
+                -6.346354722976685,
+                1.264078676700592,
+                0.03249957084655762
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -6.02,
+              -3.1499999999999995,
+              1.255591556429863
+            ],
+            "quaternion_xyzw": [
+              0.623068542080119,
+              -0.03374416336789975,
+              -0.04225926567462033,
+              0.7802955066981979
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 12.78503819444137,
+            "look_target": [
+              -5.471651275952657,
+              1.8976391951243083,
+              0.10344317828615507
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -6.5,
+            -4.5,
+            -3.5,
+            2.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057056,
+                  -0.10120589445563223,
+                  -0.14169935432937675,
+                  0.8013229747037878
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  -0.10120589445563223,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  -0.14169935432937675
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057055,
+                  0.10120589445563216,
+                  0.14169935432937666,
+                  0.8013229747037879
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.1012058944556322,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  0.1416993543293767
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.5564292050556165,
+                  2.107080049775216,
+                  0.7983143869503379
+                ],
+                "quaternion_xyzw": [
+                  0.2666333090832476,
+                  0.27450553344886075,
+                  0.6627149817987008,
+                  0.6437097509691937
+                ]
+              },
+              "look_target": [
+                -6.292254686355591,
+                2.0856666564941406,
+                0.062177394032478336
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -4.512018160506502,
+                  2.286054694116813,
+                  0.8183052880202908
+                ],
+                "quaternion_xyzw": [
+                  0.26972931384669985,
+                  -0.27146400619329764,
+                  -0.655372085447993,
+                  0.6511841676582918
+                ]
+              },
+              "look_target": [
+                -3.7381389141082764,
+                2.2810935974121094,
+                0.044410139769315723
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.730508803948156,
+                  1.2994959243372433,
+                  0.6681034793339222
+                ],
+                "quaternion_xyzw": [
+                  0.2802145276324664,
+                  0.2606269899884507,
+                  0.6292092139505945,
+                  0.6764977129842707
+                ]
+              },
+              "look_target": [
+                -6.36468243598938,
+                1.3454917073249817,
+                0.03226402819156647
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -6.5,
+            -4.5,
+            -3.5,
+            2.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057056,
+                  -0.10120589445563223,
+                  -0.14169935432937675,
+                  0.8013229747037878
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  -0.10120589445563223,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  -0.14169935432937675
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057055,
+                  0.10120589445563216,
+                  0.14169935432937666,
+                  0.8013229747037879
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.1012058944556322,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  0.1416993543293767
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -6.5,
+            -4.5,
+            -3.5,
+            2.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057056,
+                  -0.10120589445563223,
+                  -0.14169935432937675,
+                  0.8013229747037878
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -6.15,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  -0.10120589445563223,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  -0.14169935432937675
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  -4.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.5723287081057055,
+                  0.10120589445563216,
+                  0.14169935432937666,
+                  0.8013229747037879
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -3.85,
+                  2.15,
+                  2.205591556429863
+                ],
+                "quaternion_xyzw": [
+                  0.1012058944556322,
+                  0.5723287081057056,
+                  0.8013229747037878,
+                  0.1416993543293767
+                ]
+              },
+              "target": [
+                -5.0,
+                -1.0,
+                1.055591556429863
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.556367363400226,
+                  2.107061346240274,
+                  0.8391289358575895
+                ],
+                "quaternion_xyzw": [
+                  0.2706595043227974,
+                  0.2705365818636435,
+                  0.6531330850532673,
+                  0.6534298461212766
+                ]
+              },
+              "look_target": [
+                -6.258176803588867,
+                2.1073801517486572,
+                0.1373194232583046
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -4.511973725741409,
+                  2.286057472459337,
+                  0.8015077703275183
+                ],
+                "quaternion_xyzw": [
+                  0.2659462948157168,
+                  -0.27517117886965936,
+                  -0.6643219920013245,
+                  0.6420511518069771
+                ]
+              },
+              "look_target": [
+                -3.75510835647583,
+                2.260244131088257,
+                0.04420233935117722
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.730509013526492,
+                  1.2992322972681036,
+                  0.6493477814196419
+                ],
+                "quaternion_xyzw": [
+                  0.2627743802564212,
+                  0.2782017873551139,
+                  0.6716385281091518,
+                  0.6343934726592368
+                ]
+              },
+              "look_target": [
+                -6.346354722976685,
+                1.264078676700592,
+                0.03249957084655762
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_biology/bathroom_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.5564292050556165,
+                  2.107080049775216,
+                  0.7983143869503379
+                ],
+                "quaternion_xyzw": [
+                  0.2666333090832476,
+                  0.27450553344886075,
+                  0.6627149817987008,
+                  0.6437097509691937
+                ]
+              },
+              "look_target": [
+                -6.292254686355591,
+                2.0856666564941406,
+                0.062177394032478336
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -4.512018160506502,
+                  2.286054694116813,
+                  0.8183052880202908
+                ],
+                "quaternion_xyzw": [
+                  0.26972931384669985,
+                  -0.27146400619329764,
+                  -0.655372085447993,
+                  0.6511841676582918
+                ]
+              },
+              "look_target": [
+                -3.7381389141082764,
+                2.2810935974121094,
+                0.044410139769315723
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -5.730508803948156,
+                  1.2994959243372433,
+                  0.6681034793339222
+                ],
+                "quaternion_xyzw": [
+                  0.2802145276324664,
+                  0.2606269899884507,
+                  0.6292092139505945,
+                  0.6764977129842707
+                ]
+              },
+              "look_target": [
+                -6.36468243598938,
+                1.3454917073249817,
+                0.03226402819156647
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "bathroom_0",
+        "room_id": 2,
+        "bbox_map_rc": [
+          36,
+          34,
+          43,
+          37
+        ],
+        "bbox_world_xy": [
+          -6.5,
+          -4.5,
+          -3.5,
+          2.5
+        ],
+        "expanded_bbox_world_xy": [
+          -6.5,
+          -4.5,
+          -3.5,
+          2.5
+        ],
+        "bbox_area_m2": 21.0,
+        "expanded_bbox_area_m2": 21.0,
+        "pixel_count": 30,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image1_box_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_biology/bathroom_0/q_000/gt_view/image2_box_02.png"
+  ]
+}

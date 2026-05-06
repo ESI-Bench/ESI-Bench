@@ -1,0 +1,2801 @@
+{
+  "scene": "Pomaria_1_int",
+  "room": null,
+  "floor_name": null,
+  "seed": 1,
+  "trav_map_basename": "floor_trav_no_door",
+  "task_family": "Traversable Passage",
+  "task_type": "shortest_path_via_region",
+  "question_index": 0,
+  "question_id": "Traversable Passage/q_000",
+  "question_data": {
+    "case_id": "shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0",
+    "case_type": "shortest_path_via_region",
+    "question": "On the shortest path from corridor_0 to pantry_room_0, which intermediate room do you pass through among these options: pantry_room_0, bathroom_0, living_room_0, kitchen_0?",
+    "answer": "kitchen_0",
+    "answer_bool": true,
+    "source_region": "corridor_0",
+    "target_region": "pantry_room_0",
+    "via_region": "kitchen_0",
+    "required_regions": [
+      "pantry_room_0",
+      "bathroom_0",
+      "living_room_0",
+      "kitchen_0"
+    ],
+    "source_room_type": "corridor",
+    "target_room_type": "pantry_room",
+    "via_room_type": "kitchen",
+    "verification": {
+      "method": "scene.get_shortest_path + room_sequence_projection",
+      "shortest_region_path": [
+        "corridor_0",
+        "kitchen_0",
+        "corridor_0",
+        "pantry_room_0"
+      ],
+      "shortest_path_info": {
+        "source_region": "corridor_0",
+        "target_region": "pantry_room_0",
+        "blocked_regions": [],
+        "source_xy": [
+          -4.550000190734863,
+          -0.05000000074505806
+        ],
+        "target_xy": [
+          0.0,
+          2.5
+        ],
+        "room_sequence": [
+          "corridor_0",
+          "kitchen_0",
+          "corridor_0",
+          "pantry_room_0"
+        ],
+        "path_world_xy": [
+          [
+            -4.550000190734863,
+            -0.05000000074505806
+          ],
+          [
+            -4.349999904632568,
+            -0.15000000596046448
+          ],
+          [
+            -4.150000095367432,
+            -0.15000000596046448
+          ],
+          [
+            -3.950000047683716,
+            -0.15000000596046448
+          ],
+          [
+            -3.75,
+            0.05000000074505806
+          ],
+          [
+            -3.549999952316284,
+            0.05000000074505806
+          ],
+          [
+            -3.3500001430511475,
+            0.05000000074505806
+          ],
+          [
+            -3.1500000953674316,
+            0.05000000074505806
+          ],
+          [
+            -2.950000047683716,
+            0.15000000596046448
+          ],
+          [
+            -2.75,
+            0.25
+          ],
+          [
+            -2.549999952316284,
+            0.25
+          ],
+          [
+            -2.3500001430511475,
+            0.25
+          ],
+          [
+            -2.1500000953674316,
+            0.25
+          ],
+          [
+            -1.9500000476837158,
+            0.3499999940395355
+          ],
+          [
+            -1.850000023841858,
+            0.550000011920929
+          ],
+          [
+            -1.649999976158142,
+            0.75
+          ],
+          [
+            -1.4500000476837158,
+            0.949999988079071
+          ],
+          [
+            -1.350000023841858,
+            1.149999976158142
+          ],
+          [
+            -1.149999976158142,
+            1.350000023841858
+          ],
+          [
+            -0.949999988079071,
+            1.5500000715255737
+          ],
+          [
+            -0.75,
+            1.75
+          ],
+          [
+            -0.550000011920929,
+            1.9500000476837158
+          ],
+          [
+            -0.3499999940395355,
+            2.1500000953674316
+          ],
+          [
+            -0.15000000596046448,
+            2.3500001430511475
+          ]
+        ],
+        "path_length_steps": 24,
+        "path_distance": 5.73553466796875
+      },
+      "via_region_on_shortest_path": true,
+      "selected_correct_region": "kitchen_0",
+      "available_correct_regions": [
+        "kitchen_0"
+      ],
+      "mcq_has_unique_correct_option": true
+    },
+    "visualization": {
+      "map_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0.png"
+    },
+    "initial_view": {
+      "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0__initial.png",
+      "camera_pose": {
+        "position": [
+          -6.25,
+          0.15000000596046448,
+          1.35
+        ],
+        "quaternion_xyzw": [
+          0.5010621636982231,
+          0.4747092020173755,
+          0.4976580615164274,
+          0.5252850040100074
+        ],
+        "target": [
+          -13.65000057220459,
+          0.550000011920929,
+          1.0
+        ]
+      },
+      "success": true,
+      "room_instance": "corridor_0",
+      "render_xy": [
+        -6.25,
+        0.15000000596046448
+      ],
+      "selection_debug": {
+        "room_instance": "corridor_0",
+        "selected_by": "center_near_free_xy",
+        "clearance_px": 13.0,
+        "center_distance_px": 17.11724281311035,
+        "selected_map_rc": [
+          139,
+          75
+        ]
+      },
+      "ray_debug": {
+        "angle_deg": 177.0,
+        "angle_rad": 3.0892327760299634,
+        "ray_length_px": 74.1080322265625,
+        "start_map_rc": [
+          139,
+          75
+        ],
+        "end_map_rc": [
+          143,
+          1
+        ],
+        "start_xy": [
+          -6.25,
+          0.15000000596046448
+        ],
+        "target_xy": [
+          -13.65000057220459,
+          0.550000011920929
+        ],
+        "success": true
+      }
+    },
+    "room_views": {
+      "pantry_room_0": {
+        "success": true,
+        "room_instance": "pantry_room_0",
+        "center_xy": [
+          0.0,
+          2.5
+        ],
+        "corner_render_xy": [
+          [
+            -0.5999999999999998,
+            1.399999999999999
+          ],
+          [
+            -0.5999999999999998,
+            3.7875
+          ],
+          [
+            0.6374999999999997,
+            1.399999999999999
+          ],
+          [
+            0.6374999999999997,
+            3.7875
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_00.png",
+            "camera_pose": {
+              "position": [
+                -0.5999999999999998,
+                1.399999999999999,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.585807528968448,
+                -0.14937741345218652,
+                -0.19682124350065008,
+                0.7718661318266745
+              ],
+              "target": [
+                0.0,
+                2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -0.5999999999999998,
+              1.399999999999999
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_01.png",
+            "camera_pose": {
+              "position": [
+                -0.5999999999999998,
+                3.7875,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.13341718851932757,
+                0.6021434078213959,
+                0.7685227596603654,
+                -0.17028193711856415
+              ],
+              "target": [
+                0.0,
+                2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -0.5999999999999998,
+              3.7875
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_02.png",
+            "camera_pose": {
+              "position": [
+                0.6374999999999997,
+                1.399999999999999,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5852657844212117,
+                0.15733749565061156,
+                0.20650424243797477,
+                0.7681568016383996
+              ],
+              "target": [
+                0.0,
+                2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              0.6374999999999997,
+              1.399999999999999
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_03.png",
+            "camera_pose": {
+              "position": [
+                0.6374999999999997,
+                3.7875,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.14076691128368105,
+                0.6015294824407235,
+                0.7656647769090078,
+                0.17917702934005522
+              ],
+              "target": [
+                0.0,
+                2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              0.6374999999999997,
+              3.7875
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/pantry_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -0.3499999940395355,
+              2.049999952316284,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              5.887846720064156e-17,
+              0.7071067811865475,
+              0.7071067811865476,
+              5.887846720064156e-17
+            ],
+            "target": [
+              -0.3499999940395357,
+              1.0499999523162842,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "dishwasher_dngvvi_0",
+              "object_category": "dishwasher",
+              "semantic_pixels": 10997,
+              "instance_pixels": 10997,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "bottom_cabinet_jrhgeu_0",
+              "object_category": "bottom_cabinet",
+              "semantic_pixels": 8696,
+              "instance_pixels": 8696,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "electric_switch_wseglt_2",
+              "object_category": "electric_switch",
+              "semantic_pixels": 2400,
+              "instance_pixels": 2400,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "furniture_sink_zexzrc_0",
+              "object_category": "furniture_sink",
+              "semantic_pixels": 869,
+              "instance_pixels": 869,
+              "assigned_region": "kitchen_0"
+            }
+          ]
+        }
+      },
+      "bathroom_0": {
+        "success": true,
+        "room_instance": "bathroom_0",
+        "center_xy": [
+          -3.5,
+          3.0
+        ],
+        "corner_render_xy": [
+          [
+            -3.1505,
+            2.85
+          ],
+          [
+            -3.1505,
+            3.15
+          ],
+          [
+            -3.8495,
+            2.85
+          ],
+          [
+            -3.8495,
+            3.15
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -3.1505,
+                2.85,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.33547310997184415,
+                0.22108506673958167,
+                0.5039084969103443,
+                0.764627629956001
+              ],
+              "target": [
+                -3.5,
+                3.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -3.1505,
+              2.85
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -3.1505,
+                3.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.22108506673958167,
+                0.33547310997184415,
+                0.764627629956001,
+                0.5039084969103443
+              ],
+              "target": [
+                -3.5,
+                3.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -3.1505,
+              3.15
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                -3.8495,
+                2.85,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.33547310997184415,
+                -0.22108506673958167,
+                -0.5039084969103443,
+                0.764627629956001
+              ],
+              "target": [
+                -3.5,
+                3.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              -3.8495,
+              2.85
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                -3.8495,
+                3.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.22108506673958167,
+                -0.33547310997184415,
+                -0.764627629956001,
+                0.5039084969103443
+              ],
+              "target": [
+                -3.5,
+                3.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              -3.8495,
+              3.15
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/bathroom_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -3.549999952316284,
+              2.950000047683716,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.2705980500730984,
+              0.6532814824381884,
+              0.6532814824381883,
+              -0.2705980500730984
+            ],
+            "target": [
+              -2.8428931711297367,
+              2.242893266497168,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "electric_switch_wseglt_4",
+              "object_category": "electric_switch",
+              "semantic_pixels": 4692,
+              "instance_pixels": 4692,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "furniture_sink_zexzrc_1",
+              "object_category": "furniture_sink",
+              "semantic_pixels": 4494,
+              "instance_pixels": 4494,
+              "assigned_region": "corridor_0"
+            }
+          ]
+        }
+      },
+      "living_room_0": {
+        "success": true,
+        "room_instance": "living_room_0",
+        "center_xy": [
+          -10.5,
+          0.0
+        ],
+        "corner_render_xy": [
+          [
+            -12.15,
+            -2.15
+          ],
+          [
+            -12.15,
+            2.15
+          ],
+          [
+            -8.85,
+            -2.15
+          ],
+          [
+            -8.85,
+            2.15
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -12.15,
+                -2.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6252245073586132,
+                -0.21226032758058042,
+                -0.2414350643345863,
+                0.7111603043219709
+              ],
+              "target": [
+                -10.5,
+                0.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -12.15,
+              -2.15
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -12.15,
+                2.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.2122603275805804,
+                0.6252245073586131,
+                0.711160304321971,
+                -0.24143506433458628
+              ],
+              "target": [
+                -10.5,
+                0.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -12.15,
+              2.15
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                -8.85,
+                -2.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6252245073586132,
+                0.21226032758058042,
+                0.2414350643345863,
+                0.7111603043219709
+              ],
+              "target": [
+                -10.5,
+                0.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              -8.85,
+              -2.15
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                -8.85,
+                2.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.2122603275805804,
+                0.6252245073586131,
+                0.711160304321971,
+                0.24143506433458628
+              ],
+              "target": [
+                -10.5,
+                0.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              -8.85,
+              2.15
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/living_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -8.850000381469727,
+              1.5500000715255737,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              -7.850000381469727,
+              1.5500000715255737,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bookcase_vgzdul_0",
+              "object_category": "bookcase",
+              "semantic_pixels": 56116,
+              "instance_pixels": 56116,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "openable_window_ithrgo_1",
+              "object_category": "openable_window",
+              "semantic_pixels": 163,
+              "instance_pixels": 163,
+              "assigned_region": "kitchen_0"
+            }
+          ]
+        }
+      },
+      "kitchen_0": {
+        "success": true,
+        "room_instance": "kitchen_0",
+        "center_xy": [
+          -2.0,
+          -1.5
+        ],
+        "corner_render_xy": [
+          [
+            -4.15,
+            -3.15
+          ],
+          [
+            -4.15,
+            0.15000000000000002
+          ],
+          [
+            0.15000000000000002,
+            -3.15
+          ],
+          [
+            0.15000000000000002,
+            0.15000000000000002
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -4.15,
+                -3.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5921912059264003,
+                -0.2920097719081876,
+                -0.33214590248955816,
+                0.6735866449039507
+              ],
+              "target": [
+                -2.0,
+                -1.5,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -4.15,
+              -3.15
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -4.15,
+                0.15000000000000002,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.2920097719081876,
+                0.5921912059264003,
+                0.6735866449039507,
+                -0.33214590248955816
+              ],
+              "target": [
+                -2.0,
+                -1.5,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -4.15,
+              0.15000000000000002
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                0.15000000000000002,
+                -3.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5921912059264002,
+                0.2920097719081875,
+                0.3321459024895581,
+                0.6735866449039508
+              ],
+              "target": [
+                -2.0,
+                -1.5,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              0.15000000000000002,
+              -3.15
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                0.15000000000000002,
+                0.15000000000000002,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.2920097719081875,
+                0.5921912059264002,
+                0.6735866449039508,
+                0.3321459024895581
+              ],
+              "target": [
+                -2.0,
+                -1.5,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              0.15000000000000002,
+              0.15000000000000002
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/kitchen_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -0.75,
+              -0.45000001788139343,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "target": [
+              -1.75,
+              -0.4500000178813933,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bottom_cabinet_jrhgeu_0",
+              "object_category": "bottom_cabinet",
+              "semantic_pixels": 65963,
+              "instance_pixels": 65963,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "openable_window_ulnafj_1",
+              "object_category": "openable_window",
+              "semantic_pixels": 27078,
+              "instance_pixels": 27078,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "fridge_xyejdx_0",
+              "object_category": "fridge",
+              "semantic_pixels": 17618,
+              "instance_pixels": 17618,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "burner_pmntxh_0",
+              "object_category": "burner",
+              "semantic_pixels": 17610,
+              "instance_pixels": 17610,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "furniture_sink_zexzrc_0",
+              "object_category": "furniture_sink",
+              "semantic_pixels": 11694,
+              "instance_pixels": 11694,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "microwave_bfbeeb_0",
+              "object_category": "microwave",
+              "semantic_pixels": 9745,
+              "instance_pixels": 9745,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "dishwasher_dngvvi_0",
+              "object_category": "dishwasher",
+              "semantic_pixels": 4514,
+              "instance_pixels": 4514,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "electric_switch_wseglt_1",
+              "object_category": "electric_switch",
+              "semantic_pixels": 150,
+              "instance_pixels": 150,
+              "assigned_region": "corridor_0"
+            }
+          ]
+        }
+      }
+    },
+    "path_views": {
+      "success": true,
+      "sample_spacing_m": 1.0,
+      "path_length_m": 5.487,
+      "sample_count": 7,
+      "views": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_000.png",
+          "camera_pose": {
+            "position": [
+              -4.550000190734863,
+              -0.05000000074505806,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.3042094308275141,
+              0.49222089536258695,
+              0.693776002287924,
+              -0.4287774142995868
+            ],
+            "target": [
+              -3.6555727531672986,
+              -0.4972131031093788,
+              1.0
+            ]
+          },
+          "sample_index": 0,
+          "distance_along_path_m": 0.0,
+          "yaw_rad": -0.46364705765847863
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_001.png",
+          "camera_pose": {
+            "position": [
+              -3.656449663862558,
+              0.05000000074505806,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.4091605966096607,
+              -0.4091605966096607,
+              -0.576704088924317,
+              0.576704088924317
+            ],
+            "target": [
+              -2.656449663862558,
+              0.05000000074505806,
+              1.0
+            ]
+          },
+          "sample_index": 1,
+          "distance_along_path_m": 1.0,
+          "yaw_rad": 0.0
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_002.png",
+          "camera_pose": {
+            "position": [
+              -2.70366324896111,
+              0.25,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.4091605966096607,
+              -0.4091605966096607,
+              -0.576704088924317,
+              0.576704088924317
+            ],
+            "target": [
+              -1.70366324896111,
+              0.25,
+              1.0
+            ]
+          },
+          "sample_index": 2,
+          "distance_along_path_m": 2.0,
+          "yaw_rad": 0.0
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_003.png",
+          "camera_pose": {
+            "position": [
+              -1.8503921478054426,
+              0.5492157641106215,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5631612437806862,
+              -0.13294435354439668,
+              -0.18738254104560403,
+              0.793765075872796
+            ],
+            "target": [
+              -1.4031784989934768,
+              1.4436429284545313,
+              1.0
+            ]
+          },
+          "sample_index": 3,
+          "distance_along_path_m": 3.0,
+          "yaw_rad": 1.1071486581894527
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_004.png",
+          "camera_pose": {
+            "position": [
+              -1.2016271041729973,
+              1.2983728958270027,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345940822169053,
+              -0.2214361192186396,
+              -0.31211000386420595,
+              0.7535002042812852
+            ],
+            "target": [
+              -0.49452032298644977,
+              2.0054796770135503,
+              1.0
+            ]
+          },
+          "sample_index": 4,
+          "distance_along_path_m": 4.0,
+          "yaw_rad": 0.7853981633974483
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_005.png",
+          "camera_pose": {
+            "position": [
+              -0.49452035692233504,
+              2.005479710949422,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345940904660419,
+              -0.22143609930346128,
+              -0.3121099757941404,
+              0.7535002159082864
+            ],
+            "target": [
+              0.21258637158065857,
+              2.712586544819519,
+              1.0
+            ]
+          },
+          "sample_index": 5,
+          "distance_along_path_m": 5.0,
+          "yaw_rad": 0.785398237903242
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_006.png",
+          "camera_pose": {
+            "position": [
+              -0.15000000596046448,
+              2.3500001430511475,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345940987151789,
+              -0.22143607938827964,
+              -0.3121099477240702,
+              0.7535002275352883
+            ],
+            "target": [
+              0.5571066698589634,
+              3.057107029604799,
+              1.0
+            ]
+          },
+          "sample_index": 6,
+          "distance_along_path_m": 5.487,
+          "yaw_rad": 0.7853983124090469
+        }
+      ],
+      "selected_target_region": "pantry_room_0",
+      "selection_reason": "direct_path",
+      "room_sequence": [
+        "corridor_0",
+        "kitchen_0",
+        "corridor_0",
+        "pantry_room_0"
+      ],
+      "path_world_xy": [
+        [
+          -4.550000190734863,
+          -0.05000000074505806
+        ],
+        [
+          -4.349999904632568,
+          -0.15000000596046448
+        ],
+        [
+          -4.150000095367432,
+          -0.15000000596046448
+        ],
+        [
+          -3.950000047683716,
+          -0.15000000596046448
+        ],
+        [
+          -3.75,
+          0.05000000074505806
+        ],
+        [
+          -3.549999952316284,
+          0.05000000074505806
+        ],
+        [
+          -3.3500001430511475,
+          0.05000000074505806
+        ],
+        [
+          -3.1500000953674316,
+          0.05000000074505806
+        ],
+        [
+          -2.950000047683716,
+          0.15000000596046448
+        ],
+        [
+          -2.75,
+          0.25
+        ],
+        [
+          -2.549999952316284,
+          0.25
+        ],
+        [
+          -2.3500001430511475,
+          0.25
+        ],
+        [
+          -2.1500000953674316,
+          0.25
+        ],
+        [
+          -1.9500000476837158,
+          0.3499999940395355
+        ],
+        [
+          -1.850000023841858,
+          0.550000011920929
+        ],
+        [
+          -1.649999976158142,
+          0.75
+        ],
+        [
+          -1.4500000476837158,
+          0.949999988079071
+        ],
+        [
+          -1.350000023841858,
+          1.149999976158142
+        ],
+        [
+          -1.149999976158142,
+          1.350000023841858
+        ],
+        [
+          -0.949999988079071,
+          1.5500000715255737
+        ],
+        [
+          -0.75,
+          1.75
+        ],
+        [
+          -0.550000011920929,
+          1.9500000476837158
+        ],
+        [
+          -0.3499999940395355,
+          2.1500000953674316
+        ],
+        [
+          -0.15000000596046448,
+          2.3500001430511475
+        ]
+      ]
+    },
+    "task_type": "shortest_path_via_region",
+    "options": [
+      "pantry_room_0",
+      "bathroom_0",
+      "living_room_0",
+      "kitchen_0"
+    ],
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0__initial.png",
+      "kind": "start_room_longest_ray_view",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0.png",
+      "initial_view": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0__initial.png",
+        "camera_pose": {
+          "position": [
+            -6.25,
+            0.15000000596046448,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.5010621636982231,
+            0.4747092020173755,
+            0.4976580615164274,
+            0.5252850040100074
+          ],
+          "target": [
+            -13.65000057220459,
+            0.550000011920929,
+            1.0
+          ]
+        },
+        "success": true,
+        "room_instance": "corridor_0",
+        "render_xy": [
+          -6.25,
+          0.15000000596046448
+        ],
+        "selection_debug": {
+          "room_instance": "corridor_0",
+          "selected_by": "center_near_free_xy",
+          "clearance_px": 13.0,
+          "center_distance_px": 17.11724281311035,
+          "selected_map_rc": [
+            139,
+            75
+          ]
+        },
+        "ray_debug": {
+          "angle_deg": 177.0,
+          "angle_rad": 3.0892327760299634,
+          "ray_length_px": 74.1080322265625,
+          "start_map_rc": [
+            139,
+            75
+          ],
+          "end_map_rc": [
+            143,
+            1
+          ],
+          "start_xy": [
+            -6.25,
+            0.15000000596046448
+          ],
+          "target_xy": [
+            -13.65000057220459,
+            0.550000011920929
+          ],
+          "success": true
+        }
+      },
+      "room_views": {
+        "pantry_room_0": {
+          "success": true,
+          "room_instance": "pantry_room_0",
+          "center_xy": [
+            0.0,
+            2.5
+          ],
+          "corner_render_xy": [
+            [
+              -0.5999999999999998,
+              1.399999999999999
+            ],
+            [
+              -0.5999999999999998,
+              3.7875
+            ],
+            [
+              0.6374999999999997,
+              1.399999999999999
+            ],
+            [
+              0.6374999999999997,
+              3.7875
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.5999999999999998,
+                  1.399999999999999,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.585807528968448,
+                  -0.14937741345218652,
+                  -0.19682124350065008,
+                  0.7718661318266745
+                ],
+                "target": [
+                  0.0,
+                  2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -0.5999999999999998,
+                1.399999999999999
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.5999999999999998,
+                  3.7875,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.13341718851932757,
+                  0.6021434078213959,
+                  0.7685227596603654,
+                  -0.17028193711856415
+                ],
+                "target": [
+                  0.0,
+                  2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -0.5999999999999998,
+                3.7875
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_02.png",
+              "camera_pose": {
+                "position": [
+                  0.6374999999999997,
+                  1.399999999999999,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5852657844212117,
+                  0.15733749565061156,
+                  0.20650424243797477,
+                  0.7681568016383996
+                ],
+                "target": [
+                  0.0,
+                  2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                0.6374999999999997,
+                1.399999999999999
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_03.png",
+              "camera_pose": {
+                "position": [
+                  0.6374999999999997,
+                  3.7875,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.14076691128368105,
+                  0.6015294824407235,
+                  0.7656647769090078,
+                  0.17917702934005522
+                ],
+                "target": [
+                  0.0,
+                  2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                0.6374999999999997,
+                3.7875
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/pantry_room_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -0.3499999940395355,
+                2.049999952316284,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                5.887846720064156e-17,
+                0.7071067811865475,
+                0.7071067811865476,
+                5.887846720064156e-17
+              ],
+              "target": [
+                -0.3499999940395357,
+                1.0499999523162842,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "dishwasher_dngvvi_0",
+                "object_category": "dishwasher",
+                "semantic_pixels": 10997,
+                "instance_pixels": 10997,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "bottom_cabinet_jrhgeu_0",
+                "object_category": "bottom_cabinet",
+                "semantic_pixels": 8696,
+                "instance_pixels": 8696,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "electric_switch_wseglt_2",
+                "object_category": "electric_switch",
+                "semantic_pixels": 2400,
+                "instance_pixels": 2400,
+                "assigned_region": "kitchen_0"
+              },
+              {
+                "object_name": "furniture_sink_zexzrc_0",
+                "object_category": "furniture_sink",
+                "semantic_pixels": 869,
+                "instance_pixels": 869,
+                "assigned_region": "kitchen_0"
+              }
+            ]
+          }
+        },
+        "bathroom_0": {
+          "success": true,
+          "room_instance": "bathroom_0",
+          "center_xy": [
+            -3.5,
+            3.0
+          ],
+          "corner_render_xy": [
+            [
+              -3.1505,
+              2.85
+            ],
+            [
+              -3.1505,
+              3.15
+            ],
+            [
+              -3.8495,
+              2.85
+            ],
+            [
+              -3.8495,
+              3.15
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -3.1505,
+                  2.85,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.33547310997184415,
+                  0.22108506673958167,
+                  0.5039084969103443,
+                  0.764627629956001
+                ],
+                "target": [
+                  -3.5,
+                  3.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -3.1505,
+                2.85
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -3.1505,
+                  3.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.22108506673958167,
+                  0.33547310997184415,
+                  0.764627629956001,
+                  0.5039084969103443
+                ],
+                "target": [
+                  -3.5,
+                  3.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -3.1505,
+                3.15
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  -3.8495,
+                  2.85,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.33547310997184415,
+                  -0.22108506673958167,
+                  -0.5039084969103443,
+                  0.764627629956001
+                ],
+                "target": [
+                  -3.5,
+                  3.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                -3.8495,
+                2.85
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  -3.8495,
+                  3.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.22108506673958167,
+                  -0.33547310997184415,
+                  -0.764627629956001,
+                  0.5039084969103443
+                ],
+                "target": [
+                  -3.5,
+                  3.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                -3.8495,
+                3.15
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/bathroom_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -3.549999952316284,
+                2.950000047683716,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.2705980500730984,
+                0.6532814824381884,
+                0.6532814824381883,
+                -0.2705980500730984
+              ],
+              "target": [
+                -2.8428931711297367,
+                2.242893266497168,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "electric_switch_wseglt_4",
+                "object_category": "electric_switch",
+                "semantic_pixels": 4692,
+                "instance_pixels": 4692,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "furniture_sink_zexzrc_1",
+                "object_category": "furniture_sink",
+                "semantic_pixels": 4494,
+                "instance_pixels": 4494,
+                "assigned_region": "corridor_0"
+              }
+            ]
+          }
+        },
+        "living_room_0": {
+          "success": true,
+          "room_instance": "living_room_0",
+          "center_xy": [
+            -10.5,
+            0.0
+          ],
+          "corner_render_xy": [
+            [
+              -12.15,
+              -2.15
+            ],
+            [
+              -12.15,
+              2.15
+            ],
+            [
+              -8.85,
+              -2.15
+            ],
+            [
+              -8.85,
+              2.15
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -12.15,
+                  -2.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6252245073586132,
+                  -0.21226032758058042,
+                  -0.2414350643345863,
+                  0.7111603043219709
+                ],
+                "target": [
+                  -10.5,
+                  0.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -12.15,
+                -2.15
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -12.15,
+                  2.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.2122603275805804,
+                  0.6252245073586131,
+                  0.711160304321971,
+                  -0.24143506433458628
+                ],
+                "target": [
+                  -10.5,
+                  0.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -12.15,
+                2.15
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  -8.85,
+                  -2.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6252245073586132,
+                  0.21226032758058042,
+                  0.2414350643345863,
+                  0.7111603043219709
+                ],
+                "target": [
+                  -10.5,
+                  0.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                -8.85,
+                -2.15
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  -8.85,
+                  2.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.2122603275805804,
+                  0.6252245073586131,
+                  0.711160304321971,
+                  0.24143506433458628
+                ],
+                "target": [
+                  -10.5,
+                  0.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                -8.85,
+                2.15
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/living_room_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -8.850000381469727,
+                1.5500000715255737,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.5,
+                0.5,
+                0.5,
+                -0.5
+              ],
+              "target": [
+                -7.850000381469727,
+                1.5500000715255737,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "bookcase_vgzdul_0",
+                "object_category": "bookcase",
+                "semantic_pixels": 56116,
+                "instance_pixels": 56116,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "openable_window_ithrgo_1",
+                "object_category": "openable_window",
+                "semantic_pixels": 163,
+                "instance_pixels": 163,
+                "assigned_region": "kitchen_0"
+              }
+            ]
+          }
+        },
+        "kitchen_0": {
+          "success": true,
+          "room_instance": "kitchen_0",
+          "center_xy": [
+            -2.0,
+            -1.5
+          ],
+          "corner_render_xy": [
+            [
+              -4.15,
+              -3.15
+            ],
+            [
+              -4.15,
+              0.15000000000000002
+            ],
+            [
+              0.15000000000000002,
+              -3.15
+            ],
+            [
+              0.15000000000000002,
+              0.15000000000000002
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.15,
+                  -3.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5921912059264003,
+                  -0.2920097719081876,
+                  -0.33214590248955816,
+                  0.6735866449039507
+                ],
+                "target": [
+                  -2.0,
+                  -1.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -4.15,
+                -3.15
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.15,
+                  0.15000000000000002,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.2920097719081876,
+                  0.5921912059264003,
+                  0.6735866449039507,
+                  -0.33214590248955816
+                ],
+                "target": [
+                  -2.0,
+                  -1.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -4.15,
+                0.15000000000000002
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  0.15000000000000002,
+                  -3.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5921912059264002,
+                  0.2920097719081875,
+                  0.3321459024895581,
+                  0.6735866449039508
+                ],
+                "target": [
+                  -2.0,
+                  -1.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                0.15000000000000002,
+                -3.15
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  0.15000000000000002,
+                  0.15000000000000002,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.2920097719081875,
+                  0.5921912059264002,
+                  0.6735866449039508,
+                  0.3321459024895581
+                ],
+                "target": [
+                  -2.0,
+                  -1.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                0.15000000000000002,
+                0.15000000000000002
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/kitchen_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -0.75,
+                -0.45000001788139343,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "target": [
+                -1.75,
+                -0.4500000178813933,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "bottom_cabinet_jrhgeu_0",
+                "object_category": "bottom_cabinet",
+                "semantic_pixels": 65963,
+                "instance_pixels": 65963,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "openable_window_ulnafj_1",
+                "object_category": "openable_window",
+                "semantic_pixels": 27078,
+                "instance_pixels": 27078,
+                "assigned_region": "kitchen_0"
+              },
+              {
+                "object_name": "fridge_xyejdx_0",
+                "object_category": "fridge",
+                "semantic_pixels": 17618,
+                "instance_pixels": 17618,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "burner_pmntxh_0",
+                "object_category": "burner",
+                "semantic_pixels": 17610,
+                "instance_pixels": 17610,
+                "assigned_region": "kitchen_0"
+              },
+              {
+                "object_name": "furniture_sink_zexzrc_0",
+                "object_category": "furniture_sink",
+                "semantic_pixels": 11694,
+                "instance_pixels": 11694,
+                "assigned_region": "kitchen_0"
+              },
+              {
+                "object_name": "microwave_bfbeeb_0",
+                "object_category": "microwave",
+                "semantic_pixels": 9745,
+                "instance_pixels": 9745,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "dishwasher_dngvvi_0",
+                "object_category": "dishwasher",
+                "semantic_pixels": 4514,
+                "instance_pixels": 4514,
+                "assigned_region": "corridor_0"
+              },
+              {
+                "object_name": "electric_switch_wseglt_1",
+                "object_category": "electric_switch",
+                "semantic_pixels": 150,
+                "instance_pixels": 150,
+                "assigned_region": "corridor_0"
+              }
+            ]
+          }
+        }
+      },
+      "path_views": {
+        "success": true,
+        "sample_spacing_m": 1.0,
+        "path_length_m": 5.487,
+        "sample_count": 7,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_000.png",
+            "camera_pose": {
+              "position": [
+                -4.550000190734863,
+                -0.05000000074505806,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.3042094308275141,
+                0.49222089536258695,
+                0.693776002287924,
+                -0.4287774142995868
+              ],
+              "target": [
+                -3.6555727531672986,
+                -0.4972131031093788,
+                1.0
+              ]
+            },
+            "sample_index": 0,
+            "distance_along_path_m": 0.0,
+            "yaw_rad": -0.46364705765847863
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_001.png",
+            "camera_pose": {
+              "position": [
+                -3.656449663862558,
+                0.05000000074505806,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.4091605966096607,
+                -0.4091605966096607,
+                -0.576704088924317,
+                0.576704088924317
+              ],
+              "target": [
+                -2.656449663862558,
+                0.05000000074505806,
+                1.0
+              ]
+            },
+            "sample_index": 1,
+            "distance_along_path_m": 1.0,
+            "yaw_rad": 0.0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_002.png",
+            "camera_pose": {
+              "position": [
+                -2.70366324896111,
+                0.25,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.4091605966096607,
+                -0.4091605966096607,
+                -0.576704088924317,
+                0.576704088924317
+              ],
+              "target": [
+                -1.70366324896111,
+                0.25,
+                1.0
+              ]
+            },
+            "sample_index": 2,
+            "distance_along_path_m": 2.0,
+            "yaw_rad": 0.0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_003.png",
+            "camera_pose": {
+              "position": [
+                -1.8503921478054426,
+                0.5492157641106215,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5631612437806862,
+                -0.13294435354439668,
+                -0.18738254104560403,
+                0.793765075872796
+              ],
+              "target": [
+                -1.4031784989934768,
+                1.4436429284545313,
+                1.0
+              ]
+            },
+            "sample_index": 3,
+            "distance_along_path_m": 3.0,
+            "yaw_rad": 1.1071486581894527
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_004.png",
+            "camera_pose": {
+              "position": [
+                -1.2016271041729973,
+                1.2983728958270027,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345940822169053,
+                -0.2214361192186396,
+                -0.31211000386420595,
+                0.7535002042812852
+              ],
+              "target": [
+                -0.49452032298644977,
+                2.0054796770135503,
+                1.0
+              ]
+            },
+            "sample_index": 4,
+            "distance_along_path_m": 4.0,
+            "yaw_rad": 0.7853981633974483
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_005.png",
+            "camera_pose": {
+              "position": [
+                -0.49452035692233504,
+                2.005479710949422,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345940904660419,
+                -0.22143609930346128,
+                -0.3121099757941404,
+                0.7535002159082864
+              ],
+              "target": [
+                0.21258637158065857,
+                2.712586544819519,
+                1.0
+              ]
+            },
+            "sample_index": 5,
+            "distance_along_path_m": 5.0,
+            "yaw_rad": 0.785398237903242
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_006.png",
+            "camera_pose": {
+              "position": [
+                -0.15000000596046448,
+                2.3500001430511475,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345940987151789,
+                -0.22143607938827964,
+                -0.3121099477240702,
+                0.7535002275352883
+              ],
+              "target": [
+                0.5571066698589634,
+                3.057107029604799,
+                1.0
+              ]
+            },
+            "sample_index": 6,
+            "distance_along_path_m": 5.487,
+            "yaw_rad": 0.7853983124090469
+          }
+        ],
+        "selected_target_region": "pantry_room_0",
+        "selection_reason": "direct_path",
+        "room_sequence": [
+          "corridor_0",
+          "kitchen_0",
+          "corridor_0",
+          "pantry_room_0"
+        ],
+        "path_world_xy": [
+          [
+            -4.550000190734863,
+            -0.05000000074505806
+          ],
+          [
+            -4.349999904632568,
+            -0.15000000596046448
+          ],
+          [
+            -4.150000095367432,
+            -0.15000000596046448
+          ],
+          [
+            -3.950000047683716,
+            -0.15000000596046448
+          ],
+          [
+            -3.75,
+            0.05000000074505806
+          ],
+          [
+            -3.549999952316284,
+            0.05000000074505806
+          ],
+          [
+            -3.3500001430511475,
+            0.05000000074505806
+          ],
+          [
+            -3.1500000953674316,
+            0.05000000074505806
+          ],
+          [
+            -2.950000047683716,
+            0.15000000596046448
+          ],
+          [
+            -2.75,
+            0.25
+          ],
+          [
+            -2.549999952316284,
+            0.25
+          ],
+          [
+            -2.3500001430511475,
+            0.25
+          ],
+          [
+            -2.1500000953674316,
+            0.25
+          ],
+          [
+            -1.9500000476837158,
+            0.3499999940395355
+          ],
+          [
+            -1.850000023841858,
+            0.550000011920929
+          ],
+          [
+            -1.649999976158142,
+            0.75
+          ],
+          [
+            -1.4500000476837158,
+            0.949999988079071
+          ],
+          [
+            -1.350000023841858,
+            1.149999976158142
+          ],
+          [
+            -1.149999976158142,
+            1.350000023841858
+          ],
+          [
+            -0.949999988079071,
+            1.5500000715255737
+          ],
+          [
+            -0.75,
+            1.75
+          ],
+          [
+            -0.550000011920929,
+            1.9500000476837158
+          ],
+          [
+            -0.3499999940395355,
+            2.1500000953674316
+          ],
+          [
+            -0.15000000596046448,
+            2.3500001430511475
+          ]
+        ]
+      },
+      "gt_region_views": {
+        "pantry_room_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/pantry_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -0.3499999940395355,
+              2.049999952316284,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              5.887846720064156e-17,
+              0.7071067811865475,
+              0.7071067811865476,
+              5.887846720064156e-17
+            ],
+            "target": [
+              -0.3499999940395357,
+              1.0499999523162842,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "dishwasher_dngvvi_0",
+              "object_category": "dishwasher",
+              "semantic_pixels": 10997,
+              "instance_pixels": 10997,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "bottom_cabinet_jrhgeu_0",
+              "object_category": "bottom_cabinet",
+              "semantic_pixels": 8696,
+              "instance_pixels": 8696,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "electric_switch_wseglt_2",
+              "object_category": "electric_switch",
+              "semantic_pixels": 2400,
+              "instance_pixels": 2400,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "furniture_sink_zexzrc_0",
+              "object_category": "furniture_sink",
+              "semantic_pixels": 869,
+              "instance_pixels": 869,
+              "assigned_region": "kitchen_0"
+            }
+          ]
+        },
+        "bathroom_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/bathroom_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -3.549999952316284,
+              2.950000047683716,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.2705980500730984,
+              0.6532814824381884,
+              0.6532814824381883,
+              -0.2705980500730984
+            ],
+            "target": [
+              -2.8428931711297367,
+              2.242893266497168,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "electric_switch_wseglt_4",
+              "object_category": "electric_switch",
+              "semantic_pixels": 4692,
+              "instance_pixels": 4692,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "furniture_sink_zexzrc_1",
+              "object_category": "furniture_sink",
+              "semantic_pixels": 4494,
+              "instance_pixels": 4494,
+              "assigned_region": "corridor_0"
+            }
+          ]
+        },
+        "living_room_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/living_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -8.850000381469727,
+              1.5500000715255737,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              -7.850000381469727,
+              1.5500000715255737,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bookcase_vgzdul_0",
+              "object_category": "bookcase",
+              "semantic_pixels": 56116,
+              "instance_pixels": 56116,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "openable_window_ithrgo_1",
+              "object_category": "openable_window",
+              "semantic_pixels": 163,
+              "instance_pixels": 163,
+              "assigned_region": "kitchen_0"
+            }
+          ]
+        },
+        "kitchen_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/kitchen_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -0.75,
+              -0.45000001788139343,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "target": [
+              -1.75,
+              -0.4500000178813933,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bottom_cabinet_jrhgeu_0",
+              "object_category": "bottom_cabinet",
+              "semantic_pixels": 65963,
+              "instance_pixels": 65963,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "openable_window_ulnafj_1",
+              "object_category": "openable_window",
+              "semantic_pixels": 27078,
+              "instance_pixels": 27078,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "fridge_xyejdx_0",
+              "object_category": "fridge",
+              "semantic_pixels": 17618,
+              "instance_pixels": 17618,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "burner_pmntxh_0",
+              "object_category": "burner",
+              "semantic_pixels": 17610,
+              "instance_pixels": 17610,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "furniture_sink_zexzrc_0",
+              "object_category": "furniture_sink",
+              "semantic_pixels": 11694,
+              "instance_pixels": 11694,
+              "assigned_region": "kitchen_0"
+            },
+            {
+              "object_name": "microwave_bfbeeb_0",
+              "object_category": "microwave",
+              "semantic_pixels": 9745,
+              "instance_pixels": 9745,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "dishwasher_dngvvi_0",
+              "object_category": "dishwasher",
+              "semantic_pixels": 4514,
+              "instance_pixels": 4514,
+              "assigned_region": "corridor_0"
+            },
+            {
+              "object_name": "electric_switch_wseglt_1",
+              "object_category": "electric_switch",
+              "semantic_pixels": 150,
+              "instance_pixels": 150,
+              "assigned_region": "corridor_0"
+            }
+          ]
+        }
+      }
+    },
+    "legacy_binary_question": {
+      "question": "On the shortest path from corridor_0 to pantry_room_0, do you need to pass through kitchen_0?",
+      "answer": "Yes",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required_regions": [
+        "corridor_0",
+        "pantry_room_0",
+        "kitchen_0"
+      ],
+      "via_region": "kitchen_0",
+      "answer_bool": true
+    },
+    "question_format": "single_choice_room_mcq",
+    "option_count": 4,
+    "correct_region": "kitchen_0",
+    "answer_region": "kitchen_0",
+    "shortest_path_regions": [
+      "corridor_0",
+      "kitchen_0",
+      "corridor_0",
+      "pantry_room_0"
+    ],
+    "internal_shortest_path_regions": [
+      "kitchen_0"
+    ],
+    "gt_region_views": {
+      "pantry_room_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/pantry_room_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -0.3499999940395355,
+            2.049999952316284,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            5.887846720064156e-17,
+            0.7071067811865475,
+            0.7071067811865476,
+            5.887846720064156e-17
+          ],
+          "target": [
+            -0.3499999940395357,
+            1.0499999523162842,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "dishwasher_dngvvi_0",
+            "object_category": "dishwasher",
+            "semantic_pixels": 10997,
+            "instance_pixels": 10997,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "bottom_cabinet_jrhgeu_0",
+            "object_category": "bottom_cabinet",
+            "semantic_pixels": 8696,
+            "instance_pixels": 8696,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "electric_switch_wseglt_2",
+            "object_category": "electric_switch",
+            "semantic_pixels": 2400,
+            "instance_pixels": 2400,
+            "assigned_region": "kitchen_0"
+          },
+          {
+            "object_name": "furniture_sink_zexzrc_0",
+            "object_category": "furniture_sink",
+            "semantic_pixels": 869,
+            "instance_pixels": 869,
+            "assigned_region": "kitchen_0"
+          }
+        ]
+      },
+      "bathroom_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/bathroom_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -3.549999952316284,
+            2.950000047683716,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            -0.2705980500730984,
+            0.6532814824381884,
+            0.6532814824381883,
+            -0.2705980500730984
+          ],
+          "target": [
+            -2.8428931711297367,
+            2.242893266497168,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "electric_switch_wseglt_4",
+            "object_category": "electric_switch",
+            "semantic_pixels": 4692,
+            "instance_pixels": 4692,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "furniture_sink_zexzrc_1",
+            "object_category": "furniture_sink",
+            "semantic_pixels": 4494,
+            "instance_pixels": 4494,
+            "assigned_region": "corridor_0"
+          }
+        ]
+      },
+      "living_room_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/living_room_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -8.850000381469727,
+            1.5500000715255737,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            -0.5,
+            0.5,
+            0.5,
+            -0.5
+          ],
+          "target": [
+            -7.850000381469727,
+            1.5500000715255737,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "bookcase_vgzdul_0",
+            "object_category": "bookcase",
+            "semantic_pixels": 56116,
+            "instance_pixels": 56116,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "openable_window_ithrgo_1",
+            "object_category": "openable_window",
+            "semantic_pixels": 163,
+            "instance_pixels": 163,
+            "assigned_region": "kitchen_0"
+          }
+        ]
+      },
+      "kitchen_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/kitchen_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -0.75,
+            -0.45000001788139343,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "target": [
+            -1.75,
+            -0.4500000178813933,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "bottom_cabinet_jrhgeu_0",
+            "object_category": "bottom_cabinet",
+            "semantic_pixels": 65963,
+            "instance_pixels": 65963,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "openable_window_ulnafj_1",
+            "object_category": "openable_window",
+            "semantic_pixels": 27078,
+            "instance_pixels": 27078,
+            "assigned_region": "kitchen_0"
+          },
+          {
+            "object_name": "fridge_xyejdx_0",
+            "object_category": "fridge",
+            "semantic_pixels": 17618,
+            "instance_pixels": 17618,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "burner_pmntxh_0",
+            "object_category": "burner",
+            "semantic_pixels": 17610,
+            "instance_pixels": 17610,
+            "assigned_region": "kitchen_0"
+          },
+          {
+            "object_name": "furniture_sink_zexzrc_0",
+            "object_category": "furniture_sink",
+            "semantic_pixels": 11694,
+            "instance_pixels": 11694,
+            "assigned_region": "kitchen_0"
+          },
+          {
+            "object_name": "microwave_bfbeeb_0",
+            "object_category": "microwave",
+            "semantic_pixels": 9745,
+            "instance_pixels": 9745,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "dishwasher_dngvvi_0",
+            "object_category": "dishwasher",
+            "semantic_pixels": 4514,
+            "instance_pixels": 4514,
+            "assigned_region": "corridor_0"
+          },
+          {
+            "object_name": "electric_switch_wseglt_1",
+            "object_category": "electric_switch",
+            "semantic_pixels": 150,
+            "instance_pixels": 150,
+            "assigned_region": "corridor_0"
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0__initial.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/shortest_path_via_region__corridor_0__pantry_room_0__kitchen_0.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/room_views/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/pantry_room_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/bathroom_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/living_room_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/kitchen_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_003.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_005.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/Pomaria_1_int/full_scene/q_000/gt_views/path_view_006.png"
+  ]
+}

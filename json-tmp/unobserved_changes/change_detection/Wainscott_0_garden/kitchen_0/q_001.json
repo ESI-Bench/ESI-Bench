@@ -1,0 +1,806 @@
+{
+  "scene": "Wainscott_0_garden",
+  "room": "kitchen_0",
+  "floor_name": "floors_kblcfy_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 1,
+  "question_id": "change_detection/q_001",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "no",
+    "candidate_index": 1,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "french_fries",
+          "display_name": "french fries",
+          "model": "xzsoub",
+          "bbox_size_m": [
+            0.058873659133911134,
+            0.009191533088684083,
+            0.00828518295288086
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "french_fries",
+          "display_name": "french fries",
+          "model": "xzsoub",
+          "bbox_size_m": [
+            0.058873659133911134,
+            0.009191533088684083,
+            0.00828518295288086
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "on_top",
+            "support_name": "coffee_table_dnsjnv_1",
+            "support_category": "coffee_table",
+            "position": [
+              -6.6537,
+              5.1136,
+              0.8829621481895447
+            ]
+          },
+          "bbox": [
+            [
+              -6.76993989944458,
+              4.958439826965332,
+              0.7745779156684875
+            ],
+            [
+              -6.53945255279541,
+              5.272830963134766,
+              0.961344301700592
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -8.5,
+              5.2,
+              1.2756930142641068
+            ],
+            "quaternion_xyzw": [
+              0.43261857868016906,
+              -0.45284916146093485,
+              -0.5637047606235149,
+              0.5385218149669189
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 12.44706929227066,
+            "look_target": [
+              -6.654696226119995,
+              5.115635395050049,
+              0.8679617047309875
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "west_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -9.0,
+            4.0,
+            -4.0,
+            10.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  -0.19352536307895715,
+                  -0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  -0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  -0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  0.19352536307895715,
+                  0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -6.0394524506529725,
+                  5.062120497444989,
+                  1.4142164019611814
+                ],
+                "quaternion_xyzw": [
+                  0.28667537798468845,
+                  0.25350313028454347,
+                  0.6120106952369785,
+                  0.6920955855290684
+                ]
+              },
+              "look_target": [
+                -6.647633075714111,
+                5.137099742889404,
+                0.8014313173294068
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -8.5,
+              5.2,
+              1.2756930142641068
+            ],
+            "quaternion_xyzw": [
+              0.43261844711326686,
+              -0.45284913529389487,
+              -0.5637048906647746,
+              0.5385218065422159
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 12.447085432093457,
+            "look_target": [
+              -6.654695749282837,
+              5.115634918212891,
+              0.867961049079895
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "west_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -9.0,
+            4.0,
+            -4.0,
+            10.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  -0.19352536307895715,
+                  -0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  -0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  -0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  0.19352536307895715,
+                  0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -6.039451475083888,
+                  5.11563419432786,
+                  1.4383510545392924
+                ],
+                "quaternion_xyzw": [
+                  0.293569798397371,
+                  0.24548601360495712,
+                  0.5926556634179936,
+                  0.7087401887940684
+                ]
+              },
+              "look_target": [
+                -6.666315793991089,
+                5.228363752365112,
+                0.801431257724762
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -9.0,
+            4.0,
+            -4.0,
+            10.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  -0.19352536307895715,
+                  -0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  -0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  -0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  0.19352536307895715,
+                  0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -9.0,
+            4.0,
+            -4.0,
+            10.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  -0.19352536307895715,
+                  -0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -8.6,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  -0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  -0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  4.4,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.5475989059865813,
+                  0.19352536307895715,
+                  0.27125144007598745,
+                  0.7675324281515147
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -4.4,
+                  9.6,
+                  2.225693014264107
+                ],
+                "quaternion_xyzw": [
+                  0.19352536307895718,
+                  0.5475989059865815,
+                  0.7675324281515146,
+                  0.2712514400759875
+                ]
+              },
+              "target": [
+                -6.5,
+                7.0,
+                1.0756930142641068
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -6.0394524506529725,
+                  5.062120497444989,
+                  1.4142164019611814
+                ],
+                "quaternion_xyzw": [
+                  0.28667537798468845,
+                  0.25350313028454347,
+                  0.6120106952369785,
+                  0.6920955855290684
+                ]
+              },
+              "look_target": [
+                -6.647633075714111,
+                5.137099742889404,
+                0.8014313173294068
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Wainscott_0_garden/kitchen_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -6.039451475083888,
+                  5.11563419432786,
+                  1.4383510545392924
+                ],
+                "quaternion_xyzw": [
+                  0.293569798397371,
+                  0.24548601360495712,
+                  0.5926556634179936,
+                  0.7087401887940684
+                ]
+              },
+              "look_target": [
+                -6.666315793991089,
+                5.228363752365112,
+                0.801431257724762
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "kitchen_0",
+        "room_id": 8,
+        "bbox_map_rc": [
+          36,
+          23,
+          42,
+          28
+        ],
+        "bbox_world_xy": [
+          -9.0,
+          4.0,
+          -4.0,
+          10.0
+        ],
+        "expanded_bbox_world_xy": [
+          -9.0,
+          4.0,
+          -4.0,
+          10.0
+        ],
+        "bbox_area_m2": 30.0,
+        "expanded_bbox_area_m2": 30.0,
+        "pixel_count": 39,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/Wainscott_0_garden/kitchen_0/q_001/gt_view/image2_box_00.png"
+  ]
+}

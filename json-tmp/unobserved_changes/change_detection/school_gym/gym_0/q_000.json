@@ -1,0 +1,804 @@
+{
+  "scene": "school_gym",
+  "room": "gym_0",
+  "floor_name": "floors_gvzlnj_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 0,
+  "question_id": "change_detection/q_000",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "yes",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "replace",
+        "phase1_content": {
+          "category": "credit_card",
+          "display_name": "credit card",
+          "model": "dnweyo",
+          "bbox_size_m": [
+            0.04940108108520508,
+            0.07867556762695313,
+            0.0004993896484375
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "chard",
+          "display_name": "chard",
+          "model": "linuaq",
+          "bbox_size_m": [
+            0.17092024993896485,
+            0.11436743927001954,
+            0.024433591842651366
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              5.605243476867672,
+              10.647195884704574,
+              0.10835496058687567
+            ]
+          },
+          "bbox": [
+            [
+              5.4890031814575195,
+              10.492035865783691,
+              -2.8692185878753662e-05
+            ],
+            [
+              5.719491004943848,
+              10.806427955627441,
+              0.18673765659332275
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              18.44999999999997,
+              9.54,
+              1.2499713241122663
+            ],
+            "quaternion_xyzw": [
+              0.49724168111892314,
+              0.45615521092769246,
+              0.49890629025088634,
+              0.5438434036095666
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 5.12599950566769,
+            "look_target": [
+              5.604246616363525,
+              10.64923095703125,
+              0.09335451200604439
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -7.5,
+            -16.5,
+            30.5,
+            14.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  -0.3000848616678626,
+                  -0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  -0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  -0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  0.3000848616678626,
+                  0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  6.219490897729205,
+                  10.654672256218328,
+                  0.679989461301369
+                ],
+                "quaternion_xyzw": [
+                  0.2693989420738147,
+                  0.27179186782579723,
+                  0.6561636134477553,
+                  0.6503865796435675
+                ]
+              },
+              "look_target": [
+                5.604247093200684,
+                10.649231433868408,
+                0.06472159966826439
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              18.44999999999997,
+              9.54,
+              1.2499713241122663
+            ],
+            "quaternion_xyzw": [
+              0.4972416993661409,
+              0.45615519392755716,
+              0.49890626900492974,
+              0.543843420675442
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 5.12599920225859,
+            "look_target": [
+              5.604246616363525,
+              10.649231910705566,
+              0.09335457347333431
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -7.5,
+            -16.5,
+            30.5,
+            14.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  -0.3000848616678626,
+                  -0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  -0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  -0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  0.3000848616678626,
+                  0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  6.219489140325644,
+                  10.649233173975402,
+                  0.6610999087780167
+                ],
+                "quaternion_xyzw": [
+                  0.27825923690031346,
+                  0.2627135445430659,
+                  0.634246602254978,
+                  0.6717772235803248
+                ]
+              },
+              "look_target": [
+                5.586125135421753,
+                10.685664653778076,
+                0.026688988767564297
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -7.5,
+            -16.5,
+            30.5,
+            14.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  -0.3000848616678626,
+                  -0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  -0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  -0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  0.3000848616678626,
+                  0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -7.5,
+            -16.5,
+            30.5,
+            14.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  -0.3000848616678626,
+                  -0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  -0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  -0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  -14.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.6185896856185525,
+                  0.3000848616678626,
+                  0.31693965401874125,
+                  0.6533338597949755
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  28.02,
+                  12.02,
+                  2.1999713241122665
+                ],
+                "quaternion_xyzw": [
+                  0.3000848616678626,
+                  0.6185896856185525,
+                  0.6533338597949755,
+                  0.31693965401874125
+                ]
+              },
+              "target": [
+                11.5,
+                -1.0,
+                1.0499713241122663
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  6.219490897729205,
+                  10.654672256218328,
+                  0.679989461301369
+                ],
+                "quaternion_xyzw": [
+                  0.2693989420738147,
+                  0.27179186782579723,
+                  0.6561636134477553,
+                  0.6503865796435675
+                ]
+              },
+              "look_target": [
+                5.604247093200684,
+                10.649231433868408,
+                0.06472159966826439
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_gym/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  6.219489140325644,
+                  10.649233173975402,
+                  0.6610999087780167
+                ],
+                "quaternion_xyzw": [
+                  0.27825923690031346,
+                  0.2627135445430659,
+                  0.634246602254978,
+                  0.6717772235803248
+                ]
+              },
+              "look_target": [
+                5.586125135421753,
+                10.685664653778076,
+                0.026688988767564297
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "gym_0",
+        "room_id": 5,
+        "bbox_map_rc": [
+          15,
+          24,
+          46,
+          62
+        ],
+        "bbox_world_xy": [
+          -7.5,
+          -16.5,
+          30.5,
+          14.5
+        ],
+        "expanded_bbox_world_xy": [
+          -7.5,
+          -16.5,
+          30.5,
+          14.5
+        ],
+        "bbox_area_m2": 1178.0,
+        "expanded_bbox_area_m2": 1178.0,
+        "pixel_count": 1248,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/school_gym/gym_0/q_000/gt_view/image2_box_00.png"
+  ]
+}

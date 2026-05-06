@@ -1,0 +1,808 @@
+{
+  "scene": "school_chemistry",
+  "room": "corridor_0",
+  "floor_name": "floors_lttvnn_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_identification",
+  "question_index": 0,
+  "question_id": "change_identification/q_000",
+  "question_data": {
+    "task_type": "change_identification",
+    "question": "What happened to the contents of the box from Phase 1 to Phase 2?",
+    "options": [
+      "replace",
+      "remove",
+      "add",
+      "no_change"
+    ],
+    "answer": "no_change",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "paving_stone",
+          "display_name": "paving stone",
+          "model": "yencys",
+          "bbox_size_m": [
+            0.19475737762451173,
+            0.15203218078613281,
+            0.014455852031707763
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "paving_stone",
+          "display_name": "paving stone",
+          "model": "yencys",
+          "bbox_size_m": [
+            0.19475737762451173,
+            0.15203218078613281,
+            0.014455852031707763
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -2.194756523132325,
+              -15.502804115295316,
+              0.10619207077659666
+            ]
+          },
+          "bbox": [
+            [
+              -2.257688283920288,
+              -15.722224235534668,
+              -0.0021915771067142487
+            ],
+            [
+              -2.027329683303833,
+              -15.407926559448242,
+              0.18457476794719696
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "target_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -3.08,
+              -18.949999999999946,
+              1.2478084343019873
+            ],
+            "quaternion_xyzw": [
+              0.5808426189194763,
+              -0.07894922920932113,
+              -0.10911762086495874,
+              0.8027964972960391
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 18.226710145272996,
+            "look_target": [
+              -2.1425092220306396,
+              -15.565074920654297,
+              0.09119164943695068
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -5.5,
+            -39.5,
+            5.5,
+            -12.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  -0.11805832759621192,
+                  -0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  -0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  -0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  0.11805832759621192,
+                  0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.5272634113969583,
+                  -15.564806621368655,
+                  0.6209356861055212
+                ],
+                "quaternion_xyzw": [
+                  0.2688664787428372,
+                  0.27231861121699663,
+                  0.6574352844866793,
+                  0.6491010994484548
+                ]
+              },
+              "look_target": [
+                -2.1233441829681396,
+                -15.57241153717041,
+                0.024806404002010823
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -3.08,
+              -18.949999999999946,
+              1.2478084343019873
+            ],
+            "quaternion_xyzw": [
+              0.5808600709643246,
+              -0.07894725986784001,
+              -0.10911007019602957,
+              0.8027850899839241
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 18.224301714527716,
+            "look_target": [
+              -2.142538547515869,
+              -15.564987659454346,
+              0.09133018739521503
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -5.5,
+            -39.5,
+            5.5,
+            -12.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  -0.11805832759621192,
+                  -0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  -0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  -0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  0.11805832759621192,
+                  0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.5272924764484936,
+                  -15.564756136137232,
+                  0.6241192100770862
+                ],
+                "quaternion_xyzw": [
+                  0.28102947479762486,
+                  0.2597480388794059,
+                  0.6270872382624757,
+                  0.6784651694830139
+                ]
+              },
+              "look_target": [
+                -2.124883532524109,
+                -15.517648696899414,
+                0.02467431591823697
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -5.5,
+            -39.5,
+            5.5,
+            -12.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  -0.11805832759621192,
+                  -0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  -0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  -0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  0.11805832759621192,
+                  0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -5.5,
+            -39.5,
+            5.5,
+            -12.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  -0.11805832759621192,
+                  -0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  -0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  -0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -38.62,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.6659071624581444,
+                  0.11805832759621192,
+                  0.12859218822126894,
+                  0.7253233288683011
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.62,
+                  -13.38,
+                  2.1978084343019875
+                ],
+                "quaternion_xyzw": [
+                  0.11805832759621192,
+                  0.6659071624581445,
+                  0.7253233288683011,
+                  0.12859218822126892
+                ]
+              },
+              "target": [
+                0.0,
+                -26.0,
+                1.0478084343019873
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.5272634113969583,
+                  -15.564806621368655,
+                  0.6209356861055212
+                ],
+                "quaternion_xyzw": [
+                  0.2688664787428372,
+                  0.27231861121699663,
+                  0.6574352844866793,
+                  0.6491010994484548
+                ]
+              },
+              "look_target": [
+                -2.1233441829681396,
+                -15.57241153717041,
+                0.024806404002010823
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_chemistry/corridor_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -1.5272924764484936,
+                  -15.564756136137232,
+                  0.6241192100770862
+                ],
+                "quaternion_xyzw": [
+                  0.28102947479762486,
+                  0.2597480388794059,
+                  0.6270872382624757,
+                  0.6784651694830139
+                ]
+              },
+              "look_target": [
+                -2.124883532524109,
+                -15.517648696899414,
+                0.02467431591823697
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "corridor_0",
+        "room_id": 4,
+        "bbox_map_rc": [
+          1,
+          35,
+          28,
+          46
+        ],
+        "bbox_world_xy": [
+          -5.5,
+          -39.5,
+          5.5,
+          -12.5
+        ],
+        "expanded_bbox_world_xy": [
+          -5.5,
+          -39.5,
+          5.5,
+          -12.5
+        ],
+        "bbox_area_m2": 297.0,
+        "expanded_bbox_area_m2": 297.0,
+        "pixel_count": 208,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/school_chemistry/corridor_0/q_000/gt_view/image2_box_00.png"
+  ]
+}

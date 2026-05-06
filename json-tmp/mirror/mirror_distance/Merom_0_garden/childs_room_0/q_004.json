@@ -1,0 +1,1260 @@
+{
+  "scene": "Merom_0_garden",
+  "room": "childs_room_0",
+  "floor_name": "floors_vaeoco_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 70.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "render_view_groups": {
+      "single_view": "observer_view",
+      "multi_view": {
+        "type": "arc_around_mirror_center",
+        "angle_range_deg": [
+          -45,
+          45
+        ],
+        "step_deg": 5
+      },
+      "gt_view": {
+        "type": "observer_perpendicular_side_views",
+        "side_offset_m": 1.0,
+        "look_target": "observer_position"
+      }
+    }
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 2.0
+  },
+  "task_type": "mirror_distance",
+  "question_index": 4,
+  "question_id": "mirror_distance/q_004",
+  "question_data": {
+    "task_type": "mirror_distance",
+    "question": "In the mirror, you can see two reflected objects: object A (pack of cigarettes) and object B (denture). In the real world, which object is closer to the observation position, A or B?",
+    "answer": "B",
+    "placement": [
+      {
+        "name": "render_item_006",
+        "alias": "A",
+        "category": "pack_of_cigarettes",
+        "model": "tngixy",
+        "real_position": [
+          2.837590560913086,
+          -8.135218658447267,
+          0.04998591005802155
+        ],
+        "mirror_position": [
+          0.6088339776414564,
+          -10.610288479009455,
+          0.04998591005802155
+        ],
+        "real_u": -1.3263364463688718,
+        "mirror_u": -1.3263364463688712,
+        "mirror_hit_xy": [
+          0.9824254521692679,
+          -8.705688146284933
+        ]
+      },
+      {
+        "name": "render_item_007",
+        "alias": "B",
+        "category": "denture",
+        "model": "cvkqkf",
+        "real_position": [
+          2.4875905609130857,
+          -8.135218658447267,
+          0.0471706634759903
+        ],
+        "mirror_position": [
+          0.5722791041027426,
+          -10.262202654505543,
+          0.0471706634759903
+        ],
+        "real_u": -1.066245879701653,
+        "mirror_u": -1.0662458797016532,
+        "mirror_hit_xy": [
+          0.9301807141094736,
+          -8.65864268400152
+        ]
+      }
+    ],
+    "evidence": {
+      "mirror_relation": "left",
+      "observation_position": [
+        1.4375905609130855,
+        -6.385218658447268,
+        0.8000002533197403
+      ],
+      "real_a_name": "render_item_006",
+      "real_b_name": "render_item_007",
+      "real_a_label": "pack of cigarettes",
+      "real_b_label": "denture",
+      "closer_real_name": "render_item_007",
+      "closer_real_label": "denture",
+      "closer_object": "B",
+      "a_distance_to_observer": 2.363265011609638,
+      "b_distance_to_observer": 2.1752591549845968,
+      "a_real_u": -1.3263364463688718,
+      "b_real_u": -1.066245879701653,
+      "a_mirror_u": -1.3263364463688712,
+      "b_mirror_u": -1.0662458797016532
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          1.4375905609130855,
+          -6.385218658447268,
+          0.8000002533197403
+        ],
+        "forward_xy": [
+          -0.31622776601683816,
+          -0.9486832980505138
+        ],
+        "quaternion_xyzw": [
+          0.11326595025589802,
+          0.6979762349196629,
+          0.6979762349196629,
+          0.11326595025589804
+        ]
+      },
+      "render_views": {
+        "single_view": {
+          "position": [
+            1.4375905609130855,
+            -6.385218658447268,
+            0.8000002533197403
+          ],
+          "target": [
+            0.7375905609130856,
+            -8.485218658447266,
+            0.8000002533197403
+          ],
+          "forward_xy": [
+            -0.31622776601683816,
+            -0.9486832980505138
+          ],
+          "quaternion_xyzw": [
+            0.11326595025589802,
+            0.6979762349196629,
+            0.6979762349196629,
+            0.11326595025589804
+          ]
+        },
+        "multi_view": [
+          {
+            "position": [
+              2.717489548235417,
+              -7.495269164786101,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.8944271909999159,
+              -0.4472135954999578
+            ],
+            "quaternion_xyzw": [
+              0.3717480344601845,
+              0.6015009550075456,
+              0.6015009550075456,
+              0.37174803446018456
+            ],
+            "relative_angle_deg": -45.0
+          },
+          {
+            "position": [
+              2.623675651438101,
+              -7.326476654677991,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.8520463924205597,
+              -0.5234662789169037
+            ],
+            "quaternion_xyzw": [
+              0.3451571095469048,
+              0.6171438808974986,
+              0.6171438808974986,
+              0.3451571095469048
+            ],
+            "relative_angle_deg": -40.0
+          },
+          {
+            "position": [
+              2.515507508252575,
+              -7.166502870886117,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.8031810063152048,
+              -0.5957350678737108
+            ],
+            "quaternion_xyzw": [
+              0.317909158458155,
+              0.6316120383339979,
+              0.6316120383339979,
+              0.317909158458155
+            ],
+            "relative_angle_deg": -35.0
+          },
+          {
+            "position": [
+              2.393808343562191,
+              -7.016565310499947,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.7482029277778399,
+              -0.6634699532493302
+            ],
+            "quaternion_xyzw": [
+              0.29005604921750455,
+              0.6448778863570471,
+              0.6448778863570471,
+              0.29005604921750455
+            ],
+            "relative_angle_deg": -30.0
+          },
+          {
+            "position": [
+              2.259504361494208,
+              -6.877805088888793,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.687530573182806,
+              -0.726155431666611
+            ],
+            "quaternion_xyzw": [
+              0.2616508018014606,
+              0.6569161726709525,
+              0.6569161726709526,
+              0.26165080180146066
+            ],
+            "relative_angle_deg": -25.0
+          },
+          {
+            "position": [
+              2.113617696447125,
+              -6.751278255124829,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.6216256957835404,
+              -0.7833144287842712
+            ],
+            "quaternion_xyzw": [
+              0.23274748721292818,
+              0.6677039817135043,
+              0.6677039817135044,
+              0.23274748721292823
+            ],
+            "relative_angle_deg": -20.0
+          },
+          {
+            "position": [
+              1.957258634030726,
+              -6.637947754811989,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.5509898714915045,
+              -0.8345119301206996
+            ],
+            "quaternion_xyzw": [
+              0.2034011245539835,
+              0.6772207782770512,
+              0.6772207782770512,
+              0.2034011245539835
+            ],
+            "relative_angle_deg": -15.0
+          },
+          {
+            "position": [
+              1.7916171611221845,
+              -6.538676101488482,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.4761606815806376,
+              -0.8793582917768289
+            ],
+            "quaternion_xyzw": [
+              0.17366757629388616,
+              0.6854484465984346,
+              0.6854484465984347,
+              0.17366757629388616
+            ],
+            "relative_angle_deg": -10.0
+          },
+          {
+            "position": [
+              1.617953909347389,
+              -6.454218812377963,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.3977076213692615,
+              -0.9175122058614827
+            ],
+            "quaternion_xyzw": [
+              0.14360344193169355,
+              0.6923713248433753,
+              0.6923713248433753,
+              0.14360344193169358
+            ],
+            "relative_angle_deg": -5.0
+          },
+          {
+            "position": [
+              1.4375905609130855,
+              -6.385218658447268,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.31622776601683816,
+              -0.9486832980505138
+            ],
+            "quaternion_xyzw": [
+              0.11326595025589802,
+              0.6979762349196629,
+              0.6979762349196629,
+              0.11326595025589804
+            ],
+            "relative_angle_deg": 0.0
+          },
+          {
+            "position": [
+              1.2518997898072255,
+              -6.332200772531243,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.23234122642148086,
+              -0.972634337510743
+            ],
+            "quaternion_xyzw": [
+              0.08271285040617461,
+              0.702252507562405,
+              0.7022525075624051,
+              0.08271285040617461
+            ],
+            "relative_angle_deg": 5.0
+          },
+          {
+            "position": [
+              1.0622948149210776,
+              -6.29556865275478,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.14668642980158755,
+              -0.9891830423698457
+            ],
+            "quaternion_xyzw": [
+              0.05200230194461182,
+              0.7051920026435788,
+              0.705192002643579,
+              0.05200230194461182
+            ],
+            "relative_angle_deg": 10.0
+          },
+          {
+            "position": [
+              0.8702186446001403,
+              -6.27560109166846,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.05991526087921654,
+              -0.9982034669914625
+            ],
+            "quaternion_xyzw": [
+              0.021192764145679947,
+              0.7067891246672274,
+              0.7067891246672274,
+              0.02119276414567995
+            ],
+            "relative_angle_deg": 15.0
+          },
+          {
+            "position": [
+              0.6771330944793176,
+              -6.272450054468893,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.027311899356269216,
+              -0.9996269604975414
+            ],
+            "quaternion_xyzw": [
+              -0.009657115284321281,
+              0.7070408334208041,
+              0.7070408334208041,
+              -0.009657115284321281
+            ],
+            "relative_angle_deg": 20.0
+          },
+          {
+            "position": [
+              0.4845076621832726,
+              -6.286139522451814,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.11433119954627782,
+              -0.9934426892429725
+            ],
+            "quaternion_xyzw": [
+              -0.04048861184650418,
+              0.7059466497623904,
+              0.7059466497623904,
+              -0.04048861184650418
+            ],
+            "relative_angle_deg": 25.0
+          },
+          {
+            "position": [
+              0.2938083435621935,
+              -6.316565310499946,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.2004803702726736,
+              -0.9796977192661681
+            ],
+            "quaternion_xyzw": [
+              -0.07124303603481504,
+              0.7035086565327693,
+              0.7035086565327694,
+              -0.07124303603481504
+            ],
+            "relative_angle_deg": 30.0
+          },
+          {
+            "position": [
+              0.10648647557818425,
+              -6.363495859994654,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.28510376432793705,
+              -0.9584966580880917
+            ],
+            "quaternion_xyzw": [
+              -0.10186184505484416,
+              0.6997314945906201,
+              0.69973149459062,
+              -0.10186184505484416
+            ],
+            "relative_angle_deg": 35.0
+          },
+          {
+            "position": [
+              -0.07603230924536075,
+              -6.426574001116837,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.3675573465863051,
+              -0.930000858585859
+            ],
+            "quaternion_xyzw": [
+              -0.1322867542633625,
+              0.6946223539783791,
+              0.6946223539783792,
+              -0.13228675426336253
+            ],
+            "relative_angle_deg": 40.0
+          },
+          {
+            "position": [
+              -0.25235893274807986,
+              -6.505319671124935,
+              0.8000002533197403
+            ],
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.4472135954999579,
+              -0.8944271909999159
+            ],
+            "quaternion_xyzw": [
+              -0.16245984811645314,
+              0.6881909602355867,
+              0.6881909602355868,
+              -0.16245984811645317
+            ],
+            "relative_angle_deg": 45.0
+          }
+        ],
+        "gt_view": [
+          {
+            "position": [
+              0.4889072628625717,
+              -6.06899089243043,
+              0.8000002533197403
+            ],
+            "target": [
+              1.4375905609130855,
+              -6.385218658447268,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              0.9486832980505138,
+              -0.316227766016838
+            ],
+            "quaternion_xyzw": [
+              -0.4134526073152648,
+              0.573634850322232,
+              0.5736348503222319,
+              -0.4134526073152648
+            ],
+            "side": "left",
+            "offset_m": 1.0
+          },
+          {
+            "position": [
+              2.386273858963599,
+              -6.701446424464106,
+              0.8000002533197403
+            ],
+            "target": [
+              1.4375905609130855,
+              -6.385218658447268,
+              0.8000002533197403
+            ],
+            "forward_xy": [
+              -0.9486832980505138,
+              0.31622776601683805
+            ],
+            "quaternion_xyzw": [
+              0.573634850322232,
+              0.4134526073152648,
+              0.4134526073152648,
+              0.5736348503222319
+            ],
+            "side": "right",
+            "offset_m": 1.0
+          }
+        ]
+      },
+      "mirror": {
+        "position": [
+          0.7375905609130856,
+          -8.485218658447266,
+          1.1413250213861466
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.406716901130362,
+          0.9135542470674171
+        ],
+        "normal_xy": [
+          0.6691627246698307,
+          0.743115904763482
+        ],
+        "tangent_xy": [
+          -0.743115904763482,
+          0.6691627246698307
+        ],
+        "half_width_m": 0.36174091696739197,
+        "normal_yaw_offset_deg": 8.972768131529904
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004.png",
+      "camera_pose": {
+        "position": [
+          1.4375905609130855,
+          -6.385218658447268,
+          0.8000002533197403
+        ],
+        "quaternion_xyzw": [
+          0.11326595025589802,
+          0.6979762349196629,
+          0.6979762349196629,
+          0.11326595025589804
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          0.7375905609130856,
+          -8.485218658447266,
+          1.1413250213861466
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.406716901130362,
+          0.9135542470674171
+        ],
+        "normal_xy": [
+          0.6691627246698307,
+          0.743115904763482
+        ],
+        "tangent_xy": [
+          -0.743115904763482,
+          0.6691627246698307
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_map.png",
+      "multi_image_input": {
+        "room_instance": "childs_room_0",
+        "room_bbox_world_xy": [
+          -1.5,
+          -8.5,
+          5.5,
+          -5.5
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -1.15,
+                -8.15,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                0.539519850464398,
+                -0.37738240768068954,
+                -0.4314076163233898,
+                0.6167562872854806
+              ]
+            },
+            "target": [
+              2.0,
+              -7.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -1.15,
+                -5.85,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                -0.37738240768068954,
+                0.539519850464398,
+                0.6167562872854806,
+                -0.4314076163233898
+              ]
+            },
+            "target": [
+              2.0,
+              -7.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                5.15,
+                -8.15,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                0.5395198504643981,
+                0.3773824076806896,
+                0.43140761632339,
+                0.6167562872854805
+              ]
+            },
+            "target": [
+              2.0,
+              -7.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                5.15,
+                -5.85,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                0.3773824076806896,
+                0.5395198504643981,
+                0.6167562872854805,
+                0.43140761632339
+              ]
+            },
+            "target": [
+              2.0,
+              -7.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          0.7375905609130856,
+          -8.485218658447266,
+          1.1413250213861466
+        ],
+        "orbit_radius_xy_m": 2.2135943621178633,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-45.png",
+            "camera_pose": {
+              "position": [
+                2.717489548235417,
+                -7.495269164786101,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.3990700509554091,
+                0.6457089063380042,
+                0.5537750500209968,
+                0.34225180303464925
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -45
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-40.png",
+            "camera_pose": {
+              "position": [
+                2.623675651438101,
+                -7.326476654677991,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.3705247977827779,
+                0.6625015256750778,
+                0.5681767928529342,
+                0.31777072673482637
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-35.png",
+            "camera_pose": {
+              "position": [
+                2.515507508252575,
+                -7.166502870886117,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.34127422959831444,
+                0.6780330357039038,
+                0.5814969788666181,
+                0.2926847557957563
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-30.png",
+            "camera_pose": {
+              "position": [
+                2.393808343562191,
+                -7.016565310499947,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.3113740265210513,
+                0.6922738713123889,
+                0.5937102523309018,
+                0.267041642788915
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-25.png",
+            "camera_pose": {
+              "position": [
+                2.259504361494208,
+                -6.877805088888793,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.2808811052869627,
+                0.7051969242605561,
+                0.6047933645855889,
+                0.24089020083737037
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-20.png",
+            "camera_pose": {
+              "position": [
+                2.113617696447125,
+                -6.751278255124829,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.24985351090472205,
+                0.7167775947826203,
+                0.6147252182965796,
+                0.21428021069722777
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-15.png",
+            "camera_pose": {
+              "position": [
+                1.957258634030726,
+                -6.637947754811989,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.2183503061637288,
+                0.7269938384140405,
+                0.6234869076158454,
+                0.1872623259971319
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-10.png",
+            "camera_pose": {
+              "position": [
+                1.7916171611221845,
+                -6.538676101488482,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.1864314592047329,
+                0.7358262079544111,
+                0.631061754169785,
+                0.15988797681620576
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-05.png",
+            "camera_pose": {
+              "position": [
+                1.617953909347389,
+                -6.454218812377963,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.15415772936706928,
+                0.7432578904863127,
+                0.6374353388074572,
+                0.13220927178397132
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": -5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                1.4375905609130855,
+                -6.385218658447268,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.12159055152980301,
+                0.7492747393796568,
+                0.642595529048253,
+                0.10427889888861241
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                1.2518997898072255,
+                -6.332200772531243,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.08879191916694458,
+                0.7538653012205994,
+                0.6465325021767633,
+                0.07615002518239387
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+10.png",
+            "camera_pose": {
+              "position": [
+                1.0622948149210776,
+                -6.29556865275478,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.05582426633934894,
+                0.7570208376137659,
+                0.6492387639408749,
+                0.04787619557515604
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+15.png",
+            "camera_pose": {
+              "position": [
+                0.8702186446001403,
+                -6.27560109166846,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.02275034884793259,
+                0.7587353418162829,
+                0.650709162817506,
+                0.019511230908535925
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+20.png",
+            "camera_pose": {
+              "position": [
+                0.6771330944793176,
+                -6.272450054468893,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                -0.010366875225561184,
+                0.7590055501719549,
+                0.6509408998188229,
+                -0.008890874495064536
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+25.png",
+            "camera_pose": {
+              "position": [
+                0.4845076621832726,
+                -6.286139522451814,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                -0.04346436536284834,
+                0.7578309483238193,
+                0.6499335338202723,
+                -0.03727605561373929
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+30.png",
+            "camera_pose": {
+              "position": [
+                0.2938083435621935,
+                -6.316565310499946,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                -0.07647911861031434,
+                0.7552137721932538,
+                0.6476889824002877,
+                -0.06559027964192085
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+35.png",
+            "camera_pose": {
+              "position": [
+                0.10648647557818425,
+                -6.363495859994654,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                -0.10934828950871667,
+                0.7511590037237736,
+                0.6442115181900689,
+                -0.0937796488448962
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                -0.07603230924536075,
+                -6.426574001116837,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                -0.1420093097230886,
+                0.7456743613976186,
+                0.6395077607403864,
+                -0.12179050315620843
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                -0.25235893274807986,
+                -6.505319671124935,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                -0.17440000714512127,
+                0.7387702855431829,
+                0.6335866639208894,
+                -0.1495695223226433
+              ]
+            },
+            "target": [
+              0.7375905609130856,
+              -8.485218658447266,
+              1.1413250213861466
+            ],
+            "offset_deg": 45
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-45.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_-05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/Merom_0_garden/childs_room_0/q_004_gt_orbit/orbit_+45.png"
+  ]
+}

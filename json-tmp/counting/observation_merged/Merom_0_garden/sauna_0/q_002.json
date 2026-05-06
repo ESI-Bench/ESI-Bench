@@ -1,0 +1,561 @@
+{
+  "scene": "Merom_0_garden",
+  "room": "sauna_0",
+  "floor_name": "floors_tvyugz_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "observation_merged",
+  "question_index": 2,
+  "question_id": "observation_merged/q_002",
+  "question_data": {
+    "task_type": "observation_merged",
+    "question": "Considering both images, how many objects of category \"head_cabbage\" are present in this scene?",
+    "options": [
+      "0",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "case": "observation_merged",
+    "candidate_index": 2,
+    "count_target": "head_cabbage",
+    "count_object": {
+      "category": "head_cabbage",
+      "estimated_volume": 0.0017915657550725793,
+      "characteristic_size_m": 0.1214537468967268,
+      "display_name": "head cabbage",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 3
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        7.694999999999998,
+        3.9950000000000006,
+        0.0350215619802475
+      ],
+      [
+        7.6295325344550315,
+        3.94020042093686,
+        0.0350215619802475
+      ],
+      [
+        7.737053387255009,
+        3.904572160300118,
+        0.0350215619802475
+      ]
+    ],
+    "object_positions": [
+      [
+        7.694999999999998,
+        3.9950000000000006,
+        0.0350215619802475
+      ],
+      [
+        7.6295325344550315,
+        3.94020042093686,
+        0.0350215619802475
+      ],
+      [
+        7.737053387255009,
+        3.904572160300118,
+        0.0350215619802475
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 1,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              7.694999999999998,
+              3.9950000000000006,
+              0.0350215619802475
+            ],
+            [
+              7.6295325344550315,
+              3.94020042093686,
+              0.0350215619802475
+            ],
+            [
+              7.737053387255009,
+              3.904572160300118,
+              0.0350215619802475
+            ]
+          ],
+          "metadata": {
+            "merge_pattern": "random_compact_cluster",
+            "count_object": {
+              "category": "head_cabbage",
+              "estimated_volume": 0.0017915657550725793,
+              "characteristic_size_m": 0.1214537468967268,
+              "display_name": "head cabbage",
+              "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002.png"
+      ],
+      "camera_poses": {
+        "q_002.png": {
+          "position": [
+            5.85,
+            4.06,
+            1.2500215619802475
+          ],
+          "quaternion_xyzw": [
+            -0.36911042305475694,
+            0.5150635781468018,
+            0.6288112865392284,
+            -0.4506255340965847
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 11.357725393965065,
+          "look_target": [
+            7.5,
+            3.5,
+            0.9000215619802475
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/Merom_0_garden/sauna_0/candidate_renders/observation_merged/q_002",
+      "room_bbox": {
+        "room_instance": "sauna_0",
+        "room_id": 8,
+        "bbox_map_rc": [
+          28,
+          31,
+          30,
+          35
+        ],
+        "bbox_world_xy": [
+          5.5,
+          2.5,
+          9.5,
+          4.5
+        ],
+        "expanded_bbox_world_xy": [
+          5.5,
+          2.5,
+          9.5,
+          4.5
+        ],
+        "bbox_area_m2": 8.0,
+        "expanded_bbox_area_m2": 8.0,
+        "pixel_count": 15,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "sauna_0",
+        "room_bbox_world_xy": [
+          5.5,
+          2.5,
+          9.5,
+          4.5
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                5.85,
+                2.85,
+                2.2000215619802477
+              ],
+              "quaternion_xyzw": [
+                0.39465841826889475,
+                -0.2687061225128493,
+                -0.49450456067953946,
+                0.7262967658476385
+              ]
+            },
+            "target": [
+              7.5,
+              3.5,
+              1.0500215619802475
+            ],
+            "view_id": "corner_00",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                5.85,
+                4.15,
+                2.2000215619802477
+              ],
+              "quaternion_xyzw": [
+                -0.2687061225128493,
+                0.3946584182688949,
+                0.7262967658476385,
+                -0.4945045606795394
+              ]
+            },
+            "target": [
+              7.5,
+              3.5,
+              1.0500215619802475
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                9.15,
+                2.85,
+                2.2000215619802477
+              ],
+              "quaternion_xyzw": [
+                0.39465841826889475,
+                0.2687061225128493,
+                0.49450456067953946,
+                0.7262967658476385
+              ]
+            },
+            "target": [
+              7.5,
+              3.5,
+              1.0500215619802475
+            ],
+            "view_id": "corner_02",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                9.15,
+                4.15,
+                2.2000215619802477
+              ],
+              "quaternion_xyzw": [
+                0.2687061225128493,
+                0.3946584182688949,
+                0.7262967658476385,
+                0.4945045606795394
+              ]
+            },
+            "target": [
+              7.5,
+              3.5,
+              1.0500215619802475
+            ],
+            "view_id": "corner_03",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            7.695000171661377,
+            3.994999885559082,
+            0.03502156212925911
+          ],
+          "camera_pose": {
+            "position": [
+              7.552504465294552,
+              4.3890808195151765,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              -0.11154506726718383,
+              0.6326035120604135,
+              0.7547576478060917,
+              -0.13308413720427123
+            ]
+          },
+          "look_target": [
+            7.696152925491333,
+            3.994409918785095,
+            0.045461975038051605
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 32289,
+            "centered_score": 0.9598,
+            "bbox_xyxy": [
+              494,
+              311,
+              770,
+              460
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            7.629532337188721,
+            3.9402003288269043,
+            0.03502156212925911
+          ],
+          "camera_pose": {
+            "position": [
+              7.774333551215458,
+              4.334281262782999,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.11154506726718383,
+              0.6326035120604135,
+              0.7547576478060917,
+              0.13308413720427123
+            ]
+          },
+          "look_target": [
+            7.630685091018677,
+            3.9396103620529175,
+            0.045461975038051605
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 7873,
+            "centered_score": 0.8899,
+            "bbox_xyxy": [
+              567,
+              310,
+              797,
+              440
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            7.737053394317627,
+            3.9045722484588623,
+            0.03502156212925911
+          ],
+          "camera_pose": {
+            "position": [
+              7.594557687950802,
+              4.298653301624246,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              -0.11154506726718383,
+              0.6326035120604135,
+              0.7547576478060917,
+              -0.13308413720427123
+            ]
+          },
+          "look_target": [
+            7.738206148147583,
+            3.903982400894165,
+            0.045461975038051605
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 3354,
+            "centered_score": 0.9359,
+            "bbox_xyxy": [
+              495,
+              311,
+              752,
+              336
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              7.695000171661377,
+              3.994999885559082,
+              0.03502156212925911
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                7.590178489685059,
+                3.8938591480255127,
+                -0.0054418593645095825
+              ],
+              [
+                7.802127361297607,
+                4.094960689544678,
+                0.07939786463975906
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              7.694999999999998,
+              3.9950000000000006,
+              0.0350215619802475
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "head_cabbage",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              7.629532337188721,
+              3.9402003288269043,
+              0.03502156212925911
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                7.524710655212402,
+                3.839059591293335,
+                -0.0054418593645095825
+              ],
+              [
+                7.736659526824951,
+                4.0401611328125,
+                0.07939786463975906
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              7.6295325344550315,
+              3.94020042093686,
+              0.0350215619802475
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "head_cabbage",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              7.737053394317627,
+              3.9045722484588623,
+              0.03502156212925911
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                7.632231712341309,
+                3.803431510925293,
+                -0.0054418593645095825
+              ],
+              [
+                7.844180583953857,
+                4.004533290863037,
+                0.07939786463975906
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              7.737053387255009,
+              3.904572160300118,
+              0.0350215619802475
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "head_cabbage",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_2"
+          }
+        ],
+        "confusers": [],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 3274007,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/Merom_0_garden/sauna_0/q_002/target_closeups/target_closeup_002.png"
+  ]
+}

@@ -1,0 +1,794 @@
+{
+  "scene": "office_cubicles_left",
+  "room": "private_office_1",
+  "floor_name": "floors_muywul_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 1,
+  "question_id": "change_detection/q_001",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "yes",
+    "candidate_index": 1,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "remove",
+        "phase1_content": {
+          "category": "volleyball",
+          "display_name": "volleyball",
+          "model": "nofzds",
+          "bbox_size_m": [
+            0.2358690185546875,
+            0.23637770080566406,
+            0.23639936065673828
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": null,
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -9.394756523132326,
+              -5.402804115295411,
+              0.10937859224621206
+            ]
+          },
+          "bbox": [
+            [
+              -9.510995864868164,
+              -5.557964324951172,
+              0.0009949654340744019
+            ],
+            [
+              -9.280508995056152,
+              -5.243573188781738,
+              0.1877613216638565
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -11.4,
+              -5.45,
+              1.2509949557716027
+            ],
+            "quaternion_xyzw": [
+              0.3579706326760945,
+              -0.34928561436352534,
+              -0.604749151350286,
+              0.6197862935571262
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 29.98102539152253,
+            "look_target": [
+              -9.395752429962158,
+              -5.400768756866455,
+              0.09437813423573971
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "north_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "private_office_1",
+          "room_bbox_world_xy": [
+            -12.0,
+            -7.0,
+            -9.0,
+            -5.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  -0.20882046530442439,
+                  -0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  -0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  -0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  0.20882046530442439,
+                  0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -10.010996005566847,
+                  -5.372909298417593,
+                  0.6842727780053705
+                ],
+                "quaternion_xyzw": [
+                  0.26436567773425995,
+                  -0.2766900754324803,
+                  -0.6679889326831288,
+                  0.6382352046120053
+                ]
+              },
+              "look_target": [
+                -9.395607471466064,
+                -5.400959014892578,
+                0.06824531555175781
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -11.4,
+              -5.45,
+              1.2509949557716027
+            ],
+            "quaternion_xyzw": [
+              0.35797060936182507,
+              -0.3492856331522201,
+              -0.6047491896300358,
+              0.6197862590832354
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 29.981025863335276,
+            "look_target": [
+              -9.395752429962158,
+              -5.400768995285034,
+              0.09437811560928822
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "north_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "private_office_1",
+          "room_bbox_world_xy": [
+            -12.0,
+            -7.0,
+            -9.0,
+            -5.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  -0.20882046530442439,
+                  -0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  -0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  -0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  0.20882046530442439,
+                  0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -10.010996661303878,
+                  -5.341815831267392,
+                  0.7591819755461259
+                ],
+                "quaternion_xyzw": [
+                  0.2705985486037748,
+                  -0.27059755154150367,
+                  -0.6532802788764509,
+                  0.6532826859977083
+                ]
+              },
+              "look_target": [
+                -9.395752429962158,
+                -5.341813564300537,
+                0.14393774420022964
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "private_office_1",
+          "room_bbox_world_xy": [
+            -12.0,
+            -7.0,
+            -9.0,
+            -5.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  -0.20882046530442439,
+                  -0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  -0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  -0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  0.20882046530442439,
+                  0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "private_office_1",
+          "room_bbox_world_xy": [
+            -12.0,
+            -7.0,
+            -9.0,
+            -5.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  -0.20882046530442439,
+                  -0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.65,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  -0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  -0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -6.65,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.35789730130945485,
+                  0.20882046530442439,
+                  0.4586560638823962,
+                  0.7860904210390559
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_02",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -9.35,
+                  -5.35,
+                  2.200994955771603
+                ],
+                "quaternion_xyzw": [
+                  0.20882046530442436,
+                  0.3578973013094548,
+                  0.786090421039056,
+                  0.45865606388239616
+                ]
+              },
+              "target": [
+                -10.5,
+                -6.0,
+                1.0509949557716027
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -10.010996005566847,
+                  -5.372909298417593,
+                  0.6842727780053705
+                ],
+                "quaternion_xyzw": [
+                  0.26436567773425995,
+                  -0.2766900754324803,
+                  -0.6679889326831288,
+                  0.6382352046120053
+                ]
+              },
+              "look_target": [
+                -9.395607471466064,
+                -5.400959014892578,
+                0.06824531555175781
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/office_cubicles_left/private_office_1/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -10.010996661303878,
+                  -5.341815831267392,
+                  0.7591819755461259
+                ],
+                "quaternion_xyzw": [
+                  0.2705985486037748,
+                  -0.27059755154150367,
+                  -0.6532802788764509,
+                  0.6532826859977083
+                ]
+              },
+              "look_target": [
+                -9.395752429962158,
+                -5.341813564300537,
+                0.14393774420022964
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "private_office_1",
+        "room_id": 10,
+        "bbox_map_rc": [
+          20,
+          15,
+          22,
+          18
+        ],
+        "bbox_world_xy": [
+          -12.0,
+          -7.0,
+          -9.0,
+          -5.0
+        ],
+        "expanded_bbox_world_xy": [
+          -12.0,
+          -7.0,
+          -9.0,
+          -5.0
+        ],
+        "bbox_area_m2": 6.0,
+        "expanded_bbox_area_m2": 6.0,
+        "pixel_count": 12,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/office_cubicles_left/private_office_1/q_001/gt_view/image2_box_00.png"
+  ]
+}

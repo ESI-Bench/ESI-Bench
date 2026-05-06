@@ -1,0 +1,800 @@
+{
+  "scene": "house_single_floor",
+  "room": "living_room_1",
+  "floor_name": "floors_sirgua_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_identification",
+  "question_index": 0,
+  "question_id": "change_identification/q_000",
+  "question_data": {
+    "task_type": "change_identification",
+    "question": "What happened to the contents of the box from Phase 1 to Phase 2?",
+    "options": [
+      "replace",
+      "remove",
+      "add",
+      "no_change"
+    ],
+    "answer": "add",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "add",
+        "phase1_content": null,
+        "phase2_content": {
+          "category": "gym_shoe",
+          "display_name": "gym shoe",
+          "model": "keskgm",
+          "bbox_size_m": [
+            0.18231163787841798,
+            0.08108144378662109,
+            0.10367156219482422
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "on_top",
+            "support_name": "coffee_table_qtwqqb_0",
+            "support_category": "coffee_table",
+            "position": [
+              1.3163,
+              4.2435,
+              0.5961203384399414
+            ]
+          },
+          "bbox": [
+            [
+              1.2000590562820435,
+              4.088338851928711,
+              0.4876914322376251
+            ],
+            [
+              1.430550456047058,
+              4.402731418609619,
+              0.6744632124900818
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "target_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              3.9875000000000016,
+              3.4739999999999993,
+              1.250015452504158
+            ],
+            "quaternion_xyzw": [
+              0.4946435989663093,
+              0.3720315051815864,
+              0.47211701456877353,
+              0.6277147391201267
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 13.523286336916287,
+            "look_target": [
+              1.3153047561645508,
+              4.245535135269165,
+              0.5810773223638535
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "east_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -2.7499999999999982,
+            2.5799999999999983,
+            4.437500000000002,
+            7.050000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.5055605763770051,
+                  -0.19687268952983755,
+                  -0.3048230182004006,
+                  0.7827723649349386
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  -0.23526553739347952,
+                  0.4528331598342644,
+                  0.7631456832424597,
+                  -0.39648571527593796
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.514916164042129,
+                  0.29657163726514985,
+                  0.4014261067750396,
+                  0.6969674947782302
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.333321813613372,
+                  0.48062599736103423,
+                  0.6665090518778751,
+                  0.4622346838945122
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.930552048073878,
+                  4.2455328547162905,
+                  1.1963235413915658
+                ],
+                "quaternion_xyzw": [
+                  0.27059839429798904,
+                  0.27059770584777015,
+                  0.6532806514047319,
+                  0.6532823134705874
+                ]
+              },
+              "look_target": [
+                1.3153058886528015,
+                4.245534420013428,
+                0.5810773819684982
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              3.9875000000000016,
+              3.4739999999999993,
+              1.250015452504158
+            ],
+            "quaternion_xyzw": [
+              0.49464345500440143,
+              0.37203147281665466,
+              0.47211713980708836,
+              0.6277147775507229
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 13.523305960616902,
+            "look_target": [
+              1.3153085708618164,
+              4.245533466339111,
+              0.5810773074626923
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "east_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -2.7499999999999982,
+            2.5799999999999983,
+            4.437500000000002,
+            7.050000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.5055605763770051,
+                  -0.19687268952983755,
+                  -0.3048230182004006,
+                  0.7827723649349386
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  -0.23526553739347952,
+                  0.4528331598342644,
+                  0.7631456832424597,
+                  -0.39648571527593796
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.514916164042129,
+                  0.29657163726514985,
+                  0.4014261067750396,
+                  0.6969674947782302
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.333321813613372,
+                  0.48062599736103423,
+                  0.6665090518778751,
+                  0.4622346838945122
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.93055659809366,
+                  4.245530650932029,
+                  1.1571190506041373
+                ],
+                "quaternion_xyzw": [
+                  0.2636601803063431,
+                  0.2773624320767918,
+                  0.669612145212577,
+                  0.636531983153309
+                ]
+              },
+              "look_target": [
+                1.3307093381881714,
+                4.215126991271973,
+                0.5565017700195313
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -2.7499999999999982,
+            2.5799999999999983,
+            4.437500000000002,
+            7.050000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.5055605763770051,
+                  -0.19687268952983755,
+                  -0.3048230182004006,
+                  0.7827723649349386
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  -0.23526553739347952,
+                  0.4528331598342644,
+                  0.7631456832424597,
+                  -0.39648571527593796
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.514916164042129,
+                  0.29657163726514985,
+                  0.4014261067750396,
+                  0.6969674947782302
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.333321813613372,
+                  0.48062599736103423,
+                  0.6665090518778751,
+                  0.4622346838945122
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -2.7499999999999982,
+            2.5799999999999983,
+            4.437500000000002,
+            7.050000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.5055605763770051,
+                  -0.19687268952983755,
+                  -0.3048230182004006,
+                  0.7827723649349386
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.8797878503799439,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  -0.23526553739347952,
+                  0.4528331598342644,
+                  0.7631456832424597,
+                  -0.39648571527593796
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  2.937599999999999,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.514916164042129,
+                  0.29657163726514985,
+                  0.4014261067750396,
+                  0.6969674947782302
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  4.079900000000001,
+                  6.0259864807128904,
+                  2.200015452504158
+                ],
+                "quaternion_xyzw": [
+                  0.333321813613372,
+                  0.48062599736103423,
+                  0.6665090518778751,
+                  0.4622346838945122
+                ]
+              },
+              "target": [
+                0.8437500000000018,
+                4.815000000000001,
+                1.050015452504158
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.930552048073878,
+                  4.2455328547162905,
+                  1.1963235413915658
+                ],
+                "quaternion_xyzw": [
+                  0.27059839429798904,
+                  0.27059770584777015,
+                  0.6532806514047319,
+                  0.6532823134705874
+                ]
+              },
+              "look_target": [
+                1.3153058886528015,
+                4.245534420013428,
+                0.5810773819684982
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.93055659809366,
+                  4.245530650932029,
+                  1.1571190506041373
+                ],
+                "quaternion_xyzw": [
+                  0.2636601803063431,
+                  0.2773624320767918,
+                  0.669612145212577,
+                  0.636531983153309
+                ]
+              },
+              "look_target": [
+                1.3307093381881714,
+                4.215126991271973,
+                0.5565017700195313
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "living_room_1",
+        "room_id": 20,
+        "bbox_map_rc": [
+          46,
+          42,
+          49,
+          47
+        ],
+        "bbox_world_xy": [
+          -1.0,
+          3.0,
+          4.0,
+          6.0
+        ],
+        "expanded_bbox_world_xy": [
+          -2.7499999999999982,
+          2.5799999999999983,
+          4.437500000000002,
+          7.050000000000004
+        ],
+        "bbox_area_m2": 15.0,
+        "expanded_bbox_area_m2": 32.12812500000004,
+        "pixel_count": 24,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/house_single_floor/living_room_1/q_000/gt_view/image2_box_00.png"
+  ]
+}

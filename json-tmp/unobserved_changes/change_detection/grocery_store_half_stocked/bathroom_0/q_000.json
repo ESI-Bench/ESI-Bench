@@ -1,0 +1,794 @@
+{
+  "scene": "grocery_store_half_stocked",
+  "room": "bathroom_0",
+  "floor_name": "floors_sqkllg_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 0,
+  "question_id": "change_detection/q_000",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "yes",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "add",
+        "phase1_content": null,
+        "phase2_content": {
+          "category": "box_of_wagashi",
+          "display_name": "box of wagashi",
+          "model": "mlmrwy",
+          "bbox_size_m": [
+            0.2048116226196289,
+            0.2048116455078125,
+            0.041891006469726565
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              16.39022673034668,
+              -4.202804115295412,
+              0.17453586637973784
+            ]
+          },
+          "bbox": [
+            [
+              16.27398681640625,
+              -4.357964992523193,
+              0.06615224480628967
+            ],
+            [
+              16.504474639892578,
+              -4.043573379516602,
+              0.2529186010360718
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              12.049999999999999,
+              -4.16,
+              1.3161522299051285
+            ],
+            "quaternion_xyzw": [
+              0.42880032309292265,
+              -0.4328480367607914,
+              -0.5633294890676548,
+              0.5580615976167047
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 14.924483542588137,
+            "look_target": [
+              16.389230728149414,
+              -4.2007691860198975,
+              0.15953542292118073
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            11.5,
+            -6.5,
+            17.5,
+            -3.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.46871951779284804,
+                  -0.30591390132534174,
+                  -0.4529199096263265,
+                  0.6939612770753346
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  -0.30591390132534174,
+                  0.46871951779284804,
+                  0.6939612770753346,
+                  -0.45291990962632656
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.4693054355618807,
+                  0.3079301331529294,
+                  0.45401814290290843,
+                  0.691953009360814
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.3079301331529295,
+                  0.4693054355618807,
+                  0.6919530093608139,
+                  0.4540181429029086
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  17.004474837184347,
+                  -4.200769481359526,
+                  0.7747794909784048
+                ],
+                "quaternion_xyzw": [
+                  0.2705982198833121,
+                  0.27059788026277826,
+                  0.6532810724798103,
+                  0.6532818923963091
+                ]
+              },
+              "look_target": [
+                16.389230728149414,
+                -4.200768709182739,
+                0.15953538194298744
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              12.049999999999999,
+              -4.16,
+              1.3161522299051285
+            ],
+            "quaternion_xyzw": [
+              0.42880034322348515,
+              -0.43284800951789826,
+              -0.5633294612388641,
+              0.558061631370717
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 14.924484292100033,
+            "look_target": [
+              16.389230728149414,
+              -4.200768709182739,
+              0.15953536331653595
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            11.5,
+            -6.5,
+            17.5,
+            -3.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.46871951779284804,
+                  -0.30591390132534174,
+                  -0.4529199096263265,
+                  0.6939612770753346
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  -0.30591390132534174,
+                  0.46871951779284804,
+                  0.6939612770753346,
+                  -0.45291990962632656
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.4693054355618807,
+                  0.3079301331529294,
+                  0.45401814290290843,
+                  0.691953009360814
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.3079301331529295,
+                  0.4693054355618807,
+                  0.6919530093608139,
+                  0.4540181429029086
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  17.00447511629315,
+                  -4.2007705737671,
+                  0.7305847312642757
+                ],
+                "quaternion_xyzw": [
+                  0.27059846011608446,
+                  0.2705976400294912,
+                  0.6532804925053505,
+                  0.6532824723695261
+                ]
+              },
+              "look_target": [
+                16.38923168182373,
+                -4.200768709182739,
+                0.11534129679203034
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            11.5,
+            -6.5,
+            17.5,
+            -3.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.46871951779284804,
+                  -0.30591390132534174,
+                  -0.4529199096263265,
+                  0.6939612770753346
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  -0.30591390132534174,
+                  0.46871951779284804,
+                  0.6939612770753346,
+                  -0.45291990962632656
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.4693054355618807,
+                  0.3079301331529294,
+                  0.45401814290290843,
+                  0.691953009360814
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.3079301331529295,
+                  0.4693054355618807,
+                  0.6919530093608139,
+                  0.4540181429029086
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            11.5,
+            -6.5,
+            17.5,
+            -3.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.46871951779284804,
+                  -0.30591390132534174,
+                  -0.4529199096263265,
+                  0.6939612770753346
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  11.884983253479003,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  -0.30591390132534174,
+                  0.46871951779284804,
+                  0.6939612770753346,
+                  -0.45291990962632656
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -6.15,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.4693054355618807,
+                  0.3079301331529294,
+                  0.45401814290290843,
+                  0.691953009360814
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  17.15,
+                  -3.85,
+                  2.2661522299051287
+                ],
+                "quaternion_xyzw": [
+                  0.3079301331529295,
+                  0.4693054355618807,
+                  0.6919530093608139,
+                  0.4540181429029086
+                ]
+              },
+              "target": [
+                14.5,
+                -5.0,
+                1.1161522299051285
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  17.004474837184347,
+                  -4.200769481359526,
+                  0.7747794909784048
+                ],
+                "quaternion_xyzw": [
+                  0.2705982198833121,
+                  0.27059788026277826,
+                  0.6532810724798103,
+                  0.6532818923963091
+                ]
+              },
+              "look_target": [
+                16.389230728149414,
+                -4.200768709182739,
+                0.15953538194298744
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/bathroom_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  17.00447511629315,
+                  -4.2007705737671,
+                  0.7305847312642757
+                ],
+                "quaternion_xyzw": [
+                  0.27059846011608446,
+                  0.2705976400294912,
+                  0.6532804925053505,
+                  0.6532824723695261
+                ]
+              },
+              "look_target": [
+                16.38923168182373,
+                -4.200768709182739,
+                0.11534129679203034
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "bathroom_0",
+        "room_id": 1,
+        "bbox_map_rc": [
+          12,
+          30,
+          15,
+          36
+        ],
+        "bbox_world_xy": [
+          11.5,
+          -6.5,
+          17.5,
+          -3.5
+        ],
+        "expanded_bbox_world_xy": [
+          11.5,
+          -6.5,
+          17.5,
+          -3.5
+        ],
+        "bbox_area_m2": 18.0,
+        "expanded_bbox_area_m2": 18.0,
+        "pixel_count": 26,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/grocery_store_half_stocked/bathroom_0/q_000/gt_view/image2_box_00.png"
+  ]
+}

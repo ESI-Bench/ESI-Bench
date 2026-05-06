@@ -1,0 +1,867 @@
+{
+  "scene": "hotel_gym_spa",
+  "room": "locker_room_0",
+  "floor_name": "floors_zpadmw_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "semantic_fault",
+  "question_index": 2,
+  "question_id": "semantic_fault/q_002",
+  "question_data": {
+    "task_type": "semantic_fault",
+    "question": "Considering both images, how many objects of category \"head_cabbage\" are present in this scene?",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "case": "semantic_fault",
+    "candidate_index": 2,
+    "count_target": "head_cabbage",
+    "count_object": {
+      "category": "head_cabbage",
+      "estimated_volume": 0.0017915657550725793,
+      "characteristic_size_m": 0.1214537468967268,
+      "display_name": "head cabbage",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 4
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        12.226686782836907,
+        -24.905,
+        0.0349990463256836
+      ],
+      [
+        11.526686782836908,
+        -24.555,
+        0.0349990463256836
+      ],
+      [
+        11.876686782836908,
+        -24.905,
+        0.0349990463256836
+      ],
+      [
+        10.826686782836909,
+        -23.504999999999995,
+        0.0349990463256836
+      ]
+    ],
+    "object_positions": [
+      [
+        12.226686782836907,
+        -24.905,
+        0.0349990463256836
+      ],
+      [
+        11.526686782836908,
+        -24.555,
+        0.0349990463256836
+      ],
+      [
+        11.876686782836908,
+        -24.905,
+        0.0349990463256836
+      ],
+      [
+        10.826686782836909,
+        -23.504999999999995,
+        0.0349990463256836
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 4,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              12.226686782836907,
+              -24.905,
+              0.0349990463256836
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "salad",
+              "clip_score": 0.8204271793365479,
+              "source": "keys_clip_top3",
+              "position": [
+                11.726686782836907,
+                -24.905,
+                0.0349990463256836
+              ]
+            }
+          }
+        },
+        {
+          "source_index": 1,
+          "ball_positions": [
+            [
+              11.526686782836908,
+              -24.555,
+              0.0349990463256836
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "cold_cuts",
+              "clip_score": 0.8153139352798462,
+              "source": "keys_clip_top3",
+              "position": [
+                11.026686782836908,
+                -24.555,
+                0.0349990463256836
+              ]
+            }
+          }
+        },
+        {
+          "source_index": 3,
+          "ball_positions": [
+            [
+              11.876686782836908,
+              -24.905,
+              0.0349990463256836
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "hamburger",
+              "clip_score": 0.8118176460266113,
+              "source": "keys_clip_top3",
+              "position": [
+                11.376686782836908,
+                -24.905,
+                0.0349990463256836
+              ]
+            }
+          }
+        },
+        {
+          "source_index": 4,
+          "ball_positions": [
+            [
+              10.826686782836909,
+              -23.504999999999995,
+              0.0349990463256836
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "cold_cuts",
+              "clip_score": 0.8153139352798462,
+              "source": "keys_clip_top3",
+              "position": [
+                10.326686782836909,
+                -23.504999999999995,
+                0.0349990463256836
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002.png"
+      ],
+      "camera_poses": {
+        "q_002.png": {
+          "position": [
+            12.549999999999988,
+            -23.44,
+            1.2499990463256836
+          ],
+          "quaternion_xyzw": [
+            0.4502828163868675,
+            0.5090998476871972,
+            0.549449675362977,
+            0.4859709709386998
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 4.365891341989664,
+          "look_target": [
+            8.0,
+            -24.0,
+            0.8999990463256836
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/hotel_gym_spa/locker_room_0/candidate_renders/semantic_fault/q_002",
+      "room_bbox": {
+        "room_instance": "locker_room_0",
+        "room_id": 7,
+        "bbox_map_rc": [
+          2,
+          30,
+          4,
+          40
+        ],
+        "bbox_world_xy": [
+          3.0,
+          -25.0,
+          13.0,
+          -23.0
+        ],
+        "expanded_bbox_world_xy": [
+          3.0,
+          -25.0,
+          13.0,
+          -23.0
+        ],
+        "bbox_area_m2": 20.0,
+        "expanded_bbox_area_m2": 20.0,
+        "pixel_count": 31,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "locker_room_0",
+        "room_bbox_world_xy": [
+          3.0,
+          -25.0,
+          13.0,
+          -23.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                3.35,
+                -24.65,
+                2.1999990463256838
+              ],
+              "quaternion_xyzw": [
+                0.4657268584320842,
+                -0.40515335409856534,
+                -0.5163635185889397,
+                0.5935637873624987
+              ]
+            },
+            "target": [
+              8.0,
+              -24.0,
+              1.0499990463256836
+            ],
+            "view_id": "corner_00",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                3.35,
+                -23.35,
+                2.1999990463256838
+              ],
+              "quaternion_xyzw": [
+                0.4051533540985654,
+                -0.4657268584320842,
+                -0.5935637873624988,
+                0.5163635185889397
+              ]
+            },
+            "target": [
+              8.0,
+              -24.0,
+              1.0499990463256836
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                12.65,
+                -24.65,
+                2.1999990463256838
+              ],
+              "quaternion_xyzw": [
+                0.4657268584320842,
+                0.40515335409856534,
+                0.5163635185889397,
+                0.5935637873624987
+              ]
+            },
+            "target": [
+              8.0,
+              -24.0,
+              1.0499990463256836
+            ],
+            "view_id": "corner_02",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                12.65,
+                -23.35,
+                2.1999990463256838
+              ],
+              "quaternion_xyzw": [
+                0.4051533540985654,
+                0.4657268584320842,
+                0.5935637873624988,
+                0.5163635185889397
+              ]
+            },
+            "target": [
+              8.0,
+              -24.0,
+              1.0499990463256836
+            ],
+            "view_id": "corner_03",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            12.226686477661133,
+            -24.905000686645508,
+            0.034999046474695206
+          ],
+          "camera_pose": {
+            "position": [
+              12.647839469909668,
+              -24.905591011047363,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.4542047554621977,
+              0.45420475546219763,
+              0.5419391479820639,
+              0.5419391479820638
+            ]
+          },
+          "look_target": [
+            12.227839469909668,
+            -24.905591011047363,
+            0.0454394593834877
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 32880,
+            "centered_score": 0.9695,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            11.526686668395996,
+            -24.55500030517578,
+            0.034999046474695206
+          ],
+          "camera_pose": {
+            "position": [
+              11.947839660644531,
+              -24.555590629577637,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.4542047554621977,
+              0.45420475546219763,
+              0.5419391479820639,
+              0.5419391479820638
+            ]
+          },
+          "look_target": [
+            11.527839660644531,
+            -24.555590629577637,
+            0.0454394593834877
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 32881,
+            "centered_score": 0.9695,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            11.876687049865723,
+            -24.905000686645508,
+            0.034999046474695206
+          ],
+          "camera_pose": {
+            "position": [
+              12.297840042114258,
+              -24.905591011047363,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.4542047554621977,
+              0.45420475546219763,
+              0.5419391479820639,
+              0.5419391479820638
+            ]
+          },
+          "look_target": [
+            11.877840042114258,
+            -24.905591011047363,
+            0.0454394593834877
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 24504,
+            "centered_score": 0.9928,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              420
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_003.png",
+          "target_name": "render_count_target_club_sandwich_3",
+          "target_position": [
+            10.82668685913086,
+            -23.5049991607666,
+            0.034999046474695206
+          ],
+          "camera_pose": {
+            "position": [
+              11.247839851379394,
+              -23.505589485168457,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.4542047554621977,
+              0.45420475546219763,
+              0.5419391479820639,
+              0.5419391479820638
+            ]
+          },
+          "look_target": [
+            10.827839851379395,
+            -23.505589485168457,
+            0.0454394593834877
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_3",
+            "visible_pixels": 32880,
+            "centered_score": 0.9695,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_3",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              12.226686477661133,
+              -24.905000686645508,
+              0.034999046474695206
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                12.121865272521973,
+                -25.006141662597656,
+                -0.005464375019073486
+              ],
+              [
+                12.333813667297363,
+                -24.80504035949707,
+                0.07937534898519516
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              12.226686782836907,
+              -24.905,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              11.526686668395996,
+              -24.55500030517578,
+              0.034999046474695206
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                11.421865463256836,
+                -24.65614128112793,
+                -0.005464375019073486
+              ],
+              [
+                11.633813858032227,
+                -24.455039978027344,
+                0.07937534898519516
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              11.526686782836908,
+              -24.555,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              11.876687049865723,
+              -24.905000686645508,
+              0.034999046474695206
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                11.771865844726562,
+                -25.006141662597656,
+                -0.005464375019073486
+              ],
+              [
+                11.983814239501953,
+                -24.80504035949707,
+                0.07937534898519516
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              11.876686782836908,
+              -24.905,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_2"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_3",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              10.82668685913086,
+              -23.5049991607666,
+              0.034999046474695206
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                10.7218656539917,
+                -23.60614013671875,
+                -0.005464375019073486
+              ],
+              [
+                10.93381404876709,
+                -23.405038833618164,
+                0.07937534898519516
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              10.826686782836909,
+              -23.504999999999995,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_3"
+          }
+        ],
+        "confusers": [
+          {
+            "role": "confuser",
+            "name": "render_confuser_salad_0",
+            "category": "salad",
+            "model": "nffvob",
+            "position": [
+              11.726686477661133,
+              -24.905000686645508,
+              0.04410625621676445
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                11.645865440368652,
+                -24.988544464111328,
+                0.02222343347966671
+              ],
+              [
+                11.802117347717285,
+                -24.8182430267334,
+                0.09043603390455246
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              11.726686782836907,
+              -24.905,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "salad",
+            "source_clip_score": 0.8204271793365479,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 3175480
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_cold_cuts_0",
+            "category": "cold_cuts",
+            "model": "zidsvg",
+            "position": [
+              11.026686668395996,
+              -24.55500030517578,
+              0.034999046474695206
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                11.019336700439453,
+                -24.595733642578125,
+                0.028537023812532425
+              ],
+              [
+                11.033468246459961,
+                -24.51490592956543,
+                0.04153724014759064
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              11.026686782836908,
+              -24.555,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cold_cuts",
+            "source_clip_score": 0.8153139352798462,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 4340067
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_hamburger_0",
+            "category": "hamburger",
+            "model": "fyswch",
+            "position": [
+              11.376687049865723,
+              -24.905000686645508,
+              0.045048486441373825
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                11.322785377502441,
+                -24.955364227294922,
+                0.014488216489553452
+              ],
+              [
+                11.430566787719727,
+                -24.854625701904297,
+                0.08458520472049713
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              11.376686782836908,
+              -24.905,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "hamburger",
+            "source_clip_score": 0.8118176460266113,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 1708030
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_cold_cuts_1",
+            "category": "cold_cuts",
+            "model": "zidsvg",
+            "position": [
+              10.32668685913086,
+              -23.5049991607666,
+              0.034999046474695206
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                10.319336891174316,
+                -23.545732498168945,
+                0.028537023812532425
+              ],
+              [
+                10.333468437194824,
+                -23.46490478515625,
+                0.04153724014759064
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              10.326686782836909,
+              -23.504999999999995,
+              0.0349990463256836
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cold_cuts",
+            "source_clip_score": 0.8153139352798462,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 2761555
+          }
+        ],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 4153720,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hotel_gym_spa/locker_room_0/q_002/target_closeups/target_closeup_003.png"
+  ]
+}

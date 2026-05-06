@@ -1,0 +1,1214 @@
+{
+  "scene": "school_geography",
+  "room": "classroom_0",
+  "floor_name": "floors_bqaini_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 70.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "render_view_groups": {
+      "single_view": "observer_view",
+      "multi_view": {
+        "type": "arc_around_mirror_center",
+        "angle_range_deg": [
+          -45,
+          45
+        ],
+        "step_deg": 5
+      },
+      "gt_view": {
+        "type": "observer_perpendicular_side_views",
+        "side_offset_m": 1.0,
+        "look_target": "observer_position"
+      }
+    }
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 2.0
+  },
+  "task_type": "mirror_distance",
+  "question_index": 4,
+  "question_id": "mirror_distance/q_004",
+  "question_data": {
+    "task_type": "mirror_distance",
+    "question": "In the mirror, you can see two reflected objects: object A (pack of cigarettes) and object B (denture). In the real world, which object is closer to the observation position, A or B?",
+    "answer": "A",
+    "placement": [
+      {
+        "name": "render_item_002",
+        "alias": "A",
+        "category": "pack_of_cigarettes",
+        "model": "tngixy",
+        "real_position": [
+          -40.0317152404785,
+          -4.484297409057621,
+          0.04967534611001611
+        ],
+        "mirror_position": [
+          -39.419252942390706,
+          -3.046995881809457,
+          0.04967534611001611
+        ],
+        "real_u": -0.04757691980129797,
+        "mirror_u": -0.04757691980129894,
+        "mirror_hit_xy": [
+          -39.64643402067142,
+          -3.799331427009131
+        ]
+      },
+      {
+        "name": "render_item_003",
+        "alias": "B",
+        "category": "denture",
+        "model": "cvkqkf",
+        "real_position": [
+          -40.3817152404785,
+          -4.134297409057622,
+          0.04686009952798486
+        ],
+        "mirror_position": [
+          -39.91412631835716,
+          -3.036978808406413,
+          0.04686009952798486
+        ],
+        "real_u": -0.50676732544983,
+        "mirror_u": -0.5067673254498299,
+        "mirror_hit_xy": [
+          -40.0033723832877,
+          -3.6472330080627544
+        ]
+      }
+    ],
+    "evidence": {
+      "mirror_relation": "right",
+      "observation_position": [
+        -40.3817152404785,
+        -6.2342974090576195,
+        0.7996896893717349
+      ],
+      "real_a_name": "render_item_002",
+      "real_b_name": "render_item_003",
+      "real_a_label": "pack of cigarettes",
+      "real_b_label": "denture",
+      "closer_real_name": "render_item_002",
+      "closer_real_label": "pack of cigarettes",
+      "closer_object": "A",
+      "a_distance_to_observer": 1.9358516252797635,
+      "b_distance_to_observer": 2.2308635976554685,
+      "a_real_u": -0.04757691980129797,
+      "b_real_u": -0.50676732544983,
+      "a_mirror_u": -0.04757691980129894,
+      "b_mirror_u": -0.5067673254498299
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          -40.3817152404785,
+          -6.2342974090576195,
+          0.7996896893717349
+        ],
+        "forward_xy": [
+          0.2747211278973793,
+          0.9615239476408228
+        ],
+        "quaternion_xyzw": [
+          0.7002720806302403,
+          -0.09807656748578784,
+          -0.09807656748578784,
+          0.7002720806302403
+        ]
+      },
+      "render_views": {
+        "single_view": {
+          "position": [
+            -40.3817152404785,
+            -6.2342974090576195,
+            0.7996896893717349
+          ],
+          "target": [
+            -39.681715240478496,
+            -3.7842974090576216,
+            0.7996896893717349
+          ],
+          "forward_xy": [
+            0.2747211278973793,
+            0.9615239476408228
+          ],
+          "quaternion_xyzw": [
+            0.7002720806302403,
+            -0.09807656748578784,
+            -0.09807656748578784,
+            0.7002720806302403
+          ]
+        },
+        "multi_view": [
+          {
+            "position": [
+              -41.90910160121612,
+              -5.021734276134076,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.8741572761215384,
+              0.4856429311786308
+            ],
+            "quaternion_xyzw": [
+              0.6094347650033247,
+              -0.35859345672410464,
+              -0.35859345672410464,
+              0.6094347650033248
+            ],
+            "relative_angle_deg": -45.0
+          },
+          {
+            "position": [
+              -41.7927759943938,
+              -5.211154967918536,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.8285042733935749,
+              0.5599827398845294
+            ],
+            "quaternion_xyzw": [
+              0.6244963450422527,
+              -0.3316689841225249,
+              -0.3316689841225249,
+              0.6244963450422527
+            ],
+            "relative_angle_deg": -40.0
+          },
+          {
+            "position": [
+              -41.660383940540854,
+              -5.389716412119917,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.7765458528805285,
+              0.6300607418130831
+            ],
+            "quaternion_xyzw": [
+              0.6383691607943407,
+              -0.3041131607588353,
+              -0.3041131607588353,
+              0.6383691607943407
+            ],
+            "relative_angle_deg": -35.0
+          },
+          {
+            "position": [
+              -41.5129330231276,
+              -5.556059648329493,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.7186774495358552,
+              0.695343601055362
+            ],
+            "quaternion_xyzw": [
+              0.6510268045663254,
+              -0.27597844070897914,
+              -0.27597844070897914,
+              0.6510268045663254
+            ],
+            "relative_angle_deg": -30.0
+          },
+          {
+            "position": [
+              -41.351545432668864,
+              -5.708918704078921,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.6553394768509057,
+              0.7553344756336635
+            ],
+            "quaternion_xyzw": [
+              0.6624451818138735,
+              -0.24731838001164438,
+              -0.24731838001164438,
+              0.6624451818138735
+            ],
+            "relative_angle_deg": -25.0
+          },
+          {
+            "position": [
+              -41.17744942617652,
+              -5.847130229655126,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.5870139750423262,
+              0.8095767987689663
+            ],
+            "quaternion_xyzw": [
+              0.672602557006916,
+              -0.21818753472129987,
+              -0.21818753472129987,
+              0.672602557006916
+            ],
+            "relative_angle_deg": -20.0
+          },
+          {
+            "position": [
+              -40.99196997938202,
+              -5.9696423518940716,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.5142209424349442,
+              0.8576577536298017
+            ],
+            "quaternion_xyzw": [
+              0.6814795950044655,
+              -0.18864135705764407,
+              -0.18864135705764407,
+              0.6814795950044656
+            ],
+            "relative_angle_deg": -15.0
+          },
+          {
+            "position": [
+              -40.796518702871026,
+              -6.075522679570678,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.43751437796054,
+              0.8992114151176027
+            ],
+            "quaternion_xyzw": [
+              0.689059397860156,
+              -0.15873608984915594,
+              -0.15873608984915596,
+              0.6890593978601559
+            ],
+            "relative_angle_deg": -10.0
+          },
+          {
+            "position": [
+              -40.592583098874485,
+              -6.163965399459036,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.3574780648914503,
+              0.9339215347776622
+            ],
+            "quaternion_xyzw": [
+              0.6953275369884436,
+              -0.1285286594716698,
+              -0.1285286594716698,
+              0.6953275369884437
+            ],
+            "relative_angle_deg": -5.0
+          },
+          {
+            "position": [
+              -40.3817152404785,
+              -6.2342974090576195,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.2747211278973793,
+              0.9615239476408228
+            ],
+            "quaternion_xyzw": [
+              0.7002720806302403,
+              -0.09807656748578784,
+              -0.09807656748578784,
+              0.7002720806302403
+            ],
+            "relative_angle_deg": 0.0
+          },
+          {
+            "position": [
+              -40.16551995941096,
+              -6.285983439305757,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.18987339723885685,
+              0.9818085826784033
+            ],
+            "quaternion_xyzw": [
+              0.7038836165656939,
+              -0.06743778117938899,
+              -0.06743778117938899,
+              0.703883616565694
+            ],
+            "relative_angle_deg": 5.0
+          },
+          {
+            "position": [
+              -39.94564263230306,
+              -6.318630128304381,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.1035806153786545,
+              0.9946210615695704
+            ],
+            "quaternion_xyzw": [
+              0.7061552700308854,
+              -0.03667062322360214,
+              -0.03667062322360214,
+              0.7061552700308853
+            ],
+            "relative_angle_deg": 10.0
+          },
+          {
+            "position": [
+              -39.72375665837967,
+              -6.3319890150376015,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.016499522491736626,
+              0.9998638736135758
+            ],
+            "quaternion_xyzw": [
+              0.7070827168043312,
+              -0.005833660652287763,
+              -0.005833660652287763,
+              0.7070827168043311
+            ],
+            "relative_angle_deg": 15.0
+          },
+          {
+            "position": [
+              -39.50155072388075,
+              -6.325958430311064,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.0707071417240279,
+              0.9974971178450683
+            ],
+            "quaternion_xyzw": [
+              0.7066641914383855,
+              0.02501440662364201,
+              0.025014406623642016,
+              0.7066641914383854
+            ],
+            "relative_angle_deg": 20.0
+          },
+          {
+            "position": [
+              -39.28071595013944,
+              -6.300584270515903,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.1573756818971347,
+              0.9875388067045324
+            ],
+            "quaternion_xyzw": [
+              0.7049004906198698,
+              0.05581485755483832,
+              0.05581485755483832,
+              0.7049004906198697
+            ],
+            "relative_angle_deg": 25.0
+          },
+          {
+            "position": [
+              -39.062933023127606,
+              -6.2560596483294955,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.24284649810496753,
+              0.9700647289527405
+            ],
+            "quaternion_xyzw": [
+              0.7017949716535343,
+              0.08650906173236916,
+              0.08650906173236918,
+              0.7017949716535344
+            ],
+            "relative_angle_deg": 30.0
+          },
+          {
+            "position": [
+              -38.84985940242073,
+              -6.192723423011383,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.3264691058274964,
+              0.9452078728725206
+            ],
+            "quaternion_xyzw": [
+              0.697353546071238,
+              0.11703859099403864,
+              0.11703859099403864,
+              0.6973535460712379
+            ],
+            "relative_angle_deg": 35.0
+          },
+          {
+            "position": [
+              -38.64311670692976,
+              -6.111057621479695,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.40760708652724525,
+              0.9131574141476215
+            ],
+            "quaternion_xyzw": [
+              0.6915846683790101,
+              0.14734533064571342,
+              0.14734533064571342,
+              0.6915846683790101
+            ],
+            "relative_angle_deg": 40.0
+          },
+          {
+            "position": [
+              -38.44427837340204,
+              -6.011683769795248,
+              0.7996896893717349
+            ],
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.4856429311786306,
+              0.8741572761215386
+            ],
+            "quaternion_xyzw": [
+              0.6844993199634202,
+              0.17737159008594175,
+              0.17737159008594175,
+              0.6844993199634202
+            ],
+            "relative_angle_deg": 45.0
+          }
+        ],
+        "gt_view": [
+          {
+            "position": [
+              -39.42019129283768,
+              -6.509018536954999,
+              0.7996896893717349
+            ],
+            "target": [
+              -40.3817152404785,
+              -6.2342974090576195,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              -0.9615239476408226,
+              0.2747211278973799
+            ],
+            "quaternion_xyzw": [
+              0.5645177428339563,
+              0.4258165309445548,
+              0.4258165309445548,
+              0.5645177428339565
+            ],
+            "side": "left",
+            "offset_m": 1.0
+          },
+          {
+            "position": [
+              -41.34323918811932,
+              -5.95957628116024,
+              0.7996896893717349
+            ],
+            "target": [
+              -40.3817152404785,
+              -6.2342974090576195,
+              0.7996896893717349
+            ],
+            "forward_xy": [
+              0.9615239476408226,
+              -0.2747211278973799
+            ],
+            "quaternion_xyzw": [
+              -0.4258165309445548,
+              0.5645177428339563,
+              0.5645177428339565,
+              -0.4258165309445548
+            ],
+            "side": "right",
+            "offset_m": 1.0
+          }
+        ]
+      },
+      "mirror": {
+        "position": [
+          -39.681715240478496,
+          -3.7842974090576216,
+          1.1410144574381411
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.8342699933666656,
+          0.5513561264445909
+        ],
+        "normal_xy": [
+          -0.3920128436640328,
+          -0.9199597439031986
+        ],
+        "tangent_xy": [
+          0.9199597439031986,
+          -0.3920128436640328
+        ],
+        "half_width_m": 0.4465522766113281,
+        "normal_yaw_offset_deg": 8.972768131529904
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004.png",
+      "camera_pose": {
+        "position": [
+          -40.3817152404785,
+          -6.2342974090576195,
+          0.7996896893717349
+        ],
+        "quaternion_xyzw": [
+          0.7002720806302403,
+          -0.09807656748578784,
+          -0.09807656748578784,
+          0.7002720806302403
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -39.681715240478496,
+          -3.7842974090576216,
+          1.1410144574381411
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.8342699933666656,
+          0.5513561264445909
+        ],
+        "normal_xy": [
+          -0.3920128436640328,
+          -0.9199597439031986
+        ],
+        "tangent_xy": [
+          0.9199597439031986,
+          -0.3920128436640328
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_map.png",
+      "multi_image_input": {
+        "room_instance": "classroom_0",
+        "room_bbox_world_xy": [
+          -44.0,
+          -8.0,
+          -36.0,
+          -2.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -43.52,
+                -7.52,
+                1.349689689371735
+              ],
+              "quaternion_xyzw": [
+                0.5955113413785338,
+                -0.30605638215838066,
+                -0.339519573487098,
+                0.6606225794270142
+              ]
+            },
+            "target": [
+              -40.0,
+              -5.0,
+              0.8996896893717349
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -43.52,
+                -2.48,
+                1.349689689371735
+              ],
+              "quaternion_xyzw": [
+                -0.30605638215838066,
+                0.5955113413785338,
+                0.6606225794270142,
+                -0.339519573487098
+              ]
+            },
+            "target": [
+              -40.0,
+              -5.0,
+              0.8996896893717349
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                -36.48,
+                -7.52,
+                1.349689689371735
+              ],
+              "quaternion_xyzw": [
+                0.5955113413785338,
+                0.30605638215838066,
+                0.339519573487098,
+                0.6606225794270142
+              ]
+            },
+            "target": [
+              -40.0,
+              -5.0,
+              0.8996896893717349
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                -36.48,
+                -2.48,
+                1.349689689371735
+              ],
+              "quaternion_xyzw": [
+                0.30605638215838066,
+                0.5955113413785338,
+                0.6606225794270142,
+                0.339519573487098
+              ]
+            },
+            "target": [
+              -40.0,
+              -5.0,
+              0.8996896893717349
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          -39.681715240478496,
+          -3.7842974090576216,
+          1.1410144574381411
+        ],
+        "orbit_radius_xy_m": 2.54803846124818,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-40.png",
+            "camera_pose": {
+              "position": [
+                -41.7927759943938,
+                -5.211154967918536,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.6646618678872502,
+                -0.3530008273983235,
+                -0.30886735974174145,
+                0.5815633854696289
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-35.png",
+            "camera_pose": {
+              "position": [
+                -41.660383940540854,
+                -5.389716412119917,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.6794269368966046,
+                -0.3236727053468776,
+                -0.28320594786637476,
+                0.5944824709996409
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-30.png",
+            "camera_pose": {
+              "position": [
+                -41.5129330231276,
+                -5.556059648329493,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.6928986781154737,
+                -0.29372845390444996,
+                -0.2570054373728705,
+                0.6062699253579301
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-25.png",
+            "camera_pose": {
+              "position": [
+                -41.351545432668864,
+                -5.708918704078921,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7050514473187636,
+                -0.26322507365558134,
+                -0.23031570242209287,
+                0.6169033104551706
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-15.png",
+            "camera_pose": {
+              "position": [
+                -40.99196997938202,
+                -5.9696423518940716,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7253100905051231,
+                -0.2007741402141211,
+                -0.1756726154139556,
+                0.6346291432217331
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-10.png",
+            "camera_pose": {
+              "position": [
+                -40.796518702871026,
+                -6.075522679570678,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7333774010094614,
+                -0.16894546592281487,
+                -0.1478232795784264,
+                0.6416878487609136
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-05.png",
+            "camera_pose": {
+              "position": [
+                -40.592583098874485,
+                -6.163965399459036,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7400486859485318,
+                -0.13679519433489143,
+                -0.11969255372849309,
+                0.6475250650088246
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": -5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                -40.3817152404785,
+                -6.2342974090576195,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7453112461522814,
+                -0.10438452531962082,
+                -0.09133398629965754,
+                0.6521296804925725
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                -40.16551995941096,
+                -6.285983439305757,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7491550640382584,
+                -0.07177515442757577,
+                -0.06280155943681617,
+                0.6554929300648747
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+10.png",
+            "camera_pose": {
+              "position": [
+                -39.94564263230306,
+                -6.318630128304381,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7515728226806481,
+                -0.0390291554496446,
+                -0.03414958623617941,
+                0.6576084115890158
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+15.png",
+            "camera_pose": {
+              "position": [
+                -39.72375665837967,
+                -6.3319890150376015,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7525599197384584,
+                -0.006208862256043463,
+                -0.00543260735720702,
+                0.6584720981256784
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+20.png",
+            "camera_pose": {
+              "position": [
+                -39.50155072388075,
+                -6.325958430311064,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7521144762163368,
+                0.026623249859750894,
+                0.023294712798639185,
+                0.6580823455984514
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+25.png",
+            "camera_pose": {
+              "position": [
+                -39.28071595013944,
+                -6.300584270515903,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.750237340041345,
+                0.05940468310627123,
+                0.0519776901446888,
+                0.6564398959234222
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+30.png",
+            "camera_pose": {
+              "position": [
+                -39.062933023127606,
+                -6.2560596483294955,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7469320844488818,
+                0.09207303616215655,
+                0.08056172500332856,
+                0.6535478755968982
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+35.png",
+            "camera_pose": {
+              "position": [
+                -38.84985940242073,
+                -6.192723423011383,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7422050011808257,
+                0.12456612296061773,
+                0.10899240603959517,
+                0.6494117897439426
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                -38.64311670692976,
+                -6.111057621479695,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7360650885088471,
+                0.156822091064149,
+                0.13721561383624312,
+                0.644039511639056
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                -38.44427837340204,
+                -6.011683769795248,
+                0.7996896893717349
+              ],
+              "quaternion_xyzw": [
+                0.7285240341056877,
+                0.1887795394041534,
+                0.16517762391312693,
+                0.6374412677189517
+              ]
+            },
+            "target": [
+              -39.681715240478496,
+              -3.7842974090576216,
+              1.1410144574381411
+            ],
+            "offset_deg": 45
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_-05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_distance/school_geography/classroom_0/q_004_gt_orbit/orbit_+45.png"
+  ]
+}

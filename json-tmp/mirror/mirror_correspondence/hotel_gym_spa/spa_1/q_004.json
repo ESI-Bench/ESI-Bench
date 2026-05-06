@@ -1,0 +1,514 @@
+{
+  "scene": "hotel_gym_spa",
+  "room": "spa_1",
+  "floor_name": "floors_oxhkpu_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 100.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "context_render_enabled": false,
+    "clear_radius_m": 1.0
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 3.0
+  },
+  "task_type": "mirror_correspondence",
+  "question_index": 4,
+  "question_id": "mirror_correspondence/q_004",
+  "question_data": {
+    "task_type": "mirror_correspondence",
+    "question": "You are given an image with a mirror and three pillows. Based on the mirror reflection, which of the three pillows in the same image corresponds to the reflected one: the left, middle, or right object?",
+    "options": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "answer": "middle",
+    "placement": [
+      {
+        "name": "render_item_012",
+        "alias": "A",
+        "category": "pillow",
+        "model": "sjeori",
+        "real_position": [
+          15.240845680236816,
+          -10.288625717163086,
+          0.17668333649635315
+        ],
+        "line_offset_m": -0.7494129183781497,
+        "yaw_deg": -25.361469259092594,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.21951817415144353,
+          0.9756084107966764
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "right"
+      },
+      {
+        "name": "render_item_013",
+        "alias": "B",
+        "category": "pillow",
+        "model": "sjeori",
+        "real_position": [
+          15.558721542358398,
+          -9.609969139099121,
+          0.17668333649635315
+        ],
+        "line_offset_m": 0.0,
+        "yaw_deg": 0.6803085869110035,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.005936777511096048,
+          0.99998237718111
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": true,
+        "position_label": "middle"
+      },
+      {
+        "name": "render_item_014",
+        "alias": "C",
+        "category": "pillow",
+        "model": "sjeori",
+        "real_position": [
+          16.008699417114258,
+          -8.649277687072754,
+          0.17668333649635315
+        ],
+        "line_offset_m": 1.060852254481694,
+        "yaw_deg": 16.09437990871473,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.139988658327244,
+          0.9901531071201757
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "left"
+      }
+    ],
+    "evidence": {
+      "mirror_label": "target_mirror_object",
+      "real_object_name": "render_item_013",
+      "shared_category": "pillow",
+      "shared_model": "sjeori",
+      "target_position_label": "middle",
+      "target_generated_from_reflected_ray": true,
+      "target_distance_from_mirror_m": 1.3683448638788323,
+      "other_objects_on_perpendicular_line": true,
+      "other_object_distances_from_target_m": [
+        0.7494129183781497,
+        1.060852254481694
+      ],
+      "only_target_visible_in_mirror": false,
+      "temporarily_cleared_scene_objects": []
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          13.99787326812744,
+          -9.490374603271485,
+          0.9182977110147477
+        ],
+        "forward_xy": [
+          0.970142500145332,
+          -0.24253562503633255
+        ],
+        "quaternion_xyzw": [
+          -0.4351621464935994,
+          0.5573454101893037,
+          0.5573454101893036,
+          -0.4351621464935994
+        ]
+      },
+      "mirror": {
+        "position": [
+          16.797873268127443,
+          -10.190374603271485,
+          1.2596224790811539
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.9854567693516172,
+          0.16992632444407624
+        ],
+        "normal_xy": [
+          -0.9422500885218531,
+          0.33491009342890815
+        ],
+        "tangent_xy": [
+          -0.33491009342890815,
+          -0.9422500885218531
+        ],
+        "half_width_m": 0.45717954635620117,
+        "normal_yaw_offset_deg": 17.45269418819118
+      },
+      "correspondence_geometry": {
+        "target_rank": 1,
+        "answer_label": "middle",
+        "target_xy": [
+          15.558721561729985,
+          -9.609968956300463
+        ],
+        "target_distance_m": 1.3683448638788323,
+        "reflected_dir_xy": [
+          -0.905584358964046,
+          0.424166204216788
+        ],
+        "line_dir_xy": [
+          0.424166204216788,
+          0.905584358964046
+        ],
+        "line_offsets_m": [
+          -0.7494129183781497,
+          0.0,
+          1.060852254481694
+        ],
+        "render_eye": [
+          13.99787326812744,
+          -9.490374603271485,
+          0.9182977110147477
+        ],
+        "render_target": [
+          16.797873268127443,
+          -10.190374603271485,
+          1.2596224790811539
+        ]
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004.png",
+      "camera_pose": {
+        "position": [
+          13.99787326812744,
+          -9.490374603271485,
+          0.9182977110147477
+        ],
+        "quaternion_xyzw": [
+          -0.4351621464935994,
+          0.5573454101893037,
+          0.5573454101893036,
+          -0.4351621464935994
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          16.797873268127443,
+          -10.190374603271485,
+          1.2596224790811539
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.9854567693516172,
+          0.16992632444407624
+        ],
+        "normal_xy": [
+          -0.9422500885218531,
+          0.33491009342890815
+        ],
+        "tangent_xy": [
+          -0.33491009342890815,
+          -0.9422500885218531
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_map.png",
+      "multi_image_input": {
+        "room_instance": "spa_1",
+        "room_bbox_world_xy": [
+          13.0,
+          -10.0,
+          17.0,
+          -7.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                13.35,
+                -9.65,
+                1.4682977110147477
+              ],
+              "quaternion_xyzw": [
+                0.554210601449885,
+                -0.2892705714414258,
+                -0.36114568480582,
+                0.6919154139666517
+              ]
+            },
+            "target": [
+              15.0,
+              -8.5,
+              1.0182977110147475
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                13.35,
+                -7.35,
+                1.4682977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.2892705714414258,
+                0.554210601449885,
+                0.6919154139666517,
+                -0.36114568480582
+              ]
+            },
+            "target": [
+              15.0,
+              -8.5,
+              1.0182977110147475
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                16.65,
+                -9.65,
+                1.4682977110147477
+              ],
+              "quaternion_xyzw": [
+                0.554210601449885,
+                0.28927057144142565,
+                0.3611456848058199,
+                0.6919154139666518
+              ]
+            },
+            "target": [
+              15.0,
+              -8.5,
+              1.0182977110147475
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                16.65,
+                -7.35,
+                1.4682977110147477
+              ],
+              "quaternion_xyzw": [
+                0.2892705714414256,
+                0.5542106014498849,
+                0.6919154139666519,
+                0.3611456848058198
+              ]
+            },
+            "target": [
+              15.0,
+              -8.5,
+              1.0182977110147475
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          16.797873268127443,
+          -10.190374603271485,
+          1.2596224790811539
+        ],
+        "orbit_radius_xy_m": 2.8861739379323645,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-45.png",
+            "camera_pose": {
+              "position": [
+                15.31294902763569,
+                -7.715500869118566,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.1995267010191261,
+                0.7203547001584446,
+                0.6401840116840699,
+                -0.1773207058528481
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": -45
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-40.png",
+            "camera_pose": {
+              "position": [
+                15.10290015417488,
+                -7.854338185965888,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.23075822651790448,
+                0.7109658496399457,
+                0.6318400778016191,
+                -0.2050763702226697
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": -40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-35.png",
+            "camera_pose": {
+              "position": [
+                14.905751049563996,
+                -8.01095415048626,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.26155049061706603,
+                0.7002236352179998,
+                0.6222934004196304,
+                -0.2324416600659937
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": -35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-30.png",
+            "camera_pose": {
+              "position": [
+                14.723002137531012,
+                -8.184156820622377,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.29184487849178,
+                0.6881485053083066,
+                0.6115621521810983,
+                -0.2593644839982619
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": -30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-25.png",
+            "camera_pose": {
+              "position": [
+                14.55604424764331,
+                -8.37262801947187,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.32158372305290606,
+                0.674763445606955,
+                0.5996667606269692,
+                -0.28579359289392553
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": -25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                13.99787326812744,
+                -9.490374603271485,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.4600064444380282,
+                0.5891654008302097,
+                0.5235952090907102,
+                -0.4088107857644133
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                13.947519093547193,
+                -9.737074394300706,
+                0.9182977110147477
+              ],
+              "quaternion_xyzw": [
+                -0.48526765407307204,
+                0.5685394466264901,
+                0.5052647864474699,
+                -0.43126059072938067
+              ]
+            },
+            "target": [
+              16.797873268127443,
+              -10.190374603271485,
+              1.2596224790811539
+            ],
+            "offset_deg": 5
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-45.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_-25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/hotel_gym_spa/spa_1/q_004_gt_orbit/orbit_+05.png"
+  ]
+}

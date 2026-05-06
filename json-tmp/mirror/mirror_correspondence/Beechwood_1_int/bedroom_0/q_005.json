@@ -1,0 +1,514 @@
+{
+  "scene": "Beechwood_1_int",
+  "room": "bedroom_0",
+  "floor_name": "floors_nzidpe_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 100.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "context_render_enabled": false,
+    "clear_radius_m": 1.0
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 3.0
+  },
+  "task_type": "mirror_correspondence",
+  "question_index": 5,
+  "question_id": "mirror_correspondence/q_005",
+  "question_data": {
+    "task_type": "mirror_correspondence",
+    "question": "You are given an image with a mirror and three nativity_figurines. Based on the mirror reflection, which of the three nativity_figurines in the same image corresponds to the reflected one: the left, middle, or right object?",
+    "options": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "answer": "right",
+    "placement": [
+      {
+        "name": "render_item_015",
+        "alias": "A",
+        "category": "nativity_figurine",
+        "model": "iuislr",
+        "real_position": [
+          -0.4722333550453186,
+          -5.705883979797363,
+          0.18288718163967133
+        ],
+        "line_offset_m": -1.0954769498920423,
+        "yaw_deg": 23.85819171203309,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.20670106373886823,
+          0.9784041446402506
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "left"
+      },
+      {
+        "name": "render_item_016",
+        "alias": "B",
+        "category": "nativity_figurine",
+        "model": "iuislr",
+        "real_position": [
+          -0.8464832305908203,
+          -5.790599346160889,
+          0.18288718163967133
+        ],
+        "line_offset_m": -0.7117586980501289,
+        "yaw_deg": 13.133170477738204,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.11435779836622606,
+          0.9934396277342824
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "middle"
+      },
+      {
+        "name": "render_item_017",
+        "alias": "C",
+        "category": "nativity_figurine",
+        "model": "iuislr",
+        "real_position": [
+          -1.5406789779663086,
+          -5.947738170623779,
+          0.18288716673851013
+        ],
+        "line_offset_m": 0.0,
+        "yaw_deg": 10.027799364173681,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.0873974122499758,
+          0.9961735252113498
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": true,
+        "position_label": "right"
+      }
+    ],
+    "evidence": {
+      "mirror_label": "target_mirror_object",
+      "real_object_name": "render_item_017",
+      "shared_category": "nativity_figurine",
+      "shared_model": "iuislr",
+      "target_position_label": "right",
+      "target_generated_from_reflected_ray": true,
+      "target_distance_from_mirror_m": 1.3359034119322724,
+      "other_objects_on_perpendicular_line": true,
+      "other_object_distances_from_target_m": [
+        1.0954769498920423,
+        0.7117586980501289
+      ],
+      "only_target_visible_in_mirror": false,
+      "temporarily_cleared_scene_objects": []
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          -1.9457441711425778,
+          -4.100677909851077,
+          0.8020001828670502
+        ],
+        "forward_xy": [
+          0.2169304578186564,
+          -0.9761870601839526
+        ],
+        "quaternion_xyzw": [
+          -0.07715720934567177,
+          0.7028846029370597,
+          0.7028846029370598,
+          -0.07715720934567179
+        ]
+      },
+      "mirror": {
+        "position": [
+          -1.2457441711425776,
+          -7.250677909851074,
+          1.1433249509334564
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.7806578774724325,
+          0.6249586213024318
+        ],
+        "normal_xy": [
+          -0.21885344331952708,
+          0.9757577416281086
+        ],
+        "tangent_xy": [
+          -0.9757577416281086,
+          -0.21885344331952708
+        ],
+        "half_width_m": 0.47306492924690247,
+        "normal_yaw_offset_deg": -4.75477083415365
+      },
+      "correspondence_geometry": {
+        "target_rank": 2,
+        "answer_label": "right",
+        "target_xy": [
+          -1.5406790206541707,
+          -5.94773840221618
+        ],
+        "target_distance_m": 1.3359034119322724,
+        "reflected_dir_xy": [
+          -0.22077557919026092,
+          0.9753246349976016
+        ],
+        "line_dir_xy": [
+          -0.9753246349976016,
+          -0.22077557919026092
+        ],
+        "line_offsets_m": [
+          -1.0954769498920423,
+          -0.7117586980501289,
+          0.0
+        ],
+        "render_eye": [
+          -1.9457441711425778,
+          -4.100677909851077,
+          0.8020001828670502
+        ],
+        "render_target": [
+          -1.2457441711425776,
+          -7.250677909851074,
+          1.1433249509334564
+        ]
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005.png",
+      "camera_pose": {
+        "position": [
+          -1.9457441711425778,
+          -4.100677909851077,
+          0.8020001828670502
+        ],
+        "quaternion_xyzw": [
+          -0.07715720934567177,
+          0.7028846029370597,
+          0.7028846029370598,
+          -0.07715720934567179
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -1.2457441711425776,
+          -7.250677909851074,
+          1.1433249509334564
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.7806578774724325,
+          0.6249586213024318
+        ],
+        "normal_xy": [
+          -0.21885344331952708,
+          0.9757577416281086
+        ],
+        "tangent_xy": [
+          -0.9757577416281086,
+          -0.21885344331952708
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_map.png",
+      "multi_image_input": {
+        "room_instance": "bedroom_0",
+        "room_bbox_world_xy": [
+          -4.0,
+          -7.0,
+          0.0,
+          -3.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -3.65,
+                -6.65,
+                1.3520001828670503
+              ],
+              "quaternion_xyzw": [
+                0.5881861753420364,
+                -0.24363469102703073,
+                -0.2951080255345311,
+                0.7124537976106108
+              ]
+            },
+            "target": [
+              -2.0,
+              -5.0,
+              0.9020001828670502
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -3.65,
+                -3.35,
+                1.3520001828670503
+              ],
+              "quaternion_xyzw": [
+                -0.24363469102703086,
+                0.5881861753420364,
+                0.7124537976106107,
+                -0.2951080255345311
+              ]
+            },
+            "target": [
+              -2.0,
+              -5.0,
+              0.9020001828670502
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                -0.35,
+                -6.65,
+                1.3520001828670503
+              ],
+              "quaternion_xyzw": [
+                0.5881861753420364,
+                0.24363469102703073,
+                0.2951080255345311,
+                0.7124537976106108
+              ]
+            },
+            "target": [
+              -2.0,
+              -5.0,
+              0.9020001828670502
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                -0.35,
+                -3.35,
+                1.3520001828670503
+              ],
+              "quaternion_xyzw": [
+                0.24363469102703086,
+                0.5881861753420364,
+                0.7124537976106107,
+                0.2951080255345311
+              ]
+            },
+            "target": [
+              -2.0,
+              -5.0,
+              0.9020001828670502
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "right",
+        "orbit_center": [
+          -1.2457441711425776,
+          -7.250677909851074,
+          1.1433249509334564
+        ],
+        "orbit_radius_xy_m": 3.2268405600525076,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-30.png",
+            "camera_pose": {
+              "position": [
+                -0.2769619537916871,
+                -4.172697887930095,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                0.11289884622227217,
+                0.7347440493794968,
+                0.6611241886654576,
+                0.10158661124646164
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": -30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-25.png",
+            "camera_pose": {
+              "position": [
+                -0.5489120975850313,
+                -4.0999755974671395,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                0.08074230623274482,
+                0.7389693143569077,
+                0.6649260906780653,
+                0.07265209122031296
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": -25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-20.png",
+            "camera_pose": {
+              "position": [
+                -0.8261655542168583,
+                -4.051232054047498,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                0.04843206867421082,
+                0.7417879092441702,
+                0.6674622680851388,
+                0.04357927380925157
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": -20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-15.png",
+            "camera_pose": {
+              "position": [
+                -1.1066122574719865,
+                -4.026838225468747,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                0.0160296379202565,
+                0.7431944686857176,
+                0.6687278931288368,
+                0.014423500773610156
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": -15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-10.png",
+            "camera_pose": {
+              "position": [
+                -1.3881178386002935,
+                -4.0269797634957705,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                -0.01640330616054398,
+                0.7431863152157095,
+                0.6687205566199554,
+                -0.014759728215531927
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": -10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-05.png",
+            "camera_pose": {
+              "position": [
+                -1.6685398701516774,
+                -4.051655590938719,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                -0.04880502561576501,
+                0.7417634643547396,
+                0.6674402725239561,
+                -0.043914861223127745
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": -5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                -1.945744171142578,
+                -4.100677909851077,
+                0.8020001828670502
+              ],
+              "quaternion_xyzw": [
+                -0.08111384193082999,
+                0.7389286245802912,
+                0.6648894779343822,
+                -0.07298639979642768
+              ]
+            },
+            "target": [
+              -1.2457441711425776,
+              -7.250677909851074,
+              1.1433249509334564
+            ],
+            "offset_deg": 0
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_-05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Beechwood_1_int/bedroom_0/q_005_gt_orbit/orbit_+00.png"
+  ]
+}

@@ -1,0 +1,721 @@
+{
+  "scene": "restaurant_hotel",
+  "room": "dining_room_0",
+  "floor_name": "floors_eivonw_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 100.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "context_render_enabled": false,
+    "clear_radius_m": 1.0
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 3.0
+  },
+  "task_type": "mirror_correspondence",
+  "question_index": 7,
+  "question_id": "mirror_correspondence/q_007",
+  "question_data": {
+    "task_type": "mirror_correspondence",
+    "question": "You are given an image with a mirror and three beets. Based on the mirror reflection, which of the three beets in the same image corresponds to the reflected one: the left, middle, or right object?",
+    "options": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "answer": "middle",
+    "placement": [
+      {
+        "name": "render_item_021",
+        "alias": "A",
+        "category": "beet",
+        "model": "wantjv",
+        "real_position": [
+          -2.9875988960266113,
+          -9.413835525512695,
+          0.05576970800757408
+        ],
+        "line_offset_m": -1.0911343069826558,
+        "yaw_deg": -5.957994042630627,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.051969883977056784,
+          0.9986486525096858
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "right"
+      },
+      {
+        "name": "render_item_022",
+        "alias": "B",
+        "category": "beet",
+        "model": "wantjv",
+        "real_position": [
+          -2.7473998069763184,
+          -10.478202819824219,
+          0.05576970800757408
+        ],
+        "line_offset_m": 0.0,
+        "yaw_deg": 7.670483615152272,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.06688762111600505,
+          0.9977605154251403
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": true,
+        "position_label": "middle"
+      },
+      {
+        "name": "render_item_023",
+        "alias": "C",
+        "category": "beet",
+        "model": "wantjv",
+        "real_position": [
+          -2.5388169288635254,
+          -11.402472496032715,
+          0.05576970800757408
+        ],
+        "line_offset_m": 0.9475129167796539,
+        "yaw_deg": -6.49730678764638,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.056669322636311636,
+          0.9983930027158352
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "left"
+      }
+    ],
+    "evidence": {
+      "mirror_label": "target_mirror_object",
+      "real_object_name": "render_item_022",
+      "shared_category": "beet",
+      "shared_model": "wantjv",
+      "target_position_label": "middle",
+      "target_generated_from_reflected_ray": true,
+      "target_distance_from_mirror_m": 1.3686901193817536,
+      "other_objects_on_perpendicular_line": true,
+      "other_object_distances_from_target_m": [
+        1.0911343069826558,
+        0.9475129167796539
+      ],
+      "only_target_visible_in_mirror": false,
+      "temporarily_cleared_scene_objects": []
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          -1.6325144195556693,
+          -9.72950271606446,
+          0.8037546306848526
+        ],
+        "forward_xy": [
+          -0.9191450300180581,
+          -0.39391929857916724
+        ],
+        "quaternion_xyzw": [
+          0.3892559252666659,
+          0.590321797534863,
+          0.590321797534863,
+          0.3892559252666659
+        ]
+      },
+      "mirror": {
+        "position": [
+          -4.08251441955567,
+          -10.779502716064458,
+          1.1450793987512589
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.15607104674049344,
+          0.9877458318663394
+        ],
+        "normal_xy": [
+          0.9512836567386534,
+          0.30831705178587804
+        ],
+        "tangent_xy": [
+          -0.30831705178587804,
+          0.9512836567386534
+        ],
+        "half_width_m": 0.46147727966308594,
+        "normal_yaw_offset_deg": 8.717305754463709
+      },
+      "correspondence_geometry": {
+        "target_rank": 1,
+        "answer_label": "middle",
+        "target_xy": [
+          -2.747399709912381,
+          -10.478203272010283
+        ],
+        "target_distance_m": 1.3686901193817536,
+        "reflected_dir_xy": [
+          0.9754689470881615,
+          0.22013707835508733
+        ],
+        "line_dir_xy": [
+          0.22013707835508733,
+          -0.9754689470881615
+        ],
+        "line_offsets_m": [
+          -1.0911343069826558,
+          0.0,
+          0.9475129167796539
+        ],
+        "render_eye": [
+          -1.6325144195556693,
+          -9.72950271606446,
+          0.8037546306848526
+        ],
+        "render_target": [
+          -4.08251441955567,
+          -10.779502716064458,
+          1.1450793987512589
+        ]
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007.png",
+      "camera_pose": {
+        "position": [
+          -1.6325144195556693,
+          -9.72950271606446,
+          0.8037546306848526
+        ],
+        "quaternion_xyzw": [
+          0.3892559252666659,
+          0.590321797534863,
+          0.590321797534863,
+          0.3892559252666659
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -4.08251441955567,
+          -10.779502716064458,
+          1.1450793987512589
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.15607104674049344,
+          0.9877458318663394
+        ],
+        "normal_xy": [
+          0.9512836567386534,
+          0.30831705178587804
+        ],
+        "tangent_xy": [
+          -0.30831705178587804,
+          0.9512836567386534
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_map.png",
+      "multi_image_input": {
+        "room_instance": "dining_room_0",
+        "room_bbox_world_xy": [
+          -10.0,
+          -16.0,
+          8.0,
+          -5.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -9.12,
+                -15.12,
+                1.3537546306848527
+              ],
+              "quaternion_xyzw": [
+                0.5963680600218634,
+                -0.3468271248216369,
+                -0.3639351877194992,
+                0.6257853159137635
+              ]
+            },
+            "target": [
+              -1.0,
+              -10.5,
+              0.9037546306848526
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -9.12,
+                -5.88,
+                1.3537546306848527
+              ],
+              "quaternion_xyzw": [
+                -0.34682712482163686,
+                0.5963680600218633,
+                0.6257853159137636,
+                -0.3639351877194991
+              ]
+            },
+            "target": [
+              -1.0,
+              -10.5,
+              0.9037546306848526
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                7.12,
+                -15.12,
+                1.3537546306848527
+              ],
+              "quaternion_xyzw": [
+                0.5963680600218633,
+                0.3468271248216369,
+                0.3639351877194992,
+                0.6257853159137635
+              ]
+            },
+            "target": [
+              -1.0,
+              -10.5,
+              0.9037546306848526
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                7.12,
+                -5.88,
+                1.3537546306848527
+              ],
+              "quaternion_xyzw": [
+                0.3468271248216369,
+                0.5963680600218634,
+                0.6257853159137635,
+                0.3639351877194992
+              ]
+            },
+            "target": [
+              -1.0,
+              -10.5,
+              0.9037546306848526
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          -4.08251441955567,
+          -10.779502716064458,
+          1.1450793987512589
+        ],
+        "orbit_radius_xy_m": 2.665520587052368,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-45.png",
+            "camera_pose": {
+              "position": [
+                -1.607640685402754,
+                -11.769452209725626,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.6216062789612218,
+                0.42084793988667196,
+                0.37039394341173026,
+                0.5470840631320162
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -45
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-40.png",
+            "camera_pose": {
+              "position": [
+                -1.530778543743308,
+                -11.549985694521554,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.6026575182085044,
+                0.44756147097090276,
+                0.3939048821213377,
+                0.530407003432367
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-35.png",
+            "camera_pose": {
+              "position": [
+                -1.4733366528790417,
+                -11.324655338621081,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.582561564617063,
+                0.47342304335740953,
+                0.4166660004997373,
+                0.5127202838553209
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-30.png",
+            "camera_pose": {
+              "position": [
+                -1.4357521802837954,
+                -11.095176042090799,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.5613566719767381,
+                0.4983834280732787,
+                0.43863397146443833,
+                0.49405757207684037
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-25.png",
+            "camera_pose": {
+              "position": [
+                -1.4183111664881434,
+                -10.863294280940691,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.5390832050058781,
+                0.5223951116075478,
+                0.4597669777341315,
+                0.47445439362951486
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-20.png",
+            "camera_pose": {
+              "position": [
+                -1.421146348138242,
+                -10.630774815387143,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.515783562514803,
+                0.5454123863558752,
+                0.48002479143026117,
+                0.45394806427769047
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-15.png",
+            "camera_pose": {
+              "position": [
+                -1.4442361477898054,
+                -10.399387258962113,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.4915020966972595,
+                0.5673914376275604,
+                0.4993688506530777,
+                0.43257761898479236
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-10.png",
+            "camera_pose": {
+              "position": [
+                -1.487404838125483,
+                -10.17089261068562,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.4662850287035001,
+                0.5882904270493003,
+                0.5177623328864059,
+                0.410383737608052
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-05.png",
+            "camera_pose": {
+              "position": [
+                -1.5503238793458518,
+                -9.94702985279989,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.44018036065569505,
+                0.6080695722069098,
+                0.5351702250913976,
+                0.3874086674620881
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": -5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                -1.6325144195556698,
+                -9.72950271606446,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.4132377842731654,
+                0.6266912223734085,
+                0.5515593903558408,
+                0.3636961428987406
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                -1.733350939115934,
+                -9.519966713336364,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.3855085862813717,
+                0.6441199301793186,
+                0.5668986309721552,
+                0.3392913020562481
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+10.png",
+            "camera_pose": {
+              "position": [
+                -1.8520660112260363,
+                -9.320016540117662,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.35704555078471567,
+                0.6603225190887488,
+                0.5811587478240023,
+                0.31424060093623446
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+15.png",
+            "camera_pose": {
+              "position": [
+                -1.9877561425050985,
+                -9.131173937959762,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.3279028587889985,
+                0.6752681465528151,
+                0.5943125959684623,
+                0.28859172497207053
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+20.png",
+            "camera_pose": {
+              "position": [
+                -2.1393886491221457,
+                -8.954876113091366,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.29813598506479616,
+                0.6889283627201856,
+                0.6063351363079768,
+                0.2623934982569408
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                -2.880632524085039,
+                -8.400326407057511,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.17397547481432105,
+                0.7302327633802824,
+                0.6426876959637781,
+                0.15311815994812072
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                -3.092564925894502,
+                -8.304628981911542,
+                0.8037546306848526
+              ],
+              "quaternion_xyzw": [
+                0.1419575829393624,
+                0.7371264472238708,
+                0.648754920016599,
+                0.12493878182287711
+              ]
+            },
+            "target": [
+              -4.08251441955567,
+              -10.779502716064458,
+              1.1450793987512589
+            ],
+            "offset_deg": 45
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-45.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_-05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/restaurant_hotel/dining_room_0/q_007_gt_orbit/orbit_+45.png"
+  ]
+}

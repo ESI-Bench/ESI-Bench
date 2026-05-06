@@ -1,0 +1,1167 @@
+{
+  "scene": "school_geography",
+  "room": "corridor_0",
+  "floor_name": "floors_kwjfig_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "current_state_reasoning",
+  "question_index": 1,
+  "question_id": "current_state_reasoning/q_001",
+  "question_data": {
+    "task_type": "current_state_reasoning",
+    "question": "Which box changed from Phase 1 to Phase 2: the brown box, the red box, or the yellow box?",
+    "options": [
+      "brown box",
+      "red box",
+      "yellow box"
+    ],
+    "answer": "brown box",
+    "candidate_index": 1,
+    "box_count": 3,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "brown",
+        "change_type": "replace",
+        "phase1_content": {
+          "category": "carton_of_milk",
+          "display_name": "carton of milk",
+          "model": "znqqft",
+          "bbox_size_m": [
+            0.044964967727661134,
+            0.07356580352783203,
+            0.13000030517578126
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "rosehip",
+          "display_name": "rosehip",
+          "model": "xembcb",
+          "bbox_size_m": [
+            0.052181221008300784,
+            0.04908589553833008,
+            0.05916348648071289
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_cedar_chest",
+          "category": "cedar_chest",
+          "model": "fwstpx",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -30.810610015869088,
+              -0.692656982421875,
+              0.14364392521046104
+            ]
+          },
+          "bbox": [
+            [
+              -31.009607315063477,
+              -0.9628440141677856,
+              -0.0050511434674263
+            ],
+            [
+              -30.606292724609375,
+              -0.4227307438850403,
+              0.2584837079048157
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 1,
+        "position_label": "red",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "chorizo",
+          "display_name": "chorizo",
+          "model": "kfeuep",
+          "bbox_size_m": [
+            0.08565763092041015,
+            0.23212249755859374,
+            0.027542494773864747
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "chorizo",
+          "display_name": "chorizo",
+          "model": "kfeuep",
+          "bbox_size_m": [
+            0.08565763092041015,
+            0.23212249755859374,
+            0.027542494773864747
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_1_cedar_chest",
+          "category": "cedar_chest",
+          "model": "gbdzls",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -29.410610015869082,
+              0.536333885192871,
+              0.08589234538935125
+            ]
+          },
+          "bbox": [
+            [
+              -29.61170196533203,
+              0.4381723701953888,
+              -0.005014501512050629
+            ],
+            [
+              -29.209802627563477,
+              0.6339340806007385,
+              0.1398976892232895
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 2,
+        "position_label": "yellow",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "cutting_board",
+          "display_name": "cutting board",
+          "model": "aibvew",
+          "bbox_size_m": [
+            0.23035617065429687,
+            0.164834716796875,
+            0.02
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "cutting_board",
+          "display_name": "cutting board",
+          "model": "aibvew",
+          "bbox_size_m": [
+            0.23035617065429687,
+            0.164834716796875,
+            0.02
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_2_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -30.54475652313227,
+              1.2971958847045897,
+              0.10807203247211873
+            ]
+          },
+          "bbox": [
+            [
+              -30.660995483398438,
+              1.1420354843139648,
+              -0.00501144677400589
+            ],
+            [
+              -30.43050765991211,
+              1.4564266204833984,
+              0.1817549169063568
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "changed_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -37.049999999999905,
+              1.52,
+              1.2496883959975094
+            ],
+            "quaternion_xyzw": [
+              -0.4173218971339956,
+              0.4931068210214698,
+              0.5826781026606087,
+              -0.49312708900892493
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 9.519089060633098,
+            "look_target": [
+              -30.25481637318929,
+              0.3808319767316182,
+              0.09433637203959128
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -44.0,
+            -1.0,
+            -24.0,
+            2.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  -0.44103809053947096,
+                  -0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  -0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  -0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  0.44103809053947096,
+                  0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -30.105814242685394,
+                  -0.6919356551805466,
+                  0.8660000029046657
+                ],
+                "quaternion_xyzw": [
+                  0.27648034449623987,
+                  0.26458501188458644,
+                  0.6387647240924152,
+                  0.6674825974124078
+                ]
+              },
+              "look_target": [
+                -30.86056900024414,
+                -0.6587330102920532,
+                0.11051528453826905
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -28.709915003282546,
+                  0.5360528656949217,
+                  0.7285266609252969
+                ],
+                "quaternion_xyzw": [
+                  0.26597029258526955,
+                  0.2751479835812582,
+                  0.6642659936214833,
+                  0.642109087547698
+                ]
+              },
+              "look_target": [
+                -29.404407501220703,
+                0.512488067150116,
+                0.03363448984920979
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -29.930509289578325,
+                  1.2992323776358123,
+                  0.6453687610435873
+                ],
+                "quaternion_xyzw": [
+                  0.2664661195089643,
+                  0.2746678294969409,
+                  0.6631067991190955,
+                  0.6433061196314716
+                ]
+              },
+              "look_target": [
+                -30.553606033325195,
+                1.2803400754928589,
+                0.021985675655305386
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -37.049999999999905,
+              1.52,
+              1.2496883959975094
+            ],
+            "quaternion_xyzw": [
+              -0.41732892411877437,
+              0.49310574985547456,
+              0.5826710755745338,
+              -0.49313051643774025
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 9.518530333441275,
+            "look_target": [
+              -30.25480365753174,
+              0.3809608270724614,
+              0.09440691910373668
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -44.0,
+            -1.0,
+            -24.0,
+            2.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  -0.44103809053947096,
+                  -0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  -0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  -0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  0.44103809053947096,
+                  0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -30.1058513071829,
+                  -0.6919369899521602,
+                  0.6597353172138761
+                ],
+                "quaternion_xyzw": [
+                  0.2846762066981865,
+                  0.2557460982041713,
+                  0.6174256988085118,
+                  0.6872691590956883
+                ]
+              },
+              "look_target": [
+                -30.698493003845215,
+                -0.6283035576343536,
+                0.06368716955184936
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -28.71000483118436,
+                  0.5360699276500442,
+                  0.7553857712010805
+                ],
+                "quaternion_xyzw": [
+                  0.2721079325093301,
+                  0.2690796953919491,
+                  0.6496158499744646,
+                  0.6569266610933275
+                ]
+              },
+              "look_target": [
+                -29.432905197143555,
+                0.5441602170467377,
+                0.03244013570249081
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -29.930505182605422,
+                  1.2994920392000242,
+                  0.6257131540720954
+                ],
+                "quaternion_xyzw": [
+                  0.2726802707550536,
+                  0.2684996822115007,
+                  0.6482155742878711,
+                  0.6583084078484182
+                ]
+              },
+              "look_target": [
+                -30.53451442718506,
+                1.3088244795799255,
+                0.02163181684911251
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -44.0,
+            -1.0,
+            -24.0,
+            2.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  -0.44103809053947096,
+                  -0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  -0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  -0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  0.44103809053947096,
+                  0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -44.0,
+            -1.0,
+            -24.0,
+            2.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  -0.44103809053947096,
+                  -0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -43.65,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  -0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  -0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  -0.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.49671774368429117,
+                  0.44103809053947096,
+                  0.4963049111574327,
+                  0.5589618242451777
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -24.35,
+                  1.65,
+                  2.1996883959975095
+                ],
+                "quaternion_xyzw": [
+                  0.44103809053947096,
+                  0.49671774368429117,
+                  0.5589618242451777,
+                  0.4963049111574327
+                ]
+              },
+              "target": [
+                -34.0,
+                0.5,
+                1.0496883959975094
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -30.105814242685394,
+                  -0.6919356551805466,
+                  0.8660000029046657
+                ],
+                "quaternion_xyzw": [
+                  0.27648034449623987,
+                  0.26458501188458644,
+                  0.6387647240924152,
+                  0.6674825974124078
+                ]
+              },
+              "look_target": [
+                -30.86056900024414,
+                -0.6587330102920532,
+                0.11051528453826905
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -28.709915003282546,
+                  0.5360528656949217,
+                  0.7285266609252969
+                ],
+                "quaternion_xyzw": [
+                  0.26597029258526955,
+                  0.2751479835812582,
+                  0.6642659936214833,
+                  0.642109087547698
+                ]
+              },
+              "look_target": [
+                -29.404407501220703,
+                0.512488067150116,
+                0.03363448984920979
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -29.930509289578325,
+                  1.2992323776358123,
+                  0.6453687610435873
+                ],
+                "quaternion_xyzw": [
+                  0.2664661195089643,
+                  0.2746678294969409,
+                  0.6631067991190955,
+                  0.6433061196314716
+                ]
+              },
+              "look_target": [
+                -30.553606033325195,
+                1.2803400754928589,
+                0.021985675655305386
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/school_geography/corridor_0/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -30.1058513071829,
+                  -0.6919369899521602,
+                  0.6597353172138761
+                ],
+                "quaternion_xyzw": [
+                  0.2846762066981865,
+                  0.2557460982041713,
+                  0.6174256988085118,
+                  0.6872691590956883
+                ]
+              },
+              "look_target": [
+                -30.698493003845215,
+                -0.6283035576343536,
+                0.06368716955184936
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -28.71000483118436,
+                  0.5360699276500442,
+                  0.7553857712010805
+                ],
+                "quaternion_xyzw": [
+                  0.2721079325093301,
+                  0.2690796953919491,
+                  0.6496158499744646,
+                  0.6569266610933275
+                ]
+              },
+              "look_target": [
+                -29.432905197143555,
+                0.5441602170467377,
+                0.03244013570249081
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -29.930505182605422,
+                  1.2994920392000242,
+                  0.6257131540720954
+                ],
+                "quaternion_xyzw": [
+                  0.2726802707550536,
+                  0.2684996822115007,
+                  0.6482155742878711,
+                  0.6583084078484182
+                ]
+              },
+              "look_target": [
+                -30.53451442718506,
+                1.3088244795799255,
+                0.02163181684911251
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "corridor_0",
+        "room_id": 4,
+        "bbox_map_rc": [
+          44,
+          1,
+          47,
+          21
+        ],
+        "bbox_world_xy": [
+          -44.0,
+          -1.0,
+          -24.0,
+          2.0
+        ],
+        "expanded_bbox_world_xy": [
+          -44.0,
+          -1.0,
+          -24.0,
+          2.0
+        ],
+        "bbox_area_m2": 60.0,
+        "expanded_bbox_area_m2": 60.0,
+        "pixel_count": 84,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image1_box_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/school_geography/corridor_0/q_001/gt_view/image2_box_02.png"
+  ]
+}

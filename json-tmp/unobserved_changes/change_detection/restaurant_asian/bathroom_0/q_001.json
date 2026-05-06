@@ -1,0 +1,804 @@
+{
+  "scene": "restaurant_asian",
+  "room": "bathroom_0",
+  "floor_name": "floors_nvttpl_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 1,
+  "question_id": "change_detection/q_001",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "no",
+    "candidate_index": 1,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "rubber_glove",
+          "display_name": "rubber glove",
+          "model": "plffer",
+          "bbox_size_m": [
+            0.15003327178955078,
+            0.07720858478546143,
+            0.016707471638917924
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "rubber_glove",
+          "display_name": "rubber glove",
+          "model": "plffer",
+          "bbox_size_m": [
+            0.15003327178955078,
+            0.07720858478546143,
+            0.016707471638917924
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -11.569756523132328,
+              5.507195884704585,
+              0.10841847538948059
+            ]
+          },
+          "bbox": [
+            [
+              -11.685996055603027,
+              5.3520355224609375,
+              3.415346145629883e-05
+            ],
+            [
+              -11.455509185791016,
+              5.666426658630371,
+              0.1868005096912384
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -13.575000000000005,
+              5.728500000000001,
+              1.2500348389148712
+            ],
+            "quaternion_xyzw": [
+              0.3345760059155896,
+              -0.37317562450496483,
+              -0.6442954145494006,
+              0.5776523767210836
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 29.841191913938733,
+            "look_target": [
+              -11.57075309753418,
+              5.509231090545654,
+              0.09341733530163765
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -14.525000000000002,
+            2.1599999999999966,
+            -7.369999999999997,
+            6.735000000000003
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  -0.2931067599108464,
+                  -0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  -0.2931067599108464,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  -0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  0.29310675991084634,
+                  0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.29310675991084634,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.955509045463536,
+                  5.5146714074233145,
+                  0.6342729683586256
+                ],
+                "quaternion_xyzw": [
+                  0.27529407015612023,
+                  0.26581908197795623,
+                  0.6417440328487474,
+                  0.6646186778117957
+                ]
+              },
+              "look_target": [
+                -11.562437534332275,
+                5.535932779312134,
+                0.02697218906134367
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -13.575000000000005,
+              5.728500000000001,
+              1.2500348389148712
+            ],
+            "quaternion_xyzw": [
+              0.3345760396214351,
+              -0.37317565244392126,
+              -0.6442953884463184,
+              0.5776523682640773
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 29.841186179576727,
+            "look_target": [
+              -11.570752620697021,
+              5.509231090545654,
+              0.09341733157634735
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -14.525000000000002,
+            2.1599999999999966,
+            -7.369999999999997,
+            6.735000000000003
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  -0.2931067599108464,
+                  -0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  -0.2931067599108464,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  -0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  0.29310675991084634,
+                  0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.29310675991084634,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.955509073085093,
+                  5.5681854854711945,
+                  0.6710046801937484
+                ],
+                "quaternion_xyzw": [
+                  0.25134716014240466,
+                  0.28856752155271154,
+                  0.6966636241929466,
+                  0.6068057228797555
+                ]
+              },
+              "look_target": [
+                -11.593449115753174,
+                5.479809522628784,
+                0.026972220726311207
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -14.525000000000002,
+            2.1599999999999966,
+            -7.369999999999997,
+            6.735000000000003
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  -0.2931067599108464,
+                  -0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  -0.2931067599108464,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  -0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  0.29310675991084634,
+                  0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.29310675991084634,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "bathroom_0",
+          "room_bbox_world_xy": [
+            -14.525000000000002,
+            2.1599999999999966,
+            -7.369999999999997,
+            6.735000000000003
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  -0.2931067599108464,
+                  -0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -14.159000000000002,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  -0.2931067599108464,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  -0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  2.525999999999997,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.5169361868932886,
+                  0.29310675991084634,
+                  0.39670042474735645,
+                  0.6996386059817308
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -7.735999999999998,
+                  6.369000000000002,
+                  2.2000348389148714
+                ],
+                "quaternion_xyzw": [
+                  0.29310675991084634,
+                  0.5169361868932886,
+                  0.6996386059817308,
+                  0.39670042474735645
+                ]
+              },
+              "target": [
+                -10.9475,
+                4.4475,
+                1.0500348389148713
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.955509045463536,
+                  5.5146714074233145,
+                  0.6342729683586256
+                ],
+                "quaternion_xyzw": [
+                  0.27529407015612023,
+                  0.26581908197795623,
+                  0.6417440328487474,
+                  0.6646186778117957
+                ]
+              },
+              "look_target": [
+                -11.562437534332275,
+                5.535932779312134,
+                0.02697218906134367
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_asian/bathroom_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.955509073085093,
+                  5.5681854854711945,
+                  0.6710046801937484
+                ],
+                "quaternion_xyzw": [
+                  0.25134716014240466,
+                  0.28856752155271154,
+                  0.6966636241929466,
+                  0.6068057228797555
+                ]
+              },
+              "look_target": [
+                -11.593449115753174,
+                5.479809522628784,
+                0.026972220726311207
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "bathroom_0",
+        "room_id": 1,
+        "bbox_map_rc": [
+          21,
+          4,
+          24,
+          10
+        ],
+        "bbox_world_xy": [
+          -14.0,
+          3.0,
+          -8.0,
+          6.0
+        ],
+        "expanded_bbox_world_xy": [
+          -14.525000000000002,
+          2.1599999999999966,
+          -7.369999999999997,
+          6.735000000000003
+        ],
+        "bbox_area_m2": 18.0,
+        "expanded_bbox_area_m2": 32.73412500000007,
+        "pixel_count": 28,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/restaurant_asian/bathroom_0/q_001/gt_view/image2_box_00.png"
+  ]
+}

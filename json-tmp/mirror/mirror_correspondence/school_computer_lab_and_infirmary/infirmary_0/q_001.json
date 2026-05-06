@@ -1,0 +1,675 @@
+{
+  "scene": "school_computer_lab_and_infirmary",
+  "room": "infirmary_0",
+  "floor_name": "floors_qloiuu_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 100.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "context_render_enabled": false,
+    "clear_radius_m": 1.0
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 3.0
+  },
+  "task_type": "mirror_correspondence",
+  "question_index": 1,
+  "question_id": "mirror_correspondence/q_001",
+  "question_data": {
+    "task_type": "mirror_correspondence",
+    "question": "You are given an image with a mirror and three marjoram_shakers. Based on the mirror reflection, which of the three marjoram_shakers in the same image corresponds to the reflected one: the left, middle, or right object?",
+    "options": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "answer": "middle",
+    "placement": [
+      {
+        "name": "render_item_003",
+        "alias": "A",
+        "category": "marjoram_shaker",
+        "model": "xlspnl",
+        "real_position": [
+          -3.172804355621338,
+          -10.927570343017578,
+          0.09035024791955948
+        ],
+        "line_offset_m": -0.9401134865088014,
+        "yaw_deg": -5.359866744268064,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.04675660789939641,
+          0.9989063117318571
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "left"
+      },
+      {
+        "name": "render_item_004",
+        "alias": "B",
+        "category": "marjoram_shaker",
+        "model": "xlspnl",
+        "real_position": [
+          -3.9627881050109863,
+          -10.417923927307129,
+          0.09035024046897888
+        ],
+        "line_offset_m": 0.0,
+        "yaw_deg": 9.225637210074176,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.08042192853186199,
+          0.9967609108563679
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": true,
+        "position_label": "middle"
+      },
+      {
+        "name": "render_item_005",
+        "alias": "C",
+        "category": "marjoram_shaker",
+        "model": "xlspnl",
+        "real_position": [
+          -4.863483905792236,
+          -9.836853981018066,
+          0.09035023301839828
+        ],
+        "line_offset_m": 1.071865327646599,
+        "yaw_deg": -7.441065440083069,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.06488992070418016,
+          0.9978924281659849
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "right"
+      }
+    ],
+    "evidence": {
+      "mirror_label": "target_mirror_object",
+      "real_object_name": "render_item_004",
+      "shared_category": "marjoram_shaker",
+      "shared_model": "xlspnl",
+      "target_position_label": "middle",
+      "target_generated_from_reflected_ray": true,
+      "target_distance_from_mirror_m": 1.4596034657377337,
+      "other_objects_on_perpendicular_line": true,
+      "other_object_distances_from_target_m": [
+        0.9401134865088014,
+        1.071865327646599
+      ],
+      "only_target_visible_in_mirror": false,
+      "temporarily_cleared_scene_objects": []
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          -3.0040555381774934,
+          -9.194438972473147,
+          0.8001462233485654
+        ],
+        "forward_xy": [
+          -0.5812381937190967,
+          -0.8137334712067347
+        ],
+        "quaternion_xyzw": [
+          0.215793030930835,
+          0.6733746117887751,
+          0.6733746117887752,
+          0.21579303093083502
+        ]
+      },
+      "mirror": {
+        "position": [
+          -4.754055538177493,
+          -11.644438972473145,
+          1.1414709914149717
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.46806419016821904,
+          0.8836944686271208
+        ],
+        "normal_xy": [
+          0.5618318277643386,
+          0.8272514716281759
+        ],
+        "tangent_xy": [
+          -0.8272514716281759,
+          0.5618318277643386
+        ],
+        "half_width_m": 0.4021632671356201,
+        "normal_yaw_offset_deg": -16.148007507540942
+      },
+      "correspondence_geometry": {
+        "target_rank": 1,
+        "answer_label": "middle",
+        "target_xy": [
+          -3.9627881446918343,
+          -10.417924321439568
+        ],
+        "target_distance_m": 1.4596034657377337,
+        "reflected_dir_xy": [
+          0.5421112048988764,
+          0.8403067544195325
+        ],
+        "line_dir_xy": [
+          -0.8403067544195325,
+          0.5421112048988764
+        ],
+        "line_offsets_m": [
+          -0.9401134865088014,
+          0.0,
+          1.071865327646599
+        ],
+        "render_eye": [
+          -3.0040555381774934,
+          -9.194438972473147,
+          0.8001462233485654
+        ],
+        "render_target": [
+          -4.754055538177493,
+          -11.644438972473145,
+          1.1414709914149717
+        ]
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001.png",
+      "camera_pose": {
+        "position": [
+          -3.0040555381774934,
+          -9.194438972473147,
+          0.8001462233485654
+        ],
+        "quaternion_xyzw": [
+          0.215793030930835,
+          0.6733746117887751,
+          0.6733746117887752,
+          0.21579303093083502
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -4.754055538177493,
+          -11.644438972473145,
+          1.1414709914149717
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.46806419016821904,
+          0.8836944686271208
+        ],
+        "normal_xy": [
+          0.5618318277643386,
+          0.8272514716281759
+        ],
+        "tangent_xy": [
+          -0.8272514716281759,
+          0.5618318277643386
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_map.png",
+      "multi_image_input": {
+        "room_instance": "infirmary_0",
+        "room_bbox_world_xy": [
+          -7.0,
+          -12.0,
+          0.0,
+          -6.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -6.52,
+                -11.52,
+                1.3501462233485655
+              ],
+              "quaternion_xyzw": [
+                0.6029497570797747,
+                -0.28216726636277595,
+                -0.31629010389096107,
+                0.6758652191165365
+              ]
+            },
+            "target": [
+              -3.5,
+              -9.0,
+              0.9001462233485654
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -6.52,
+                -6.48,
+                1.3501462233485655
+              ],
+              "quaternion_xyzw": [
+                -0.28216726636277595,
+                0.6029497570797747,
+                0.6758652191165365,
+                -0.31629010389096107
+              ]
+            },
+            "target": [
+              -3.5,
+              -9.0,
+              0.9001462233485654
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                -0.48,
+                -11.52,
+                1.3501462233485655
+              ],
+              "quaternion_xyzw": [
+                0.6029497570797747,
+                0.28216726636277595,
+                0.31629010389096107,
+                0.6758652191165365
+              ]
+            },
+            "target": [
+              -3.5,
+              -9.0,
+              0.9001462233485654
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                -0.48,
+                -6.48,
+                1.3501462233485655
+              ],
+              "quaternion_xyzw": [
+                0.28216726636277595,
+                0.6029497570797747,
+                0.6758652191165365,
+                0.31629010389096107
+              ]
+            },
+            "target": [
+              -3.5,
+              -9.0,
+              0.9001462233485654
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          -4.754055538177493,
+          -11.644438972473145,
+          1.1414709914149717
+        ],
+        "orbit_radius_xy_m": 3.010813843464917,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-20.png",
+            "camera_pose": {
+              "position": [
+                -2.271644100654266,
+                -9.940727302367591,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.3475050182265706,
+                0.6599716911381694,
+                0.5893805653606854,
+                0.31033558993240595
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": -20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-15.png",
+            "camera_pose": {
+              "position": [
+                -2.4295786816704488,
+                -9.73085402699434,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.31838670960411464,
+                0.6745015003273822,
+                0.6023562539690144,
+                0.28433180002945835
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": -15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-10.png",
+            "camera_pose": {
+              "position": [
+                -2.6052039351221503,
+                -9.535544288510366,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.2886623337840098,
+                0.6877473575745627,
+                0.6141853232122217,
+                0.25778676838479164
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": -10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-05.png",
+            "camera_pose": {
+              "position": [
+                -2.7971832467851763,
+                -9.356284511956773,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.25838847280505256,
+                0.6996840486375955,
+                0.624845255784683,
+                0.23075102497486244
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": -5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                -3.0040555381774934,
+                -9.194438972473147,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.22762275468227006,
+                0.710288851346605,
+                0.6343157598988755,
+                0.20327603387386256
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                -3.2242463862487005,
+                -9.051239412339969,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.19642374370871832,
+                0.7195415788568971,
+                0.6425788079119493,
+                0.17541409528892943
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+10.png",
+            "camera_pose": {
+              "position": [
+                -3.456080005690108,
+                -8.927775666676109,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.16485082897502112,
+                0.7274246180757652,
+                0.649618670642371,
+                0.1472182460037283
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+15.png",
+            "camera_pose": {
+              "position": [
+                -3.6977920026727986,
+                -8.824987369135519,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.13296411131886152,
+                0.7339229631900135,
+                0.6554219473113132,
+                0.11874215841992102
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+20.png",
+            "camera_pose": {
+              "position": [
+                -3.947542802950041,
+                -8.743656800727752,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.10082428891962031,
+                0.7390242442303754,
+                0.6599775910518001,
+                0.09004003838869827
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+25.png",
+            "camera_pose": {
+              "position": [
+                -4.203431652128068,
+                -8.68440293618713,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.06849254175594266,
+                0.7427187506184524,
+                0.663276929937046,
+                0.06116652202686143
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+30.png",
+            "camera_pose": {
+              "position": [
+                -4.463511081554723,
+                -8.647676733201273,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.036030415146171085,
+                0.7449994496513531,
+                0.6653136834879603,
+                0.0321765717138687
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+35.png",
+            "camera_pose": {
+              "position": [
+                -4.725801729731819,
+                -8.633757700350786,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                0.0034997025933336764,
+                0.7458619998888418,
+                0.6660839746283975,
+                0.003125371467821683
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                -4.988307406451302,
+                -8.642751769880206,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                -0.029037671842300255,
+                0.7453047594175173,
+                0.6655863370653914,
+                -0.025931778100448857
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                -5.249030285008074,
+                -8.674590491489647,
+                0.8001462233485654
+              ],
+              "quaternion_xyzw": [
+                -0.06151977141918883,
+                0.7433287889762882,
+                0.6638217180803268,
+                -0.05493956505523913
+              ]
+            },
+            "target": [
+              -4.754055538177493,
+              -11.644438972473145,
+              1.1414709914149717
+            ],
+            "offset_deg": 45
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_-05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/school_computer_lab_and_infirmary/infirmary_0/q_001_gt_orbit/orbit_+45.png"
+  ]
+}

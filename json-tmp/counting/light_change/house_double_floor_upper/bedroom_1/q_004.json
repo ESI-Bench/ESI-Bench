@@ -1,0 +1,789 @@
+{
+  "scene": "house_double_floor_upper",
+  "room": "bedroom_1",
+  "floor_name": "floors_zrhxwn_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "light_change",
+  "question_index": 4,
+  "question_id": "light_change/q_004",
+  "question_data": {
+    "task_type": "light_change",
+    "question": "Considering both images, how many objects of category \"hammer\" are present in this scene?",
+    "options": [
+      "0",
+      "1",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "case": "light_change",
+    "candidate_index": 4,
+    "count_target": "hammer",
+    "count_object": {
+      "category": "hammer",
+      "estimated_volume": 0.0003954488724928832,
+      "characteristic_size_m": 0.07340012179227808,
+      "display_name": "hammer",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 3
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        2.9450000000000003,
+        2.2575000000000003,
+        0.035
+      ],
+      [
+        3.2950000000000004,
+        2.9575000000000005,
+        0.035
+      ],
+      [
+        2.9450000000000003,
+        1.5575,
+        0.035
+      ]
+    ],
+    "object_positions": [
+      [
+        2.9450000000000003,
+        2.2575000000000003,
+        0.035
+      ],
+      [
+        3.2950000000000004,
+        2.9575000000000005,
+        0.035
+      ],
+      [
+        2.9450000000000003,
+        1.5575,
+        0.035
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 3,
+      "source_entries": [
+        {
+          "source_index": 2,
+          "ball_positions": [
+            [
+              2.9450000000000003,
+              2.2575000000000003,
+              0.035
+            ]
+          ],
+          "metadata": {
+            "lighting": {
+              "target_lights": [
+                {
+                  "name": "downlight_fisfbn_5",
+                  "category": "downlight",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      4.155243396759033,
+                      1.1680774688720703,
+                      2.43477201461792
+                    ],
+                    [
+                      4.7998433113098145,
+                      1.4210764169692993,
+                      2.531479597091675
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                },
+                {
+                  "name": "floor_lamp_ogolip_0",
+                  "category": "floor_lamp",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      5.825823783874512,
+                      -0.2056240290403366,
+                      1.430511474609375e-06
+                    ],
+                    [
+                      6.373258590698242,
+                      0.19409170746803284,
+                      1.674290657043457
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                },
+                {
+                  "name": "table_lamp_erfbgw_0",
+                  "category": "table_lamp",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      5.676529884338379,
+                      3.6634583473205566,
+                      0.6999883055686951
+                    ],
+                    [
+                      5.933829307556152,
+                      3.9207587242126465,
+                      1.1696956157684326
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                }
+              ],
+              "render_behavior": "first_four_views_normal_then_random_large_light_change_for_last_four_views"
+            }
+          }
+        },
+        {
+          "source_index": 3,
+          "ball_positions": [
+            [
+              3.2950000000000004,
+              2.9575000000000005,
+              0.035
+            ]
+          ],
+          "metadata": {
+            "lighting": {
+              "target_lights": [
+                {
+                  "name": "downlight_fisfbn_5",
+                  "category": "downlight",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      4.155243396759033,
+                      1.1680774688720703,
+                      2.43477201461792
+                    ],
+                    [
+                      4.7998433113098145,
+                      1.4210764169692993,
+                      2.531479597091675
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                },
+                {
+                  "name": "floor_lamp_ogolip_0",
+                  "category": "floor_lamp",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      5.825823783874512,
+                      -0.2056240290403366,
+                      1.430511474609375e-06
+                    ],
+                    [
+                      6.373258590698242,
+                      0.19409170746803284,
+                      1.674290657043457
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                },
+                {
+                  "name": "table_lamp_erfbgw_0",
+                  "category": "table_lamp",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      5.676529884338379,
+                      3.6634583473205566,
+                      0.6999883055686951
+                    ],
+                    [
+                      5.933829307556152,
+                      3.9207587242126465,
+                      1.1696956157684326
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                }
+              ],
+              "render_behavior": "first_four_views_normal_then_random_large_light_change_for_last_four_views"
+            }
+          }
+        },
+        {
+          "source_index": 4,
+          "ball_positions": [
+            [
+              2.9450000000000003,
+              1.5575,
+              0.035
+            ]
+          ],
+          "metadata": {
+            "lighting": {
+              "target_lights": [
+                {
+                  "name": "downlight_fisfbn_5",
+                  "category": "downlight",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      4.155243396759033,
+                      1.1680774688720703,
+                      2.43477201461792
+                    ],
+                    [
+                      4.7998433113098145,
+                      1.4210764169692993,
+                      2.531479597091675
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                },
+                {
+                  "name": "floor_lamp_ogolip_0",
+                  "category": "floor_lamp",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      5.825823783874512,
+                      -0.2056240290403366,
+                      1.430511474609375e-06
+                    ],
+                    [
+                      6.373258590698242,
+                      0.19409170746803284,
+                      1.674290657043457
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                },
+                {
+                  "name": "table_lamp_erfbgw_0",
+                  "category": "table_lamp",
+                  "in_rooms": [
+                    "bedroom_1"
+                  ],
+                  "bbox": [
+                    [
+                      5.676529884338379,
+                      3.6634583473205566,
+                      0.6999883055686951
+                    ],
+                    [
+                      5.933829307556152,
+                      3.9207587242126465,
+                      1.1696956157684326
+                    ]
+                  ],
+                  "has_open_state": false,
+                  "open_state": null
+                }
+              ],
+              "render_behavior": "first_four_views_normal_then_random_large_light_change_for_last_four_views"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_normal.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_changed.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_normal.png",
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_changed.png"
+      ],
+      "camera_poses": {
+        "q_004_normal.png": {
+          "position": [
+            4.468293070793152,
+            1.9268227219581604,
+            1.25
+          ],
+          "quaternion_xyzw": [
+            -0.0030020026273197583,
+            0.045614021233582214,
+            0.9967982090815317,
+            -0.06560243455070155
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view_normal",
+          "pitch_deg": 84.75988434138749,
+          "look_target": [
+            4.472500000000002,
+            1.8950000000000014,
+            0.9
+          ],
+          "lighting_phase": "normal"
+        },
+        "q_004_changed.png": {
+          "position": [
+            4.468293070793152,
+            1.9268227219581604,
+            1.25
+          ],
+          "quaternion_xyzw": [
+            -0.0030020026273197583,
+            0.045614021233582214,
+            0.9967982090815317,
+            -0.06560243455070155
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view_changed",
+          "pitch_deg": 84.75988434138749,
+          "look_target": [
+            4.472500000000002,
+            1.8950000000000014,
+            0.9
+          ],
+          "lighting_phase": "changed"
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/house_double_floor_upper/bedroom_1/candidate_renders/light_change/q_004",
+      "room_bbox": {
+        "room_instance": "bedroom_1",
+        "room_id": 5,
+        "bbox_map_rc": [
+          7,
+          9,
+          10,
+          12
+        ],
+        "bbox_world_xy": [
+          2.5,
+          0.5,
+          5.5,
+          3.5
+        ],
+        "expanded_bbox_world_xy": [
+          2.5,
+          -0.28749999999999987,
+          6.445000000000004,
+          4.077500000000002
+        ],
+        "bbox_area_m2": 9.0,
+        "expanded_bbox_area_m2": 17.219925000000025,
+        "pixel_count": 16,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "bedroom_1",
+        "room_bbox_world_xy": [
+          2.5,
+          -0.28749999999999987,
+          6.445000000000004,
+          4.077500000000002
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                2.85,
+                0.06250000000000011,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                0.5012636571325806,
+                -0.1900206531373113,
+                -0.2992325635889887,
+                0.789358454890617
+              ]
+            },
+            "target": [
+              4.472500000000002,
+              1.8950000000000014,
+              1.05
+            ],
+            "view_id": "corner_00",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                2.85,
+                3.7275000000000023,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                -0.19002065313731134,
+                0.5012636571325806,
+                0.789358454890617,
+                -0.29923256358898875
+              ]
+            },
+            "target": [
+              4.472500000000002,
+              1.8950000000000014,
+              1.05
+            ],
+            "view_id": "corner_01",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                6.095000000000004,
+                0.06250000000000011,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                0.5012636571325806,
+                0.19002065313731134,
+                0.29923256358898875,
+                0.789358454890617
+              ]
+            },
+            "target": [
+              4.472500000000002,
+              1.8950000000000014,
+              1.05
+            ],
+            "view_id": "corner_02",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                6.095000000000004,
+                3.7275000000000023,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                0.19002065313731134,
+                0.5012636571325805,
+                0.789358454890617,
+                0.2992325635889888
+              ]
+            },
+            "target": [
+              4.472500000000002,
+              1.8950000000000014,
+              1.05
+            ],
+            "view_id": "corner_03",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            2.944999933242798,
+            2.257499933242798,
+            0.03500000014901161
+          ],
+          "camera_pose": {
+            "position": [
+              3.366152687072754,
+              2.2569100856781006,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.45420535194191314,
+              0.45420535194191314,
+              0.5419386480657408,
+              0.5419386480657408
+            ]
+          },
+          "look_target": [
+            2.946152687072754,
+            2.2569100856781006,
+            0.04544041305780411
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 32881,
+            "centered_score": 0.9695,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            3.2950000762939453,
+            2.9574999809265137,
+            0.03500000014901161
+          ],
+          "camera_pose": {
+            "position": [
+              3.1525043699271205,
+              3.351581034091898,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              -0.11154175543180388,
+              0.6325847297086343,
+              0.7547733899207154,
+              -0.13308691296381264
+            ]
+          },
+          "look_target": [
+            3.2961528301239014,
+            2.9569101333618164,
+            0.04544041305780411
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 35644,
+            "centered_score": 0.9696,
+            "bbox_xyxy": [
+              494,
+              311,
+              777,
+              460
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            2.944999933242798,
+            1.5575000047683716,
+            0.03500000014901161
+          ],
+          "camera_pose": {
+            "position": [
+              3.366152687072754,
+              1.5569101572036743,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.45420535194191314,
+              0.45420535194191314,
+              0.5419386480657408,
+              0.5419386480657408
+            ]
+          },
+          "look_target": [
+            2.946152687072754,
+            1.5569101572036743,
+            0.04544041305780411
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 32881,
+            "centered_score": 0.9695,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.944999933242798,
+              2.257499933242798,
+              0.03500000014901161
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.8401782512664795,
+                2.1563591957092285,
+                -0.00546342134475708
+              ],
+              [
+                3.0521271228790283,
+                2.3574609756469727,
+                0.07937630265951157
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.9450000000000003,
+              2.2575000000000003,
+              0.035
+            ],
+            "source_entry_case": "light_change",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              3.2950000762939453,
+              2.9574999809265137,
+              0.03500000014901161
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.190178394317627,
+                2.8563592433929443,
+                -0.00546342134475708
+              ],
+              [
+                3.402127265930176,
+                3.0574610233306885,
+                0.07937630265951157
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.2950000000000004,
+              2.9575000000000005,
+              0.035
+            ],
+            "source_entry_case": "light_change",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              2.944999933242798,
+              1.5575000047683716,
+              0.03500000014901161
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                2.8401782512664795,
+                1.4563593864440918,
+                -0.00546342134475708
+              ],
+              [
+                3.0521271228790283,
+                1.6574609279632568,
+                0.07937630265951157
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              2.9450000000000003,
+              1.5575,
+              0.035
+            ],
+            "source_entry_case": "light_change",
+            "target_name": "render_count_target_club_sandwich_2"
+          }
+        ],
+        "confusers": [],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 9132723,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_normal.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/q_004_changed.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/light_change/house_double_floor_upper/bedroom_1/q_004/target_closeups/target_closeup_002.png"
+  ]
+}

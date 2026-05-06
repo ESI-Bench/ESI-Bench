@@ -1,0 +1,867 @@
+{
+  "scene": "hall_train_station",
+  "room": "bathroom_0",
+  "floor_name": "floors_nvttpl_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "semantic_fault",
+  "question_index": 2,
+  "question_id": "semantic_fault/q_002",
+  "question_data": {
+    "task_type": "semantic_fault",
+    "question": "Considering both images, how many objects of category \"head_cabbage\" are present in this scene?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "case": "semantic_fault",
+    "candidate_index": 2,
+    "count_target": "head_cabbage",
+    "count_object": {
+      "category": "head_cabbage",
+      "estimated_volume": 0.0017915657550725793,
+      "characteristic_size_m": 0.1214537468967268,
+      "display_name": "head cabbage",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 4
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        -8.005,
+        -42.554999999999986,
+        0.045031774640083316
+      ],
+      [
+        -6.955000000000002,
+        -41.15499999999998,
+        0.045031774640083316
+      ],
+      [
+        -6.955000000000002,
+        -40.80499999999998,
+        0.045031774640083316
+      ],
+      [
+        -6.955000000000002,
+        -41.50499999999998,
+        0.045031774640083316
+      ]
+    ],
+    "object_positions": [
+      [
+        -8.005,
+        -42.554999999999986,
+        0.045031774640083316
+      ],
+      [
+        -6.955000000000002,
+        -41.15499999999998,
+        0.045031774640083316
+      ],
+      [
+        -6.955000000000002,
+        -40.80499999999998,
+        0.045031774640083316
+      ],
+      [
+        -6.955000000000002,
+        -41.50499999999998,
+        0.045031774640083316
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 4,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              -8.005,
+              -42.554999999999986,
+              0.045031774640083316
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "salad",
+              "clip_score": 0.8204271793365479,
+              "source": "keys_clip_top3",
+              "position": [
+                -7.505000000000001,
+                -42.554999999999986,
+                0.045031774640083316
+              ]
+            }
+          }
+        },
+        {
+          "source_index": 1,
+          "ball_positions": [
+            [
+              -6.955000000000002,
+              -41.15499999999998,
+              0.045031774640083316
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "cold_cuts",
+              "clip_score": 0.8153139352798462,
+              "source": "keys_clip_top3",
+              "position": [
+                -6.955000000000002,
+                -41.65499999999998,
+                0.045031774640083316
+              ]
+            }
+          }
+        },
+        {
+          "source_index": 3,
+          "ball_positions": [
+            [
+              -6.955000000000002,
+              -40.80499999999998,
+              0.045031774640083316
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "hamburger",
+              "clip_score": 0.8118176460266113,
+              "source": "keys_clip_top3",
+              "position": [
+                -6.955000000000002,
+                -41.30499999999998,
+                0.045031774640083316
+              ]
+            }
+          }
+        },
+        {
+          "source_index": 4,
+          "ball_positions": [
+            [
+              -6.955000000000002,
+              -41.50499999999998,
+              0.045031774640083316
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "cold_cuts",
+              "clip_score": 0.8153139352798462,
+              "source": "keys_clip_top3",
+              "position": [
+                -6.955000000000002,
+                -41.00499999999998,
+                0.045031774640083316
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002.png"
+      ],
+      "camera_poses": {
+        "q_002.png": {
+          "position": [
+            -8.62,
+            -41.14999999999993,
+            1.2600317746400833
+          ],
+          "quaternion_xyzw": [
+            -0.14518860062293792,
+            0.6421028049011702,
+            0.7342092467463534,
+            -0.16601518056899256
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 7.65735225366114,
+          "look_target": [
+            -7.5,
+            -43.5,
+            0.9100317746400833
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/hall_train_station/bathroom_0/candidate_renders/semantic_fault/q_002",
+      "room_bbox": {
+        "room_instance": "bathroom_0",
+        "room_id": 1,
+        "bbox_map_rc": [
+          1,
+          38,
+          7,
+          42
+        ],
+        "bbox_world_xy": [
+          -9.5,
+          -46.5,
+          -5.5,
+          -40.5
+        ],
+        "expanded_bbox_world_xy": [
+          -9.5,
+          -46.5,
+          -5.5,
+          -40.5
+        ],
+        "bbox_area_m2": 24.0,
+        "expanded_bbox_area_m2": 24.0,
+        "pixel_count": 35,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "bathroom_0",
+        "room_bbox_world_xy": [
+          -9.5,
+          -46.5,
+          -5.5,
+          -40.5
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -9.15,
+                -46.15,
+                2.2100317746400835
+              ],
+              "quaternion_xyzw": [
+                0.5499481701636364,
+                -0.15721793492319244,
+                -0.22546411346695766,
+                0.7886732305655579
+              ]
+            },
+            "target": [
+              -7.5,
+              -43.5,
+              1.0600317746400834
+            ],
+            "view_id": "corner_00",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -9.15,
+                -40.85,
+                2.2100317746400835
+              ],
+              "quaternion_xyzw": [
+                -0.15721793492319242,
+                0.5499481701636363,
+                0.788673230565558,
+                -0.22546411346695763
+              ]
+            },
+            "target": [
+              -7.5,
+              -43.5,
+              1.0600317746400834
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                -5.85,
+                -46.15,
+                2.2100317746400835
+              ],
+              "quaternion_xyzw": [
+                0.5499481701636364,
+                0.15721793492319244,
+                0.22546411346695766,
+                0.7886732305655579
+              ]
+            },
+            "target": [
+              -7.5,
+              -43.5,
+              1.0600317746400834
+            ],
+            "view_id": "corner_02",
+            "is_traversable": true,
+            "blocker_occluded": true,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                -5.85,
+                -40.85,
+                2.2100317746400835
+              ],
+              "quaternion_xyzw": [
+                0.15721793492319242,
+                0.5499481701636363,
+                0.788673230565558,
+                0.22546411346695763
+              ]
+            },
+            "target": [
+              -7.5,
+              -43.5,
+              1.0600317746400834
+            ],
+            "view_id": "corner_03",
+            "is_traversable": true,
+            "blocker_occluded": true,
+            "trav_occluded": true
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            -8.005000114440918,
+            -42.55500030517578,
+            0.045031774789094925
+          ],
+          "camera_pose": {
+            "position": [
+              -7.583847122192383,
+              -42.55558967590332,
+              0.13
+            ],
+            "quaternion_xyzw": [
+              0.4542252254795389,
+              0.45422522547953886,
+              0.5419219911925166,
+              0.5419219911925166
+            ]
+          },
+          "look_target": [
+            -8.003847122192383,
+            -42.55558967590332,
+            0.05547218769788742
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 32884,
+            "centered_score": 0.9695,
+            "bbox_xyxy": [
+              501,
+              312,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            -6.954999923706055,
+            -41.154998779296875,
+            0.045031774789094925
+          ],
+          "camera_pose": {
+            "position": [
+              -6.609803311274722,
+              -40.91468604675698,
+              0.13
+            ],
+            "quaternion_xyzw": [
+              0.29661413741443926,
+              0.5697904565801044,
+              0.6797992746140272,
+              0.35388110335304246
+            ]
+          },
+          "look_target": [
+            -6.953847169876099,
+            -41.155588150024414,
+            0.05547218769788742
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 34551,
+            "centered_score": 0.9713,
+            "bbox_xyxy": [
+              500,
+              311,
+              788,
+              464
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            -6.954999923706055,
+            -40.80500030517578,
+            0.045031774789094925
+          ],
+          "camera_pose": {
+            "position": [
+              -7.373847169876099,
+              -40.80558967590332,
+              0.13
+            ],
+            "quaternion_xyzw": [
+              0.4542252254795389,
+              -0.45422522547953886,
+              -0.5419219911925166,
+              0.5419219911925166
+            ]
+          },
+          "look_target": [
+            -6.953847169876099,
+            -40.80558967590332,
+            0.05547218769788742
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 33878,
+            "centered_score": 0.969,
+            "bbox_xyxy": [
+              496,
+              310,
+              773,
+              452
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_003.png",
+          "target_name": "render_count_target_club_sandwich_3",
+          "target_position": [
+            -6.954999923706055,
+            -41.505001068115234,
+            0.045031774789094925
+          ],
+          "camera_pose": {
+            "position": [
+              -6.609803311274722,
+              -41.264688335575336,
+              0.13
+            ],
+            "quaternion_xyzw": [
+              0.29661413741443926,
+              0.5697904565801044,
+              0.6797992746140272,
+              0.35388110335304246
+            ]
+          },
+          "look_target": [
+            -6.953847169876099,
+            -41.50559043884277,
+            0.05547218769788742
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_3",
+            "visible_pixels": 34630,
+            "centered_score": 0.9712,
+            "bbox_xyxy": [
+              500,
+              311,
+              788,
+              464
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_3",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -8.005000114440918,
+              -42.55500030517578,
+              0.045031774789094925
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -8.109821319580078,
+                -42.6561393737793,
+                0.004568353295326233
+              ],
+              [
+                -7.8978729248046875,
+                -42.455039978027344,
+                0.08940807729959488
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -8.005,
+              -42.554999999999986,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -6.954999923706055,
+              -41.154998779296875,
+              0.045031774789094925
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -7.059821605682373,
+                -41.25613784790039,
+                0.004568353295326233
+              ],
+              [
+                -6.847872734069824,
+                -41.05503845214844,
+                0.08940807729959488
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -6.955000000000002,
+              -41.15499999999998,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -6.954999923706055,
+              -40.80500030517578,
+              0.045031774789094925
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -7.059821605682373,
+                -40.9061393737793,
+                0.004568353295326233
+              ],
+              [
+                -6.847872734069824,
+                -40.705039978027344,
+                0.08940807729959488
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -6.955000000000002,
+              -40.80499999999998,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_2"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_3",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -6.954999923706055,
+              -41.505001068115234,
+              0.045031774789094925
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -7.059821605682373,
+                -41.60614013671875,
+                0.004568353295326233
+              ],
+              [
+                -6.847872734069824,
+                -41.4050407409668,
+                0.08940807729959488
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -6.955000000000002,
+              -41.50499999999998,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "target_name": "render_count_target_club_sandwich_3"
+          }
+        ],
+        "confusers": [
+          {
+            "role": "confuser",
+            "name": "render_confuser_salad_0",
+            "category": "salad",
+            "model": "nffvob",
+            "position": [
+              -7.505000114440918,
+              -42.55500030517578,
+              0.05413898453116417
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -7.58582067489624,
+                -42.638545989990234,
+                0.03225616365671158
+              ],
+              [
+                -7.429569244384766,
+                -42.46824264526367,
+                0.10046876221895218
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -7.505000000000001,
+              -42.554999999999986,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "salad",
+            "source_clip_score": 0.8204271793365479,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 6582781
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_cold_cuts_0",
+            "category": "cold_cuts",
+            "model": "zidsvg",
+            "position": [
+              -6.954999923706055,
+              -41.654998779296875,
+              0.045031774789094925
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -6.9623494148254395,
+                -41.69573211669922,
+                0.038569752126932144
+              ],
+              [
+                -6.948218822479248,
+                -41.61490249633789,
+                0.051569968461990356
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -6.955000000000002,
+              -41.65499999999998,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cold_cuts",
+            "source_clip_score": 0.8153139352798462,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 7417510
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_hamburger_0",
+            "category": "hamburger",
+            "model": "fyswch",
+            "position": [
+              -6.954999923706055,
+              -41.30500030517578,
+              0.055081214755773544
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -7.008901596069336,
+                -41.35536575317383,
+                0.02452094480395317
+              ],
+              [
+                -6.901120185852051,
+                -41.25462341308594,
+                0.09461793303489685
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -6.955000000000002,
+              -41.30499999999998,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "hamburger",
+            "source_clip_score": 0.8118176460266113,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 5301261
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_cold_cuts_1",
+            "category": "cold_cuts",
+            "model": "zidsvg",
+            "position": [
+              -6.954999923706055,
+              -41.005001068115234,
+              0.045031774789094925
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -6.9623494148254395,
+                -41.04573440551758,
+                0.038569752126932144
+              ],
+              [
+                -6.948218822479248,
+                -40.96490478515625,
+                0.051569968461990356
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -6.955000000000002,
+              -41.00499999999998,
+              0.045031774640083316
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cold_cuts",
+            "source_clip_score": 0.8153139352798462,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 1217121
+          }
+        ],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 4355235,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/hall_train_station/bathroom_0/q_002/target_closeups/target_closeup_003.png"
+  ]
+}

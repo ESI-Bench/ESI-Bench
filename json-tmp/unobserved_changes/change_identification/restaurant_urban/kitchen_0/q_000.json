@@ -1,0 +1,798 @@
+{
+  "scene": "restaurant_urban",
+  "room": "kitchen_0",
+  "floor_name": "floors_ykbuit_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_identification",
+  "question_index": 0,
+  "question_id": "change_identification/q_000",
+  "question_data": {
+    "task_type": "change_identification",
+    "question": "What happened to the contents of the box from Phase 1 to Phase 2?",
+    "options": [
+      "replace",
+      "remove",
+      "add",
+      "no_change"
+    ],
+    "answer": "remove",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "remove",
+        "phase1_content": {
+          "category": "bottle_of_sunscreen",
+          "display_name": "bottle of sunscreen",
+          "model": "prlrwi",
+          "bbox_size_m": [
+            0.020799934387207033,
+            0.046354999542236326,
+            0.11574316787719727
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": null,
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -7.994756523132327,
+              2.24719588470459,
+              0.10838383018970489
+            ]
+          },
+          "bbox": [
+            [
+              -8.110995292663574,
+              2.0920329093933105,
+              1.9744038581848145e-07
+            ],
+            [
+              -7.880506992340088,
+              2.4064247608184814,
+              0.18676654994487762
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "target_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -11.4,
+              2.4000000000000004,
+              1.2500001937150955
+            ],
+            "quaternion_xyzw": [
+              0.4026667279722323,
+              -0.4208951048739548,
+              -0.5873415183318187,
+              0.5619045806193012
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 18.748437021048527,
+            "look_target": [
+              -7.995748519897461,
+              2.2492295503616333,
+              0.09338340722024441
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "west_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -12.0,
+            1.0,
+            -6.0,
+            8.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  -0.20434972537489776,
+                  -0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  -0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  -0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  0.20434972537489776,
+                  0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -7.380504547286234,
+                  2.2492374924248293,
+                  0.6308552796722792
+                ],
+                "quaternion_xyzw": [
+                  0.2946907982995739,
+                  0.24413918735894505,
+                  0.5894041372287112,
+                  0.7114465219613856
+                ]
+              },
+              "look_target": [
+                -7.925358533859253,
+                2.3523788452148438,
+                0.07632484287023544
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -11.4,
+              2.4000000000000004,
+              1.2500001937150955
+            ],
+            "quaternion_xyzw": [
+              0.4026667306072259,
+              -0.42089510632398064,
+              -0.5873415159763212,
+              0.5619045801070227
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 18.74843661654374,
+            "look_target": [
+              -7.995748281478882,
+              2.2492295503616333,
+              0.09338335320353508
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "west_0.20",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -12.0,
+            1.0,
+            -6.0,
+            8.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  -0.20434972537489776,
+                  -0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  -0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  -0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  0.20434972537489776,
+                  0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -7.380503032172064,
+                  2.254676585323644,
+                  0.7625010872623837
+                ],
+                "quaternion_xyzw": [
+                  0.2705965416069943,
+                  0.27059955853079376,
+                  0.6532851241772143,
+                  0.6532778406788611
+                ]
+              },
+              "look_target": [
+                -7.995748281478882,
+                2.254669725894928,
+                0.14725583791732788
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -12.0,
+            1.0,
+            -6.0,
+            8.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  -0.20434972537489776,
+                  -0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  -0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  -0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  0.20434972537489776,
+                  0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "kitchen_0",
+          "room_bbox_world_xy": [
+            -12.0,
+            1.0,
+            -6.0,
+            8.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  -0.20434972537489776,
+                  -0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -11.52,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  -0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  -0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  1.48,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.5638506648565885,
+                  0.20434972537489776,
+                  0.2726518378064734,
+                  0.7523128290948782
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -6.48,
+                  7.52,
+                  2.2000001937150957
+                ],
+                "quaternion_xyzw": [
+                  0.20434972537489776,
+                  0.5638506648565885,
+                  0.7523128290948782,
+                  0.2726518378064734
+                ]
+              },
+              "target": [
+                -9.0,
+                4.5,
+                1.0500001937150956
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -7.380504547286234,
+                  2.2492374924248293,
+                  0.6308552796722792
+                ],
+                "quaternion_xyzw": [
+                  0.2946907982995739,
+                  0.24413918735894505,
+                  0.5894041372287112,
+                  0.7114465219613856
+                ]
+              },
+              "look_target": [
+                -7.925358533859253,
+                2.3523788452148438,
+                0.07632484287023544
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/restaurant_urban/kitchen_0/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -7.380503032172064,
+                  2.254676585323644,
+                  0.7625010872623837
+                ],
+                "quaternion_xyzw": [
+                  0.2705965416069943,
+                  0.27059955853079376,
+                  0.6532851241772143,
+                  0.6532778406788611
+                ]
+              },
+              "look_target": [
+                -7.995748281478882,
+                2.254669725894928,
+                0.14725583791732788
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "kitchen_0",
+        "room_id": 6,
+        "bbox_map_rc": [
+          18,
+          5,
+          25,
+          11
+        ],
+        "bbox_world_xy": [
+          -12.0,
+          1.0,
+          -6.0,
+          8.0
+        ],
+        "expanded_bbox_world_xy": [
+          -12.0,
+          1.0,
+          -6.0,
+          8.0
+        ],
+        "bbox_area_m2": 42.0,
+        "expanded_bbox_area_m2": 42.0,
+        "pixel_count": 51,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/restaurant_urban/kitchen_0/q_000/gt_view/image2_box_00.png"
+  ]
+}

@@ -1,0 +1,2951 @@
+{
+  "_ground_truth": [
+    [
+      "coconut_oil_jar",
+      "baking_powder_jar",
+      "mug"
+    ]
+  ],
+  "_question": "How should you stack baking_powder_jar, coconut_oil_jar, mug to maximize stability?",
+  "answer": null,
+  "camera_0_azimuth_deg": null,
+  "camera_poses": null,
+  "camera_poses_floor": null,
+  "capacity_diff_measured": null,
+  "cloth": null,
+  "containee": null,
+  "container_cat": null,
+  "container_model": null,
+  "containers": null,
+  "corner_clearances": null,
+  "d_far": null,
+  "d_near": null,
+  "dist_far_centre": null,
+  "dist_near_centre": null,
+  "distractors": null,
+  "drift_x": null,
+  "drift_y": null,
+  "dynamic_friction": null,
+  "exist": null,
+  "exist_far": null,
+  "exist_left": null,
+  "exist_near": null,
+  "exist_obj": null,
+  "exist_obj_container": null,
+  "exist_obj_small": null,
+  "exist_occluder_obj": null,
+  "exist_ref": null,
+  "exist_ref_obj": null,
+  "exist_right": null,
+  "exist_step_view": null,
+  "exist_target_obj": null,
+  "exist_task_obj": null,
+  "extra_inside_check": null,
+  "extra_placement_success": null,
+  "extras": null,
+  "far_category": null,
+  "far_corner": null,
+  "far_corner_xy": null,
+  "far_pos": null,
+  "final_particles_obj": null,
+  "floor": "floors_cxcxqq_0",
+  "floor_name": null,
+  "goal_xy": null,
+  "ground_truth_fallen": null,
+  "ground_truth_slid": null,
+  "hierarchy": null,
+  "image_paths": null,
+  "initial_cam_poses": [
+    {
+      "_key": "initial_side_az000.png",
+      "azimuth_deg": 0,
+      "position": [
+        -0.7978332278637503,
+        1.2000820636749268,
+        0.05
+      ],
+      "quaternion_xyzw": [
+        0.5162990885547234,
+        0.5162990885547234,
+        0.48315137499293315,
+        0.48315137499293315
+      ],
+      "type": "side"
+    },
+    {
+      "_key": "initial_side_az090.png",
+      "azimuth_deg": 90,
+      "position": [
+        -1.5750973224639893,
+        1.9773461582751657,
+        0.05
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.7301571732749575,
+        0.6832792271942151,
+        -0.0
+      ],
+      "type": "side"
+    },
+    {
+      "_key": "initial_side_az180.png",
+      "azimuth_deg": 180,
+      "position": [
+        -2.352361417064228,
+        1.2000820636749268,
+        0.05
+      ],
+      "quaternion_xyzw": [
+        0.5162990885547234,
+        -0.5162990885547234,
+        -0.48315137499293315,
+        0.48315137499293315
+      ],
+      "type": "side"
+    },
+    {
+      "_key": "initial_side_az270.png",
+      "azimuth_deg": 270,
+      "position": [
+        -1.5750973224639895,
+        0.4228179690746878,
+        0.05
+      ],
+      "quaternion_xyzw": [
+        0.7301571732749575,
+        -1.0429367714225926e-16,
+        -9.759775802705241e-17,
+        0.6832792271942151
+      ],
+      "type": "side"
+    },
+    {
+      "_key": "initial_topdown.png",
+      "azimuth_deg": null,
+      "position": [
+        -1.5750973224639893,
+        1.2000820636749268,
+        1.8
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.7071067811865475,
+        -0.7071067811865475
+      ],
+      "type": "top_down"
+    }
+  ],
+  "initial_exist_flags": [
+    {
+      "_key": "exist_stack_obj0_initial_side_az000.png",
+      "value": false
+    },
+    {
+      "_key": "exist_stack_obj0_initial_side_az090.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj0_initial_side_az180.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj0_initial_side_az270.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj0_initial_topdown.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj1_initial_side_az000.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj1_initial_side_az090.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj1_initial_side_az180.png",
+      "value": false
+    },
+    {
+      "_key": "exist_stack_obj1_initial_side_az270.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj1_initial_topdown.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj2_initial_side_az000.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj2_initial_side_az090.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj2_initial_side_az180.png",
+      "value": false
+    },
+    {
+      "_key": "exist_stack_obj2_initial_side_az270.png",
+      "value": true
+    },
+    {
+      "_key": "exist_stack_obj2_initial_topdown.png",
+      "value": true
+    }
+  ],
+  "initial_poses": [
+    {
+      "_key": "stack_obj0",
+      "aabb_max": [
+        -1.7353414297103882,
+        1.2657636404037476,
+        0.20425428450107574
+      ],
+      "aabb_min": [
+        -1.8912241458892822,
+        1.1356004476547241,
+        -0.001025952398777008
+      ],
+      "position": [
+        -1.804106593132019,
+        1.2006714344024658,
+        0.08837872743606567
+      ],
+      "quaternion_xyzw": [
+        0.008833955973386765,
+        -0.22459258139133453,
+        0.0013852881966158748,
+        0.9744117856025696
+      ]
+    },
+    {
+      "_key": "stack_obj1",
+      "aabb_max": [
+        -1.5082811117172241,
+        1.2656500339508057,
+        0.20425355434417725
+      ],
+      "aabb_min": [
+        -1.6643885374069214,
+        1.1356971263885498,
+        -0.001024298369884491
+      ],
+      "position": [
+        -1.577286958694458,
+        1.2006827592849731,
+        0.08837935328483582
+      ],
+      "quaternion_xyzw": [
+        -5.123205482959747e-06,
+        5.724141374230385e-06,
+        5.304755177348852e-07,
+        1.0000001192092896
+      ]
+    },
+    {
+      "_key": "stack_obj2",
+      "aabb_max": [
+        -1.2589704990386963,
+        1.2847321033477783,
+        0.08916714042425156
+      ],
+      "aabb_min": [
+        -1.4282771348953247,
+        1.1154321432113647,
+        -0.0010155905038118362
+      ],
+      "position": [
+        -1.3436267375946045,
+        1.2006819248199463,
+        0.024773094803094864
+      ],
+      "quaternion_xyzw": [
+        3.83647875423776e-06,
+        8.017523214221001e-07,
+        -5.583740403380943e-07,
+        1.0
+      ]
+    }
+  ],
+  "layout": null,
+  "mirror_setup": null,
+  "n_objects": 3,
+  "navigation": null,
+  "near_category": null,
+  "near_corner": null,
+  "near_corner_xy": null,
+  "near_pos": null,
+  "obj": null,
+  "obj_aabb": null,
+  "obj_category": null,
+  "obj_model": null,
+  "object_categories": [
+    "baking_powder_jar",
+    "coconut_oil_jar",
+    "mug"
+  ],
+  "object_category": null,
+  "object_models": [
+    "lgopij",
+    "phimqa",
+    "yiamah"
+  ],
+  "object_names": [
+    "stack_obj0",
+    "stack_obj1",
+    "stack_obj2"
+  ],
+  "object_scales": [
+    [
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0
+    ]
+  ],
+  "objects": null,
+  "objects_meta": null,
+  "observer_poses": null,
+  "orbital_geometry": null,
+  "orbital_views_before": null,
+  "orientation": null,
+  "path_waypoints": null,
+  "placement_mode": null,
+  "proximity_thresh": null,
+  "qa": null,
+  "qa_per_view": null,
+  "question_data": null,
+  "question_id": null,
+  "question_index": null,
+  "ref_category": null,
+  "ref_model": null,
+  "ref_placement": null,
+  "render": null,
+  "resolved_room": null,
+  "robot_bbox_top_z": null,
+  "robot_start_z": null,
+  "room": "dining_room_0",
+  "row_layout": null,
+  "run_idx": 0,
+  "scale_obj": null,
+  "scene": "restaurant_diner",
+  "seed": null,
+  "separation": null,
+  "slope": null,
+  "slope_angle_deg": null,
+  "slope_quaternion": null,
+  "slope_scale": null,
+  "small_item": null,
+  "small_obj_cat": null,
+  "stage0_initial_views": null,
+  "start_xy": null,
+  "static_friction": null,
+  "step_log": null,
+  "success": null,
+  "success_list": null,
+  "support_category": null,
+  "support_type": null,
+  "target_confusable_with": null,
+  "task": null,
+  "task_category": null,
+  "task_family": null,
+  "task_obj_aabb_max": null,
+  "task_obj_aabb_min": null,
+  "task_obj_centre": null,
+  "task_type": null,
+  "touching": null,
+  "touching_left": null,
+  "touching_right": null,
+  "trav_map_basename": null,
+  "trials": [
+    {
+      "all_on_top": true,
+      "all_stable": false,
+      "all_upright": false,
+      "camera_poses": [
+        {
+          "_key": "trial0_stack_obj0__stack_obj1__stack_obj2_side_az000.png",
+          "azimuth_deg": 0,
+          "look_target": [
+            -2.5356740951538086,
+            -5.7381744384765625,
+            0.3
+          ],
+          "position": [
+            -1.9659590907930862,
+            -5.7381744384765625,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.3654008586514479,
+            0.36540085865144795,
+            0.6053777436417568,
+            0.6053777436417568
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial0_stack_obj0__stack_obj1__stack_obj2_side_az090.png",
+          "azimuth_deg": 90,
+          "look_target": [
+            -2.5356740951538086,
+            -5.7381744384765625,
+            0.3
+          ],
+          "position": [
+            -2.5356740951538086,
+            -5.1684594341158405,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.5167548500076519,
+            0.8561334154169952,
+            -0.0
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial0_stack_obj0__stack_obj1__stack_obj2_side_az180.png",
+          "azimuth_deg": 180,
+          "look_target": [
+            -2.5356740951538086,
+            -5.7381744384765625,
+            0.3
+          ],
+          "position": [
+            -3.105389099514531,
+            -5.7381744384765625,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            -0.3654008586514479,
+            0.36540085865144795,
+            0.6053777436417568,
+            -0.6053777436417568
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial0_stack_obj0__stack_obj1__stack_obj2_side_az270.png",
+          "azimuth_deg": 270,
+          "look_target": [
+            -2.5356740951538086,
+            -5.7381744384765625,
+            0.3
+          ],
+          "position": [
+            -2.5356740951538086,
+            -6.3078894428372845,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.5167548500076519,
+            -0.0,
+            -0.0,
+            0.8561334154169952
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial0_stack_obj0__stack_obj1__stack_obj2_topdown.png",
+          "azimuth_deg": null,
+          "look_target": null,
+          "position": [
+            -2.5356740951538086,
+            -5.7381744384765625,
+            1.8
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.7071067811865475,
+            -0.7071067811865475
+          ],
+          "type": "top_down"
+        }
+      ],
+      "exist_flags": [
+        {
+          "_key": "exist_stack_obj0_trial0_stack_obj0__stack_obj1__stack_obj2_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial0_stack_obj0__stack_obj1__stack_obj2_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial0_stack_obj0__stack_obj1__stack_obj2_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial0_stack_obj0__stack_obj1__stack_obj2_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial0_stack_obj0__stack_obj1__stack_obj2_topdown.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial0_stack_obj0__stack_obj1__stack_obj2_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial0_stack_obj0__stack_obj1__stack_obj2_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial0_stack_obj0__stack_obj1__stack_obj2_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial0_stack_obj0__stack_obj1__stack_obj2_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial0_stack_obj0__stack_obj1__stack_obj2_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial0_stack_obj0__stack_obj1__stack_obj2_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial0_stack_obj0__stack_obj1__stack_obj2_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial0_stack_obj0__stack_obj1__stack_obj2_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial0_stack_obj0__stack_obj1__stack_obj2_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial0_stack_obj0__stack_obj1__stack_obj2_topdown.png",
+          "value": true
+        }
+      ],
+      "on_top_checks": [
+        true,
+        true
+      ],
+      "order": [
+        "stack_obj0",
+        "stack_obj1",
+        "stack_obj2"
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "post_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -2.535670757293701,
+            -5.738178253173828,
+            0.10161145031452179
+          ],
+          "extent": [
+            0.15584301948547363,
+            0.13008546829223633,
+            0.20528072118759155
+          ],
+          "max": [
+            -2.457749366760254,
+            -5.673135280609131,
+            0.20425181090831757
+          ],
+          "min": [
+            -2.6135923862457275,
+            -5.803220748901367,
+            -0.0010289177298545837
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -2.5354695320129395,
+            -5.738199710845947,
+            0.306840717792511
+          ],
+          "extent": [
+            0.15615630149841309,
+            0.13011837005615234,
+            0.2053927183151245
+          ],
+          "max": [
+            -2.4573915004730225,
+            -5.673140525817871,
+            0.40953707695007324
+          ],
+          "min": [
+            -2.6135478019714355,
+            -5.803258895874023,
+            0.20414435863494873
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -2.5353899002075195,
+            -5.738034248352051,
+            0.4545586109161377
+          ],
+          "extent": [
+            0.16930651664733887,
+            0.16929864883422852,
+            0.09041938185691833
+          ],
+          "max": [
+            -2.4507367610931396,
+            -5.653385162353516,
+            0.49976828694343567
+          ],
+          "min": [
+            -2.6200432777404785,
+            -5.822683811187744,
+            0.40934890508651733
+          ]
+        }
+      ],
+      "pre_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -2.5356740951538086,
+            -5.7381744384765625,
+            0.10161386430263519
+          ],
+          "extent": [
+            0.15584158897399902,
+            0.13008451461791992,
+            0.20528018474578857
+          ],
+          "max": [
+            -2.4577531814575195,
+            -5.673131942749023,
+            0.20425395667552948
+          ],
+          "min": [
+            -2.6135947704315186,
+            -5.803216457366943,
+            -0.0010262280702590942
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -2.5356550216674805,
+            -5.738197326660156,
+            0.30688536167144775
+          ],
+          "extent": [
+            0.15610718727111816,
+            0.12995290756225586,
+            0.20527783036231995
+          ],
+          "max": [
+            -2.457601547241211,
+            -5.673221111297607,
+            0.4095242917537689
+          ],
+          "min": [
+            -2.613708734512329,
+            -5.803174018859863,
+            0.20424646139144897
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -2.535548686981201,
+            -5.738279342651367,
+            0.45455533266067505
+          ],
+          "extent": [
+            0.16930651664733887,
+            0.16930007934570312,
+            0.09018275141716003
+          ],
+          "max": [
+            -2.4508955478668213,
+            -5.653629302978516,
+            0.49964672327041626
+          ],
+          "min": [
+            -2.62020206451416,
+            -5.822929382324219,
+            0.4094639718532562
+          ]
+        }
+      ],
+      "snaps": [
+        {
+          "_key": "stack_obj0",
+          "aabb_max": [
+            -2.4577622413635254,
+            -5.673154354095459,
+            0.20425207912921906
+          ],
+          "aabb_min": [
+            -2.6136364936828613,
+            -5.803302764892578,
+            -0.001025468111038208
+          ],
+          "position": [
+            -2.526519775390625,
+            -5.738238334655762,
+            0.08837497979402542
+          ],
+          "quaternion_xyzw": [
+            0.008849279955029488,
+            -0.22460120916366577,
+            0.0013102530501782894,
+            0.974409818649292
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "aabb_max": [
+            -2.456106424331665,
+            -5.673398971557617,
+            0.40950098633766174
+          ],
+          "aabb_min": [
+            -2.6127655506134033,
+            -5.804405212402344,
+            0.20416468381881714
+          ],
+          "position": [
+            -2.5255870819091797,
+            -5.738916397094727,
+            0.293596476316452
+          ],
+          "quaternion_xyzw": [
+            6.173364818096161e-05,
+            0.00028204271802678704,
+            0.004709951113909483,
+            0.999988853931427
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "aabb_max": [
+            -2.4496092796325684,
+            -5.6543498039245605,
+            0.4997060298919678
+          ],
+          "aabb_min": [
+            -2.618915319442749,
+            -5.823648929595947,
+            0.40934938192367554
+          ],
+          "position": [
+            -2.534261465072632,
+            -5.738360404968262,
+            0.43521809577941895
+          ],
+          "quaternion_xyzw": [
+            -0.00123105279635638,
+            0.0001713522942736745,
+            0.0012712146854028106,
+            0.9999986290931702
+          ]
+        }
+      ],
+      "stack_results": [
+        {
+          "lower": "stack_obj0",
+          "placement_ok": true,
+          "upper": "stack_obj1"
+        },
+        {
+          "lower": "stack_obj1",
+          "placement_ok": true,
+          "upper": "stack_obj2"
+        }
+      ],
+      "success": true,
+      "tilt_dots": [
+        {
+          "_key": "stack_obj0",
+          "value": 0.899
+        },
+        {
+          "_key": "stack_obj1",
+          "value": 1.0
+        },
+        {
+          "_key": "stack_obj2",
+          "value": 1.0
+        }
+      ],
+      "trial_idx": 0
+    },
+    {
+      "all_on_top": true,
+      "all_stable": false,
+      "all_upright": false,
+      "camera_poses": [
+        {
+          "_key": "trial1_stack_obj0__stack_obj2__stack_obj1_side_az000.png",
+          "azimuth_deg": 0,
+          "look_target": [
+            -1.171698808670044,
+            -5.114667892456055,
+            0.3
+          ],
+          "position": [
+            -0.6019837200212335,
+            -5.114667892456055,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.36540087711352476,
+            0.36540087711352476,
+            0.6053777324982038,
+            0.6053777324982037
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial1_stack_obj0__stack_obj2__stack_obj1_side_az090.png",
+          "azimuth_deg": 90,
+          "look_target": [
+            -1.171698808670044,
+            -5.114667892456055,
+            0.3
+          ],
+          "position": [
+            -1.171698808670044,
+            -4.544952803807244,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.5167548761169714,
+            0.8561333996576312,
+            -0.0
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial1_stack_obj0__stack_obj2__stack_obj1_side_az180.png",
+          "azimuth_deg": 180,
+          "look_target": [
+            -1.171698808670044,
+            -5.114667892456055,
+            0.3
+          ],
+          "position": [
+            -1.7414138973188544,
+            -5.114667892456055,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            -0.36540087711352476,
+            0.36540087711352476,
+            0.6053777324982038,
+            -0.6053777324982037
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial1_stack_obj0__stack_obj2__stack_obj1_side_az270.png",
+          "azimuth_deg": 270,
+          "look_target": [
+            -1.171698808670044,
+            -5.114667892456055,
+            0.3
+          ],
+          "position": [
+            -1.171698808670044,
+            -5.684382981104865,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.5167548761169714,
+            -0.0,
+            -0.0,
+            0.8561333996576312
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial1_stack_obj0__stack_obj2__stack_obj1_topdown.png",
+          "azimuth_deg": null,
+          "look_target": null,
+          "position": [
+            -1.171698808670044,
+            -5.114667892456055,
+            1.8
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.7071067811865475,
+            -0.7071067811865475
+          ],
+          "type": "top_down"
+        }
+      ],
+      "exist_flags": [
+        {
+          "_key": "exist_stack_obj0_trial1_stack_obj0__stack_obj2__stack_obj1_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial1_stack_obj0__stack_obj2__stack_obj1_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial1_stack_obj0__stack_obj2__stack_obj1_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial1_stack_obj0__stack_obj2__stack_obj1_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial1_stack_obj0__stack_obj2__stack_obj1_topdown.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial1_stack_obj0__stack_obj2__stack_obj1_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial1_stack_obj0__stack_obj2__stack_obj1_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial1_stack_obj0__stack_obj2__stack_obj1_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial1_stack_obj0__stack_obj2__stack_obj1_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial1_stack_obj0__stack_obj2__stack_obj1_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial1_stack_obj0__stack_obj2__stack_obj1_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial1_stack_obj0__stack_obj2__stack_obj1_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial1_stack_obj0__stack_obj2__stack_obj1_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial1_stack_obj0__stack_obj2__stack_obj1_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial1_stack_obj0__stack_obj2__stack_obj1_topdown.png",
+          "value": true
+        }
+      ],
+      "on_top_checks": [
+        true,
+        true
+      ],
+      "order": [
+        "stack_obj0",
+        "stack_obj2",
+        "stack_obj1"
+      ],
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "post_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -1.171741008758545,
+            -5.114704132080078,
+            0.10162051022052765
+          ],
+          "extent": [
+            0.1558917760848999,
+            0.13018083572387695,
+            0.20527702569961548
+          ],
+          "max": [
+            -1.0937950611114502,
+            -5.049613952636719,
+            0.2042590230703354
+          ],
+          "min": [
+            -1.24968683719635,
+            -5.179794788360596,
+            -0.0010180100798606873
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -1.1717793941497803,
+            -5.114170551300049,
+            0.3969845771789551
+          ],
+          "extent": [
+            0.15637421607971191,
+            0.13082599639892578,
+            0.2056657373905182
+          ],
+          "max": [
+            -1.0935922861099243,
+            -5.048757553100586,
+            0.499817430973053
+          ],
+          "min": [
+            -1.2499665021896362,
+            -5.179583549499512,
+            0.2941516935825348
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -1.1721621751785278,
+            -5.114715099334717,
+            0.24932827055454254
+          ],
+          "extent": [
+            0.16930627822875977,
+            0.16929912567138672,
+            0.0903688371181488
+          ],
+          "max": [
+            -1.087509036064148,
+            -5.030065536499023,
+            0.29451268911361694
+          ],
+          "min": [
+            -1.2568153142929077,
+            -5.19936466217041,
+            0.20414385199546814
+          ]
+        }
+      ],
+      "pre_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -1.171698808670044,
+            -5.114667892456055,
+            0.1016148179769516
+          ],
+          "extent": [
+            0.15586793422698975,
+            0.13013219833374023,
+            0.20527756214141846
+          ],
+          "max": [
+            -1.0937649011611938,
+            -5.0496015548706055,
+            0.20425359904766083
+          ],
+          "min": [
+            -1.2496328353881836,
+            -5.179733753204346,
+            -0.0010239705443382263
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -1.171826958656311,
+            -5.114376068115234,
+            0.39702221751213074
+          ],
+          "extent": [
+            0.15610742568969727,
+            0.12995290756225586,
+            0.20527780055999756
+          ],
+          "max": [
+            -1.0937732458114624,
+            -5.049399375915527,
+            0.4996611177921295
+          ],
+          "min": [
+            -1.2498806715011597,
+            -5.179352283477783,
+            0.29438331723213196
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -1.1717207431793213,
+            -5.114635944366455,
+            0.24931617081165314
+          ],
+          "extent": [
+            0.16930651664733887,
+            0.16930007934570312,
+            0.09018275141716003
+          ],
+          "max": [
+            -1.0870674848556519,
+            -5.0299859046936035,
+            0.29440754652023315
+          ],
+          "min": [
+            -1.2563740015029907,
+            -5.199285984039307,
+            0.20422479510307312
+          ]
+        }
+      ],
+      "snaps": [
+        {
+          "_key": "stack_obj0",
+          "aabb_max": [
+            -1.0940396785736084,
+            -5.04976749420166,
+            0.2042604684829712
+          ],
+          "aabb_min": [
+            -1.249967098236084,
+            -5.180010795593262,
+            -0.0010176897048950195
+          ],
+          "position": [
+            -1.1628413200378418,
+            -5.114899635314941,
+            0.08838177472352982
+          ],
+          "quaternion_xyzw": [
+            0.008940976113080978,
+            -0.22462670505046844,
+            0.0017149412306025624,
+            0.9744024872779846
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "aabb_max": [
+            -1.0952563285827637,
+            -5.048458576202393,
+            0.49984675645828247
+          ],
+          "aabb_min": [
+            -1.2517749071121216,
+            -5.179529190063477,
+            0.29418814182281494
+          ],
+          "position": [
+            -1.164635181427002,
+            -5.113964080810547,
+            0.3838137686252594
+          ],
+          "quaternion_xyzw": [
+            -0.0013295207172632217,
+            0.0007919940399006009,
+            -0.0035226766485720873,
+            0.9999927282333374
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "aabb_max": [
+            -1.0894113779067993,
+            -5.030238151550293,
+            0.2945442497730255
+          ],
+          "aabb_min": [
+            -1.2587109804153442,
+            -5.199531078338623,
+            0.20419380068778992
+          ],
+          "position": [
+            -1.1740506887435913,
+            -5.114251136779785,
+            0.23005828261375427
+          ],
+          "quaternion_xyzw": [
+            -0.001054805819876492,
+            0.0005945148877799511,
+            0.004492014180868864,
+            0.9999893307685852
+          ]
+        }
+      ],
+      "stack_results": [
+        {
+          "lower": "stack_obj0",
+          "placement_ok": true,
+          "upper": "stack_obj2"
+        },
+        {
+          "lower": "stack_obj2",
+          "placement_ok": true,
+          "upper": "stack_obj1"
+        }
+      ],
+      "success": true,
+      "tilt_dots": [
+        {
+          "_key": "stack_obj0",
+          "value": 0.8989
+        },
+        {
+          "_key": "stack_obj1",
+          "value": 1.0
+        },
+        {
+          "_key": "stack_obj2",
+          "value": 1.0
+        }
+      ],
+      "trial_idx": 1
+    },
+    {
+      "all_on_top": true,
+      "all_stable": true,
+      "all_upright": true,
+      "camera_poses": [
+        {
+          "_key": "trial2_stack_obj1__stack_obj0__stack_obj2_side_az000.png",
+          "azimuth_deg": 0,
+          "look_target": [
+            -2.5429203510284424,
+            -0.1593618094921112,
+            0.3
+          ],
+          "position": [
+            -1.9747407967140966,
+            -0.1593618094921112,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.3650637730490988,
+            0.3650637730490988,
+            0.6055810776495218,
+            0.6055810776495218
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial2_stack_obj1__stack_obj0__stack_obj2_side_az090.png",
+          "azimuth_deg": 90,
+          "look_target": [
+            -2.5429203510284424,
+            -0.1593618094921112,
+            0.3
+          ],
+          "position": [
+            -2.5429203510284424,
+            0.40881774482223454,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.516278138977129,
+            0.8564209731284681,
+            -0.0
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial2_stack_obj1__stack_obj0__stack_obj2_side_az180.png",
+          "azimuth_deg": 180,
+          "look_target": [
+            -2.5429203510284424,
+            -0.1593618094921112,
+            0.3
+          ],
+          "position": [
+            -3.111099905342788,
+            -0.15936180949211112,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            -0.36506377304909876,
+            0.3650637730490988,
+            0.6055810776495218,
+            -0.6055810776495217
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial2_stack_obj1__stack_obj0__stack_obj2_side_az270.png",
+          "azimuth_deg": 270,
+          "look_target": [
+            -2.5429203510284424,
+            -0.1593618094921112,
+            0.3
+          ],
+          "position": [
+            -2.5429203510284424,
+            -0.727541363806457,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.516278138977129,
+            -0.0,
+            -0.0,
+            0.8564209731284681
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial2_stack_obj1__stack_obj0__stack_obj2_topdown.png",
+          "azimuth_deg": null,
+          "look_target": null,
+          "position": [
+            -2.5429203510284424,
+            -0.1593618094921112,
+            1.8
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.7071067811865475,
+            -0.7071067811865475
+          ],
+          "type": "top_down"
+        }
+      ],
+      "exist_flags": [
+        {
+          "_key": "exist_stack_obj0_trial2_stack_obj1__stack_obj0__stack_obj2_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial2_stack_obj1__stack_obj0__stack_obj2_side_az090.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial2_stack_obj1__stack_obj0__stack_obj2_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial2_stack_obj1__stack_obj0__stack_obj2_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial2_stack_obj1__stack_obj0__stack_obj2_topdown.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial2_stack_obj1__stack_obj0__stack_obj2_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial2_stack_obj1__stack_obj0__stack_obj2_side_az090.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial2_stack_obj1__stack_obj0__stack_obj2_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial2_stack_obj1__stack_obj0__stack_obj2_side_az270.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial2_stack_obj1__stack_obj0__stack_obj2_topdown.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial2_stack_obj1__stack_obj0__stack_obj2_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial2_stack_obj1__stack_obj0__stack_obj2_side_az090.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial2_stack_obj1__stack_obj0__stack_obj2_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial2_stack_obj1__stack_obj0__stack_obj2_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial2_stack_obj1__stack_obj0__stack_obj2_topdown.png",
+          "value": false
+        }
+      ],
+      "on_top_checks": [
+        true,
+        true
+      ],
+      "order": [
+        "stack_obj1",
+        "stack_obj0",
+        "stack_obj2"
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "post_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -2.543734550476074,
+            -0.17376498878002167,
+            0.3108059763908386
+          ],
+          "extent": [
+            0.19124698638916016,
+            0.13888922333717346,
+            0.2371681034564972
+          ],
+          "max": [
+            -2.448111057281494,
+            -0.10432036966085434,
+            0.4293900430202484
+          ],
+          "min": [
+            -2.6393580436706543,
+            -0.2432096004486084,
+            0.19222193956375122
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -2.5263118743896484,
+            -0.16563385725021362,
+            0.13090990483760834
+          ],
+          "extent": [
+            0.1680290699005127,
+            0.16126132011413574,
+            0.2640245258808136
+          ],
+          "max": [
+            -2.4422972202301025,
+            -0.08500319719314575,
+            0.26292216777801514
+          ],
+          "min": [
+            -2.6103262901306152,
+            -0.2462645173072815,
+            -0.001102358102798462
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -2.5319979190826416,
+            -0.1961318850517273,
+            0.45777174830436707
+          ],
+          "extent": [
+            0.15536928176879883,
+            0.16909421980381012,
+            0.1228223443031311
+          ],
+          "max": [
+            -2.454313278198242,
+            -0.11158476769924164,
+            0.5191829204559326
+          ],
+          "min": [
+            -2.609682559967041,
+            -0.28067898750305176,
+            0.3963605761528015
+          ]
+        }
+      ],
+      "pre_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -2.543489456176758,
+            -0.17119933664798737,
+            0.30743706226348877
+          ],
+          "extent": [
+            0.19651150703430176,
+            0.13272184133529663,
+            0.2365904003381729
+          ],
+          "max": [
+            -2.4452338218688965,
+            -0.10483841598033905,
+            0.42573225498199463
+          ],
+          "min": [
+            -2.6417453289031982,
+            -0.23756025731563568,
+            0.18914185464382172
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -2.5429203510284424,
+            -0.1593618094921112,
+            0.10161466896533966
+          ],
+          "extent": [
+            0.15610742568969727,
+            0.12995287775993347,
+            0.20527786016464233
+          ],
+          "max": [
+            -2.4648666381835938,
+            -0.09438537806272507,
+            0.20425359904766083
+          ],
+          "min": [
+            -2.620974063873291,
+            -0.22433824837207794,
+            -0.0010242536664009094
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -2.5397825241088867,
+            -0.1839747428894043,
+            0.4700111746788025
+          ],
+          "extent": [
+            0.16930651664733887,
+            0.16929996013641357,
+            0.09018275141716003
+          ],
+          "max": [
+            -2.4551291465759277,
+            -0.09932475537061691,
+            0.5151025652885437
+          ],
+          "min": [
+            -2.6244356632232666,
+            -0.2686247229576111,
+            0.42491981387138367
+          ]
+        }
+      ],
+      "snaps": [
+        {
+          "_key": "stack_obj0",
+          "aabb_max": [
+            -2.4481046199798584,
+            -0.10450609773397446,
+            0.4291093051433563
+          ],
+          "aabb_min": [
+            -2.6392710208892822,
+            -0.24274669587612152,
+            0.19208602607250214
+          ],
+          "position": [
+            -2.5490667819976807,
+            -0.17315536737442017,
+            0.29901790618896484
+          ],
+          "quaternion_xyzw": [
+            -0.01600462757050991,
+            -0.02165418490767479,
+            -0.002912932774052024,
+            0.999633252620697
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "aabb_max": [
+            -2.442474365234375,
+            -0.08585964143276215,
+            0.2652665376663208
+          ],
+          "aabb_min": [
+            -2.6084671020507812,
+            -0.2463480532169342,
+            -0.001155175268650055
+          ],
+          "position": [
+            -2.520590305328369,
+            -0.16557101905345917,
+            0.09216884523630142
+          ],
+          "quaternion_xyzw": [
+            -0.03738091513514519,
+            -0.0029245768673717976,
+            0.1027631089091301,
+            0.9939989447593689
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "aabb_max": [
+            -2.600661277770996,
+            -0.12724336981773376,
+            0.4571869671344757
+          ],
+          "aabb_min": [
+            -2.768880605697632,
+            -0.29546883702278137,
+            0.3669925630092621
+          ],
+          "position": [
+            -2.685325860977173,
+            -0.21159197390079498,
+            0.39278560876846313
+          ],
+          "quaternion_xyzw": [
+            -9.847495675785467e-05,
+            1.3062730431556702e-05,
+            0.8363907933235168,
+            0.5481338500976562
+          ]
+        }
+      ],
+      "stack_results": [
+        {
+          "lower": "stack_obj1",
+          "placement_ok": true,
+          "upper": "stack_obj0"
+        },
+        {
+          "lower": "stack_obj0",
+          "placement_ok": true,
+          "upper": "stack_obj2"
+        }
+      ],
+      "success": true,
+      "tilt_dots": [
+        {
+          "_key": "stack_obj0",
+          "value": 0.9984
+        },
+        {
+          "_key": "stack_obj1",
+          "value": 0.9971
+        },
+        {
+          "_key": "stack_obj2",
+          "value": 0.9167
+        }
+      ],
+      "trial_idx": 2
+    },
+    {
+      "all_on_top": false,
+      "all_stable": false,
+      "all_upright": false,
+      "camera_poses": [
+        {
+          "_key": "trial3_stack_obj1__stack_obj2__stack_obj0_side_az000.png",
+          "azimuth_deg": 0,
+          "look_target": [
+            -1.8545324802398682,
+            3.469362735748291,
+            0.3
+          ],
+          "position": [
+            -1.2533621820223846,
+            3.469362735748291,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.3719822858049297,
+            0.37198228580492976,
+            0.6013561166624479,
+            0.6013561166624479
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial3_stack_obj1__stack_obj2__stack_obj0_side_az090.png",
+          "azimuth_deg": 90,
+          "look_target": [
+            -1.8545324802398682,
+            3.469362735748291,
+            0.3
+          ],
+          "position": [
+            -1.8545324802398682,
+            4.070533033965774,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.5260623935478764,
+            0.850445976000051,
+            -0.0
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial3_stack_obj1__stack_obj2__stack_obj0_side_az180.png",
+          "azimuth_deg": 180,
+          "look_target": [
+            -1.8545324802398682,
+            3.469362735748291,
+            0.3
+          ],
+          "position": [
+            -2.4557027784573515,
+            3.469362735748291,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            -0.3719822858049297,
+            0.3719822858049297,
+            0.6013561166624479,
+            -0.6013561166624479
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial3_stack_obj1__stack_obj2__stack_obj0_side_az270.png",
+          "azimuth_deg": 270,
+          "look_target": [
+            -1.8545324802398682,
+            3.469362735748291,
+            0.3
+          ],
+          "position": [
+            -1.8545324802398682,
+            2.8681924375308077,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.5260623935478764,
+            -0.0,
+            -0.0,
+            0.850445976000051
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial3_stack_obj1__stack_obj2__stack_obj0_topdown.png",
+          "azimuth_deg": null,
+          "look_target": null,
+          "position": [
+            -1.8545324802398682,
+            3.469362735748291,
+            1.8
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.7071067811865475,
+            -0.7071067811865475
+          ],
+          "type": "top_down"
+        }
+      ],
+      "exist_flags": [
+        {
+          "_key": "exist_stack_obj0_trial3_stack_obj1__stack_obj2__stack_obj0_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial3_stack_obj1__stack_obj2__stack_obj0_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial3_stack_obj1__stack_obj2__stack_obj0_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial3_stack_obj1__stack_obj2__stack_obj0_side_az270.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial3_stack_obj1__stack_obj2__stack_obj0_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial3_stack_obj1__stack_obj2__stack_obj0_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial3_stack_obj1__stack_obj2__stack_obj0_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial3_stack_obj1__stack_obj2__stack_obj0_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial3_stack_obj1__stack_obj2__stack_obj0_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial3_stack_obj1__stack_obj2__stack_obj0_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial3_stack_obj1__stack_obj2__stack_obj0_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial3_stack_obj1__stack_obj2__stack_obj0_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial3_stack_obj1__stack_obj2__stack_obj0_side_az180.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial3_stack_obj1__stack_obj2__stack_obj0_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial3_stack_obj1__stack_obj2__stack_obj0_topdown.png",
+          "value": true
+        }
+      ],
+      "on_top_checks": [
+        true,
+        false
+      ],
+      "order": [
+        "stack_obj1",
+        "stack_obj2",
+        "stack_obj0"
+      ],
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "post_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -1.7382264137268066,
+            3.1585075855255127,
+            0.07686036080121994
+          ],
+          "extent": [
+            0.19315588474273682,
+            0.23259544372558594,
+            0.15575219690799713
+          ],
+          "max": [
+            -1.6416484117507935,
+            3.2748053073883057,
+            0.1547364592552185
+          ],
+          "min": [
+            -1.8348042964935303,
+            3.0422098636627197,
+            -0.001015742658637464
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -1.854532241821289,
+            3.4693644046783447,
+            0.10161405801773071
+          ],
+          "extent": [
+            0.15610778331756592,
+            0.12995338439941406,
+            0.20527923107147217
+          ],
+          "max": [
+            -1.7764782905578613,
+            3.5343410968780518,
+            0.2042536735534668
+          ],
+          "min": [
+            -1.9325860738754272,
+            3.4043877124786377,
+            -0.0010255500674247742
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -1.8546350002288818,
+            3.467373847961426,
+            0.24930588901042938
+          ],
+          "extent": [
+            0.1691880226135254,
+            0.16918063163757324,
+            0.0904262363910675
+          ],
+          "max": [
+            -1.7700409889221191,
+            3.551964282989502,
+            0.29451900720596313
+          ],
+          "min": [
+            -1.9392290115356445,
+            3.3827836513519287,
+            0.20409277081489563
+          ]
+        }
+      ],
+      "pre_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -1.8995513916015625,
+            3.356264591217041,
+            0.33810707926750183
+          ],
+          "extent": [
+            0.1966944932937622,
+            0.1327216625213623,
+            0.2367478460073471
+          ],
+          "max": [
+            -1.8012040853500366,
+            3.4226253032684326,
+            0.456481009721756
+          ],
+          "min": [
+            -1.9978985786437988,
+            3.2899036407470703,
+            0.21973316371440887
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -1.8545324802398682,
+            3.469362735748291,
+            0.10161454975605011
+          ],
+          "extent": [
+            0.15610754489898682,
+            0.12995266914367676,
+            0.205278217792511
+          ],
+          "max": [
+            -1.77647864818573,
+            3.534339189529419,
+            0.2042536586523056
+          ],
+          "min": [
+            -1.9325861930847168,
+            3.404386520385742,
+            -0.0010245591402053833
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -1.8545362949371338,
+            3.46940541267395,
+            0.24931946396827698
+          ],
+          "extent": [
+            0.16930651664733887,
+            0.16930007934570312,
+            0.09018273651599884
+          ],
+          "max": [
+            -1.7698830366134644,
+            3.5540554523468018,
+            0.2944108247756958
+          ],
+          "min": [
+            -1.9391895532608032,
+            3.3847553730010986,
+            0.20422808825969696
+          ]
+        }
+      ],
+      "snaps": [
+        {
+          "_key": "stack_obj0",
+          "aabb_max": [
+            -1.6416484117507935,
+            3.2748053073883057,
+            0.1547364592552185
+          ],
+          "aabb_min": [
+            -1.8348042964935303,
+            3.0422098636627197,
+            -0.001015742658637464
+          ],
+          "position": [
+            -1.733501672744751,
+            3.170358419418335,
+            0.06763899326324463
+          ],
+          "quaternion_xyzw": [
+            0.44878220558166504,
+            0.28237631916999817,
+            -0.7153415679931641,
+            0.4551316797733307
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "aabb_max": [
+            -1.7764785289764404,
+            3.5343410968780518,
+            0.2042536586523056
+          ],
+          "aabb_min": [
+            -1.932586431503296,
+            3.4043877124786377,
+            -0.0010255351662635803
+          ],
+          "position": [
+            -1.845485806465149,
+            3.4693727493286133,
+            0.08837901800870895
+          ],
+          "quaternion_xyzw": [
+            -4.1602179408073425e-06,
+            4.988163709640503e-06,
+            -3.6967976484447718e-06,
+            1.0000001192092896
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "aabb_max": [
+            -1.7700412273406982,
+            3.5519638061523438,
+            0.29451873898506165
+          ],
+          "aabb_min": [
+            -1.9392292499542236,
+            3.3827834129333496,
+            0.20409268140792847
+          ],
+          "position": [
+            -1.8546276092529297,
+            3.4680280685424805,
+            0.2299928367137909
+          ],
+          "quaternion_xyzw": [
+            -0.0017191602382808924,
+            -0.0004052181029692292,
+            -0.018707720562815666,
+            0.9998234510421753
+          ]
+        }
+      ],
+      "stack_results": [
+        {
+          "lower": "stack_obj1",
+          "placement_ok": true,
+          "upper": "stack_obj2"
+        },
+        {
+          "lower": "stack_obj2",
+          "placement_ok": true,
+          "upper": "stack_obj0"
+        }
+      ],
+      "success": true,
+      "tilt_dots": [
+        {
+          "_key": "stack_obj0",
+          "value": 0.4377
+        },
+        {
+          "_key": "stack_obj1",
+          "value": 1.0
+        },
+        {
+          "_key": "stack_obj2",
+          "value": 1.0
+        }
+      ],
+      "trial_idx": 3
+    },
+    {
+      "all_on_top": false,
+      "all_stable": false,
+      "all_upright": false,
+      "camera_poses": [
+        {
+          "_key": "trial4_stack_obj2__stack_obj0__stack_obj1_side_az000.png",
+          "azimuth_deg": 0,
+          "look_target": [
+            -0.2640197277069092,
+            -8.616783142089844,
+            0.3
+          ],
+          "position": [
+            0.3114063200060604,
+            -8.616783142089844,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.36664126275872305,
+            0.36664126275872305,
+            0.6046273103678735,
+            0.6046273103678735
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial4_stack_obj2__stack_obj0__stack_obj1_side_az090.png",
+          "azimuth_deg": 90,
+          "look_target": [
+            -0.2640197277069092,
+            -8.616783142089844,
+            0.3
+          ],
+          "position": [
+            -0.2640197277069091,
+            -8.041357094376874,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            2.5010193924472595e-17,
+            0.518509046318984,
+            0.8550721425034135,
+            4.124425649898571e-17
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial4_stack_obj2__stack_obj0__stack_obj1_side_az180.png",
+          "azimuth_deg": 180,
+          "look_target": [
+            -0.2640197277069092,
+            -8.616783142089844,
+            0.3
+          ],
+          "position": [
+            -0.8394457754198787,
+            -8.616783142089844,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            -0.36664126275872305,
+            0.36664126275872305,
+            0.6046273103678735,
+            -0.6046273103678735
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial4_stack_obj2__stack_obj0__stack_obj1_side_az270.png",
+          "azimuth_deg": 270,
+          "look_target": [
+            -0.2640197277069092,
+            -8.616783142089844,
+            0.3
+          ],
+          "position": [
+            -0.2640197277069093,
+            -9.192209189802814,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.518509046318984,
+            -5.002038784894519e-17,
+            -8.248851299797142e-17,
+            0.8550721425034135
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial4_stack_obj2__stack_obj0__stack_obj1_topdown.png",
+          "azimuth_deg": null,
+          "look_target": null,
+          "position": [
+            -0.2640197277069092,
+            -8.616783142089844,
+            1.8
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.7071067811865475,
+            -0.7071067811865475
+          ],
+          "type": "top_down"
+        }
+      ],
+      "exist_flags": [
+        {
+          "_key": "exist_stack_obj0_trial4_stack_obj2__stack_obj0__stack_obj1_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial4_stack_obj2__stack_obj0__stack_obj1_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial4_stack_obj2__stack_obj0__stack_obj1_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial4_stack_obj2__stack_obj0__stack_obj1_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial4_stack_obj2__stack_obj0__stack_obj1_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial4_stack_obj2__stack_obj0__stack_obj1_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial4_stack_obj2__stack_obj0__stack_obj1_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial4_stack_obj2__stack_obj0__stack_obj1_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial4_stack_obj2__stack_obj0__stack_obj1_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial4_stack_obj2__stack_obj0__stack_obj1_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial4_stack_obj2__stack_obj0__stack_obj1_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial4_stack_obj2__stack_obj0__stack_obj1_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial4_stack_obj2__stack_obj0__stack_obj1_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial4_stack_obj2__stack_obj0__stack_obj1_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj2_trial4_stack_obj2__stack_obj0__stack_obj1_topdown.png",
+          "value": true
+        }
+      ],
+      "on_top_checks": [
+        false,
+        true
+      ],
+      "order": [
+        "stack_obj2",
+        "stack_obj0",
+        "stack_obj1"
+      ],
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "post_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -0.1186157763004303,
+            -8.726944923400879,
+            0.0768667459487915
+          ],
+          "extent": [
+            0.2102895975112915,
+            0.1367664337158203,
+            0.15577340126037598
+          ],
+          "max": [
+            -0.013470973819494247,
+            -8.658561706542969,
+            0.1547534465789795
+          ],
+          "min": [
+            -0.22376057505607605,
+            -8.795328140258789,
+            -0.001019950956106186
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -0.13792669773101807,
+            -8.714868545532227,
+            0.23512820899486542
+          ],
+          "extent": [
+            0.1594218611717224,
+            0.13862323760986328,
+            0.2069794237613678
+          ],
+          "max": [
+            -0.05821576341986656,
+            -8.645557403564453,
+            0.3386179208755493
+          ],
+          "min": [
+            -0.21763762831687927,
+            -8.784180641174316,
+            0.13163849711418152
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -0.28737178444862366,
+            -8.597434997558594,
+            0.044075679033994675
+          ],
+          "extent": [
+            0.16806292533874512,
+            0.1680593490600586,
+            0.09018268436193466
+          ],
+          "max": [
+            -0.2033403217792511,
+            -8.513404846191406,
+            0.089167021214962
+          ],
+          "min": [
+            -0.3714032471179962,
+            -8.681464195251465,
+            -0.0010156631469726562
+          ]
+        }
+      ],
+      "pre_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -0.18167278170585632,
+            -8.710142135620117,
+            0.14897769689559937
+          ],
+          "extent": [
+            0.19659395515918732,
+            0.1327219009399414,
+            0.23666070401668549
+          ],
+          "max": [
+            -0.08337579667568207,
+            -8.643781661987305,
+            0.2673080563545227
+          ],
+          "min": [
+            -0.2799697518348694,
+            -8.776503562927246,
+            0.03064735233783722
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -0.12312497943639755,
+            -8.718605995178223,
+            0.23772560060024261
+          ],
+          "extent": [
+            0.15610744059085846,
+            0.12995338439941406,
+            0.20557734370231628
+          ],
+          "max": [
+            -0.04507126286625862,
+            -8.653629302978516,
+            0.34051427245140076
+          ],
+          "min": [
+            -0.20117869973182678,
+            -8.78358268737793,
+            0.13493692874908447
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -0.2640197277069092,
+            -8.616783142089844,
+            0.044075775891542435
+          ],
+          "extent": [
+            0.16930660605430603,
+            0.16930007934570312,
+            0.09018269926309586
+          ],
+          "max": [
+            -0.17936643958091736,
+            -8.532133102416992,
+            0.08916712552309036
+          ],
+          "min": [
+            -0.3486730456352234,
+            -8.701433181762695,
+            -0.0010155756026506424
+          ]
+        }
+      ],
+      "snaps": [
+        {
+          "_key": "stack_obj0",
+          "aabb_max": [
+            -0.013467788696289062,
+            -8.658561706542969,
+            0.15475265681743622
+          ],
+          "aabb_min": [
+            -0.22375842928886414,
+            -8.795328140258789,
+            -0.0010195699287578464
+          ],
+          "position": [
+            -0.13183191418647766,
+            -8.726686477661133,
+            0.06764879822731018
+          ],
+          "quaternion_xyzw": [
+            -0.006452418863773346,
+            0.530047595500946,
+            0.014642385765910149,
+            0.8478170037269592
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "aabb_max": [
+            -0.058216799050569534,
+            -8.645560264587402,
+            0.3386138081550598
+          ],
+          "aabb_min": [
+            -0.21763859689235687,
+            -8.784181594848633,
+            0.13163715600967407
+          ],
+          "position": [
+            -0.1301591992378235,
+            -8.71493148803711,
+            0.2219807654619217
+          ],
+          "quaternion_xyzw": [
+            0.00685263192281127,
+            0.0020426290575414896,
+            -0.030425943434238434,
+            0.9995114803314209
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "aabb_max": [
+            -0.2033403217792511,
+            -8.513404846191406,
+            0.089167021214962
+          ],
+          "aabb_min": [
+            -0.3714032471179962,
+            -8.681464195251465,
+            -0.0010156631469726562
+          ],
+          "position": [
+            -0.2875988483428955,
+            -8.596879005432129,
+            0.024773044511675835
+          ],
+          "quaternion_xyzw": [
+            4.340331543062348e-06,
+            -1.385807991027832e-06,
+            0.19266006350517273,
+            0.981265664100647
+          ]
+        }
+      ],
+      "stack_results": [
+        {
+          "lower": "stack_obj2",
+          "placement_ok": true,
+          "upper": "stack_obj0"
+        },
+        {
+          "lower": "stack_obj0",
+          "placement_ok": true,
+          "upper": "stack_obj1"
+        }
+      ],
+      "success": true,
+      "tilt_dots": [
+        {
+          "_key": "stack_obj0",
+          "value": 0.438
+        },
+        {
+          "_key": "stack_obj1",
+          "value": 0.9999
+        },
+        {
+          "_key": "stack_obj2",
+          "value": 1.0
+        }
+      ],
+      "trial_idx": 4
+    },
+    {
+      "all_on_top": false,
+      "all_stable": false,
+      "all_upright": false,
+      "camera_poses": [
+        {
+          "_key": "trial5_stack_obj2__stack_obj1__stack_obj0_side_az000.png",
+          "azimuth_deg": 0,
+          "look_target": [
+            -0.6289774775505066,
+            -8.894394874572754,
+            0.3
+          ],
+          "position": [
+            -0.05582931579212769,
+            -8.894394874572754,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.36614902972414054,
+            0.36614902972414054,
+            0.6049255227150451,
+            0.6049255227150451
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial5_stack_obj2__stack_obj1__stack_obj0_side_az090.png",
+          "azimuth_deg": 90,
+          "look_target": [
+            -0.6289774775505066,
+            -8.894394874572754,
+            0.3
+          ],
+          "position": [
+            -0.6289774775505066,
+            -8.321246712814375,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.517812923685629,
+            0.8554938784492505,
+            -0.0
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial5_stack_obj2__stack_obj1__stack_obj0_side_az180.png",
+          "azimuth_deg": 180,
+          "look_target": [
+            -0.6289774775505066,
+            -8.894394874572754,
+            0.3
+          ],
+          "position": [
+            -1.2021256393088855,
+            -8.894394874572754,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            -0.36614902972414054,
+            0.36614902972414054,
+            0.6049255227150451,
+            -0.6049255227150451
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial5_stack_obj2__stack_obj1__stack_obj0_side_az270.png",
+          "azimuth_deg": 270,
+          "look_target": [
+            -0.6289774775505066,
+            -8.894394874572754,
+            0.3
+          ],
+          "position": [
+            -0.6289774775505067,
+            -9.467543036331133,
+            0.6
+          ],
+          "quaternion_xyzw": [
+            0.517812923685629,
+            -5.0151764297781076e-17,
+            -8.285719685171336e-17,
+            0.8554938784492505
+          ],
+          "type": "side"
+        },
+        {
+          "_key": "trial5_stack_obj2__stack_obj1__stack_obj0_topdown.png",
+          "azimuth_deg": null,
+          "look_target": null,
+          "position": [
+            -0.6289774775505066,
+            -8.894394874572754,
+            1.8
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.7071067811865475,
+            -0.7071067811865475
+          ],
+          "type": "top_down"
+        }
+      ],
+      "exist_flags": [
+        {
+          "_key": "exist_stack_obj0_trial5_stack_obj2__stack_obj1__stack_obj0_side_az000.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial5_stack_obj2__stack_obj1__stack_obj0_side_az090.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial5_stack_obj2__stack_obj1__stack_obj0_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj0_trial5_stack_obj2__stack_obj1__stack_obj0_side_az270.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj0_trial5_stack_obj2__stack_obj1__stack_obj0_topdown.png",
+          "value": true
+        },
+        {
+          "_key": "exist_stack_obj1_trial5_stack_obj2__stack_obj1__stack_obj0_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial5_stack_obj2__stack_obj1__stack_obj0_side_az090.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial5_stack_obj2__stack_obj1__stack_obj0_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial5_stack_obj2__stack_obj1__stack_obj0_side_az270.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj1_trial5_stack_obj2__stack_obj1__stack_obj0_topdown.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial5_stack_obj2__stack_obj1__stack_obj0_side_az000.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial5_stack_obj2__stack_obj1__stack_obj0_side_az090.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial5_stack_obj2__stack_obj1__stack_obj0_side_az180.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial5_stack_obj2__stack_obj1__stack_obj0_side_az270.png",
+          "value": false
+        },
+        {
+          "_key": "exist_stack_obj2_trial5_stack_obj2__stack_obj1__stack_obj0_topdown.png",
+          "value": false
+        }
+      ],
+      "on_top_checks": [
+        false,
+        true
+      ],
+      "order": [
+        "stack_obj2",
+        "stack_obj1",
+        "stack_obj0"
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "post_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -0.6258935928344727,
+            -8.89065170288086,
+            0.2724241018295288
+          ],
+          "extent": [
+            0.2074405550956726,
+            0.13277912139892578,
+            0.33275946974754333
+          ],
+          "max": [
+            -0.522173285484314,
+            -8.824262619018555,
+            0.43880385160446167
+          ],
+          "min": [
+            -0.7296138405799866,
+            -8.95704174041748,
+            0.10604437440633774
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -0.5995402336120605,
+            -8.909280776977539,
+            0.0870036706328392
+          ],
+          "extent": [
+            0.16984063386917114,
+            0.14007854461669922,
+            0.204530730843544
+          ],
+          "max": [
+            -0.5146199464797974,
+            -8.839241981506348,
+            0.1892690360546112
+          ],
+          "min": [
+            -0.6844605803489685,
+            -8.979320526123047,
+            -0.0152616947889328
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -0.5954561233520508,
+            -8.890840530395508,
+            0.06674978137016296
+          ],
+          "extent": [
+            0.14592373371124268,
+            0.16744327545166016,
+            0.13562768697738647
+          ],
+          "max": [
+            -0.5224942564964294,
+            -8.807119369506836,
+            0.1345636248588562
+          ],
+          "min": [
+            -0.6684179902076721,
+            -8.974562644958496,
+            -0.0010640546679496765
+          ]
+        }
+      ],
+      "pre_aabbs": [
+        {
+          "_key": "stack_obj0",
+          "centre": [
+            -0.6268128156661987,
+            -8.891368865966797,
+            0.2912382185459137
+          ],
+          "extent": [
+            0.19153720140457153,
+            0.1327219009399414,
+            0.3237949013710022
+          ],
+          "max": [
+            -0.5310442447662354,
+            -8.825008392333984,
+            0.4531356692314148
+          ],
+          "min": [
+            -0.7225814461708069,
+            -8.957730293273926,
+            0.1293407827615738
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "centre": [
+            -0.623146116733551,
+            -8.894428253173828,
+            0.08095188438892365
+          ],
+          "extent": [
+            0.15610742568969727,
+            0.12995338439941406,
+            0.20430299639701843
+          ],
+          "max": [
+            -0.5450924038887024,
+            -8.829451560974121,
+            0.18310338258743286
+          ],
+          "min": [
+            -0.7011998295783997,
+            -8.959404945373535,
+            -0.021199621260166168
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "centre": [
+            -0.6289774775505066,
+            -8.894394874572754,
+            0.044075753539800644
+          ],
+          "extent": [
+            0.16930663585662842,
+            0.16930007934570312,
+            0.09018265455961227
+          ],
+          "max": [
+            -0.5443241596221924,
+            -8.809744834899902,
+            0.08916708081960678
+          ],
+          "min": [
+            -0.7136307954788208,
+            -8.979044914245605,
+            -0.001015571877360344
+          ]
+        }
+      ],
+      "snaps": [
+        {
+          "_key": "stack_obj0",
+          "aabb_max": [
+            -0.5221734642982483,
+            -8.824264526367188,
+            0.43880391120910645
+          ],
+          "aabb_min": [
+            -0.7296134829521179,
+            -8.957042694091797,
+            0.10604463517665863
+          ],
+          "position": [
+            -0.6305274963378906,
+            -8.890278816223145,
+            0.21240034699440002
+          ],
+          "quaternion_xyzw": [
+            0.0043303482234478,
+            0.08456577360630035,
+            0.0032631098292768,
+            0.9964032173156738
+          ]
+        },
+        {
+          "_key": "stack_obj1",
+          "aabb_max": [
+            -0.5146211981773376,
+            -8.839241027832031,
+            0.18926721811294556
+          ],
+          "aabb_min": [
+            -0.6844597458839417,
+            -8.979318618774414,
+            -0.01526179164648056
+          ],
+          "position": [
+            -0.5948413610458374,
+            -8.909050941467285,
+            0.08083856105804443
+          ],
+          "quaternion_xyzw": [
+            -0.0054124100133776665,
+            -0.06852138042449951,
+            -0.037093907594680786,
+            0.9969451427459717
+          ]
+        },
+        {
+          "_key": "stack_obj2",
+          "aabb_max": [
+            -0.5224944353103638,
+            -8.80711841583252,
+            0.13456323742866516
+          ],
+          "aabb_min": [
+            -0.6684182286262512,
+            -8.97456169128418,
+            -0.001064017415046692
+          ],
+          "position": [
+            -0.5891321301460266,
+            -8.887872695922852,
+            0.06005445122718811
+          ],
+          "quaternion_xyzw": [
+            -0.10448147356510162,
+            0.277345210313797,
+            -0.08895324170589447,
+            0.9509210586547852
+          ]
+        }
+      ],
+      "stack_results": [
+        {
+          "lower": "stack_obj2",
+          "placement_ok": true,
+          "upper": "stack_obj1"
+        },
+        {
+          "lower": "stack_obj1",
+          "placement_ok": true,
+          "upper": "stack_obj0"
+        }
+      ],
+      "success": true,
+      "tilt_dots": [
+        {
+          "_key": "stack_obj0",
+          "value": 0.9857
+        },
+        {
+          "_key": "stack_obj1",
+          "value": 0.9905
+        },
+        {
+          "_key": "stack_obj2",
+          "value": 0.8243
+        }
+      ],
+      "trial_idx": 5
+    }
+  ],
+  "true_count": null,
+  "views": null,
+  "visibility": null,
+  "visibility_summary": null,
+  "x_gap": null,
+  "y_gap": null
+}

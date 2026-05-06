@@ -1,0 +1,636 @@
+{
+  "scene": "office_cubicles_left",
+  "room": "bathroom_0",
+  "floor_name": "floors_mlogeo_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "hidden_by_others",
+  "question_index": 2,
+  "question_id": "hidden_by_others/q_002",
+  "question_data": {
+    "task_type": "hidden_by_others",
+    "question": "Considering both images, how many objects of category \"head_cabbage\" are present in this scene?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "case": "hidden_by_others",
+    "candidate_index": 2,
+    "count_target": "head_cabbage",
+    "count_object": {
+      "category": "head_cabbage",
+      "estimated_volume": 0.0017915657550725793,
+      "characteristic_size_m": 0.1214537468967268,
+      "display_name": "head cabbage",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 3
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        -23.544183341785065,
+        -10.050062251181174,
+        0.035
+      ],
+      [
+        -23.455514421718178,
+        -9.086240716724946,
+        0.035
+      ],
+      [
+        -24.771985707257503,
+        -9.187104125875877,
+        0.035
+      ]
+    ],
+    "object_positions": [
+      [
+        -23.544183341785065,
+        -10.050062251181174,
+        0.035
+      ],
+      [
+        -23.455514421718178,
+        -9.086240716724946,
+        0.035
+      ],
+      [
+        -24.771985707257503,
+        -9.187104125875877,
+        0.035
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 3,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              -23.544183341785065,
+              -10.050062251181174,
+              0.035
+            ]
+          ],
+          "metadata": {
+            "anchor_object": {
+              "name": "urinal_lowprn_0",
+              "category": "urinal",
+              "in_rooms": [
+                "bathroom_0"
+              ],
+              "bbox": [
+                [
+                  -23.333637237548828,
+                  -10.1182222366333,
+                  0.3633565306663513
+                ],
+                [
+                  -23.06393814086914,
+                  -9.792322158813477,
+                  0.8654564619064331
+                ]
+              ],
+              "has_open_state": false,
+              "open_state": null
+            },
+            "visibility": {
+              "occluded_from_agent": true,
+              "occlusion_test": "agent_to_ball_segment_intersects_anchor_bbox_xy"
+            }
+          }
+        },
+        {
+          "source_index": 1,
+          "ball_positions": [
+            [
+              -23.455514421718178,
+              -9.086240716724946,
+              0.035
+            ]
+          ],
+          "metadata": {
+            "anchor_object": {
+              "name": "urinal_lowprn_4",
+              "category": "urinal",
+              "in_rooms": [
+                "bathroom_0"
+              ],
+              "bbox": [
+                [
+                  -23.333637237548828,
+                  -9.296748161315918,
+                  0.36335647106170654
+                ],
+                [
+                  -23.06393814086914,
+                  -8.970848083496094,
+                  0.8654564023017883
+                ]
+              ],
+              "has_open_state": false,
+              "open_state": null
+            },
+            "visibility": {
+              "occluded_from_agent": true,
+              "occlusion_test": "agent_to_ball_segment_intersects_anchor_bbox_xy"
+            }
+          }
+        },
+        {
+          "source_index": 2,
+          "ball_positions": [
+            [
+              -24.771985707257503,
+              -9.187104125875877,
+              0.035
+            ]
+          ],
+          "metadata": {
+            "anchor_object": {
+              "name": "pot_plant_ttijye_0",
+              "category": "pot_plant",
+              "in_rooms": [
+                "bathroom_0"
+              ],
+              "bbox": [
+                [
+                  -24.62643051147461,
+                  -9.89560317993164,
+                  -0.00012350082397460938
+                ],
+                [
+                  -23.53689193725586,
+                  -8.70832347869873,
+                  0.9997336864471436
+                ]
+              ],
+              "has_open_state": false,
+              "open_state": null
+            },
+            "visibility": {
+              "occluded_from_agent": true,
+              "occlusion_test": "agent_to_ball_segment_intersects_anchor_bbox_xy"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002.png"
+      ],
+      "camera_poses": {
+        "q_002.png": {
+          "position": [
+            -22.05000000000001,
+            -9.64,
+            1.25
+          ],
+          "quaternion_xyzw": [
+            0.2554989900522251,
+            0.5899364077471532,
+            0.7028721454016944,
+            0.30441098553616136
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 9.985014668809727,
+          "look_target": [
+            -23.5,
+            -11.0,
+            0.9
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/office_cubicles_left/bathroom_0/candidate_renders/hidden_by_others/q_002",
+      "room_bbox": {
+        "room_instance": "bathroom_0",
+        "room_id": 2,
+        "bbox_map_rc": [
+          14,
+          1,
+          18,
+          6
+        ],
+        "bbox_world_xy": [
+          -26.0,
+          -13.0,
+          -21.0,
+          -9.0
+        ],
+        "expanded_bbox_world_xy": [
+          -26.0,
+          -13.0,
+          -21.0,
+          -9.0
+        ],
+        "bbox_area_m2": 20.0,
+        "expanded_bbox_area_m2": 20.0,
+        "pixel_count": 30,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "bathroom_0",
+        "room_bbox_world_xy": [
+          -26.0,
+          -13.0,
+          -21.0,
+          -9.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -25.65,
+                -12.65,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                0.49507250565078875,
+                -0.2441204935269992,
+                -0.3687760730722765,
+                0.7478720523713767
+              ]
+            },
+            "target": [
+              -23.5,
+              -11.0,
+              1.05
+            ],
+            "view_id": "corner_00",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -25.65,
+                -9.35,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                -0.2441204935269992,
+                0.49507250565078875,
+                0.7478720523713767,
+                -0.3687760730722765
+              ]
+            },
+            "target": [
+              -23.5,
+              -11.0,
+              1.05
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                -21.35,
+                -12.65,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                0.49507250565078875,
+                0.2441204935269992,
+                0.3687760730722765,
+                0.7478720523713767
+              ]
+            },
+            "target": [
+              -23.5,
+              -11.0,
+              1.05
+            ],
+            "view_id": "corner_02",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                -21.35,
+                -9.35,
+                2.2
+              ],
+              "quaternion_xyzw": [
+                0.2441204935269992,
+                0.49507250565078875,
+                0.7478720523713767,
+                0.3687760730722765
+              ]
+            },
+            "target": [
+              -23.5,
+              -11.0,
+              1.05
+            ],
+            "view_id": "corner_03",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            -23.5441837310791,
+            -10.05006217956543,
+            0.03500000014901161
+          ],
+          "camera_pose": {
+            "position": [
+              -23.399382278633787,
+              -9.655981126400045,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.11154175543180249,
+              0.6325847297086346,
+              0.7547733899207156,
+              0.133086912963811
+            ]
+          },
+          "look_target": [
+            -23.543030738830566,
+            -10.050652027130127,
+            0.04544041305780411
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 11319,
+            "centered_score": 0.8906,
+            "bbox_xyxy": [
+              507,
+              316,
+              614,
+              460
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            -23.455514907836914,
+            -9.086240768432617,
+            0.03500000014901161
+          ],
+          "camera_pose": {
+            "position": [
+              -23.789541656047533,
+              -10.007729384367504,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.6694295551318312,
+              -0.11803849225340618,
+              -0.1273601348679724,
+              0.7222952174207946
+            ]
+          },
+          "look_target": [
+            -23.45436191558838,
+            -9.086830615997314,
+            0.04544041305780411
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 1581,
+            "centered_score": 0.9493,
+            "bbox_xyxy": [
+              579,
+              344,
+              623,
+              390
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            -24.77198600769043,
+            -9.187104225158691,
+            0.03500000014901161
+          ],
+          "camera_pose": {
+            "position": [
+              -25.190833015441896,
+              -9.187694072723389,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.4542053519419133,
+              -0.45420535194191325,
+              -0.5419386480657405,
+              0.5419386480657407
+            ]
+          },
+          "look_target": [
+            -24.770833015441895,
+            -9.187694072723389,
+            0.04544041305780411
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 33874,
+            "centered_score": 0.969,
+            "bbox_xyxy": [
+              496,
+              310,
+              773,
+              452
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -23.5441837310791,
+              -10.05006217956543,
+              0.03500000014901161
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -23.649005889892578,
+                -10.151203155517578,
+                -0.00546342134475708
+              ],
+              [
+                -23.437055587768555,
+                -9.950100898742676,
+                0.07937630265951157
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -23.544183341785065,
+              -10.050062251181174,
+              0.035
+            ],
+            "source_entry_case": "hidden_by_others",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -23.455514907836914,
+              -9.086240768432617,
+              0.03500000014901161
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -23.56033706665039,
+                -9.187381744384766,
+                -0.00546342134475708
+              ],
+              [
+                -23.348386764526367,
+                -8.986279487609863,
+                0.07937630265951157
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -23.455514421718178,
+              -9.086240716724946,
+              0.035
+            ],
+            "source_entry_case": "hidden_by_others",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -24.77198600769043,
+              -9.187104225158691,
+              0.03500000014901161
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -24.876808166503906,
+                -9.28824520111084,
+                -0.00546342134475708
+              ],
+              [
+                -24.664857864379883,
+                -9.087142944335938,
+                0.07937630265951157
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -24.771985707257503,
+              -9.187104125875877,
+              0.035
+            ],
+            "source_entry_case": "hidden_by_others",
+            "target_name": "render_count_target_club_sandwich_2"
+          }
+        ],
+        "confusers": [],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 8696448,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/q_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/hidden_by_others/office_cubicles_left/bathroom_0/q_002/target_closeups/target_closeup_002.png"
+  ]
+}

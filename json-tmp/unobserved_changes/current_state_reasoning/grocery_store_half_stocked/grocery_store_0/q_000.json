@@ -1,0 +1,1137 @@
+{
+  "scene": "grocery_store_half_stocked",
+  "room": "grocery_store_0",
+  "floor_name": "floors_mdfbbc_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "current_state_reasoning",
+  "question_index": 0,
+  "question_id": "current_state_reasoning/q_000",
+  "question_data": {
+    "task_type": "current_state_reasoning",
+    "question": "Which box changed from Phase 1 to Phase 2: the brown box, the red box, or the yellow box?",
+    "options": [
+      "brown box",
+      "red box",
+      "yellow box"
+    ],
+    "answer": "yellow box",
+    "candidate_index": 0,
+    "box_count": 3,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "brown",
+        "change_type": "no_change",
+        "phase1_content": null,
+        "phase2_content": null,
+        "container": {
+          "name": "render_unobserved_box_0_cedar_chest",
+          "category": "cedar_chest",
+          "model": "fwstpx",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              1.5393899841308594,
+              0.14234301757812373,
+              0.210101366519928
+            ]
+          },
+          "bbox": [
+            [
+              1.3390722274780273,
+              -0.12722410261631012,
+              0.005505703389644623
+            ],
+            [
+              1.7426458597183228,
+              0.4129214286804199,
+              0.26904061436653137
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 1,
+        "position_label": "red",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "plant_pot",
+          "display_name": "plant pot",
+          "model": "skbcqq",
+          "bbox_size_m": [
+            0.09017292022705078,
+            0.09017292785644532,
+            0.0986700553894043
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "plant_pot",
+          "display_name": "plant pot",
+          "model": "skbcqq",
+          "bbox_size_m": [
+            0.09017292022705078,
+            0.09017292785644532,
+            0.0986700553894043
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_1_cedar_chest",
+          "category": "cedar_chest",
+          "model": "gbdzls",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              1.1893899841308593,
+              -5.978666114807129,
+              0.1523497866988182
+            ]
+          },
+          "bbox": [
+            [
+              0.9883010983467102,
+              -6.076829433441162,
+              0.005539204925298691
+            ],
+            [
+              1.390198826789856,
+              -5.881067752838135,
+              0.1504569947719574
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 2,
+        "position_label": "yellow",
+        "change_type": "remove",
+        "phase1_content": {
+          "category": "screwdriver",
+          "display_name": "screwdriver",
+          "model": "uajlga",
+          "bbox_size_m": [
+            0.19609317779541016,
+            0.01819426441192627,
+            0.018081545352935793
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": null,
+        "container": {
+          "name": "render_unobserved_box_2_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              9.85524347686767,
+              0.032195884704589006,
+              0.17452947378158568
+            ]
+          },
+          "bbox": [
+            [
+              9.739004135131836,
+              -0.12296482175588608,
+              0.00554540753364563
+            ],
+            [
+              9.969491004943848,
+              0.19142577052116394,
+              0.19231174886226654
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "changed_box_index": 2
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              4.102998971939087,
+              -1.9919650554656982,
+              1.3161458373069763
+            ],
+            "quaternion_xyzw": [
+              0.0405109406226517,
+              -0.022320504253736495,
+              -0.4820575869908911,
+              0.8749177913405616
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 84.69790347377823,
+            "look_target": [
+              4.194785575071971,
+              -1.933956354856491,
+              0.14614583730697633
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "grocery_store_0",
+          "room_bbox_world_xy": [
+            -1.5,
+            -6.8149999999999995,
+            10.270000000000003,
+            2.8150000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  -0.28007432380733227,
+                  -0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  -0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  -0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  0.28007432380733227,
+                  0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.243048440259533,
+                  0.14166819945015668,
+                  0.8395788459998783
+                ],
+                "quaternion_xyzw": [
+                  0.27084428062401444,
+                  0.2703515952606648,
+                  0.6526864878874988,
+                  0.6538759355736802
+                ]
+              },
+              "look_target": [
+                1.540743887424469,
+                0.14294690638780594,
+                0.1372731290757656
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.8900174958555116,
+                  -5.978961401953034,
+                  0.7732198272300262
+                ],
+                "quaternion_xyzw": [
+                  0.27059242132597455,
+                  0.27060367870314056,
+                  0.6532950711531733,
+                  0.6532678934405425
+                ]
+              },
+              "look_target": [
+                1.1892586946487427,
+                -5.97899055480957,
+                0.07246102541685104
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  9.239001873057745,
+                  0.03423225017099458,
+                  0.6389485618213435
+                ],
+                "quaternion_xyzw": [
+                  0.26924794107360883,
+                  -0.27194145626283,
+                  -0.6565247518812142,
+                  0.6500220309809384
+                ]
+              },
+              "look_target": [
+                9.84537649154663,
+                0.028196212835609913,
+                0.03254390180110932
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              4.102998971939087,
+              -1.9919650554656982,
+              1.3161458373069763
+            ],
+            "quaternion_xyzw": [
+              0.04049445771936453,
+              -0.02229183389041231,
+              -0.4817334486622574,
+              0.8750977988063877
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 84.70114633402805,
+            "look_target": [
+              4.194686055183411,
+              -1.9339239597320557,
+              0.14614583730697633
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "grocery_store_0",
+          "room_bbox_world_xy": [
+            -1.5,
+            -6.8149999999999995,
+            10.270000000000003,
+            2.8150000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  -0.28007432380733227,
+                  -0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  -0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  -0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  0.28007432380733227,
+                  0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.2430475047354097,
+                  0.1415965743013549,
+                  0.8396060785049809
+                ],
+                "quaternion_xyzw": [
+                  0.2708544226422148,
+                  0.2703414343785997,
+                  0.6526619573482114,
+                  0.6539004205715693
+                ]
+              },
+              "look_target": [
+                1.5407158136367798,
+                0.14292802661657333,
+                0.1372731253504753
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.890004188380289,
+                  -5.978961278721344,
+                  0.7733887252184861
+                ],
+                "quaternion_xyzw": [
+                  0.2705923068490461,
+                  0.2706037931752583,
+                  0.6532953475133124,
+                  0.6532676170687891
+                ]
+              },
+              "look_target": [
+                1.189076542854309,
+                -5.9789910316467285,
+                0.07246107906103133
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  9.239002595757277,
+                  0.03421112943581489,
+                  0.7141725769479019
+                ],
+                "quaternion_xyzw": [
+                  0.27060347978749333,
+                  -0.270592620249751,
+                  -0.6532683736850216,
+                  0.65329459092832
+                ]
+              },
+              "look_target": [
+                9.854246616363525,
+                0.034235820174217224,
+                0.0989285558462143
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "grocery_store_0",
+          "room_bbox_world_xy": [
+            -1.5,
+            -6.8149999999999995,
+            10.270000000000003,
+            2.8150000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  -0.28007432380733227,
+                  -0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  -0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  -0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  0.28007432380733227,
+                  0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "grocery_store_0",
+          "room_bbox_world_xy": [
+            -1.5,
+            -6.8149999999999995,
+            10.270000000000003,
+            2.8150000000000004
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  -0.28007432380733227,
+                  -0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -0.7296,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  -0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  -0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  -6.044599999999999,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.5785466623453708,
+                  0.28007432380733227,
+                  0.33379200170875545,
+                  0.6895107194439832
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  9.499600000000003,
+                  2.0446000000000004,
+                  2.2661458373069765
+                ],
+                "quaternion_xyzw": [
+                  0.2800743238073322,
+                  0.5785466623453708,
+                  0.6895107194439832,
+                  0.33379200170875545
+                ]
+              },
+              "target": [
+                4.385000000000002,
+                -1.9999999999999996,
+                1.1161458373069764
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.243048440259533,
+                  0.14166819945015668,
+                  0.8395788459998783
+                ],
+                "quaternion_xyzw": [
+                  0.27084428062401444,
+                  0.2703515952606648,
+                  0.6526864878874988,
+                  0.6538759355736802
+                ]
+              },
+              "look_target": [
+                1.540743887424469,
+                0.14294690638780594,
+                0.1372731290757656
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.8900174958555116,
+                  -5.978961401953034,
+                  0.7732198272300262
+                ],
+                "quaternion_xyzw": [
+                  0.27059242132597455,
+                  0.27060367870314056,
+                  0.6532950711531733,
+                  0.6532678934405425
+                ]
+              },
+              "look_target": [
+                1.1892586946487427,
+                -5.97899055480957,
+                0.07246102541685104
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  9.239001873057745,
+                  0.03423225017099458,
+                  0.6389485618213435
+                ],
+                "quaternion_xyzw": [
+                  0.26924794107360883,
+                  -0.27194145626283,
+                  -0.6565247518812142,
+                  0.6500220309809384
+                ]
+              },
+              "look_target": [
+                9.84537649154663,
+                0.028196212835609913,
+                0.03254390180110932
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/grocery_store_half_stocked/grocery_store_0/candidate_renders/current_state_reasoning/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  2.2430475047354097,
+                  0.1415965743013549,
+                  0.8396060785049809
+                ],
+                "quaternion_xyzw": [
+                  0.2708544226422148,
+                  0.2703414343785997,
+                  0.6526619573482114,
+                  0.6539004205715693
+                ]
+              },
+              "look_target": [
+                1.5407158136367798,
+                0.14292802661657333,
+                0.1372731253504753
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  1.890004188380289,
+                  -5.978961278721344,
+                  0.7733887252184861
+                ],
+                "quaternion_xyzw": [
+                  0.2705923068490461,
+                  0.2706037931752583,
+                  0.6532953475133124,
+                  0.6532676170687891
+                ]
+              },
+              "look_target": [
+                1.189076542854309,
+                -5.9789910316467285,
+                0.07246107906103133
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  9.239002595757277,
+                  0.03421112943581489,
+                  0.7141725769479019
+                ],
+                "quaternion_xyzw": [
+                  0.27060347978749333,
+                  -0.270592620249751,
+                  -0.6532683736850216,
+                  0.65329459092832
+                ]
+              },
+              "look_target": [
+                9.854246616363525,
+                0.034235820174217224,
+                0.0989285558462143
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "grocery_store_0",
+        "room_id": 3,
+        "bbox_map_rc": [
+          12,
+          17,
+          21,
+          28
+        ],
+        "bbox_world_xy": [
+          -1.5,
+          -6.5,
+          9.5,
+          2.5
+        ],
+        "expanded_bbox_world_xy": [
+          -1.5,
+          -6.8149999999999995,
+          10.270000000000003,
+          2.8150000000000004
+        ],
+        "bbox_area_m2": 99.0,
+        "expanded_bbox_area_m2": 113.34510000000002,
+        "pixel_count": 120,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image1_box_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/grocery_store_half_stocked/grocery_store_0/q_000/gt_view/image2_box_02.png"
+  ]
+}

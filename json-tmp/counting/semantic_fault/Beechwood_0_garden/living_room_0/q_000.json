@@ -1,0 +1,741 @@
+{
+  "scene": "Beechwood_0_garden",
+  "room": "living_room_0",
+  "floor_name": "floors_ctewvi_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "reuse_agent_position_from_existing_json_if_available",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "semantic_fault",
+  "question_index": 0,
+  "question_id": "semantic_fault/q_000",
+  "question_data": {
+    "task_type": "semantic_fault",
+    "question": "Considering both images, how many objects of category \"cauliflower\" are present in this scene?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "case": "semantic_fault",
+    "candidate_index": 0,
+    "count_target": "cauliflower",
+    "count_object": {
+      "category": "cauliflower",
+      "estimated_volume": 0.005731786146402203,
+      "characteristic_size_m": 0.17896303083054382,
+      "display_name": "cauliflower",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "target_model": "genkom",
+      "resolved_models": [
+        "genkom"
+      ],
+      "resolved_object_count": 3
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        3.2675000000000005,
+        13.914999999999997,
+        0.03499707937240601
+      ],
+      [
+        3.6175000000000006,
+        14.964999999999996,
+        0.03499707937240601
+      ],
+      [
+        3.6175000000000006,
+        15.314999999999996,
+        0.03499707937240601
+      ]
+    ],
+    "object_positions": [
+      [
+        3.2675000000000005,
+        13.914999999999997,
+        0.03499707937240601
+      ],
+      [
+        3.6175000000000006,
+        14.964999999999996,
+        0.03499707937240601
+      ],
+      [
+        3.6175000000000006,
+        15.314999999999996,
+        0.03499707937240601
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 3,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              3.2675000000000005,
+              13.914999999999997,
+              0.03499707937240601
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "salad",
+              "clip_score": 0.8204271793365479,
+              "source": "keys_clip_top3",
+              "position": [
+                3.7675000000000005,
+                13.914999999999997,
+                0.03499707937240601
+              ]
+            },
+            "count_object": {
+              "category": "cauliflower",
+              "estimated_volume": 0.005731786146402203,
+              "characteristic_size_m": 0.17896303083054382,
+              "display_name": "cauliflower",
+              "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models"
+            }
+          }
+        },
+        {
+          "source_index": 1,
+          "ball_positions": [
+            [
+              3.6175000000000006,
+              14.964999999999996,
+              0.03499707937240601
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "cold_cuts",
+              "clip_score": 0.8153139352798462,
+              "source": "keys_clip_top3",
+              "position": [
+                3.6175000000000006,
+                15.464999999999996,
+                0.03499707937240601
+              ]
+            },
+            "count_object": {
+              "category": "cauliflower",
+              "estimated_volume": 0.005731786146402203,
+              "characteristic_size_m": 0.17896303083054382,
+              "display_name": "cauliflower",
+              "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models"
+            }
+          }
+        },
+        {
+          "source_index": 3,
+          "ball_positions": [
+            [
+              3.6175000000000006,
+              15.314999999999996,
+              0.03499707937240601
+            ]
+          ],
+          "metadata": {
+            "confuser_object": {
+              "category": "hamburger",
+              "clip_score": 0.8118176460266113,
+              "source": "keys_clip_top3",
+              "position": [
+                3.6175000000000006,
+                14.814999999999996,
+                0.03499707937240601
+              ]
+            },
+            "count_object": {
+              "category": "cauliflower",
+              "estimated_volume": 0.005731786146402203,
+              "characteristic_size_m": 0.17896303083054382,
+              "display_name": "cauliflower",
+              "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000.png"
+      ],
+      "camera_poses": {
+        "q_000.png": {
+          "position": [
+            2.0369,
+            14.869999999999989,
+            1.249997079372406
+          ],
+          "quaternion_xyzw": [
+            -0.2860664027796683,
+            0.5584573763502672,
+            0.6930159967637656,
+            -0.35499323969647817
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 12.273750730104696,
+          "look_target": [
+            3.3425000000000007,
+            13.93,
+            0.899997079372406
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/Beechwood_0_garden/living_room_0/candidate_renders/semantic_fault/q_000",
+      "room_bbox": {
+        "room_instance": "living_room_0",
+        "room_id": 7,
+        "bbox_map_rc": [
+          42,
+          32,
+          46,
+          35
+        ],
+        "bbox_world_xy": [
+          2.0,
+          12.0,
+          5.0,
+          16.0
+        ],
+        "expanded_bbox_world_xy": [
+          1.4225,
+          11.719999999999999,
+          5.262500000000001,
+          16.14
+        ],
+        "bbox_area_m2": 12.0,
+        "expanded_bbox_area_m2": 16.97280000000001,
+        "pixel_count": 20,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "living_room_0",
+        "room_bbox_world_xy": [
+          1.4225,
+          11.719999999999999,
+          5.262500000000001,
+          16.14
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                1.7725,
+                12.069999999999999,
+                2.199997079372406
+              ],
+              "quaternion_xyzw": [
+                0.5026269522676429,
+                -0.18377244502379209,
+                -0.29007797663554663,
+                0.7933779696809997
+              ]
+            },
+            "target": [
+              3.3425000000000007,
+              13.93,
+              1.049997079372406
+            ],
+            "view_id": "corner_00",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                1.7725,
+                15.790000000000001,
+                2.199997079372406
+              ],
+              "quaternion_xyzw": [
+                -0.18377244502379209,
+                0.5026269522676429,
+                0.7933779696809997,
+                -0.29007797663554663
+              ]
+            },
+            "target": [
+              3.3425000000000007,
+              13.93,
+              1.049997079372406
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                4.912500000000001,
+                12.069999999999999,
+                2.199997079372406
+              ],
+              "quaternion_xyzw": [
+                0.5026269522676429,
+                0.18377244502379209,
+                0.29007797663554663,
+                0.7933779696809997
+              ]
+            },
+            "target": [
+              3.3425000000000007,
+              13.93,
+              1.049997079372406
+            ],
+            "view_id": "corner_02",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                4.912500000000001,
+                15.790000000000001,
+                2.199997079372406
+              ],
+              "quaternion_xyzw": [
+                0.18377244502379209,
+                0.5026269522676429,
+                0.7933779696809997,
+                0.29007797663554663
+              ]
+            },
+            "target": [
+              3.3425000000000007,
+              13.93,
+              1.049997079372406
+            ],
+            "view_id": "corner_03",
+            "is_traversable": true,
+            "blocker_occluded": true,
+            "trav_occluded": true
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_cauliflower_0",
+          "target_position": [
+            3.2674999237060547,
+            13.914999961853027,
+            0.03499707952141762
+          ],
+          "camera_pose": {
+            "position": [
+              3.6821763944625854,
+              13.918069839477539,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.459606398684719,
+              0.45960639868471886,
+              0.5373657583881422,
+              0.5373657583881422
+            ]
+          },
+          "look_target": [
+            3.2621763944625854,
+            13.918069839477539,
+            0.054082770645618436
+          ],
+          "visibility": {
+            "target_name": "render_count_target_cauliflower_0",
+            "visible_pixels": 54078,
+            "centered_score": 0.9663,
+            "bbox_xyxy": [
+              470,
+              262,
+              794,
+              482
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_cauliflower_0",
+              "cauliflower"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_cauliflower_1",
+          "target_position": [
+            3.617500066757202,
+            14.96500015258789,
+            0.03499707952141762
+          ],
+          "camera_pose": {
+            "position": [
+              4.032176537513733,
+              14.968070030212402,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.459606398684719,
+              0.45960639868471886,
+              0.5373657583881422,
+              0.5373657583881422
+            ]
+          },
+          "look_target": [
+            3.612176537513733,
+            14.968070030212402,
+            0.054082770645618436
+          ],
+          "visibility": {
+            "target_name": "render_count_target_cauliflower_1",
+            "visible_pixels": 54078,
+            "centered_score": 0.9663,
+            "bbox_xyxy": [
+              470,
+              262,
+              794,
+              482
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_cauliflower_1",
+              "cauliflower"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_cauliflower_2",
+          "target_position": [
+            3.617500066757202,
+            15.3149995803833,
+            0.03499707952141762
+          ],
+          "camera_pose": {
+            "position": [
+              4.032176537513733,
+              15.318069458007812,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.459606398684719,
+              0.45960639868471886,
+              0.5373657583881422,
+              0.5373657583881422
+            ]
+          },
+          "look_target": [
+            3.612176537513733,
+            15.318069458007812,
+            0.054082770645618436
+          ],
+          "visibility": {
+            "target_name": "render_count_target_cauliflower_2",
+            "visible_pixels": 54078,
+            "centered_score": 0.9663,
+            "bbox_xyxy": [
+              470,
+              262,
+              794,
+              482
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_cauliflower_2",
+              "cauliflower"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_cauliflower_0",
+            "category": "cauliflower",
+            "model": "genkom",
+            "position": [
+              3.2674999237060547,
+              13.914999961853027,
+              0.03499707952141762
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.1357572078704834,
+                13.795148849487305,
+                -0.06068011745810509
+              ],
+              [
+                3.3885955810546875,
+                14.040990829467773,
+                0.13059136271476746
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.2675000000000005,
+              13.914999999999997,
+              0.03499707937240601
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cauliflower",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_cauliflower_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_cauliflower_1",
+            "category": "cauliflower",
+            "model": "genkom",
+            "position": [
+              3.617500066757202,
+              14.96500015258789,
+              0.03499707952141762
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.485757350921631,
+                14.845149040222168,
+                -0.06068011745810509
+              ],
+              [
+                3.738595724105835,
+                15.090991020202637,
+                0.13059136271476746
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.6175000000000006,
+              14.964999999999996,
+              0.03499707937240601
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cauliflower",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_cauliflower_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_cauliflower_2",
+            "category": "cauliflower",
+            "model": "genkom",
+            "position": [
+              3.617500066757202,
+              15.3149995803833,
+              0.03499707952141762
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.485757350921631,
+                15.195148468017578,
+                -0.06068011745810509
+              ],
+              [
+                3.738595724105835,
+                15.440990447998047,
+                0.13059136271476746
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.6175000000000006,
+              15.314999999999996,
+              0.03499707937240601
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cauliflower",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_cauliflower_2"
+          }
+        ],
+        "confusers": [
+          {
+            "role": "confuser",
+            "name": "render_confuser_salad_0",
+            "category": "salad",
+            "model": "nffvob",
+            "position": [
+              3.7674999237060547,
+              13.914999961853027,
+              0.04410428926348686
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.6866791248321533,
+                13.831456184387207,
+                0.022221466526389122
+              ],
+              [
+                3.842930555343628,
+                14.00175666809082,
+                0.09043406695127487
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.7675000000000005,
+              13.914999999999997,
+              0.03499707937240601
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "salad",
+            "source_clip_score": 0.8204271793365479,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 1188888561
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_cold_cuts_0",
+            "category": "cold_cuts",
+            "model": "zidsvg",
+            "position": [
+              3.617500066757202,
+              15.46500015258789,
+              0.03499707952141762
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.6101503372192383,
+                15.424267768859863,
+                0.028535056859254837
+              ],
+              [
+                3.624281167984009,
+                15.505095481872559,
+                0.04153527319431305
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.6175000000000006,
+              15.464999999999996,
+              0.03499707937240601
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "cold_cuts",
+            "source_clip_score": 0.8153139352798462,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 2116820859
+          },
+          {
+            "role": "confuser",
+            "name": "render_confuser_hamburger_0",
+            "category": "hamburger",
+            "model": "fyswch",
+            "position": [
+              3.617500066757202,
+              14.8149995803833,
+              0.04504651948809624
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                3.563598394393921,
+                14.764636039733887,
+                0.014486249536275864
+              ],
+              [
+                3.671379566192627,
+                14.865375518798828,
+                0.08458323776721954
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              3.6175000000000006,
+              14.814999999999996,
+              0.03499707937240601
+            ],
+            "source_entry_case": "semantic_fault",
+            "source_category": "hamburger",
+            "source_clip_score": 0.8118176460266113,
+            "source_sampling_source": "keys_clip_top3",
+            "confuser_pool_seed": 435768299
+          }
+        ],
+        "containers": []
+      },
+      "target_category": "cauliflower",
+      "target_model": "genkom",
+      "target_pool_seed": 1420011194,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/q_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/semantic_fault/Beechwood_0_garden/living_room_0/q_000/target_closeups/target_closeup_002.png"
+  ]
+}

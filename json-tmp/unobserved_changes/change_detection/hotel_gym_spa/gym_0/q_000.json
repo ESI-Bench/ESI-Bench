@@ -1,0 +1,804 @@
+{
+  "scene": "hotel_gym_spa",
+  "room": "gym_0",
+  "floor_name": "floors_qdlnea_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 0,
+  "question_id": "change_detection/q_000",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "no",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "box_of_oatmeal",
+          "display_name": "box of oatmeal",
+          "model": "rabeel",
+          "bbox_size_m": [
+            0.07563073348999023,
+            0.2410998229980469,
+            0.24178317260742188
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "box_of_oatmeal",
+          "display_name": "box of oatmeal",
+          "model": "rabeel",
+          "bbox_size_m": [
+            0.07563073348999023,
+            0.2410998229980469,
+            0.24178317260742188
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              -10.79475652313229,
+              -17.502804115295383,
+              0.11043669611215591
+            ]
+          },
+          "bbox": [
+            [
+              -10.910995483398438,
+              -17.657962799072266,
+              1.4178454875946045e-05
+            ],
+            [
+              -10.680510520935059,
+              -17.34357452392578,
+              0.18678054213523865
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -8.45000000000006,
+              -16.44,
+              1.2520530596375465
+            ],
+            "quaternion_xyzw": [
+              0.2943879377933422,
+              0.45621350995415244,
+              0.705611663862915,
+              0.45532093652467204
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 24.230589871729503,
+            "look_target": [
+              -10.795753002166748,
+              -17.500768661499023,
+              0.0933973416686058
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -26.0,
+            -24.0,
+            -8.0,
+            -15.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  -0.3575664668054789,
+                  -0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  -0.35756646680547893,
+                  0.5563018120394922,
+                  0.6310106724267034,
+                  -0.4055860537807278
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  0.3575664668054788,
+                  0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.3575664668054789,
+                  0.5563018120394921,
+                  0.6310106724267035,
+                  0.40558605378072776
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.180507727210617,
+                  -17.44180823136575,
+                  0.6962873102796264
+                ],
+                "quaternion_xyzw": [
+                  0.2570656494320673,
+                  0.28348520470880967,
+                  0.6843938259401215,
+                  0.6206113772791443
+                ]
+              },
+              "look_target": [
+                -10.794415473937988,
+                -17.501961708068848,
+                0.0794395476579666
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -8.45000000000006,
+              -16.44,
+              1.2520530596375465
+            ],
+            "quaternion_xyzw": [
+              0.2943878755875612,
+              0.45621348997645655,
+              0.705611726054268,
+              0.45532090038264317
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 24.230596764738117,
+            "look_target": [
+              -10.795752048492432,
+              -17.500768661499023,
+              0.0933973602950573
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -26.0,
+            -24.0,
+            -8.0,
+            -15.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  -0.3575664668054789,
+                  -0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  -0.35756646680547893,
+                  0.5563018120394922,
+                  0.6310106724267034,
+                  -0.4055860537807278
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  0.3575664668054788,
+                  0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.3575664668054789,
+                  0.5563018120394921,
+                  0.6310106724267035,
+                  0.40558605378072776
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.180507743920618,
+                  -17.55428067916719,
+                  0.6955707597935389
+                ],
+                "quaternion_xyzw": [
+                  0.28185294820276086,
+                  0.2588542543520157,
+                  0.6249294515346112,
+                  0.6804532101459467
+                ]
+              },
+              "look_target": [
+                -10.794413566589355,
+                -17.501961708068848,
+                0.07943957746028898
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -26.0,
+            -24.0,
+            -8.0,
+            -15.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  -0.3575664668054789,
+                  -0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  -0.35756646680547893,
+                  0.5563018120394922,
+                  0.6310106724267034,
+                  -0.4055860537807278
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  0.3575664668054788,
+                  0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.3575664668054789,
+                  0.5563018120394921,
+                  0.6310106724267035,
+                  0.40558605378072776
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "gym_0",
+          "room_bbox_world_xy": [
+            -26.0,
+            -24.0,
+            -8.0,
+            -15.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  -0.3575664668054789,
+                  -0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -25.28,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  -0.35756646680547893,
+                  0.5563018120394922,
+                  0.6310106724267034,
+                  -0.4055860537807278
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -23.28,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.5563018120394922,
+                  0.3575664668054788,
+                  0.40558605378072776,
+                  0.6310106724267035
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -8.72,
+                  -15.72,
+                  2.2020530596375467
+                ],
+                "quaternion_xyzw": [
+                  0.3575664668054789,
+                  0.5563018120394921,
+                  0.6310106724267035,
+                  0.40558605378072776
+                ]
+              },
+              "target": [
+                -17.0,
+                -19.5,
+                1.0520530596375466
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.180507727210617,
+                  -17.44180823136575,
+                  0.6962873102796264
+                ],
+                "quaternion_xyzw": [
+                  0.2570656494320673,
+                  0.28348520470880967,
+                  0.6843938259401215,
+                  0.6206113772791443
+                ]
+              },
+              "look_target": [
+                -10.794415473937988,
+                -17.501961708068848,
+                0.0794395476579666
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/hotel_gym_spa/gym_0/candidate_renders/change_detection/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  -10.180507743920618,
+                  -17.55428067916719,
+                  0.6955707597935389
+                ],
+                "quaternion_xyzw": [
+                  0.28185294820276086,
+                  0.2588542543520157,
+                  0.6249294515346112,
+                  0.6804532101459467
+                ]
+              },
+              "look_target": [
+                -10.794413566589355,
+                -17.501961708068848,
+                0.07943957746028898
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "gym_0",
+        "room_id": 5,
+        "bbox_map_rc": [
+          3,
+          1,
+          12,
+          19
+        ],
+        "bbox_world_xy": [
+          -26.0,
+          -24.0,
+          -8.0,
+          -15.0
+        ],
+        "expanded_bbox_world_xy": [
+          -26.0,
+          -24.0,
+          -8.0,
+          -15.0
+        ],
+        "bbox_area_m2": 162.0,
+        "expanded_bbox_area_m2": 162.0,
+        "pixel_count": 129,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/hotel_gym_spa/gym_0/q_000/gt_view/image2_box_00.png"
+  ]
+}

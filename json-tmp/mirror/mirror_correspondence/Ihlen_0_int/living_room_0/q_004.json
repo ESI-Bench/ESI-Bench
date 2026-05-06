@@ -1,0 +1,399 @@
+{
+  "scene": "Ihlen_0_int",
+  "room": "living_room_0",
+  "floor_name": "floors_lwmene_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 100.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "context_render_enabled": false,
+    "clear_radius_m": 1.0
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 3.0
+  },
+  "task_type": "mirror_correspondence",
+  "question_index": 4,
+  "question_id": "mirror_correspondence/q_004",
+  "question_data": {
+    "task_type": "mirror_correspondence",
+    "question": "You are given an image with a mirror and three celerys. Based on the mirror reflection, which of the three celerys in the same image corresponds to the reflected one: the left, middle, or right object?",
+    "options": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "answer": "middle",
+    "placement": [
+      {
+        "name": "render_item_012",
+        "alias": "A",
+        "category": "celery",
+        "model": "rqvtqi",
+        "real_position": [
+          -0.22619886696338654,
+          1.6607604026794434,
+          0.038820039480924606
+        ],
+        "line_offset_m": -0.7573446810811237,
+        "yaw_deg": 23.865264752285327,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.20676145428449022,
+          0.9783913843764992
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "right"
+      },
+      {
+        "name": "render_item_013",
+        "alias": "B",
+        "category": "celery",
+        "model": "rqvtqi",
+        "real_position": [
+          -0.3235662877559662,
+          0.909700870513916,
+          0.038820039480924606
+        ],
+        "line_offset_m": 0.0,
+        "yaw_deg": -23.707508325846756,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.20541432249465014,
+          0.9786751024288213
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": true,
+        "position_label": "middle"
+      },
+      {
+        "name": "render_item_014",
+        "alias": "C",
+        "category": "celery",
+        "model": "rqvtqi",
+        "real_position": [
+          -0.4513210654258728,
+          -0.07575660198926926,
+          0.038820039480924606
+        ],
+        "line_offset_m": 0.9937039613049611,
+        "yaw_deg": 2.8153862098454536,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.02456640786164557,
+          0.9996982002608463
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "left"
+      }
+    ],
+    "evidence": {
+      "mirror_label": "target_mirror_object",
+      "real_object_name": "render_item_013",
+      "shared_category": "celery",
+      "shared_model": "rqvtqi",
+      "target_position_label": "middle",
+      "target_generated_from_reflected_ray": true,
+      "target_distance_from_mirror_m": 1.1665525504275247,
+      "other_objects_on_perpendicular_line": true,
+      "other_object_distances_from_target_m": [
+        0.7573446810811237,
+        0.9937039613049611
+      ],
+      "only_target_visible_in_mirror": false,
+      "temporarily_cleared_scene_objects": []
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          0.9695621585845944,
+          1.0596777057647702,
+          0.8
+        ],
+        "forward_xy": [
+          -1.0,
+          0.0
+        ],
+        "quaternion_xyzw": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "mirror": {
+        "position": [
+          -1.4804378414154054,
+          1.0596777057647702,
+          1.1413247680664063
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.03222468128545587,
+          0.999480650095864
+        ],
+        "normal_xy": [
+          0.9979231398321017,
+          -0.06441589080063892
+        ],
+        "tangent_xy": [
+          0.06441589080063892,
+          0.9979231398321017
+        ],
+        "half_width_m": 0.4833453893661499,
+        "normal_yaw_offset_deg": -27.575972787433763
+      },
+      "correspondence_geometry": {
+        "target_rank": 1,
+        "answer_label": "middle",
+        "target_xy": [
+          -0.3235662935962669,
+          0.9097007916895932
+        ],
+        "target_distance_m": 1.1665525504275247,
+        "reflected_dir_xy": [
+          0.9917011860247202,
+          -0.12856421600571072
+        ],
+        "line_dir_xy": [
+          -0.12856421600571072,
+          -0.9917011860247202
+        ],
+        "line_offsets_m": [
+          -0.7573446810811237,
+          0.0,
+          0.9937039613049611
+        ],
+        "render_eye": [
+          0.9695621585845944,
+          1.0596777057647702,
+          0.8
+        ],
+        "render_target": [
+          -1.4804378414154054,
+          1.0596777057647702,
+          1.1413247680664063
+        ]
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004.png",
+      "camera_pose": {
+        "position": [
+          0.9695621585845944,
+          1.0596777057647702,
+          0.8
+        ],
+        "quaternion_xyzw": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -1.4804378414154054,
+          1.0596777057647702,
+          1.1413247680664063
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.03222468128545587,
+          0.999480650095864
+        ],
+        "normal_xy": [
+          0.9979231398321017,
+          -0.06441589080063892
+        ],
+        "tangent_xy": [
+          0.06441589080063892,
+          0.9979231398321017
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_map.png",
+      "multi_image_input": {
+        "room_instance": "living_room_0",
+        "room_bbox_world_xy": [
+          -1.5,
+          -0.5,
+          0.5,
+          4.5
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -1.15,
+                -0.15000000000000002,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6270428972391389,
+                -0.09271335164916264,
+                -0.1131305474956879,
+                0.7651293476734842
+              ]
+            },
+            "target": [
+              -0.5,
+              2.0,
+              0.9
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -1.15,
+                4.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.09271335164916261,
+                0.6270428972391389,
+                0.7651293476734842,
+                -0.11313054749568789
+              ]
+            },
+            "target": [
+              -0.5,
+              2.0,
+              0.9
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                0.15000000000000002,
+                -0.15000000000000002,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6270428972391389,
+                0.09271335164916265,
+                0.11313054749568793,
+                0.7651293476734842
+              ]
+            },
+            "target": [
+              -0.5,
+              2.0,
+              0.9
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                0.15000000000000002,
+                4.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.09271335164916264,
+                0.6270428972391389,
+                0.7651293476734842,
+                0.1131305474956879
+              ]
+            },
+            "target": [
+              -0.5,
+              2.0,
+              0.9
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "middle",
+        "orbit_center": [
+          -1.4804378414154054,
+          1.0596777057647702,
+          1.1413247680664063
+        ],
+        "orbit_radius_xy_m": 2.4499999999999997,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                0.3963710442260906,
+                2.634507349496791,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.31878748541352403,
+                0.6836419686411422,
+                0.5950020702113004,
+                0.2774540219576075
+              ]
+            },
+            "target": [
+              -1.4804378414154054,
+              1.0596777057647702,
+              1.1413247680664063
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                0.251973772491636,
+                2.7920893196718115,
+                0.8
+              ],
+              "quaternion_xyzw": [
+                0.2886640265155747,
+                0.6968966077831272,
+                0.6065381345419626,
+                0.2512363214237579
+              ]
+            },
+            "target": [
+              -1.4804378414154054,
+              1.0596777057647702,
+              1.1413247680664063
+            ],
+            "offset_deg": 45
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Ihlen_0_int/living_room_0/q_004_gt_orbit/orbit_+45.png"
+  ]
+}

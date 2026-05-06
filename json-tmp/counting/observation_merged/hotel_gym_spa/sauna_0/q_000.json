@@ -1,0 +1,661 @@
+{
+  "scene": "hotel_gym_spa",
+  "room": "sauna_0",
+  "floor_name": "floors_buymjp_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "observation_merged",
+  "question_index": 0,
+  "question_id": "observation_merged/q_000",
+  "question_data": {
+    "task_type": "observation_merged",
+    "question": "Considering both images, how many objects of category \"club_sandwich\" are present in this scene?",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "case": "observation_merged",
+    "candidate_index": 0,
+    "count_target": "club_sandwich",
+    "count_object": {
+      "category": "club_sandwich",
+      "estimated_volume": 0.0027063572222381484,
+      "characteristic_size_m": 0.13935686679793463,
+      "display_name": "club sandwich",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 4
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        9.445,
+        -21.555,
+        0.03499850988388062
+      ],
+      [
+        9.409928158968444,
+        -21.63002025104361,
+        0.03499850988388062
+      ],
+      [
+        9.360988624821406,
+        -21.572045865769503,
+        0.03499850988388062
+      ],
+      [
+        9.512802799907217,
+        -21.516689301715186,
+        0.03499850988388062
+      ]
+    ],
+    "object_positions": [
+      [
+        9.445,
+        -21.555,
+        0.03499850988388062
+      ],
+      [
+        9.409928158968444,
+        -21.63002025104361,
+        0.03499850988388062
+      ],
+      [
+        9.360988624821406,
+        -21.572045865769503,
+        0.03499850988388062
+      ],
+      [
+        9.512802799907217,
+        -21.516689301715186,
+        0.03499850988388062
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 1,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              9.445,
+              -21.555,
+              0.03499850988388062
+            ],
+            [
+              9.409928158968444,
+              -21.63002025104361,
+              0.03499850988388062
+            ],
+            [
+              9.360988624821406,
+              -21.572045865769503,
+              0.03499850988388062
+            ],
+            [
+              9.512802799907217,
+              -21.516689301715186,
+              0.03499850988388062
+            ]
+          ],
+          "metadata": {
+            "merge_pattern": "random_compact_cluster",
+            "count_object": {
+              "category": "club_sandwich",
+              "estimated_volume": 0.0027063572222381484,
+              "characteristic_size_m": 0.13935686679793463,
+              "display_name": "club sandwich",
+              "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000.png"
+      ],
+      "camera_poses": {
+        "q_000.png": {
+          "position": [
+            11.068068027496338,
+            -20.494979858398438,
+            1.2499985098838806
+          ],
+          "quaternion_xyzw": [
+            0.46058221608151845,
+            0.03152056524138301,
+            0.06056529192781926,
+            0.8849871872575327
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 35.011507921940456,
+          "look_target": [
+            11.0,
+            -20.0,
+            0.8999985098838806
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/hotel_gym_spa/sauna_0/candidate_renders/observation_merged/q_000",
+      "room_bbox": {
+        "room_instance": "sauna_0",
+        "room_id": 8,
+        "bbox_map_rc": [
+          5,
+          36,
+          9,
+          40
+        ],
+        "bbox_world_xy": [
+          9.0,
+          -22.0,
+          13.0,
+          -18.0
+        ],
+        "expanded_bbox_world_xy": [
+          9.0,
+          -22.0,
+          13.0,
+          -18.0
+        ],
+        "bbox_area_m2": 16.0,
+        "expanded_bbox_area_m2": 16.0,
+        "pixel_count": 25,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "sauna_0",
+        "room_bbox_world_xy": [
+          9.0,
+          -22.0,
+          13.0,
+          -18.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                9.35,
+                -21.65,
+                2.199998509883881
+              ],
+              "quaternion_xyzw": [
+                0.48796998701182903,
+                -0.20212378665132275,
+                -0.32495012582926786,
+                0.7844990008718615
+              ]
+            },
+            "target": [
+              11.0,
+              -20.0,
+              1.0499985098838807
+            ],
+            "view_id": "corner_00",
+            "is_traversable": true,
+            "blocker_occluded": true,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                9.35,
+                -18.38463134765625,
+                2.199998509883881
+              ],
+              "quaternion_xyzw": [
+                -0.20402112999137356,
+                0.48525656938984524,
+                0.7837793813941022,
+                -0.3295319736877133
+              ]
+            },
+            "target": [
+              11.0,
+              -20.0,
+              1.0499985098838807
+            ],
+            "view_id": "corner_01",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                12.65,
+                -21.65,
+                2.199998509883881
+              ],
+              "quaternion_xyzw": [
+                0.48796998701182903,
+                0.20212378665132275,
+                0.32495012582926786,
+                0.7844990008718615
+              ]
+            },
+            "target": [
+              11.0,
+              -20.0,
+              1.0499985098838807
+            ],
+            "view_id": "corner_02",
+            "is_traversable": true,
+            "blocker_occluded": true,
+            "trav_occluded": true
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                12.65,
+                -18.38463134765625,
+                2.199998509883881
+              ],
+              "quaternion_xyzw": [
+                0.20402112999137356,
+                0.48525656938984524,
+                0.7837793813941022,
+                0.3295319736877133
+              ]
+            },
+            "target": [
+              11.0,
+              -20.0,
+              1.0499985098838807
+            ],
+            "view_id": "corner_03",
+            "is_traversable": false,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            9.444999694824219,
+            -21.55500030517578,
+            0.03499851003289223
+          ],
+          "camera_pose": {
+            "position": [
+              9.866152687072754,
+              -21.555590629577637,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.45420441994232075,
+              0.45420441994232075,
+              0.5419394291845353,
+              0.5419394291845353
+            ]
+          },
+          "look_target": [
+            9.446152687072754,
+            -21.555590629577637,
+            0.04543892294168472
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 4856,
+            "centered_score": 0.9097,
+            "bbox_xyxy": [
+              501,
+              315,
+              750,
+              448
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            9.409928321838379,
+            -21.630020141601562,
+            0.03499851003289223
+          ],
+          "camera_pose": {
+            "position": [
+              9.831081314086914,
+              -21.630610466003418,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.45420441994232075,
+              0.45420441994232075,
+              0.5419394291845353,
+              0.5419394291845353
+            ]
+          },
+          "look_target": [
+            9.411081314086914,
+            -21.630610466003418,
+            0.04543892294168472
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 16468,
+            "centered_score": 0.9204,
+            "bbox_xyxy": [
+              501,
+              314,
+              715,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            9.36098861694336,
+            -21.572046279907227,
+            0.03499851003289223
+          ],
+          "camera_pose": {
+            "position": [
+              9.782141609191894,
+              -21.572636604309082,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.45420441994232075,
+              0.45420441994232075,
+              0.5419394291845353,
+              0.5419394291845353
+            ]
+          },
+          "look_target": [
+            9.362141609191895,
+            -21.572636604309082,
+            0.04543892294168472
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 2433,
+            "centered_score": 0.9444,
+            "bbox_xyxy": [
+              527,
+              312,
+              754,
+              330
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_003.png",
+          "target_name": "render_count_target_club_sandwich_3",
+          "target_position": [
+            9.512803077697754,
+            -21.51668930053711,
+            0.03499851003289223
+          ],
+          "camera_pose": {
+            "position": [
+              9.933956069946289,
+              -21.517279624938965,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.45420441994232075,
+              0.45420441994232075,
+              0.5419394291845353,
+              0.5419394291845353
+            ]
+          },
+          "look_target": [
+            9.513956069946289,
+            -21.517279624938965,
+            0.04543892294168472
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_3",
+            "visible_pixels": 32332,
+            "centered_score": 0.9681,
+            "bbox_xyxy": [
+              501,
+              315,
+              770,
+              451
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_3",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              9.444999694824219,
+              -21.55500030517578,
+              0.03499851003289223
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                9.340178489685059,
+                -21.65614128112793,
+                -0.005464911460876465
+              ],
+              [
+                9.55212688446045,
+                -21.455039978027344,
+                0.07937481254339218
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              9.445,
+              -21.555,
+              0.03499850988388062
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "club_sandwich",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              9.409928321838379,
+              -21.630020141601562,
+              0.03499851003289223
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                9.305107116699219,
+                -21.73116111755371,
+                -0.005464911460876465
+              ],
+              [
+                9.51705551147461,
+                -21.530059814453125,
+                0.07937481254339218
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              9.409928158968444,
+              -21.63002025104361,
+              0.03499850988388062
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "club_sandwich",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              9.36098861694336,
+              -21.572046279907227,
+              0.03499851003289223
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                9.2561674118042,
+                -21.673187255859375,
+                -0.005464911460876465
+              ],
+              [
+                9.46811580657959,
+                -21.47208595275879,
+                0.07937481254339218
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              9.360988624821406,
+              -21.572045865769503,
+              0.03499850988388062
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "club_sandwich",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_2"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_3",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              9.512803077697754,
+              -21.51668930053711,
+              0.03499851003289223
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                9.407981872558594,
+                -21.617830276489258,
+                -0.005464911460876465
+              ],
+              [
+                9.619930267333984,
+                -21.416728973388672,
+                0.07937481254339218
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              9.512802799907217,
+              -21.516689301715186,
+              0.03499850988388062
+            ],
+            "source_entry_case": "observation_merged",
+            "source_category": "club_sandwich",
+            "source_sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+            "target_name": "render_count_target_club_sandwich_3"
+          }
+        ],
+        "confusers": [],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 8696448,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/q_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_merged/hotel_gym_spa/sauna_0/q_000/target_closeups/target_closeup_003.png"
+  ]
+}

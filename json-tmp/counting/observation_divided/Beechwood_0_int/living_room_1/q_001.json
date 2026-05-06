@@ -1,0 +1,631 @@
+{
+  "scene": "Beechwood_0_int",
+  "room": "living_room_1",
+  "floor_name": "floors_gjpvfd_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "single_agent_view_toward_room_center",
+    "primary_image": "room_center_single_view",
+    "context_image": "room_center_single_view",
+    "views_per_candidate": 1,
+    "topdown_map": "floor_trav_with_count_object_annotations",
+    "agent_position_policy": "sample_free_point_near_short_edge_of_room_bbox",
+    "pitch_deg": 15.0
+  },
+  "mirror_setup": null,
+  "task_type": "observation_divided",
+  "question_index": 1,
+  "question_id": "observation_divided/q_001",
+  "question_data": {
+    "task_type": "observation_divided",
+    "question": "Considering both images, how many objects of category \"boxed_ink_cartridge\" are present in this scene?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "case": "observation_divided",
+    "candidate_index": 1,
+    "count_target": "boxed_ink_cartridge",
+    "count_object": {
+      "category": "boxed_ink_cartridge",
+      "estimated_volume": 0.00018977483046488455,
+      "characteristic_size_m": 0.057466251698532346,
+      "display_name": "boxed ink cartridge",
+      "sampling_source": "keys_json_filtered_by_estimated_size_and_local_models",
+      "resolved_models": [
+        "ablfyd"
+      ],
+      "resolved_object_count": 3
+    },
+    "count_unit": "objects",
+    "ball_positions": [
+      [
+        -2.016437292098999,
+        -2.045439064502716,
+        0.0349995231628418
+      ],
+      [
+        -2.164391040802002,
+        1.4019702672958374,
+        0.0349995231628418
+      ],
+      [
+        -5.124917984008789,
+        1.3498626351356506,
+        0.0349995231628418
+      ]
+    ],
+    "object_positions": [
+      [
+        -2.016437292098999,
+        -2.045439064502716,
+        0.0349995231628418
+      ],
+      [
+        -2.164391040802002,
+        1.4019702672958374,
+        0.0349995231628418
+      ],
+      [
+        -5.124917984008789,
+        1.3498626351356506,
+        0.0349995231628418
+      ]
+    ],
+    "case_metadata": {
+      "source_candidates": 3,
+      "source_entries": [
+        {
+          "source_index": 0,
+          "ball_positions": [
+            [
+              -2.016437292098999,
+              -2.045439064502716,
+              0.0349995231628418
+            ]
+          ],
+          "metadata": {
+            "anchor_object": {
+              "name": "straight_chair_amgwaw_0",
+              "category": "straight_chair",
+              "in_rooms": [
+                "living_room_1"
+              ],
+              "bbox": [
+                [
+                  -2.3868751525878906,
+                  -2.1931028366088867,
+                  -0.001819521188735962
+                ],
+                [
+                  -1.6459994316101074,
+                  -1.8977752923965454,
+                  0.5974498987197876
+                ]
+              ],
+              "has_open_state": false,
+              "open_state": null
+            },
+            "visibility": {
+              "placement": "ball_center_aligned_with_chair_bbox_center_xy",
+              "support": "placed_on_floor_below_chair"
+            }
+          }
+        },
+        {
+          "source_index": 1,
+          "ball_positions": [
+            [
+              -2.164391040802002,
+              1.4019702672958374,
+              0.0349995231628418
+            ]
+          ],
+          "metadata": {
+            "anchor_object": {
+              "name": "armchair_vzhxuf_0",
+              "category": "armchair",
+              "in_rooms": [
+                "living_room_1"
+              ],
+              "bbox": [
+                [
+                  -2.575885772705078,
+                  0.9938545227050781,
+                  -0.004365861415863037
+                ],
+                [
+                  -1.7528963088989258,
+                  1.8100860118865967,
+                  0.8473657369613647
+                ]
+              ],
+              "has_open_state": false,
+              "open_state": null
+            },
+            "visibility": {
+              "placement": "ball_center_aligned_with_chair_bbox_center_xy",
+              "support": "placed_on_floor_below_chair"
+            }
+          }
+        },
+        {
+          "source_index": 2,
+          "ball_positions": [
+            [
+              -5.124917984008789,
+              1.3498626351356506,
+              0.0349995231628418
+            ]
+          ],
+          "metadata": {
+            "anchor_object": {
+              "name": "armchair_bslhmj_0",
+              "category": "armchair",
+              "in_rooms": [
+                "living_room_1"
+              ],
+              "bbox": [
+                [
+                  -5.578738689422607,
+                  0.8943012952804565,
+                  1.7881393432617188e-07
+                ],
+                [
+                  -4.671097278594971,
+                  1.8054239749908447,
+                  0.8442035913467407
+                ]
+              ],
+              "has_open_state": false,
+              "open_state": null
+            },
+            "visibility": {
+              "placement": "ball_center_aligned_with_chair_bbox_center_xy",
+              "support": "placed_on_floor_below_chair"
+            }
+          }
+        }
+      ]
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001.png",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001_topdown_map.png",
+      "context_without_mirror": {
+        "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001.png",
+        "kind": "agent_centered_alternate_view"
+      },
+      "all_images": [
+        "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001.png"
+      ],
+      "camera_poses": {
+        "q_001.png": {
+          "position": [
+            -0.24999999999999833,
+            -1.6,
+            1.2499995231628418
+          ],
+          "quaternion_xyzw": [
+            0.597957645861764,
+            0.2635049480984877,
+            0.3052548812961812,
+            0.6926985300460258
+          ],
+          "angle_deg": null,
+          "view_name": "room_center_single_view",
+          "pitch_deg": 8.396557631869495,
+          "look_target": [
+            -2.0,
+            0.0,
+            0.8999995231628418
+          ]
+        }
+      },
+      "render_output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_counting/Beechwood_0_int/living_room_1/candidate_renders/observation_divided/q_001",
+      "room_bbox": {
+        "room_instance": "living_room_1",
+        "room_id": 7,
+        "bbox_map_rc": [
+          8,
+          5,
+          12,
+          11
+        ],
+        "bbox_world_xy": [
+          -5.0,
+          -2.0,
+          1.0,
+          2.0
+        ],
+        "expanded_bbox_world_xy": [
+          -5.0,
+          -2.0,
+          1.0,
+          2.0
+        ],
+        "bbox_area_m2": 24.0,
+        "expanded_bbox_area_m2": 24.0,
+        "pixel_count": 28,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "multi_image_input": {
+        "room_instance": "living_room_1",
+        "room_bbox_world_xy": [
+          -5.0,
+          -2.0,
+          1.0,
+          2.0
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -4.65,
+                -1.65,
+                2.199999523162842
+              ],
+              "quaternion_xyzw": [
+                0.5000419483321753,
+                -0.2777022125155061,
+                -0.3982489859265088,
+                0.7171033930199063
+              ]
+            },
+            "target": [
+              -2.0,
+              0.0,
+              1.0499995231628418
+            ],
+            "view_id": "corner_00",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -4.65,
+                1.65,
+                2.199999523162842
+              ],
+              "quaternion_xyzw": [
+                -0.2777022125155061,
+                0.5000419483321753,
+                0.7171033930199063,
+                -0.3982489859265088
+              ]
+            },
+            "target": [
+              -2.0,
+              0.0,
+              1.0499995231628418
+            ],
+            "view_id": "corner_01",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                0.65,
+                -1.65,
+                2.199999523162842
+              ],
+              "quaternion_xyzw": [
+                0.5000419483321753,
+                0.277702212515506,
+                0.3982489859265087,
+                0.7171033930199064
+              ]
+            },
+            "target": [
+              -2.0,
+              0.0,
+              1.0499995231628418
+            ],
+            "view_id": "corner_02",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": false
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                0.65,
+                1.65,
+                2.199999523162842
+              ],
+              "quaternion_xyzw": [
+                0.277702212515506,
+                0.5000419483321753,
+                0.7171033930199064,
+                0.3982489859265087
+              ]
+            },
+            "target": [
+              -2.0,
+              0.0,
+              1.0499995231628418
+            ],
+            "view_id": "corner_03",
+            "is_traversable": true,
+            "blocker_occluded": false,
+            "trav_occluded": true
+          }
+        ]
+      },
+      "target_closeups": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/target_closeups/target_closeup_000.png",
+          "target_name": "render_count_target_club_sandwich_0",
+          "target_position": [
+            -2.016437292098999,
+            -2.0454390048980713,
+            0.03499952331185341
+          ],
+          "camera_pose": {
+            "position": [
+              -1.6712406796676664,
+              -1.8051268087999741,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.29660096501880795,
+              0.5697651526435299,
+              0.6798204829281168,
+              0.35389214370255373
+            ]
+          },
+          "look_target": [
+            -2.015284538269043,
+            -2.0460289120674133,
+            0.045439936220645905
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_0",
+            "visible_pixels": 34630,
+            "centered_score": 0.9712,
+            "bbox_xyxy": [
+              500,
+              311,
+              788,
+              464
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_0",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/target_closeups/target_closeup_001.png",
+          "target_name": "render_count_target_club_sandwich_1",
+          "target_position": [
+            -2.164391040802002,
+            1.4019702672958374,
+            0.03499952331185341
+          ],
+          "camera_pose": {
+            "position": [
+              -1.5832382869720458,
+              1.4013804197311401,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.46703784000528564,
+              0.4670378400052856,
+              0.5309196323392055,
+              0.5309196323392056
+            ]
+          },
+          "look_target": [
+            -2.163238286972046,
+            1.4013804197311401,
+            0.045439936220645905
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_1",
+            "visible_pixels": 15594,
+            "centered_score": 0.9819,
+            "bbox_xyxy": [
+              542,
+              326,
+              732,
+              419
+            ],
+            "is_visible": true,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_1",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": false,
+          "container_name": null
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/target_closeups/target_closeup_002.png",
+          "target_name": "render_count_target_club_sandwich_2",
+          "target_position": [
+            -5.124917984008789,
+            1.3498625755310059,
+            0.03499952331185341
+          ],
+          "camera_pose": {
+            "position": [
+              -4.543765230178833,
+              1.3492727279663086,
+              0.12
+            ],
+            "quaternion_xyzw": [
+              0.46703784000528564,
+              0.4670378400052856,
+              0.5309196323392055,
+              0.5309196323392056
+            ]
+          },
+          "look_target": [
+            -5.123765230178833,
+            1.3492727279663086,
+            0.045439936220645905
+          ],
+          "visibility": {
+            "target_name": "render_count_target_club_sandwich_2",
+            "visible_pixels": 0,
+            "centered_score": 0.0,
+            "bbox_xyxy": null,
+            "is_visible": false,
+            "matched_aliases": [
+              "render_count_target_club_sandwich_2",
+              "club_sandwich"
+            ]
+          },
+          "best_effort_only": true,
+          "container_name": null
+        }
+      ],
+      "resolved_objects": {
+        "targets": [
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_0",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -2.016437292098999,
+              -2.0454390048980713,
+              0.03499952331185341
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -2.1212589740753174,
+                -2.1465797424316406,
+                -0.005463898181915283
+              ],
+              [
+                -1.9093101024627686,
+                -1.945478081703186,
+                0.07937582582235336
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -2.016437292098999,
+              -2.045439064502716,
+              0.0349995231628418
+            ],
+            "source_entry_case": "observation_divided",
+            "target_name": "render_count_target_club_sandwich_0"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_1",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -2.164391040802002,
+              1.4019702672958374,
+              0.03499952331185341
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -2.2692127227783203,
+                1.3008296489715576,
+                -0.005463898181915283
+              ],
+              [
+                -2.0572638511657715,
+                1.5019311904907227,
+                0.07937582582235336
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -2.164391040802002,
+              1.4019702672958374,
+              0.0349995231628418
+            ],
+            "source_entry_case": "observation_divided",
+            "target_name": "render_count_target_club_sandwich_1"
+          },
+          {
+            "role": "count_target",
+            "name": "render_count_target_club_sandwich_2",
+            "category": "club_sandwich",
+            "model": "ablfyd",
+            "position": [
+              -5.124917984008789,
+              1.3498625755310059,
+              0.03499952331185341
+            ],
+            "quaternion_xyzw": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "bbox": [
+              [
+                -5.229739665985107,
+                1.248721957206726,
+                -0.005463898181915283
+              ],
+              [
+                -5.017790794372559,
+                1.4498234987258911,
+                0.07937582582235336
+              ]
+            ],
+            "in_rooms": [],
+            "requested_position": [
+              -5.124917984008789,
+              1.3498626351356506,
+              0.0349995231628418
+            ],
+            "source_entry_case": "observation_divided",
+            "target_name": "render_count_target_club_sandwich_2"
+          }
+        ],
+        "confusers": [],
+        "containers": []
+      },
+      "target_category": "club_sandwich",
+      "target_pool_seed": 3209584,
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001_topdown_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/q_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/target_closeups/target_closeup_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/target_closeups/target_closeup_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/counting/observation_divided/Beechwood_0_int/living_room_1/q_001/target_closeups/target_closeup_002.png"
+  ]
+}

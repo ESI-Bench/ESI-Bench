@@ -1,0 +1,794 @@
+{
+  "scene": "house_double_floor_lower",
+  "room": "corridor_0",
+  "floor_name": "floors_xorxro_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_detection",
+  "question_index": 1,
+  "question_id": "change_detection/q_001",
+  "question_data": {
+    "task_type": "change_detection",
+    "question": "Comparing Phase 1 and Phase 2, did the contents of any box change?",
+    "options": [
+      "yes",
+      "no"
+    ],
+    "answer": "yes",
+    "candidate_index": 1,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "remove",
+        "phase1_content": {
+          "category": "enchilada",
+          "display_name": "enchilada",
+          "model": "dwvaig",
+          "bbox_size_m": [
+            0.20345899963378905,
+            0.061889039993286134,
+            0.04105330276489258
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": null,
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              0.08999000453948969,
+              1.0971958847045897,
+              0.10838359177112579
+            ]
+          },
+          "bbox": [
+            [
+              -0.026249989867210388,
+              0.9420353174209595,
+              -9.685754776000977e-08
+            ],
+            [
+              0.20423758029937744,
+              1.256426453590393,
+              0.18676629662513733
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {},
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -0.17505353689193726,
+              3.2965481281280518,
+              1.2499999552965164
+            ],
+            "quaternion_xyzw": [
+              -0.03096158057058376,
+              0.5171582848002908,
+              0.8538008265417546,
+              -0.05111592303391575
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 27.59232872055219,
+            "look_target": [
+              0.08899383619427681,
+              1.099230706691742,
+              0.09338312968611717
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            -0.5,
+            0.5,
+            7.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5891581076186856,
+                  0.05950908811568466,
+                  0.08098174381668576,
+                  0.8017439428066904
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.059509088115684665,
+                  0.5891581076186856,
+                  0.8017439428066904,
+                  0.08098174381668577
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5848148594829322,
+                  0.1581041951099153,
+                  0.20763817818365948,
+                  0.768037128384543
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.15810419510991533,
+                  0.5848148594829323,
+                  0.768037128384543,
+                  0.20763817818365948
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -0.5262500638860431,
+                  1.158186037164313,
+                  0.6581740512023929
+                ],
+                "quaternion_xyzw": [
+                  0.2558852921000936,
+                  -0.2845510968061378,
+                  -0.6869671170975175,
+                  0.617761742599847
+                ]
+              },
+              "look_target": [
+                0.09531057812273502,
+                1.0920624136924744,
+                0.03310608267784118
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -0.17505353689193726,
+              3.2965481281280518,
+              1.2499999552965164
+            ],
+            "quaternion_xyzw": [
+              -0.030961593852206166,
+              0.5171582689888276,
+              0.8538008342035482,
+              -0.05111594698267536
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 27.59233072874514,
+            "look_target": [
+              0.08899394050240517,
+              1.0992308557033539,
+              0.09338310174643993
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            -0.5,
+            0.5,
+            7.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5891581076186856,
+                  0.05950908811568466,
+                  0.08098174381668576,
+                  0.8017439428066904
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.059509088115684665,
+                  0.5891581076186856,
+                  0.8017439428066904,
+                  0.08098174381668577
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5848148594829322,
+                  0.1581041951099153,
+                  0.20763817818365948,
+                  0.768037128384543
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.15810419510991533,
+                  0.5848148594829323,
+                  0.768037128384543,
+                  0.20763817818365948
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -0.5262501176297173,
+                  1.0457168521582128,
+                  0.7624997377249623
+                ],
+                "quaternion_xyzw": [
+                  0.2705979058422392,
+                  -0.2705981943038808,
+                  -0.6532818306420992,
+                  0.6532811342340917
+                ]
+              },
+              "look_target": [
+                0.08899401500821114,
+                1.0457161962985992,
+                0.14725560508668423
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            -0.5,
+            0.5,
+            7.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5891581076186856,
+                  0.05950908811568466,
+                  0.08098174381668576,
+                  0.8017439428066904
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.059509088115684665,
+                  0.5891581076186856,
+                  0.8017439428066904,
+                  0.08098174381668577
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5848148594829322,
+                  0.1581041951099153,
+                  0.20763817818365948,
+                  0.768037128384543
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.15810419510991533,
+                  0.5848148594829323,
+                  0.768037128384543,
+                  0.20763817818365948
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "corridor_0",
+          "room_bbox_world_xy": [
+            -4.5,
+            -0.5,
+            0.5,
+            7.5
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5891581076186856,
+                  0.05950908811568466,
+                  0.08098174381668576,
+                  0.8017439428066904
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_00",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -1.265253472328186,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.059509088115684665,
+                  0.5891581076186856,
+                  0.8017439428066904,
+                  0.08098174381668577
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  -0.09999999999999998,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.5848148594829322,
+                  0.1581041951099153,
+                  0.20763817818365948,
+                  0.768037128384543
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  0.09999999999999998,
+                  7.1,
+                  2.1999999552965166
+                ],
+                "quaternion_xyzw": [
+                  0.15810419510991533,
+                  0.5848148594829323,
+                  0.768037128384543,
+                  0.20763817818365948
+                ]
+              },
+              "target": [
+                -2.0,
+                3.5,
+                1.0499999552965165
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": true,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -0.5262500638860431,
+                  1.158186037164313,
+                  0.6581740512023929
+                ],
+                "quaternion_xyzw": [
+                  0.2558852921000936,
+                  -0.2845510968061378,
+                  -0.6869671170975175,
+                  0.617761742599847
+                ]
+              },
+              "look_target": [
+                0.09531057812273502,
+                1.0920624136924744,
+                0.03310608267784118
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_double_floor_lower/corridor_0/candidate_renders/change_detection/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "back",
+              "camera_pose": {
+                "position": [
+                  -0.5262501176297173,
+                  1.0457168521582128,
+                  0.7624997377249623
+                ],
+                "quaternion_xyzw": [
+                  0.2705979058422392,
+                  -0.2705981943038808,
+                  -0.6532818306420992,
+                  0.6532811342340917
+                ]
+              },
+              "look_target": [
+                0.08899401500821114,
+                1.0457161962985992,
+                0.14725560508668423
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "corridor_0",
+        "room_id": 3,
+        "bbox_map_rc": [
+          29,
+          25,
+          37,
+          30
+        ],
+        "bbox_world_xy": [
+          -4.5,
+          -0.5,
+          0.5,
+          7.5
+        ],
+        "expanded_bbox_world_xy": [
+          -4.5,
+          -0.5,
+          0.5,
+          7.5
+        ],
+        "bbox_area_m2": 40.0,
+        "expanded_bbox_area_m2": 40.0,
+        "pixel_count": 22,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_detection/house_double_floor_lower/corridor_0/q_001/gt_view/image2_box_00.png"
+  ]
+}

@@ -1,0 +1,3044 @@
+{
+  "scene": "house_double_floor_upper",
+  "room": null,
+  "floor_name": null,
+  "seed": 1,
+  "trav_map_basename": "floor_trav_no_door",
+  "task_family": "Traversable Passage",
+  "task_type": "shortest_path_via_region",
+  "question_index": 1,
+  "question_id": "Traversable Passage/q_001",
+  "question_data": {
+    "case_id": "shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1",
+    "case_type": "shortest_path_via_region",
+    "question": "On the shortest path from bathroom_0 to bedroom_0, which intermediate room do you pass through among these options: bedroom_0, living_room_0, bedroom_2, bedroom_1?",
+    "answer": "living_room_0",
+    "answer_bool": false,
+    "source_region": "bathroom_0",
+    "target_region": "bedroom_0",
+    "via_region": "bedroom_1",
+    "required_regions": [
+      "bedroom_0",
+      "living_room_0",
+      "bedroom_2",
+      "bedroom_1"
+    ],
+    "source_room_type": "bathroom",
+    "target_room_type": "bedroom",
+    "via_room_type": "bedroom",
+    "verification": {
+      "method": "scene.get_shortest_path + room_sequence_projection",
+      "shortest_region_path": [
+        "bathroom_0",
+        "living_room_0",
+        "bedroom_0"
+      ],
+      "shortest_path_info": {
+        "source_region": "bathroom_0",
+        "target_region": "bedroom_0",
+        "blocked_regions": [],
+        "source_xy": [
+          0.0,
+          2.5
+        ],
+        "target_xy": [
+          -4.0,
+          2.0
+        ],
+        "room_sequence": [
+          "bathroom_0",
+          "living_room_0",
+          "bedroom_0"
+        ],
+        "path_world_xy": [
+          [
+            0.0,
+            2.5
+          ],
+          [
+            -0.20000000298023224,
+            2.299999952316284
+          ],
+          [
+            -0.4000000059604645,
+            2.1000001430511475
+          ],
+          [
+            -0.5,
+            1.899999976158142
+          ],
+          [
+            -0.5,
+            1.7000000476837158
+          ],
+          [
+            -0.5,
+            1.5
+          ],
+          [
+            -0.5,
+            1.3000000715255737
+          ],
+          [
+            -0.5,
+            1.100000023841858
+          ],
+          [
+            -0.6000000238418579,
+            0.9000000357627869
+          ],
+          [
+            -0.800000011920929,
+            0.9000000357627869
+          ],
+          [
+            -1.0,
+            0.9000000357627869
+          ],
+          [
+            -1.2000000476837158,
+            0.9000000357627869
+          ],
+          [
+            -1.399999976158142,
+            0.9000000357627869
+          ],
+          [
+            -1.600000023841858,
+            0.9000000357627869
+          ],
+          [
+            -1.8000000715255737,
+            0.9000000357627869
+          ],
+          [
+            -2.0,
+            0.9000000357627869
+          ],
+          [
+            -2.200000047683716,
+            0.9000000357627869
+          ],
+          [
+            -2.4000000953674316,
+            0.9000000357627869
+          ],
+          [
+            -2.6000001430511475,
+            0.9000000357627869
+          ],
+          [
+            -2.799999952316284,
+            1.0
+          ],
+          [
+            -3.0,
+            1.2000000476837158
+          ],
+          [
+            -3.200000047683716,
+            1.399999976158142
+          ],
+          [
+            -3.4000000953674316,
+            1.600000023841858
+          ],
+          [
+            -3.6000001430511475,
+            1.8000000715255737
+          ],
+          [
+            -3.799999952316284,
+            1.899999976158142
+          ],
+          [
+            -4.0,
+            2.0
+          ]
+        ],
+        "path_length_steps": 26,
+        "path_distance": 5.70416259765625
+      },
+      "via_region_on_shortest_path": false,
+      "selected_correct_region": "living_room_0",
+      "available_correct_regions": [
+        "living_room_0"
+      ],
+      "mcq_has_unique_correct_option": true
+    },
+    "visualization": {
+      "map_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1.png"
+    },
+    "initial_view": {
+      "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1__initial.png",
+      "camera_pose": {
+        "position": [
+          0.20000000298023224,
+          2.4000000953674316,
+          1.35
+        ],
+        "quaternion_xyzw": [
+          0.1498877675076841,
+          0.6729081010964746,
+          0.7070531506815776,
+          0.15749344983698113
+        ],
+        "target": [
+          -2.799999952316284,
+          -4.0,
+          1.0
+        ]
+      },
+      "success": true,
+      "room_instance": "bathroom_0",
+      "render_xy": [
+        0.20000000298023224,
+        2.4000000953674316
+      ],
+      "selection_debug": {
+        "room_instance": "bathroom_0",
+        "selected_by": "center_near_free_xy",
+        "clearance_px": 9.993799209594727,
+        "center_distance_px": 2.2360680103302,
+        "selected_map_rc": [
+          90,
+          68
+        ]
+      },
+      "ray_debug": {
+        "angle_deg": 245.0,
+        "angle_rad": 4.276056667386107,
+        "ray_length_px": 70.68238830566406,
+        "start_map_rc": [
+          90,
+          68
+        ],
+        "end_map_rc": [
+          26,
+          38
+        ],
+        "start_xy": [
+          0.20000000298023224,
+          2.4000000953674316
+        ],
+        "target_xy": [
+          -2.799999952316284,
+          -4.0
+        ],
+        "success": true
+      }
+    },
+    "room_views": {
+      "bedroom_0": {
+        "success": true,
+        "room_instance": "bedroom_0",
+        "center_xy": [
+          -4.0,
+          2.0
+        ],
+        "corner_render_xy": [
+          [
+            -5.15,
+            0.85
+          ],
+          [
+            -5.15,
+            3.15
+          ],
+          [
+            -2.85,
+            0.85
+          ],
+          [
+            -2.85,
+            3.15
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -5.15,
+                0.85,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5805060938632272,
+                -0.24045349711837766,
+                -0.2977057693936559,
+                0.718725306066881
+              ],
+              "target": [
+                -4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -5.15,
+              0.85
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -5.15,
+                3.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.24045349711837766,
+                0.5805060938632272,
+                0.718725306066881,
+                -0.2977057693936559
+              ],
+              "target": [
+                -4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -5.15,
+              3.15
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                -2.85,
+                0.85,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.580506093863227,
+                0.24045349711837757,
+                0.29770576939365584,
+                0.7187253060668811
+              ],
+              "target": [
+                -4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              -2.85,
+              0.85
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                -2.85,
+                3.15,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.24045349711837763,
+                0.5805060938632272,
+                0.718725306066881,
+                0.2977057693936559
+              ],
+              "target": [
+                -4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              -2.85,
+              3.15
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -4.099999904632568,
+              1.3000000715255737,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5000000000000001,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "target": [
+              -5.099999904632568,
+              1.300000071525574,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bed_klcjcy_0",
+              "object_category": "bed",
+              "semantic_pixels": 64443,
+              "instance_pixels": 64443,
+              "assigned_region": "bedroom_0"
+            },
+            {
+              "object_name": "desk_aduafr_0",
+              "object_category": "desk",
+              "semantic_pixels": 63398,
+              "instance_pixels": 63398,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "nightstand_aykehx_0",
+              "object_category": "nightstand",
+              "semantic_pixels": 18036,
+              "instance_pixels": 18036,
+              "assigned_region": "bedroom_0"
+            },
+            {
+              "object_name": "table_lamp_erfbgw_1",
+              "object_category": "table_lamp",
+              "semantic_pixels": 6669,
+              "instance_pixels": 6669,
+              "assigned_region": "bedroom_0"
+            },
+            {
+              "object_name": "taboret_cgwxtq_0",
+              "object_category": "taboret",
+              "semantic_pixels": 1267,
+              "instance_pixels": 1267,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "map_fdtxut_0",
+              "object_category": "map",
+              "semantic_pixels": 957,
+              "instance_pixels": 957,
+              "assigned_region": "living_room_0"
+            }
+          ]
+        }
+      },
+      "living_room_0": {
+        "success": true,
+        "room_instance": "living_room_0",
+        "center_xy": [
+          -2.0,
+          -2.0
+        ],
+        "corner_render_xy": [
+          [
+            -5.1,
+            -4.1
+          ],
+          [
+            -5.1,
+            0.09999999999999998
+          ],
+          [
+            1.1,
+            -4.1
+          ],
+          [
+            1.1,
+            0.09999999999999998
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                -5.1,
+                -4.1,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5948910827971652,
+                -0.3155473181531857,
+                -0.34641855813679295,
+                0.6530916261851579
+              ],
+              "target": [
+                -2.0,
+                -2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              -5.1,
+              -4.1
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                -5.1,
+                0.09999999999999998,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.31554731815318565,
+                0.5948910827971652,
+                0.6530916261851579,
+                -0.3464185581367929
+              ],
+              "target": [
+                -2.0,
+                -2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              -5.1,
+              0.09999999999999998
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                1.1,
+                -4.1,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5948910827971652,
+                0.31554731815318576,
+                0.346418558136793,
+                0.6530916261851578
+              ],
+              "target": [
+                -2.0,
+                -2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              1.1,
+              -4.1
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                1.1,
+                0.09999999999999998,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.31554731815318576,
+                0.5948910827971653,
+                0.6530916261851578,
+                0.346418558136793
+              ],
+              "target": [
+                -2.0,
+                -2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              1.1,
+              0.09999999999999998
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/living_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -2.200000047683716,
+              -1.5,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              -1.2000000476837158,
+              -1.5,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "stairs_tikozn_0",
+              "object_category": "stairs",
+              "semantic_pixels": 207277,
+              "instance_pixels": 207277,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "table_lamp_lshxmu_0",
+              "object_category": "table_lamp",
+              "semantic_pixels": 19376,
+              "instance_pixels": 19376,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "desk_iotfzl_0",
+              "object_category": "desk",
+              "semantic_pixels": 11754,
+              "instance_pixels": 11754,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "bed_siuxgz_0",
+              "object_category": "bed",
+              "semantic_pixels": 3041,
+              "instance_pixels": 3041,
+              "assigned_region": "bedroom_1"
+            },
+            {
+              "object_name": "ottoman_qsnawv_0",
+              "object_category": "ottoman",
+              "semantic_pixels": 1569,
+              "instance_pixels": 1569,
+              "assigned_region": "bedroom_1"
+            },
+            {
+              "object_name": "shower_giialz_0",
+              "object_category": "shower",
+              "semantic_pixels": 470,
+              "instance_pixels": 470,
+              "assigned_region": "bathroom_0"
+            },
+            {
+              "object_name": "bookcase_bsvnni_0",
+              "object_category": "bookcase",
+              "semantic_pixels": 435,
+              "instance_pixels": 435,
+              "assigned_region": "bedroom_2"
+            }
+          ]
+        }
+      },
+      "bedroom_2": {
+        "success": true,
+        "room_instance": "bedroom_2",
+        "center_xy": [
+          4.0,
+          -2.5
+        ],
+        "corner_render_xy": [
+          [
+            2.85,
+            -4.360000000000001
+          ],
+          [
+            2.85,
+            -0.85
+          ],
+          [
+            6.095000000000004,
+            -4.360000000000001
+          ],
+          [
+            6.095000000000004,
+            -0.85
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_00.png",
+            "camera_pose": {
+              "position": [
+                2.85,
+                -4.360000000000001,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6241185410381813,
+                -0.17735892275712717,
+                -0.20800269766349852,
+                0.7319526876892458
+              ],
+              "target": [
+                4.0,
+                -2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              2.85,
+              -4.360000000000001
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_01.png",
+            "camera_pose": {
+              "position": [
+                2.85,
+                -0.85,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.19287924520173277,
+                0.6140635371859581,
+                0.7301541314569567,
+                -0.2293436578268875
+              ],
+              "target": [
+                4.0,
+                -2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              2.85,
+              -0.85
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_02.png",
+            "camera_pose": {
+              "position": [
+                6.095000000000004,
+                -4.360000000000001,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6036655429727051,
+                0.2713007673302392,
+                0.3073037351716805,
+                0.6837749777690217
+              ],
+              "target": [
+                4.0,
+                -2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              6.095000000000004,
+              -4.360000000000001
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_03.png",
+            "camera_pose": {
+              "position": [
+                6.095000000000004,
+                -0.85,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.28794683984394936,
+                0.593314019511117,
+                0.6762724830633426,
+                0.32820819661730855
+              ],
+              "target": [
+                4.0,
+                -2.5,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              6.095000000000004,
+              -0.85
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/bedroom_2__open_view.png",
+          "camera_pose": {
+            "position": [
+              3.299999952316284,
+              -2.299999952316284,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.27059805007309856,
+              0.6532814824381882,
+              0.6532814824381883,
+              0.27059805007309856
+            ],
+            "target": [
+              2.5928931711297363,
+              -3.0071067335028316,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "stairs_tikozn_0",
+              "object_category": "stairs",
+              "semantic_pixels": 140918,
+              "instance_pixels": 140918,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "desk_uqcmzf_0",
+              "object_category": "desk",
+              "semantic_pixels": 91545,
+              "instance_pixels": 91545,
+              "assigned_region": "bedroom_2"
+            },
+            {
+              "object_name": "bookcase_eckdny_0",
+              "object_category": "bookcase",
+              "semantic_pixels": 54788,
+              "instance_pixels": 54788,
+              "assigned_region": "bedroom_2"
+            },
+            {
+              "object_name": "room_divider_bydmct_0",
+              "object_category": "room_divider",
+              "semantic_pixels": 34883,
+              "instance_pixels": 34883,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "sofa_ukfaaz_0",
+              "object_category": "sofa",
+              "semantic_pixels": 1304,
+              "instance_pixels": 1304,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "table_lamp_lshxmu_0",
+              "object_category": "table_lamp",
+              "semantic_pixels": 898,
+              "instance_pixels": 898,
+              "assigned_region": "living_room_0"
+            }
+          ]
+        }
+      },
+      "bedroom_1": {
+        "success": true,
+        "room_instance": "bedroom_1",
+        "center_xy": [
+          4.0,
+          2.0
+        ],
+        "corner_render_xy": [
+          [
+            2.85,
+            0.06250000000000011
+          ],
+          [
+            2.85,
+            3.7275000000000023
+          ],
+          [
+            6.095000000000004,
+            0.06250000000000011
+          ],
+          [
+            6.095000000000004,
+            3.7275000000000023
+          ]
+        ],
+        "views": {
+          "view_00": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+            "camera_pose": {
+              "position": [
+                2.85,
+                0.06250000000000011,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.627381272666021,
+                -0.1721687830624574,
+                -0.20097882606696277,
+                0.7323647727188288
+              ],
+              "target": [
+                4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_00",
+            "corner_xy": [
+              2.85,
+              0.06250000000000011
+            ]
+          },
+          "view_01": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+            "camera_pose": {
+              "position": [
+                2.85,
+                3.7275000000000023,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.18688909430810752,
+                0.6179971495013467,
+                0.7309513731847909,
+                -0.2210476864302679
+              ],
+              "target": [
+                4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_01",
+            "corner_xy": [
+              2.85,
+              3.7275000000000023
+            ]
+          },
+          "view_02": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+            "camera_pose": {
+              "position": [
+                6.095000000000004,
+                0.06250000000000011,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.6071598378390581,
+                0.2654932253000121,
+                0.3000462758686141,
+                0.6861796491972209
+              ],
+              "target": [
+                4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_02",
+            "corner_xy": [
+              6.095000000000004,
+              0.06250000000000011
+            ]
+          },
+          "view_03": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+            "camera_pose": {
+              "position": [
+                6.095000000000004,
+                3.7275000000000023,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.28164705429986064,
+                0.5972905423911958,
+                0.679219851622563,
+                0.32028009294376375
+              ],
+              "target": [
+                4.0,
+                2.0,
+                1.0
+              ]
+            },
+            "view_role": "view_03",
+            "corner_xy": [
+              6.095000000000004,
+              3.7275000000000023
+            ]
+          }
+        },
+        "gt_open_view": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_1__open_view.png",
+          "camera_pose": {
+            "position": [
+              3.4000000953674316,
+              0.699999988079071,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.27059805007309856,
+              0.6532814824381882,
+              0.6532814824381883,
+              0.27059805007309856
+            ],
+            "target": [
+              2.6928933141808837,
+              -0.007106793107476417,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bookcase_otwukr_2",
+              "object_category": "bookcase",
+              "semantic_pixels": 2633,
+              "instance_pixels": 2633,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "desk_aduafr_0",
+              "object_category": "desk",
+              "semantic_pixels": 2403,
+              "instance_pixels": 2403,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "sofa_ukfaaz_0",
+              "object_category": "sofa",
+              "semantic_pixels": 2227,
+              "instance_pixels": 2227,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "taboret_cgwxtq_0",
+              "object_category": "taboret",
+              "semantic_pixels": 588,
+              "instance_pixels": 588,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "coffee_table_osroux_0",
+              "object_category": "coffee_table",
+              "semantic_pixels": 208,
+              "instance_pixels": 208,
+              "assigned_region": "living_room_0"
+            }
+          ]
+        }
+      }
+    },
+    "path_views": {
+      "success": true,
+      "sample_spacing_m": 1.0,
+      "path_length_m": 5.615,
+      "sample_count": 7,
+      "views": [
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_000.png",
+          "camera_pose": {
+            "position": [
+              0.0,
+              2.5,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.22143608934587078,
+              0.5345940945906104,
+              0.7535002217217873,
+              0.31210996175910577
+            ],
+            "target": [
+              -0.7071067021612122,
+              1.7928931397881258,
+              1.0
+            ]
+          },
+          "sample_index": 0,
+          "distance_along_path_m": 0.0,
+          "yaw_rad": -2.35619437843365
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_001.png",
+          "camera_pose": {
+            "position": [
+              -0.5,
+              1.689292248527698,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -1.6060499178184562e-17,
+              0.5786404649140492,
+              0.8155827440327885,
+              -2.2636968522804183e-17
+            ],
+            "target": [
+              -0.49999999999999994,
+              0.689292248527698,
+              1.0
+            ]
+          },
+          "sample_index": 1,
+          "distance_along_path_m": 1.0,
+          "yaw_rad": -1.5707963267948966
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_002.png",
+          "camera_pose": {
+            "position": [
+              -0.7871010014060373,
+              0.9000000357627869,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.40916059660966075,
+              0.4091605966096607,
+              0.576704088924317,
+              0.576704088924317
+            ],
+            "target": [
+              -1.7871010014060373,
+              0.900000035762787,
+              1.0
+            ]
+          },
+          "sample_index": 2,
+          "distance_along_path_m": 2.0,
+          "yaw_rad": 3.141592653589793
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_003.png",
+          "camera_pose": {
+            "position": [
+              -1.7871010014060373,
+              0.9000000357627869,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.40916059660966075,
+              0.4091605966096607,
+              0.576704088924317,
+              0.576704088924317
+            ],
+            "target": [
+              -2.7871010014060373,
+              0.900000035762787,
+              1.0
+            ]
+          },
+          "sample_index": 3,
+          "distance_along_path_m": 3.0,
+          "yaw_rad": 3.141592653589793
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_004.png",
+          "camera_pose": {
+            "position": [
+              -2.7673482182737157,
+              0.9836741232477315,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.4922210154889369,
+              0.3042092364590312,
+              0.42877714034090203,
+              0.6937761716037323
+            ],
+            "target": [
+              -3.6617753026494873,
+              1.430887931995915,
+              1.0
+            ]
+          },
+          "sample_index": 4,
+          "distance_along_path_m": 4.0,
+          "yaw_rad": 2.677944806170209
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_005.png",
+          "camera_pose": {
+            "position": [
+              -3.4812933277481153,
+              1.6812932562225418,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5345940822169053,
+              0.2214361192186396,
+              0.31211000386420584,
+              0.7535002042812852
+            ],
+            "target": [
+              -4.188400108934663,
+              2.3884000374090895,
+              1.0
+            ]
+          },
+          "sample_index": 5,
+          "distance_along_path_m": 5.0,
+          "yaw_rad": 2.356194490192345
+        },
+        {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_006.png",
+          "camera_pose": {
+            "position": [
+              -3.999999999999999,
+              1.9999999999999996,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.4922209792243361,
+              0.3042092951363955,
+              0.4287772230455326,
+              0.6937761204894665
+            ],
+            "target": [
+              -4.894427190999915,
+              2.4472135954999574,
+              1.0
+            ]
+          },
+          "sample_index": 6,
+          "distance_along_path_m": 5.615,
+          "yaw_rad": 2.677945044588987
+        }
+      ],
+      "selected_target_region": "bedroom_0",
+      "selection_reason": "direct_path",
+      "room_sequence": [
+        "bathroom_0",
+        "living_room_0",
+        "bedroom_0"
+      ],
+      "path_world_xy": [
+        [
+          0.0,
+          2.5
+        ],
+        [
+          -0.20000000298023224,
+          2.299999952316284
+        ],
+        [
+          -0.4000000059604645,
+          2.1000001430511475
+        ],
+        [
+          -0.5,
+          1.899999976158142
+        ],
+        [
+          -0.5,
+          1.7000000476837158
+        ],
+        [
+          -0.5,
+          1.5
+        ],
+        [
+          -0.5,
+          1.3000000715255737
+        ],
+        [
+          -0.5,
+          1.100000023841858
+        ],
+        [
+          -0.6000000238418579,
+          0.9000000357627869
+        ],
+        [
+          -0.800000011920929,
+          0.9000000357627869
+        ],
+        [
+          -1.0,
+          0.9000000357627869
+        ],
+        [
+          -1.2000000476837158,
+          0.9000000357627869
+        ],
+        [
+          -1.399999976158142,
+          0.9000000357627869
+        ],
+        [
+          -1.600000023841858,
+          0.9000000357627869
+        ],
+        [
+          -1.8000000715255737,
+          0.9000000357627869
+        ],
+        [
+          -2.0,
+          0.9000000357627869
+        ],
+        [
+          -2.200000047683716,
+          0.9000000357627869
+        ],
+        [
+          -2.4000000953674316,
+          0.9000000357627869
+        ],
+        [
+          -2.6000001430511475,
+          0.9000000357627869
+        ],
+        [
+          -2.799999952316284,
+          1.0
+        ],
+        [
+          -3.0,
+          1.2000000476837158
+        ],
+        [
+          -3.200000047683716,
+          1.399999976158142
+        ],
+        [
+          -3.4000000953674316,
+          1.600000023841858
+        ],
+        [
+          -3.6000001430511475,
+          1.8000000715255737
+        ],
+        [
+          -3.799999952316284,
+          1.899999976158142
+        ],
+        [
+          -4.0,
+          2.0
+        ]
+      ]
+    },
+    "task_type": "shortest_path_via_region",
+    "options": [
+      "bedroom_0",
+      "living_room_0",
+      "bedroom_2",
+      "bedroom_1"
+    ],
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1__initial.png",
+      "kind": "start_room_longest_ray_view",
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1.png",
+      "initial_view": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1__initial.png",
+        "camera_pose": {
+          "position": [
+            0.20000000298023224,
+            2.4000000953674316,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.1498877675076841,
+            0.6729081010964746,
+            0.7070531506815776,
+            0.15749344983698113
+          ],
+          "target": [
+            -2.799999952316284,
+            -4.0,
+            1.0
+          ]
+        },
+        "success": true,
+        "room_instance": "bathroom_0",
+        "render_xy": [
+          0.20000000298023224,
+          2.4000000953674316
+        ],
+        "selection_debug": {
+          "room_instance": "bathroom_0",
+          "selected_by": "center_near_free_xy",
+          "clearance_px": 9.993799209594727,
+          "center_distance_px": 2.2360680103302,
+          "selected_map_rc": [
+            90,
+            68
+          ]
+        },
+        "ray_debug": {
+          "angle_deg": 245.0,
+          "angle_rad": 4.276056667386107,
+          "ray_length_px": 70.68238830566406,
+          "start_map_rc": [
+            90,
+            68
+          ],
+          "end_map_rc": [
+            26,
+            38
+          ],
+          "start_xy": [
+            0.20000000298023224,
+            2.4000000953674316
+          ],
+          "target_xy": [
+            -2.799999952316284,
+            -4.0
+          ],
+          "success": true
+        }
+      },
+      "room_views": {
+        "bedroom_0": {
+          "success": true,
+          "room_instance": "bedroom_0",
+          "center_xy": [
+            -4.0,
+            2.0
+          ],
+          "corner_render_xy": [
+            [
+              -5.15,
+              0.85
+            ],
+            [
+              -5.15,
+              3.15
+            ],
+            [
+              -2.85,
+              0.85
+            ],
+            [
+              -2.85,
+              3.15
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.15,
+                  0.85,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5805060938632272,
+                  -0.24045349711837766,
+                  -0.2977057693936559,
+                  0.718725306066881
+                ],
+                "target": [
+                  -4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -5.15,
+                0.85
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.15,
+                  3.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.24045349711837766,
+                  0.5805060938632272,
+                  0.718725306066881,
+                  -0.2977057693936559
+                ],
+                "target": [
+                  -4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -5.15,
+                3.15
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  -2.85,
+                  0.85,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.580506093863227,
+                  0.24045349711837757,
+                  0.29770576939365584,
+                  0.7187253060668811
+                ],
+                "target": [
+                  -4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                -2.85,
+                0.85
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  -2.85,
+                  3.15,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.24045349711837763,
+                  0.5805060938632272,
+                  0.718725306066881,
+                  0.2977057693936559
+                ],
+                "target": [
+                  -4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                -2.85,
+                3.15
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -4.099999904632568,
+                1.3000000715255737,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5000000000000001,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "target": [
+                -5.099999904632568,
+                1.300000071525574,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "bed_klcjcy_0",
+                "object_category": "bed",
+                "semantic_pixels": 64443,
+                "instance_pixels": 64443,
+                "assigned_region": "bedroom_0"
+              },
+              {
+                "object_name": "desk_aduafr_0",
+                "object_category": "desk",
+                "semantic_pixels": 63398,
+                "instance_pixels": 63398,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "nightstand_aykehx_0",
+                "object_category": "nightstand",
+                "semantic_pixels": 18036,
+                "instance_pixels": 18036,
+                "assigned_region": "bedroom_0"
+              },
+              {
+                "object_name": "table_lamp_erfbgw_1",
+                "object_category": "table_lamp",
+                "semantic_pixels": 6669,
+                "instance_pixels": 6669,
+                "assigned_region": "bedroom_0"
+              },
+              {
+                "object_name": "taboret_cgwxtq_0",
+                "object_category": "taboret",
+                "semantic_pixels": 1267,
+                "instance_pixels": 1267,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "map_fdtxut_0",
+                "object_category": "map",
+                "semantic_pixels": 957,
+                "instance_pixels": 957,
+                "assigned_region": "living_room_0"
+              }
+            ]
+          }
+        },
+        "living_room_0": {
+          "success": true,
+          "room_instance": "living_room_0",
+          "center_xy": [
+            -2.0,
+            -2.0
+          ],
+          "corner_render_xy": [
+            [
+              -5.1,
+              -4.1
+            ],
+            [
+              -5.1,
+              0.09999999999999998
+            ],
+            [
+              1.1,
+              -4.1
+            ],
+            [
+              1.1,
+              0.09999999999999998
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.1,
+                  -4.1,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5948910827971652,
+                  -0.3155473181531857,
+                  -0.34641855813679295,
+                  0.6530916261851579
+                ],
+                "target": [
+                  -2.0,
+                  -2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                -5.1,
+                -4.1
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.1,
+                  0.09999999999999998,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.31554731815318565,
+                  0.5948910827971652,
+                  0.6530916261851579,
+                  -0.3464185581367929
+                ],
+                "target": [
+                  -2.0,
+                  -2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                -5.1,
+                0.09999999999999998
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  1.1,
+                  -4.1,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.5948910827971652,
+                  0.31554731815318576,
+                  0.346418558136793,
+                  0.6530916261851578
+                ],
+                "target": [
+                  -2.0,
+                  -2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                1.1,
+                -4.1
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  1.1,
+                  0.09999999999999998,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.31554731815318576,
+                  0.5948910827971653,
+                  0.6530916261851578,
+                  0.346418558136793
+                ],
+                "target": [
+                  -2.0,
+                  -2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                1.1,
+                0.09999999999999998
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/living_room_0__open_view.png",
+            "camera_pose": {
+              "position": [
+                -2.200000047683716,
+                -1.5,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -0.5,
+                0.5,
+                0.5,
+                -0.5
+              ],
+              "target": [
+                -1.2000000476837158,
+                -1.5,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "stairs_tikozn_0",
+                "object_category": "stairs",
+                "semantic_pixels": 207277,
+                "instance_pixels": 207277,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "table_lamp_lshxmu_0",
+                "object_category": "table_lamp",
+                "semantic_pixels": 19376,
+                "instance_pixels": 19376,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "desk_iotfzl_0",
+                "object_category": "desk",
+                "semantic_pixels": 11754,
+                "instance_pixels": 11754,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "bed_siuxgz_0",
+                "object_category": "bed",
+                "semantic_pixels": 3041,
+                "instance_pixels": 3041,
+                "assigned_region": "bedroom_1"
+              },
+              {
+                "object_name": "ottoman_qsnawv_0",
+                "object_category": "ottoman",
+                "semantic_pixels": 1569,
+                "instance_pixels": 1569,
+                "assigned_region": "bedroom_1"
+              },
+              {
+                "object_name": "shower_giialz_0",
+                "object_category": "shower",
+                "semantic_pixels": 470,
+                "instance_pixels": 470,
+                "assigned_region": "bathroom_0"
+              },
+              {
+                "object_name": "bookcase_bsvnni_0",
+                "object_category": "bookcase",
+                "semantic_pixels": 435,
+                "instance_pixels": 435,
+                "assigned_region": "bedroom_2"
+              }
+            ]
+          }
+        },
+        "bedroom_2": {
+          "success": true,
+          "room_instance": "bedroom_2",
+          "center_xy": [
+            4.0,
+            -2.5
+          ],
+          "corner_render_xy": [
+            [
+              2.85,
+              -4.360000000000001
+            ],
+            [
+              2.85,
+              -0.85
+            ],
+            [
+              6.095000000000004,
+              -4.360000000000001
+            ],
+            [
+              6.095000000000004,
+              -0.85
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_00.png",
+              "camera_pose": {
+                "position": [
+                  2.85,
+                  -4.360000000000001,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6241185410381813,
+                  -0.17735892275712717,
+                  -0.20800269766349852,
+                  0.7319526876892458
+                ],
+                "target": [
+                  4.0,
+                  -2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                2.85,
+                -4.360000000000001
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_01.png",
+              "camera_pose": {
+                "position": [
+                  2.85,
+                  -0.85,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.19287924520173277,
+                  0.6140635371859581,
+                  0.7301541314569567,
+                  -0.2293436578268875
+                ],
+                "target": [
+                  4.0,
+                  -2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                2.85,
+                -0.85
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_02.png",
+              "camera_pose": {
+                "position": [
+                  6.095000000000004,
+                  -4.360000000000001,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6036655429727051,
+                  0.2713007673302392,
+                  0.3073037351716805,
+                  0.6837749777690217
+                ],
+                "target": [
+                  4.0,
+                  -2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                6.095000000000004,
+                -4.360000000000001
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_03.png",
+              "camera_pose": {
+                "position": [
+                  6.095000000000004,
+                  -0.85,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.28794683984394936,
+                  0.593314019511117,
+                  0.6762724830633426,
+                  0.32820819661730855
+                ],
+                "target": [
+                  4.0,
+                  -2.5,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                6.095000000000004,
+                -0.85
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/bedroom_2__open_view.png",
+            "camera_pose": {
+              "position": [
+                3.299999952316284,
+                -2.299999952316284,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.27059805007309856,
+                0.6532814824381882,
+                0.6532814824381883,
+                0.27059805007309856
+              ],
+              "target": [
+                2.5928931711297363,
+                -3.0071067335028316,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "stairs_tikozn_0",
+                "object_category": "stairs",
+                "semantic_pixels": 140918,
+                "instance_pixels": 140918,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "desk_uqcmzf_0",
+                "object_category": "desk",
+                "semantic_pixels": 91545,
+                "instance_pixels": 91545,
+                "assigned_region": "bedroom_2"
+              },
+              {
+                "object_name": "bookcase_eckdny_0",
+                "object_category": "bookcase",
+                "semantic_pixels": 54788,
+                "instance_pixels": 54788,
+                "assigned_region": "bedroom_2"
+              },
+              {
+                "object_name": "room_divider_bydmct_0",
+                "object_category": "room_divider",
+                "semantic_pixels": 34883,
+                "instance_pixels": 34883,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "sofa_ukfaaz_0",
+                "object_category": "sofa",
+                "semantic_pixels": 1304,
+                "instance_pixels": 1304,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "table_lamp_lshxmu_0",
+                "object_category": "table_lamp",
+                "semantic_pixels": 898,
+                "instance_pixels": 898,
+                "assigned_region": "living_room_0"
+              }
+            ]
+          }
+        },
+        "bedroom_1": {
+          "success": true,
+          "room_instance": "bedroom_1",
+          "center_xy": [
+            4.0,
+            2.0
+          ],
+          "corner_render_xy": [
+            [
+              2.85,
+              0.06250000000000011
+            ],
+            [
+              2.85,
+              3.7275000000000023
+            ],
+            [
+              6.095000000000004,
+              0.06250000000000011
+            ],
+            [
+              6.095000000000004,
+              3.7275000000000023
+            ]
+          ],
+          "views": {
+            "view_00": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+              "camera_pose": {
+                "position": [
+                  2.85,
+                  0.06250000000000011,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.627381272666021,
+                  -0.1721687830624574,
+                  -0.20097882606696277,
+                  0.7323647727188288
+                ],
+                "target": [
+                  4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_00",
+              "corner_xy": [
+                2.85,
+                0.06250000000000011
+              ]
+            },
+            "view_01": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+              "camera_pose": {
+                "position": [
+                  2.85,
+                  3.7275000000000023,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  -0.18688909430810752,
+                  0.6179971495013467,
+                  0.7309513731847909,
+                  -0.2210476864302679
+                ],
+                "target": [
+                  4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_01",
+              "corner_xy": [
+                2.85,
+                3.7275000000000023
+              ]
+            },
+            "view_02": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+              "camera_pose": {
+                "position": [
+                  6.095000000000004,
+                  0.06250000000000011,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.6071598378390581,
+                  0.2654932253000121,
+                  0.3000462758686141,
+                  0.6861796491972209
+                ],
+                "target": [
+                  4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_02",
+              "corner_xy": [
+                6.095000000000004,
+                0.06250000000000011
+              ]
+            },
+            "view_03": {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+              "camera_pose": {
+                "position": [
+                  6.095000000000004,
+                  3.7275000000000023,
+                  1.35
+                ],
+                "quaternion_xyzw": [
+                  0.28164705429986064,
+                  0.5972905423911958,
+                  0.679219851622563,
+                  0.32028009294376375
+                ],
+                "target": [
+                  4.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "view_role": "view_03",
+              "corner_xy": [
+                6.095000000000004,
+                3.7275000000000023
+              ]
+            }
+          },
+          "gt_open_view": {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_1__open_view.png",
+            "camera_pose": {
+              "position": [
+                3.4000000953674316,
+                0.699999988079071,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.27059805007309856,
+                0.6532814824381882,
+                0.6532814824381883,
+                0.27059805007309856
+              ],
+              "target": [
+                2.6928933141808837,
+                -0.007106793107476417,
+                1.35
+              ]
+            },
+            "visible_objects": [
+              {
+                "object_name": "bookcase_otwukr_2",
+                "object_category": "bookcase",
+                "semantic_pixels": 2633,
+                "instance_pixels": 2633,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "desk_aduafr_0",
+                "object_category": "desk",
+                "semantic_pixels": 2403,
+                "instance_pixels": 2403,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "sofa_ukfaaz_0",
+                "object_category": "sofa",
+                "semantic_pixels": 2227,
+                "instance_pixels": 2227,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "taboret_cgwxtq_0",
+                "object_category": "taboret",
+                "semantic_pixels": 588,
+                "instance_pixels": 588,
+                "assigned_region": "living_room_0"
+              },
+              {
+                "object_name": "coffee_table_osroux_0",
+                "object_category": "coffee_table",
+                "semantic_pixels": 208,
+                "instance_pixels": 208,
+                "assigned_region": "living_room_0"
+              }
+            ]
+          }
+        }
+      },
+      "path_views": {
+        "success": true,
+        "sample_spacing_m": 1.0,
+        "path_length_m": 5.615,
+        "sample_count": 7,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_000.png",
+            "camera_pose": {
+              "position": [
+                0.0,
+                2.5,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.22143608934587078,
+                0.5345940945906104,
+                0.7535002217217873,
+                0.31210996175910577
+              ],
+              "target": [
+                -0.7071067021612122,
+                1.7928931397881258,
+                1.0
+              ]
+            },
+            "sample_index": 0,
+            "distance_along_path_m": 0.0,
+            "yaw_rad": -2.35619437843365
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_001.png",
+            "camera_pose": {
+              "position": [
+                -0.5,
+                1.689292248527698,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                -1.6060499178184562e-17,
+                0.5786404649140492,
+                0.8155827440327885,
+                -2.2636968522804183e-17
+              ],
+              "target": [
+                -0.49999999999999994,
+                0.689292248527698,
+                1.0
+              ]
+            },
+            "sample_index": 1,
+            "distance_along_path_m": 1.0,
+            "yaw_rad": -1.5707963267948966
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_002.png",
+            "camera_pose": {
+              "position": [
+                -0.7871010014060373,
+                0.9000000357627869,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.40916059660966075,
+                0.4091605966096607,
+                0.576704088924317,
+                0.576704088924317
+              ],
+              "target": [
+                -1.7871010014060373,
+                0.900000035762787,
+                1.0
+              ]
+            },
+            "sample_index": 2,
+            "distance_along_path_m": 2.0,
+            "yaw_rad": 3.141592653589793
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_003.png",
+            "camera_pose": {
+              "position": [
+                -1.7871010014060373,
+                0.9000000357627869,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.40916059660966075,
+                0.4091605966096607,
+                0.576704088924317,
+                0.576704088924317
+              ],
+              "target": [
+                -2.7871010014060373,
+                0.900000035762787,
+                1.0
+              ]
+            },
+            "sample_index": 3,
+            "distance_along_path_m": 3.0,
+            "yaw_rad": 3.141592653589793
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_004.png",
+            "camera_pose": {
+              "position": [
+                -2.7673482182737157,
+                0.9836741232477315,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.4922210154889369,
+                0.3042092364590312,
+                0.42877714034090203,
+                0.6937761716037323
+              ],
+              "target": [
+                -3.6617753026494873,
+                1.430887931995915,
+                1.0
+              ]
+            },
+            "sample_index": 4,
+            "distance_along_path_m": 4.0,
+            "yaw_rad": 2.677944806170209
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_005.png",
+            "camera_pose": {
+              "position": [
+                -3.4812933277481153,
+                1.6812932562225418,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.5345940822169053,
+                0.2214361192186396,
+                0.31211000386420584,
+                0.7535002042812852
+              ],
+              "target": [
+                -4.188400108934663,
+                2.3884000374090895,
+                1.0
+              ]
+            },
+            "sample_index": 5,
+            "distance_along_path_m": 5.0,
+            "yaw_rad": 2.356194490192345
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_006.png",
+            "camera_pose": {
+              "position": [
+                -3.999999999999999,
+                1.9999999999999996,
+                1.35
+              ],
+              "quaternion_xyzw": [
+                0.4922209792243361,
+                0.3042092951363955,
+                0.4287772230455326,
+                0.6937761204894665
+              ],
+              "target": [
+                -4.894427190999915,
+                2.4472135954999574,
+                1.0
+              ]
+            },
+            "sample_index": 6,
+            "distance_along_path_m": 5.615,
+            "yaw_rad": 2.677945044588987
+          }
+        ],
+        "selected_target_region": "bedroom_0",
+        "selection_reason": "direct_path",
+        "room_sequence": [
+          "bathroom_0",
+          "living_room_0",
+          "bedroom_0"
+        ],
+        "path_world_xy": [
+          [
+            0.0,
+            2.5
+          ],
+          [
+            -0.20000000298023224,
+            2.299999952316284
+          ],
+          [
+            -0.4000000059604645,
+            2.1000001430511475
+          ],
+          [
+            -0.5,
+            1.899999976158142
+          ],
+          [
+            -0.5,
+            1.7000000476837158
+          ],
+          [
+            -0.5,
+            1.5
+          ],
+          [
+            -0.5,
+            1.3000000715255737
+          ],
+          [
+            -0.5,
+            1.100000023841858
+          ],
+          [
+            -0.6000000238418579,
+            0.9000000357627869
+          ],
+          [
+            -0.800000011920929,
+            0.9000000357627869
+          ],
+          [
+            -1.0,
+            0.9000000357627869
+          ],
+          [
+            -1.2000000476837158,
+            0.9000000357627869
+          ],
+          [
+            -1.399999976158142,
+            0.9000000357627869
+          ],
+          [
+            -1.600000023841858,
+            0.9000000357627869
+          ],
+          [
+            -1.8000000715255737,
+            0.9000000357627869
+          ],
+          [
+            -2.0,
+            0.9000000357627869
+          ],
+          [
+            -2.200000047683716,
+            0.9000000357627869
+          ],
+          [
+            -2.4000000953674316,
+            0.9000000357627869
+          ],
+          [
+            -2.6000001430511475,
+            0.9000000357627869
+          ],
+          [
+            -2.799999952316284,
+            1.0
+          ],
+          [
+            -3.0,
+            1.2000000476837158
+          ],
+          [
+            -3.200000047683716,
+            1.399999976158142
+          ],
+          [
+            -3.4000000953674316,
+            1.600000023841858
+          ],
+          [
+            -3.6000001430511475,
+            1.8000000715255737
+          ],
+          [
+            -3.799999952316284,
+            1.899999976158142
+          ],
+          [
+            -4.0,
+            2.0
+          ]
+        ]
+      },
+      "gt_region_views": {
+        "bedroom_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -4.099999904632568,
+              1.3000000715255737,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.5000000000000001,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "target": [
+              -5.099999904632568,
+              1.300000071525574,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bed_klcjcy_0",
+              "object_category": "bed",
+              "semantic_pixels": 64443,
+              "instance_pixels": 64443,
+              "assigned_region": "bedroom_0"
+            },
+            {
+              "object_name": "desk_aduafr_0",
+              "object_category": "desk",
+              "semantic_pixels": 63398,
+              "instance_pixels": 63398,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "nightstand_aykehx_0",
+              "object_category": "nightstand",
+              "semantic_pixels": 18036,
+              "instance_pixels": 18036,
+              "assigned_region": "bedroom_0"
+            },
+            {
+              "object_name": "table_lamp_erfbgw_1",
+              "object_category": "table_lamp",
+              "semantic_pixels": 6669,
+              "instance_pixels": 6669,
+              "assigned_region": "bedroom_0"
+            },
+            {
+              "object_name": "taboret_cgwxtq_0",
+              "object_category": "taboret",
+              "semantic_pixels": 1267,
+              "instance_pixels": 1267,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "map_fdtxut_0",
+              "object_category": "map",
+              "semantic_pixels": 957,
+              "instance_pixels": 957,
+              "assigned_region": "living_room_0"
+            }
+          ]
+        },
+        "living_room_0": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/living_room_0__open_view.png",
+          "camera_pose": {
+            "position": [
+              -2.200000047683716,
+              -1.5,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              -0.5,
+              0.5,
+              0.5,
+              -0.5
+            ],
+            "target": [
+              -1.2000000476837158,
+              -1.5,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "stairs_tikozn_0",
+              "object_category": "stairs",
+              "semantic_pixels": 207277,
+              "instance_pixels": 207277,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "table_lamp_lshxmu_0",
+              "object_category": "table_lamp",
+              "semantic_pixels": 19376,
+              "instance_pixels": 19376,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "desk_iotfzl_0",
+              "object_category": "desk",
+              "semantic_pixels": 11754,
+              "instance_pixels": 11754,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "bed_siuxgz_0",
+              "object_category": "bed",
+              "semantic_pixels": 3041,
+              "instance_pixels": 3041,
+              "assigned_region": "bedroom_1"
+            },
+            {
+              "object_name": "ottoman_qsnawv_0",
+              "object_category": "ottoman",
+              "semantic_pixels": 1569,
+              "instance_pixels": 1569,
+              "assigned_region": "bedroom_1"
+            },
+            {
+              "object_name": "shower_giialz_0",
+              "object_category": "shower",
+              "semantic_pixels": 470,
+              "instance_pixels": 470,
+              "assigned_region": "bathroom_0"
+            },
+            {
+              "object_name": "bookcase_bsvnni_0",
+              "object_category": "bookcase",
+              "semantic_pixels": 435,
+              "instance_pixels": 435,
+              "assigned_region": "bedroom_2"
+            }
+          ]
+        },
+        "bedroom_2": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/bedroom_2__open_view.png",
+          "camera_pose": {
+            "position": [
+              3.299999952316284,
+              -2.299999952316284,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.27059805007309856,
+              0.6532814824381882,
+              0.6532814824381883,
+              0.27059805007309856
+            ],
+            "target": [
+              2.5928931711297363,
+              -3.0071067335028316,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "stairs_tikozn_0",
+              "object_category": "stairs",
+              "semantic_pixels": 140918,
+              "instance_pixels": 140918,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "desk_uqcmzf_0",
+              "object_category": "desk",
+              "semantic_pixels": 91545,
+              "instance_pixels": 91545,
+              "assigned_region": "bedroom_2"
+            },
+            {
+              "object_name": "bookcase_eckdny_0",
+              "object_category": "bookcase",
+              "semantic_pixels": 54788,
+              "instance_pixels": 54788,
+              "assigned_region": "bedroom_2"
+            },
+            {
+              "object_name": "room_divider_bydmct_0",
+              "object_category": "room_divider",
+              "semantic_pixels": 34883,
+              "instance_pixels": 34883,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "sofa_ukfaaz_0",
+              "object_category": "sofa",
+              "semantic_pixels": 1304,
+              "instance_pixels": 1304,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "table_lamp_lshxmu_0",
+              "object_category": "table_lamp",
+              "semantic_pixels": 898,
+              "instance_pixels": 898,
+              "assigned_region": "living_room_0"
+            }
+          ]
+        },
+        "bedroom_1": {
+          "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_1__open_view.png",
+          "camera_pose": {
+            "position": [
+              3.4000000953674316,
+              0.699999988079071,
+              1.35
+            ],
+            "quaternion_xyzw": [
+              0.27059805007309856,
+              0.6532814824381882,
+              0.6532814824381883,
+              0.27059805007309856
+            ],
+            "target": [
+              2.6928933141808837,
+              -0.007106793107476417,
+              1.35
+            ]
+          },
+          "visible_objects": [
+            {
+              "object_name": "bookcase_otwukr_2",
+              "object_category": "bookcase",
+              "semantic_pixels": 2633,
+              "instance_pixels": 2633,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "desk_aduafr_0",
+              "object_category": "desk",
+              "semantic_pixels": 2403,
+              "instance_pixels": 2403,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "sofa_ukfaaz_0",
+              "object_category": "sofa",
+              "semantic_pixels": 2227,
+              "instance_pixels": 2227,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "taboret_cgwxtq_0",
+              "object_category": "taboret",
+              "semantic_pixels": 588,
+              "instance_pixels": 588,
+              "assigned_region": "living_room_0"
+            },
+            {
+              "object_name": "coffee_table_osroux_0",
+              "object_category": "coffee_table",
+              "semantic_pixels": 208,
+              "instance_pixels": 208,
+              "assigned_region": "living_room_0"
+            }
+          ]
+        }
+      }
+    },
+    "legacy_binary_question": {
+      "question": "On the shortest path from bathroom_0 to bedroom_0, do you need to pass through bedroom_1?",
+      "answer": "No",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required_regions": [
+        "bathroom_0",
+        "bedroom_0",
+        "bedroom_1"
+      ],
+      "via_region": "bedroom_1",
+      "answer_bool": false
+    },
+    "question_format": "single_choice_room_mcq",
+    "option_count": 4,
+    "correct_region": "living_room_0",
+    "answer_region": "living_room_0",
+    "shortest_path_regions": [
+      "bathroom_0",
+      "living_room_0",
+      "bedroom_0"
+    ],
+    "internal_shortest_path_regions": [
+      "living_room_0"
+    ],
+    "gt_region_views": {
+      "bedroom_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -4.099999904632568,
+            1.3000000715255737,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.5000000000000001,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "target": [
+            -5.099999904632568,
+            1.300000071525574,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "bed_klcjcy_0",
+            "object_category": "bed",
+            "semantic_pixels": 64443,
+            "instance_pixels": 64443,
+            "assigned_region": "bedroom_0"
+          },
+          {
+            "object_name": "desk_aduafr_0",
+            "object_category": "desk",
+            "semantic_pixels": 63398,
+            "instance_pixels": 63398,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "nightstand_aykehx_0",
+            "object_category": "nightstand",
+            "semantic_pixels": 18036,
+            "instance_pixels": 18036,
+            "assigned_region": "bedroom_0"
+          },
+          {
+            "object_name": "table_lamp_erfbgw_1",
+            "object_category": "table_lamp",
+            "semantic_pixels": 6669,
+            "instance_pixels": 6669,
+            "assigned_region": "bedroom_0"
+          },
+          {
+            "object_name": "taboret_cgwxtq_0",
+            "object_category": "taboret",
+            "semantic_pixels": 1267,
+            "instance_pixels": 1267,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "map_fdtxut_0",
+            "object_category": "map",
+            "semantic_pixels": 957,
+            "instance_pixels": 957,
+            "assigned_region": "living_room_0"
+          }
+        ]
+      },
+      "living_room_0": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/living_room_0__open_view.png",
+        "camera_pose": {
+          "position": [
+            -2.200000047683716,
+            -1.5,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            -0.5,
+            0.5,
+            0.5,
+            -0.5
+          ],
+          "target": [
+            -1.2000000476837158,
+            -1.5,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "stairs_tikozn_0",
+            "object_category": "stairs",
+            "semantic_pixels": 207277,
+            "instance_pixels": 207277,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "table_lamp_lshxmu_0",
+            "object_category": "table_lamp",
+            "semantic_pixels": 19376,
+            "instance_pixels": 19376,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "desk_iotfzl_0",
+            "object_category": "desk",
+            "semantic_pixels": 11754,
+            "instance_pixels": 11754,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "bed_siuxgz_0",
+            "object_category": "bed",
+            "semantic_pixels": 3041,
+            "instance_pixels": 3041,
+            "assigned_region": "bedroom_1"
+          },
+          {
+            "object_name": "ottoman_qsnawv_0",
+            "object_category": "ottoman",
+            "semantic_pixels": 1569,
+            "instance_pixels": 1569,
+            "assigned_region": "bedroom_1"
+          },
+          {
+            "object_name": "shower_giialz_0",
+            "object_category": "shower",
+            "semantic_pixels": 470,
+            "instance_pixels": 470,
+            "assigned_region": "bathroom_0"
+          },
+          {
+            "object_name": "bookcase_bsvnni_0",
+            "object_category": "bookcase",
+            "semantic_pixels": 435,
+            "instance_pixels": 435,
+            "assigned_region": "bedroom_2"
+          }
+        ]
+      },
+      "bedroom_2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/bedroom_2__open_view.png",
+        "camera_pose": {
+          "position": [
+            3.299999952316284,
+            -2.299999952316284,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.27059805007309856,
+            0.6532814824381882,
+            0.6532814824381883,
+            0.27059805007309856
+          ],
+          "target": [
+            2.5928931711297363,
+            -3.0071067335028316,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "stairs_tikozn_0",
+            "object_category": "stairs",
+            "semantic_pixels": 140918,
+            "instance_pixels": 140918,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "desk_uqcmzf_0",
+            "object_category": "desk",
+            "semantic_pixels": 91545,
+            "instance_pixels": 91545,
+            "assigned_region": "bedroom_2"
+          },
+          {
+            "object_name": "bookcase_eckdny_0",
+            "object_category": "bookcase",
+            "semantic_pixels": 54788,
+            "instance_pixels": 54788,
+            "assigned_region": "bedroom_2"
+          },
+          {
+            "object_name": "room_divider_bydmct_0",
+            "object_category": "room_divider",
+            "semantic_pixels": 34883,
+            "instance_pixels": 34883,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "sofa_ukfaaz_0",
+            "object_category": "sofa",
+            "semantic_pixels": 1304,
+            "instance_pixels": 1304,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "table_lamp_lshxmu_0",
+            "object_category": "table_lamp",
+            "semantic_pixels": 898,
+            "instance_pixels": 898,
+            "assigned_region": "living_room_0"
+          }
+        ]
+      },
+      "bedroom_1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_1__open_view.png",
+        "camera_pose": {
+          "position": [
+            3.4000000953674316,
+            0.699999988079071,
+            1.35
+          ],
+          "quaternion_xyzw": [
+            0.27059805007309856,
+            0.6532814824381882,
+            0.6532814824381883,
+            0.27059805007309856
+          ],
+          "target": [
+            2.6928933141808837,
+            -0.007106793107476417,
+            1.35
+          ]
+        },
+        "visible_objects": [
+          {
+            "object_name": "bookcase_otwukr_2",
+            "object_category": "bookcase",
+            "semantic_pixels": 2633,
+            "instance_pixels": 2633,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "desk_aduafr_0",
+            "object_category": "desk",
+            "semantic_pixels": 2403,
+            "instance_pixels": 2403,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "sofa_ukfaaz_0",
+            "object_category": "sofa",
+            "semantic_pixels": 2227,
+            "instance_pixels": 2227,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "taboret_cgwxtq_0",
+            "object_category": "taboret",
+            "semantic_pixels": 588,
+            "instance_pixels": 588,
+            "assigned_region": "living_room_0"
+          },
+          {
+            "object_name": "coffee_table_osroux_0",
+            "object_category": "coffee_table",
+            "semantic_pixels": 208,
+            "instance_pixels": 208,
+            "assigned_region": "living_room_0"
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1__initial.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/shortest_path_via_region__bathroom_0__bedroom_0__bedroom_1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/room_views/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/view_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/living_room_0__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/bedroom_2__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/bedroom_1__open_view.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_001.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_002.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_003.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_004.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_005.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/cognitivemap/Traversable Passage/house_double_floor_upper/full_scene/q_001/gt_views/path_view_006.png"
+  ]
+}

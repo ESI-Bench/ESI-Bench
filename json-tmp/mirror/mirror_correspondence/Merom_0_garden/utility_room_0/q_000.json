@@ -1,0 +1,675 @@
+{
+  "scene": "Merom_0_garden",
+  "room": "utility_room_0",
+  "floor_name": "floors_kzcgnc_0",
+  "seed": 1,
+  "camera_setup": {
+    "mode": "per_question_reset",
+    "preferred_xy": null,
+    "height_m": 0.8,
+    "fov_deg": 100.0,
+    "look_target": "mirror_center",
+    "trav_map_pixel_occlusion_check": true,
+    "context_render_enabled": false,
+    "clear_radius_m": 1.0
+  },
+  "mirror_setup": {
+    "name": "render_mirror_main",
+    "category": "mirror",
+    "model": "tytkbq",
+    "mode": "per_question_reset",
+    "camera_forward_distance_m": 3.0
+  },
+  "task_type": "mirror_correspondence",
+  "question_index": 0,
+  "question_id": "mirror_correspondence/q_000",
+  "question_data": {
+    "task_type": "mirror_correspondence",
+    "question": "You are given an image with a mirror and three bottle_of_tequilas. Based on the mirror reflection, which of the three bottle_of_tequilas in the same image corresponds to the reflected one: the left, middle, or right object?",
+    "options": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "answer": "left",
+    "placement": [
+      {
+        "name": "render_item_000",
+        "alias": "A",
+        "category": "bottle_of_tequila",
+        "model": "gbozpr",
+        "real_position": [
+          0.6903060674667358,
+          -12.26126480102539,
+          0.09574701637029648
+        ],
+        "line_offset_m": 0.0,
+        "yaw_deg": 23.642559498313695,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.2048595907287456,
+          0.9787913710727383
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": true,
+        "position_label": "left"
+      },
+      {
+        "name": "render_item_001",
+        "alias": "B",
+        "category": "bottle_of_tequila",
+        "model": "gbozpr",
+        "real_position": [
+          0.8482692837715149,
+          -11.47288990020752,
+          0.09574701637029648
+        ],
+        "line_offset_m": 0.8040449847235864,
+        "yaw_deg": -22.39998481861688,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.1942342212605198,
+          0.9809551810818471
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "middle"
+      },
+      {
+        "name": "render_item_002",
+        "alias": "C",
+        "category": "bottle_of_tequila",
+        "model": "gbozpr",
+        "real_position": [
+          0.9215195178985596,
+          -11.107306480407715,
+          0.09574701637029648
+        ],
+        "line_offset_m": 1.1768942411777668,
+        "yaw_deg": 7.24376266883634,
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.06317166267638163,
+          0.9980026758655016
+        ],
+        "mirror_position": null,
+        "mirror_hit_xy": null,
+        "visible_in_mirror": false,
+        "position_label": "right"
+      }
+    ],
+    "evidence": {
+      "mirror_label": "target_mirror_object",
+      "real_object_name": "render_item_000",
+      "shared_category": "bottle_of_tequila",
+      "shared_model": "gbozpr",
+      "target_position_label": "left",
+      "target_generated_from_reflected_ray": true,
+      "target_distance_from_mirror_m": 1.3796152233237278,
+      "other_objects_on_perpendicular_line": true,
+      "other_object_distances_from_target_m": [
+        0.8040449847235864,
+        1.1768942411777668
+      ],
+      "only_target_visible_in_mirror": false,
+      "temporarily_cleared_scene_objects": []
+    },
+    "scene_setup": {
+      "camera": {
+        "position": [
+          2.137577209472656,
+          -12.34022487640381,
+          0.8000002533197403
+        ],
+        "forward_xy": [
+          -0.9922778767136676,
+          0.12403473458920834
+        ],
+        "quaternion_xyzw": [
+          0.5301025218269595,
+          0.4679650802706308,
+          0.46796508027063083,
+          0.5301025218269595
+        ]
+      },
+      "mirror": {
+        "position": [
+          -0.662422790527344,
+          -11.99022487640381,
+          1.1413250213861466
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.08043848894119864,
+          0.9967595745699445
+        ],
+        "normal_xy": [
+          0.9870592989937134,
+          -0.16035566803215667
+        ],
+        "tangent_xy": [
+          0.16035566803215667,
+          0.9870592989937134
+        ],
+        "half_width_m": 0.478365421295166,
+        "normal_yaw_offset_deg": -22.924877779736335
+      },
+      "correspondence_geometry": {
+        "target_rank": 0,
+        "answer_label": "left",
+        "target_xy": [
+          0.6903060794267261,
+          -12.261265037301348
+        ],
+        "target_distance_m": 1.3796152233237278,
+        "reflected_dir_xy": [
+          0.9805117014402872,
+          -0.19646069158656876
+        ],
+        "line_dir_xy": [
+          0.19646069158656876,
+          0.9805117014402872
+        ],
+        "line_offsets_m": [
+          0.0,
+          0.8040449847235864,
+          1.1768942411777668
+        ],
+        "render_eye": [
+          2.137577209472656,
+          -12.34022487640381,
+          0.8000002533197403
+        ],
+        "render_target": [
+          -0.662422790527344,
+          -11.99022487640381,
+          1.1413250213861466
+        ]
+      }
+    },
+    "render": {
+      "image": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000.png",
+      "camera_pose": {
+        "position": [
+          2.137577209472656,
+          -12.34022487640381,
+          0.8000002533197403
+        ],
+        "quaternion_xyzw": [
+          0.5301025218269595,
+          0.4679650802706308,
+          0.46796508027063083,
+          0.5301025218269595
+        ]
+      },
+      "mirror_pose": {
+        "position": [
+          -0.662422790527344,
+          -11.99022487640381,
+          1.1413250213861466
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          -0.08043848894119864,
+          0.9967595745699445
+        ],
+        "normal_xy": [
+          0.9870592989937134,
+          -0.16035566803215667
+        ],
+        "tangent_xy": [
+          0.16035566803215667,
+          0.9870592989937134
+        ]
+      },
+      "topdown_map": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_map.png",
+      "multi_image_input": {
+        "room_instance": "utility_room_0",
+        "room_bbox_world_xy": [
+          -1.5,
+          -12.5,
+          5.5,
+          -9.5
+        ],
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_00.png",
+            "camera_pose": {
+              "position": [
+                -1.15,
+                -12.15,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                0.539519850464398,
+                -0.37738240768068954,
+                -0.4314076163233898,
+                0.6167562872854806
+              ]
+            },
+            "target": [
+              2.0,
+              -11.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_00"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_01.png",
+            "camera_pose": {
+              "position": [
+                -1.15,
+                -9.85,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                -0.37738240768068954,
+                0.539519850464398,
+                0.6167562872854806,
+                -0.4314076163233898
+              ]
+            },
+            "target": [
+              2.0,
+              -11.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_01"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_02.png",
+            "camera_pose": {
+              "position": [
+                5.15,
+                -12.15,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                0.5395198504643981,
+                0.3773824076806896,
+                0.43140761632339,
+                0.6167562872854805
+              ]
+            },
+            "target": [
+              2.0,
+              -11.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_02"
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_03.png",
+            "camera_pose": {
+              "position": [
+                5.15,
+                -9.85,
+                1.3500002533197404
+              ],
+              "quaternion_xyzw": [
+                0.3773824076806896,
+                0.5395198504643981,
+                0.6167562872854805,
+                0.43140761632339
+              ]
+            },
+            "target": [
+              2.0,
+              -11.0,
+              0.9000002533197403
+            ],
+            "view_id": "corner_03"
+          }
+        ]
+      },
+      "gt_view_input": {
+        "anchor_answer_label": "left",
+        "orbit_center": [
+          -0.662422790527344,
+          -11.99022487640381,
+          1.1413250213861466
+        ],
+        "orbit_radius_xy_m": 2.821790211904492,
+        "views": [
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+00.png",
+            "camera_pose": {
+              "position": [
+                2.137577209472656,
+                -12.34022487640381,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.5610290762862549,
+                0.49526649262792255,
+                0.43896894421522764,
+                0.49725621449710994
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 0
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+05.png",
+            "camera_pose": {
+              "position": [
+                2.157426874091224,
+                -12.094856941042478,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.5388918799284866,
+                0.5192668532707571,
+                0.4602411544878589,
+                0.47763538034478803
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 5
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+10.png",
+            "camera_pose": {
+              "position": [
+                2.1558157800902644,
+                -11.848692692490678,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.5157288722486624,
+                0.5422787599451921,
+                0.4806372695645254,
+                0.45710534009895937
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 10
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+15.png",
+            "camera_pose": {
+              "position": [
+                2.1327561888679294,
+                -11.603605589317924,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.4915841453483996,
+                0.5642584081789619,
+                0.5001184642809393,
+                0.43570517385808294
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 15
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+20.png",
+            "camera_pose": {
+              "position": [
+                2.0884235978371835,
+                -11.361460892367004,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.4665036600876502,
+                0.5851639584624113,
+                0.518647655075719,
+                0.4134756180549047
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 20
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+25.png",
+            "camera_pose": {
+              "position": [
+                2.0231554047845206,
+                -11.124101468992679,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.4405351585955892,
+                0.6049556158923822,
+                0.5361895705810565,
+                0.39045898791234124
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 25
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+30.png",
+            "camera_pose": {
+              "position": [
+                1.9374483400690838,
+                -10.893333767728363,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.41372807339075973,
+                0.6235957059240728,
+                0.5527108187637699,
+                0.36669909689404817
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 30
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+35.png",
+            "camera_pose": {
+              "position": [
+                1.831954686204699,
+                -10.670914070122027,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.38613343328346456,
+                0.6410487460866737,
+                0.5681799504889373,
+                0.3422411733030033
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 35
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+40.png",
+            "camera_pose": {
+              "position": [
+                1.7074773135960832,
+                -10.458535124373142,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.35780376623952487,
+                0.6572815135262697,
+                0.5825675193851114,
+                0.31713177418685956
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 40
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+45.png",
+            "camera_pose": {
+              "position": [
+                1.5649635702102804,
+                -10.257813262496768,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.32879299939031126,
+                0.6722631082474296,
+                0.595846137897163,
+                0.2914186967139592
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 45
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+50.png",
+            "camera_pose": {
+              "position": [
+                1.4054980716866083,
+                -10.07027609906096,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.2991563563793858,
+                0.6859650119331032,
+                0.6079905294200465,
+                0.265150887188708
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 50
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+55.png",
+            "camera_pose": {
+              "position": [
+                1.2302944467567318,
+                -9.897350905117499,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.26895025224115654,
+                0.6983611422308594,
+                0.6189775764142565,
+                0.23837834787950177
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 55
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+60.png",
+            "camera_pose": {
+              "position": [
+                1.0406861007972097,
+                -9.740353745807381,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.23823218601165308,
+                0.7094279024021268,
+                0.6287863644113761,
+                0.2111520418365673
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 60
+          },
+          {
+            "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+65.png",
+            "camera_pose": {
+              "position": [
+                0.8381160678094414,
+                -9.600479464310435,
+                0.8000002533197403
+              ],
+              "quaternion_xyzw": [
+                0.20706063127584426,
+                0.7191442262399256,
+                0.6373982218259583,
+                0.1835237958808995
+              ]
+            },
+            "target": [
+              -0.662422790527344,
+              -11.99022487640381,
+              1.1413250213861466
+            ],
+            "offset_deg": 65
+          }
+        ]
+      }
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_map.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_room_views/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+05.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+10.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+15.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+20.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+25.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+30.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+35.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+40.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+45.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+50.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+55.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+60.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/mirror/mirror_correspondence/Merom_0_garden/utility_room_0/q_000_gt_orbit/orbit_+65.png"
+  ]
+}

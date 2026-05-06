@@ -1,0 +1,1157 @@
+{
+  "scene": "house_single_floor",
+  "room": "childs_room_2",
+  "floor_name": "floors_vmamhf_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "current_state_reasoning",
+  "question_index": 1,
+  "question_id": "current_state_reasoning/q_001",
+  "question_data": {
+    "task_type": "current_state_reasoning",
+    "question": "Which box changed from Phase 1 to Phase 2: the brown box, the red box, or the yellow box?",
+    "options": [
+      "brown box",
+      "red box",
+      "yellow box"
+    ],
+    "answer": "red box",
+    "candidate_index": 1,
+    "box_count": 3,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "brown",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "casserole",
+          "display_name": "casserole",
+          "model": "ncbsee",
+          "bbox_size_m": [
+            0.24506137847900392,
+            0.24506139373779298,
+            0.11969763946533203
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "casserole",
+          "display_name": "casserole",
+          "model": "ncbsee",
+          "bbox_size_m": [
+            0.24506137847900392,
+            0.24506139373779298,
+            0.11969763946533203
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_cedar_chest",
+          "category": "cedar_chest",
+          "model": "fwstpx",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              20.90688998413088,
+              7.532343017578128,
+              0.14394621598720553
+            ]
+          },
+          "bbox": [
+            [
+              20.70795440673828,
+              7.262166976928711,
+              -4.900246858596802e-05
+            ],
+            [
+              21.111242294311523,
+              7.802285194396973,
+              0.2634859085083008
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 1,
+        "position_label": "red",
+        "change_type": "remove",
+        "phase1_content": {
+          "category": "box_of_shampoo",
+          "display_name": "box of shampoo",
+          "model": "bclpiq",
+          "bbox_size_m": [
+            0.05533064842224121,
+            0.0919355697631836,
+            0.1840967831015587
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": null,
+        "container": {
+          "name": "render_unobserved_box_1_cedar_chest",
+          "category": "cedar_chest",
+          "model": "gbdzls",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              23.00688998413089,
+              7.011333885192875,
+              0.08619463616609574
+            ]
+          },
+          "bbox": [
+            [
+              22.805681228637695,
+              6.913174152374268,
+              -1.5340745449066162e-05
+            ],
+            [
+              23.20758056640625,
+              7.108935832977295,
+              0.14490225911140442
+            ]
+          ]
+        }
+      },
+      {
+        "box_index": 2,
+        "position_label": "yellow",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "pitcher",
+          "display_name": "pitcher",
+          "model": "bbewjo",
+          "bbox_size_m": [
+            0.17412541580200194,
+            0.1264273567199707,
+            0.2443133426157292
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "pitcher",
+          "display_name": "pitcher",
+          "model": "bbewjo",
+          "bbox_size_m": [
+            0.17412541580200194,
+            0.1264273567199707,
+            0.2443133426157292
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_2_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "floor",
+            "position": [
+              22.922743476867705,
+              6.3721958847045945,
+              0.10837432324886322
+            ]
+          },
+          "bbox": [
+            [
+              22.806503295898438,
+              6.217035293579102,
+              -9.298324584960938e-06
+            ],
+            [
+              23.036991119384766,
+              6.531426429748535,
+              0.18675705790519714
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "changed_box_index": 1
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              21.26750000000002,
+              5.909000000000004,
+              1.2499906867742538
+            ],
+            "quaternion_xyzw": [
+              0.40611729020847503,
+              -0.16232662320905095,
+              -0.33377392031307546,
+              0.8350531624454295
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 38.129256992904246,
+            "look_target": [
+              22.27932580312093,
+              6.972504218419393,
+              0.09777184600631396
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "childs_room_2",
+          "room_bbox_world_xy": [
+            20.31750000000002,
+            5.475000000000005,
+            24.209999999999994,
+            8.187499999999998
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.42875664786204915,
+                  -0.23655623624280483,
+                  -0.42119608667860514,
+                  0.7634151823060412
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  -0.23655623624280483,
+                  0.42875664786204915,
+                  0.7634151823060412,
+                  -0.42119608667860514
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.428756647862049,
+                  0.23655623624280453,
+                  0.42119608667860486,
+                  0.7634151823060416
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.23655623624280453,
+                  0.428756647862049,
+                  0.7634151823060416,
+                  0.42119608667860486
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  20.909594185901202,
+                  6.762166590368884,
+                  0.9206095713929989
+                ],
+                "quaternion_xyzw": [
+                  0.3826771197826587,
+                  0.0021980449437845576,
+                  0.005306549913990287,
+                  0.9238642925891681
+                ]
+              },
+              "look_target": [
+                20.900282859802246,
+                7.572685480117798,
+                0.11003719866275787
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.70758110148578,
+                  7.011056678834478,
+                  0.7639069761071571
+                ],
+                "quaternion_xyzw": [
+                  0.27061696691215925,
+                  0.270579131911516,
+                  0.6532358099559206,
+                  0.6533271517276059
+                ]
+              },
+              "look_target": [
+                23.006874084472656,
+                7.011154651641846,
+                0.0631999522447586
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.53698994814386,
+                  6.382392910923673,
+                  0.6852131443499375
+                ],
+                "quaternion_xyzw": [
+                  0.2687062389407078,
+                  0.27247672664113065,
+                  0.6578170088880441,
+                  0.6487142463449225
+                ]
+              },
+              "look_target": [
+                22.93694305419922,
+                6.37403130531311,
+                0.08510799407958983
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              21.26750000000002,
+              5.909000000000004,
+              1.2499906867742538
+            ],
+            "quaternion_xyzw": [
+              0.40611722808546985,
+              -0.16232659658283305,
+              -0.33377392932633543,
+              0.8350531942314017
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 38.129265602749506,
+            "look_target": [
+              22.279325485229492,
+              6.972503900527954,
+              0.09777184228102366
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_1_cedar_chest",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              },
+              {
+                "target_name": "render_unobserved_box_2_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "childs_room_2",
+          "room_bbox_world_xy": [
+            20.31750000000002,
+            5.475000000000005,
+            24.209999999999994,
+            8.187499999999998
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.42875664786204915,
+                  -0.23655623624280483,
+                  -0.42119608667860514,
+                  0.7634151823060412
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  -0.23655623624280483,
+                  0.42875664786204915,
+                  0.7634151823060412,
+                  -0.42119608667860514
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.428756647862049,
+                  0.23655623624280453,
+                  0.42119608667860486,
+                  0.7634151823060416
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.23655623624280453,
+                  0.428756647862049,
+                  0.7634151823060416,
+                  0.42119608667860486
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  20.90945597879399,
+                  6.76216164663375,
+                  0.8336428400397159
+                ],
+                "quaternion_xyzw": [
+                  0.38266895225391834,
+                  -0.0033290220207519406,
+                  -0.00803697011193802,
+                  0.9238445744305118
+                ]
+              },
+              "look_target": [
+                20.922014236450195,
+                7.483888864517212,
+                0.11180637180805206
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.707523855971846,
+                  7.011049909662783,
+                  0.780938030746711
+                ],
+                "quaternion_xyzw": [
+                  0.27059875508743264,
+                  0.2705973450569275,
+                  0.6532797803785865,
+                  0.6532831844933554
+                ]
+              },
+              "look_target": [
+                23.006574630737305,
+                7.011053562164307,
+                0.07998880550265312
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.53698978620951,
+                  6.374233585768695,
+                  0.6851566346706883
+                ],
+                "quaternion_xyzw": [
+                  0.27055248978223606,
+                  0.2706436026943169,
+                  0.6533914561941354,
+                  0.6531714901660826
+                ]
+              },
+              "look_target": [
+                22.936941146850586,
+                6.3740315437316895,
+                0.08510796129703521
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/room_view/image2",
+        "image1": {
+          "room_instance": "childs_room_2",
+          "room_bbox_world_xy": [
+            20.31750000000002,
+            5.475000000000005,
+            24.209999999999994,
+            8.187499999999998
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.42875664786204915,
+                  -0.23655623624280483,
+                  -0.42119608667860514,
+                  0.7634151823060412
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  -0.23655623624280483,
+                  0.42875664786204915,
+                  0.7634151823060412,
+                  -0.42119608667860514
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.428756647862049,
+                  0.23655623624280453,
+                  0.42119608667860486,
+                  0.7634151823060416
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.23655623624280453,
+                  0.428756647862049,
+                  0.7634151823060416,
+                  0.42119608667860486
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "childs_room_2",
+          "room_bbox_world_xy": [
+            20.31750000000002,
+            5.475000000000005,
+            24.209999999999994,
+            8.187499999999998
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.42875664786204915,
+                  -0.23655623624280483,
+                  -0.42119608667860514,
+                  0.7634151823060412
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  20.66750000000002,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  -0.23655623624280483,
+                  0.42875664786204915,
+                  0.7634151823060412,
+                  -0.42119608667860514
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_01",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  5.825000000000005,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.428756647862049,
+                  0.23655623624280453,
+                  0.42119608667860486,
+                  0.7634151823060416
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  23.859999999999992,
+                  7.837499999999999,
+                  2.199990686774254
+                ],
+                "quaternion_xyzw": [
+                  0.23655623624280453,
+                  0.428756647862049,
+                  0.7634151823060416,
+                  0.42119608667860486
+                ]
+              },
+              "target": [
+                22.26375000000001,
+                6.831250000000002,
+                1.049990686774254
+              ],
+              "view_id": "corner_03",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  20.909594185901202,
+                  6.762166590368884,
+                  0.9206095713929989
+                ],
+                "quaternion_xyzw": [
+                  0.3826771197826587,
+                  0.0021980449437845576,
+                  0.005306549913990287,
+                  0.9238642925891681
+                ]
+              },
+              "look_target": [
+                20.900282859802246,
+                7.572685480117798,
+                0.11003719866275787
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.70758110148578,
+                  7.011056678834478,
+                  0.7639069761071571
+                ],
+                "quaternion_xyzw": [
+                  0.27061696691215925,
+                  0.270579131911516,
+                  0.6532358099559206,
+                  0.6533271517276059
+                ]
+              },
+              "look_target": [
+                23.006874084472656,
+                7.011154651641846,
+                0.0631999522447586
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.53698994814386,
+                  6.382392910923673,
+                  0.6852131443499375
+                ],
+                "quaternion_xyzw": [
+                  0.2687062389407078,
+                  0.27247672664113065,
+                  0.6578170088880441,
+                  0.6487142463449225
+                ]
+              },
+              "look_target": [
+                22.93694305419922,
+                6.37403130531311,
+                0.08510799407958983
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/house_single_floor/childs_room_2/candidate_renders/current_state_reasoning/q_001/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "brown",
+              "container_name": "render_unobserved_box_0_cedar_chest",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  20.90945597879399,
+                  6.76216164663375,
+                  0.8336428400397159
+                ],
+                "quaternion_xyzw": [
+                  0.38266895225391834,
+                  -0.0033290220207519406,
+                  -0.00803697011193802,
+                  0.9238445744305118
+                ]
+              },
+              "look_target": [
+                20.922014236450195,
+                7.483888864517212,
+                0.11180637180805206
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_01.png",
+              "box_index": 1,
+              "position_label": "red",
+              "container_name": "render_unobserved_box_1_cedar_chest",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.707523855971846,
+                  7.011049909662783,
+                  0.780938030746711
+                ],
+                "quaternion_xyzw": [
+                  0.27059875508743264,
+                  0.2705973450569275,
+                  0.6532797803785865,
+                  0.6532831844933554
+                ]
+              },
+              "look_target": [
+                23.006574630737305,
+                7.011053562164307,
+                0.07998880550265312
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_02.png",
+              "box_index": 2,
+              "position_label": "yellow",
+              "container_name": "render_unobserved_box_2_carton",
+              "view_direction": "front",
+              "camera_pose": {
+                "position": [
+                  23.53698978620951,
+                  6.374233585768695,
+                  0.6851566346706883
+                ],
+                "quaternion_xyzw": [
+                  0.27055248978223606,
+                  0.2706436026943169,
+                  0.6533914561941354,
+                  0.6531714901660826
+                ]
+              },
+              "look_target": [
+                22.936941146850586,
+                6.3740315437316895,
+                0.08510796129703521
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "childs_room_2",
+        "room_id": 7,
+        "bbox_map_rc": [
+          49,
+          64,
+          51,
+          67
+        ],
+        "bbox_world_xy": [
+          21.0,
+          6.0,
+          24.0,
+          8.0
+        ],
+        "expanded_bbox_world_xy": [
+          20.31750000000002,
+          5.475000000000005,
+          24.209999999999994,
+          8.187499999999998
+        ],
+        "bbox_area_m2": 6.0,
+        "expanded_bbox_area_m2": 10.558406249999901,
+        "pixel_count": 12,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image1_box_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/current_state_reasoning/house_single_floor/childs_room_2/q_001/gt_view/image2_box_02.png"
+  ]
+}

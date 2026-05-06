@@ -1,0 +1,810 @@
+{
+  "scene": "Beechwood_0_garden",
+  "room": "living_room_1",
+  "floor_name": "floors_vnoqmp_0",
+  "seed": 7,
+  "camera_setup": {
+    "mode": "two_phase_primary_plus_room_and_gt_views",
+    "primary_images": "image1.png + image2.png",
+    "room_view_images": "room_view/image1/* + room_view/image2/*",
+    "gt_view_images": "gt_view/image1_gt.png + gt_view/image2_gt.png",
+    "agent_position_policy": "search_traversable_edge_positions_and_maximize_visible_boxes",
+    "phases": 2
+  },
+  "task_type": "change_identification",
+  "question_index": 0,
+  "question_id": "change_identification/q_000",
+  "question_data": {
+    "task_type": "change_identification",
+    "question": "What happened to the contents of the box from Phase 1 to Phase 2?",
+    "options": [
+      "replace",
+      "remove",
+      "add",
+      "no_change"
+    ],
+    "answer": "no_change",
+    "candidate_index": 0,
+    "box_count": 1,
+    "boxes": [
+      {
+        "box_index": 0,
+        "position_label": "the box",
+        "change_type": "no_change",
+        "phase1_content": {
+          "category": "pastry",
+          "display_name": "pastry",
+          "model": "bqjjie",
+          "bbox_size_m": [
+            0.19957801818847656,
+            0.1918839569091797,
+            0.09566559600830078
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "phase2_content": {
+          "category": "pastry",
+          "display_name": "pastry",
+          "model": "bqjjie",
+          "bbox_size_m": [
+            0.19957801818847656,
+            0.1918839569091797,
+            0.09566559600830078
+          ],
+          "sampling_source": "keys_json_filtered_by_local_model_bbox_edges"
+        },
+        "container": {
+          "name": "render_unobserved_box_0_carton",
+          "category": "carton",
+          "model": "cdmmwy",
+          "placement": {
+            "placement_type": "on_top",
+            "support_name": "breakfast_table_skczfi_1",
+            "support_category": "breakfast_table",
+            "position": [
+              -4.2494,
+              23.3969,
+              0.8671477842330932
+            ]
+          },
+          "bbox": [
+            [
+              -4.365642070770264,
+              23.241741180419922,
+              0.7587598562240601
+            ],
+            [
+              -4.13515567779541,
+              23.556133270263672,
+              0.945527970790863
+            ]
+          ]
+        }
+      }
+    ],
+    "question_metadata": {
+      "target_box_index": 0
+    },
+    "phase_description": {
+      "phase_1": "Initial observation: box contents are clearly visible.",
+      "phase_2": "Later observation: box contents may have changed, been removed, been added, or stayed the same."
+    },
+    "render": {
+      "multi_image_input": true,
+      "image1": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/image1.png",
+        "camera_poses": {
+          "image1.png": {
+            "position": [
+              -0.8499999999999974,
+              19.4,
+              1.249997079372406
+            ],
+            "quaternion_xyzw": [
+              0.6380958989964882,
+              0.23461782799004927,
+              0.2530731328565935,
+              0.6882892472640003
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 4.334329923588827,
+            "look_target": [
+              -4.250398397445679,
+              23.398937225341797,
+              0.8521438837051392
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -6.0,
+            19.0,
+            0.0,
+            23.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  -0.2777022125155061,
+                  -0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  -0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  -0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  0.2777022125155061,
+                  0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  -4.2503963644131035,
+                  22.74174065669211,
+                  1.4721759745577145
+                ],
+                "quaternion_xyzw": [
+                  0.3826788708166948,
+                  0.0018684852650319068,
+                  0.004510922467934316,
+                  0.9238685199592862
+                ]
+              },
+              "look_target": [
+                -4.2567360401153564,
+                23.39093017578125,
+                0.8229555010795593
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "image2": {
+        "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/image2.png",
+        "camera_poses": {
+          "image2.png": {
+            "position": [
+              -0.8499999999999974,
+              19.4,
+              1.249997079372406
+            ],
+            "quaternion_xyzw": [
+              0.6381143657381695,
+              0.23461312675296067,
+              0.2530571881581634,
+              0.6882795918195285
+            ],
+            "angle_deg": null,
+            "view_name": "maximize_box_visibility",
+            "pitch_deg": 4.331875061510864,
+            "look_target": [
+              -4.250401973724365,
+              23.399198532104492,
+              0.8523548245429993
+            ],
+            "selection_mode": "maximize_visible_boxes",
+            "candidate_label": "fallback",
+            "visible_box_count": 0,
+            "visible_pixel_sum": 0,
+            "target_metrics": [
+              {
+                "target_name": "render_unobserved_box_0_carton",
+                "visible_pixels": 0,
+                "centered_score": 0.0,
+                "bbox_xyxy": null,
+                "is_visible": false
+              }
+            ]
+          }
+        },
+        "room_view": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -6.0,
+            19.0,
+            0.0,
+            23.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  -0.2777022125155061,
+                  -0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  -0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  -0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  0.2777022125155061,
+                  0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "gt_view": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  -4.250392566315918,
+                  22.741756321558135,
+                  1.5149780387464697
+                ],
+                "quaternion_xyzw": [
+                  0.3826793747403735,
+                  0.0017622585063007043,
+                  0.004254468386318513,
+                  0.9238697365386657
+                ]
+              },
+              "look_target": [
+                -4.256766080856323,
+                23.433754920959473,
+                0.8229500889778137
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000",
+        "success": true
+      },
+      "room_view": {
+        "image1_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/room_view/image1",
+        "image2_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/room_view/image2",
+        "image1": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -6.0,
+            19.0,
+            0.0,
+            23.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  -0.2777022125155061,
+                  -0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  -0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  -0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  0.2777022125155061,
+                  0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        },
+        "image2": {
+          "room_instance": "living_room_1",
+          "room_bbox_world_xy": [
+            -6.0,
+            19.0,
+            0.0,
+            23.0
+          ],
+          "views": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_00.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  -0.2777022125155061,
+                  -0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_00",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_01.png",
+              "camera_pose": {
+                "position": [
+                  -5.65,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  -0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  -0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_01",
+              "is_traversable": false,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_02.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  19.35,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.5000419483321752,
+                  0.2777022125155061,
+                  0.39824898592650887,
+                  0.7171033930199063
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_02",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": false
+            },
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_03.png",
+              "camera_pose": {
+                "position": [
+                  -0.35,
+                  22.65,
+                  2.199997079372406
+                ],
+                "quaternion_xyzw": [
+                  0.2777022125155061,
+                  0.5000419483321752,
+                  0.7171033930199063,
+                  0.39824898592650887
+                ]
+              },
+              "target": [
+                -3.0,
+                21.0,
+                1.049997079372406
+              ],
+              "view_id": "corner_03",
+              "is_traversable": true,
+              "blocker_occluded": false,
+              "trav_occluded": true
+            }
+          ]
+        }
+      },
+      "gt_view": {
+        "dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+        "image1": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/gt_view/image1_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  -4.2503963644131035,
+                  22.74174065669211,
+                  1.4721759745577145
+                ],
+                "quaternion_xyzw": [
+                  0.3826788708166948,
+                  0.0018684852650319068,
+                  0.004510922467934316,
+                  0.9238685199592862
+                ]
+              },
+              "look_target": [
+                -4.2567360401153564,
+                23.39093017578125,
+                0.8229555010795593
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        },
+        "image2": {
+          "output_dir": "/home/jliu/Desktop/project/BEHAVIOR-1K/renders_unobserved_changes/Beechwood_0_garden/living_room_1/candidate_renders/change_identification/q_000/gt_view",
+          "images": [
+            {
+              "image_path": "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/gt_view/image2_box_00.png",
+              "box_index": 0,
+              "position_label": "the box",
+              "container_name": "render_unobserved_box_0_carton",
+              "view_direction": "right",
+              "camera_pose": {
+                "position": [
+                  -4.250392566315918,
+                  22.741756321558135,
+                  1.5149780387464697
+                ],
+                "quaternion_xyzw": [
+                  0.3826793747403735,
+                  0.0017622585063007043,
+                  0.004254468386318513,
+                  0.9238697365386657
+                ]
+              },
+              "look_target": [
+                -4.256766080856323,
+                23.433754920959473,
+                0.8229500889778137
+              ],
+              "pitch_deg": 45.0,
+              "requested_clearance_m": 0.5,
+              "fov_deg": 55.0
+            }
+          ],
+          "fov_deg": 55.0,
+          "success": true
+        }
+      },
+      "room_bbox": {
+        "room_instance": "living_room_1",
+        "room_id": 8,
+        "bbox_map_rc": [
+          49,
+          24,
+          53,
+          30
+        ],
+        "bbox_world_xy": [
+          -6.0,
+          19.0,
+          0.0,
+          23.0
+        ],
+        "expanded_bbox_world_xy": [
+          -6.0,
+          19.0,
+          0.0,
+          23.0
+        ],
+        "bbox_area_m2": 24.0,
+        "expanded_bbox_area_m2": 24.0,
+        "pixel_count": 29,
+        "source": "seg_map_expanded_with_walls"
+      },
+      "success": true
+    }
+  },
+  "image_paths": [
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/image1.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image1/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/gt_view/image1_box_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/image2.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_00.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_01.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_02.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/room_view/image2/corner_03.png",
+    "/home/jliu/Desktop/project/BEHAVIOR-1K/organized_dataset/render/unobserved_changes/change_identification/Beechwood_0_garden/living_room_1/q_000/gt_view/image2_box_00.png"
+  ]
+}
