@@ -237,13 +237,6 @@ We also build on BEHAVIOR-1K and OmniGibson. Please cite them as well:
   year      = {2023}
 }
 
-@article{li2024behavior1k,
-  title   = {{BEHAVIOR-1K}: A Human-Centered, Embodied {AI} Benchmark with 1,000 Everyday Activities and Realistic Simulation},
-  author  = {Li, Chengshu and Zhang, Ruohan and Wong, Josiah and Gokmen, Cem and Srivastava, Sanjana and Mart{\'i}n-Mart{\'i}n, Roberto and Wang, Chen and Levine, Gabrael and Lingelbach, Michael and Sun, Jiankai and Anvari, Mona and Hwang, Minjune and Sharma, Manasi and Aydin, Arman and Bansal, Dhruva and Hunter, Samuel and Kim, Kyu-Young and Lou, Alan and Matthews, Caleb R and Villa-Renteria, Ivan and Tang, Jerry Huayang and Tang, Claire and Xia, Fei and Savarese, Silvio and Gweon, Hyowon and Liu, Karen and Wu, Jiajun and Fei-Fei, Li},
-  journal = {arXiv preprint arXiv:2403.09227},
-  year    = {2024}
-}
-
 @inproceedings{li2022omnigibson,
   title     = {{OmniGibson}: A Platform for Accelerating Embodied {AI} Research Built upon {NVIDIA}'s Omniverse Engine},
   author    = {Li, Chengshu and Gokmen, Cem and Lingelbach, Michael and Srivastava, Sanjana and Mart{\'i}n-Mart{\'i}n, Roberto and Ber, Daniel and Shen, William and Hirose, Noriaki and Zhang, Ruohan and Liu, Karen and Gweon, Hyowon and Savarese, Silvio and Fei-Fei, Li and Wu, Jiajun},
