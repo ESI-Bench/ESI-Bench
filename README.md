@@ -217,7 +217,6 @@ If you find ESI-Bench useful in your research, please cite:
 @inproceedings{hong2026esibench,
   title     = {{ESI-Bench}: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop},
   author    = {Hong, Yining and Liu, Jiageng and Yin, Han and Li, Manling and Guibas, Leonidas and Li, Fei-Fei and Wu, Jiajun and Choi, Yejin},
-  booktitle = {Advances in Neural Information Processing Systems},
   year      = {2026}
 }
 ```
