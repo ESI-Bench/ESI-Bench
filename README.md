@@ -26,7 +26,6 @@
   <sup>3</sup>Northwestern University
 </p>
 
-<p><em>NeurIPS 2026 (Evaluations and Datasets Track)</em></p>
 
 </div>
 
