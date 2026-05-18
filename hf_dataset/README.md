@@ -10,7 +10,7 @@ configs:
 
 BEHAVIOR ESI-Bench is a question dataset for evaluating embodied spatial intelligence across indoor scenes, object arrangements, physical reasoning, temporal understanding, and active exploration tasks.
 
-Each row is one question instance. The table is intentionally flattened for Hugging Face Dataset Viewer and Croissant compatibility.
+Each row is one valid question instance. The table is intentionally flattened for Hugging Face Dataset Viewer and Croissant compatibility.
 
 ## Schema
 
@@ -29,7 +29,9 @@ image_paths_json
 metadata_json
 ```
 
-`options_json`, `image_paths_json`, and `metadata_json` are JSON-encoded strings. They can be decoded by downstream users when structured fields are needed.
+`options_json`, `image_paths_json`, and `metadata_json` are JSON-encoded strings. `metadata_json` stores the task payload needed by the original runner, with duplicated top-level row fields and empty values removed.
+
+The mirrored local files under `dataset/json_clean` use this same top-level schema. The older `dataset/json` tree is the raw source used to regenerate this table.
 
 ## Task Taxonomy
 

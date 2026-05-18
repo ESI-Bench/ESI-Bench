@@ -73,6 +73,13 @@ class ActiveExploreConfig:
     overwrite: bool
 
 
+@dataclass
+class SelectedQuestion:
+    payload: dict[str, Any]
+    source_path: Path
+    source_label: str
+
+
 def normalize_text(value: Any) -> str:
     return "" if value is None else str(value).strip()
 
@@ -81,7 +88,7 @@ def parse_args(argv: list[str] | None = None) -> ActiveExploreConfig:
     parser = argparse.ArgumentParser(description="Unified BEHAVIOR-NEW active exploration pipeline.")
     parser.add_argument("--task", required=True, help="Task module name under active_explore/tasks, e.g. counting or action.")
     parser.add_argument("--metadata", type=Path, required=True, help="Metadata JSON containing json_paths, or a single question JSON.")
-    parser.add_argument("--question-index", type=int, default=0, help="Question index to select from metadata json_paths.")
+    parser.add_argument("--question-index", type=int, default=0, help="Question index for metadata json_paths.")
     parser.add_argument("--json-root", type=Path, default=None, help="Optional root used to resolve relative json_paths.")
     parser.add_argument("--results-root", type=Path, default=Path("BEHAVIOR-NEW/active_results"))
     parser.add_argument("--step-image-root", type=Path, default=Path("BEHAVIOR-NEW/active_steps"))
@@ -145,20 +152,76 @@ def resolve_json_path(raw_path: str, metadata_path: Path, json_root: Path | None
     raise FileNotFoundError(f"Could not resolve question JSON path: {raw_path}")
 
 
-def select_question_json(metadata_path: Path, question_index: int, json_root: Path | None) -> Path:
+def decode_json_field(value: Any) -> Any:
+    if not isinstance(value, str):
+        return value
+    stripped = value.strip()
+    if not stripped:
+        return None
+    try:
+        return json.loads(stripped)
+    except json.JSONDecodeError:
+        return value
+
+
+def is_hf_question_row(value: Any) -> bool:
+    return isinstance(value, dict) and "metadata_json" in value and "big_task" in value and "small_task" in value
+
+
+def payload_from_hf_row(row: dict[str, Any]) -> dict[str, Any]:
+    metadata = decode_json_field(row.get("metadata_json"))
+    payload = dict(metadata) if isinstance(metadata, dict) else {}
+    row_answer = decode_json_field(row.get("answer"))
+    row_options = decode_json_field(row.get("options_json"))
+    row_image_paths = decode_json_field(row.get("image_paths_json"))
+
+    payload["scene"] = row.get("scene") or payload.get("scene") or "unknown_scene"
+    payload["room"] = row.get("room") or payload.get("room") or "unknown_room"
+    if row.get("question") and not payload.get("_question"):
+        payload["_question"] = row["question"]
+    if row.get("answer") not in (None, "") and "_ground_truth" not in payload:
+        payload["_ground_truth"] = row_answer
+    if row.get("answer") not in (None, "") and "answer" not in payload:
+        payload["answer"] = row_answer
+
+    payload["_hf_id"] = row.get("id")
+    payload["_hf_big_task"] = row.get("big_task")
+    payload["_hf_small_task"] = row.get("small_task")
+    payload["_hf_runner_task"] = row.get("runner_task")
+    payload["_hf_options"] = row_options if row_options is not None else []
+    payload["_hf_image_paths"] = row_image_paths if row_image_paths is not None else []
+    return payload
+
+
+def load_question_json(path: Path) -> dict[str, Any]:
+    with path.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+    if is_hf_question_row(payload):
+        return payload_from_hf_row(payload)
+    return payload
+
+
+def select_question(metadata_path: Path, question_index: int, json_root: Path | None) -> SelectedQuestion:
+    if metadata_path.suffix.lower() == ".jsonl":
+        raise ValueError("questions.jsonl is an HF export artifact, not a runner input. Use dataset/json_clean/*.json or dataset/json_clean/<Big Task>.json.")
+
     with metadata_path.open("r", encoding="utf-8") as f:
         metadata = json.load(f)
+    if is_hf_question_row(metadata):
+        return SelectedQuestion(payload=payload_from_hf_row(metadata), source_path=metadata_path, source_label=str(metadata_path))
     if isinstance(metadata, dict) and isinstance(metadata.get("json_paths"), list):
         json_paths = metadata["json_paths"]
     elif isinstance(metadata, list):
         json_paths = metadata
     else:
-        return metadata_path
+        return SelectedQuestion(payload=metadata, source_path=metadata_path, source_label=str(metadata_path))
     if not json_paths:
         raise ValueError(f"No json_paths found in metadata: {metadata_path}")
     if question_index < 0 or question_index >= len(json_paths):
         raise IndexError(f"question_index={question_index} out of range for {len(json_paths)} paths")
-    return resolve_json_path(str(json_paths[question_index]), metadata_path, json_root)
+    selected = json_paths[question_index]
+    question_json = resolve_json_path(str(selected), metadata_path, json_root)
+    return SelectedQuestion(payload=load_question_json(question_json), source_path=question_json, source_label=str(question_json))
 
 
 def rotate_vec(vec: np.ndarray, quat_xyzw: np.ndarray) -> np.ndarray:
@@ -647,9 +710,10 @@ def task_cleanup_runtime(task_module, env, payload: dict[str, Any], task_state: 
 
 def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
     task_module = load_task_module(config.task)
-    question_json = select_question_json(config.metadata, config.question_index, config.json_root)
-    with question_json.open("r", encoding="utf-8") as f:
-        payload = json.load(f)
+    selected_question = select_question(config.metadata, config.question_index, config.json_root)
+    question_json = selected_question.source_path
+    source_label = selected_question.source_label
+    payload = selected_question.payload
 
     output_path = output_path_for(task_module, payload, question_json, config.results_root)
     if output_path.exists() and not config.overwrite:
@@ -660,7 +724,7 @@ def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
     task_state = task_preprocess(task_module, payload, question_json, config)
     if task_state.get("skip_reason"):
         return {
-            "source_json": str(question_json),
+            "source_json": source_label,
             "source_metadata": str(config.metadata),
             "question_index": config.question_index,
             "task": getattr(task_module, "TASK_NAME", config.task),
@@ -830,7 +894,7 @@ def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
         final_answer = final_answer or {"answer": "not sure", "answer_step": -1, "confidence": 0.0, "reasoning": "no answer", "steps": len(history), "stopped_by": "empty"}
         score = task_score(task_module, payload, final_answer, camera_info, task_state)
         result = {
-            "source_json": str(question_json),
+            "source_json": source_label,
             "source_metadata": str(config.metadata),
             "question_index": config.question_index,
             "task": task_module.TASK_NAME,

@@ -56,7 +56,7 @@ Spatial intelligence unfolds through a perception-action loop: agents act to acq
 ```
 esi-bench/
 ├── dataset/
-│   └── json/                          # Task question JSONs
+│   └── json_clean/                    # Task question JSONs
 │       ├── Action Sequencing/
 │       ├── Cognitive Mapping/
 │       ├── Enumerative Perception/
@@ -108,7 +108,7 @@ Run from the repository root:
 ```bash
 python src/main.py \
   --task counting \
-  --metadata "dataset/json/Enumerative Perception/Spatial Segmentation/Beechwood_1_int/playroom_0/q_001.json" \
+  --metadata "dataset/json_clean/Enumerative Perception/Spatial Segmentation/Merom_0_int/living_room_0/q_000.json" \
   --provider gemini \
   --model gemini-3.1-pro-preview \
   --max-steps 30 \
@@ -124,7 +124,8 @@ For GPT:
 ```bash
 python src/main.py \
   --task cognitivemap \
-  --metadata "dataset/json/Cognitive Mapping/Traversable Passage/Merom_1_int/full_scene/q_006.json" \
+  --metadata "dataset/json_clean/Cognitive Mapping.json" \
+  --question-index 0 \
   --provider gpt \
   --model gpt-5 \
   --max-steps 30 \
@@ -135,7 +136,9 @@ python src/main.py \
   --overwrite
 ```
 
-`--metadata` can be either a single question JSON or a big-task metadata file such as `dataset/json/Enumerative Perception.json`. Use `--question-index` to select from a metadata list.
+`--metadata` can be a single canonical question JSON under `dataset/json_clean`, or a big-task summary JSON such as `dataset/json_clean/Cognitive Mapping.json` containing `json_paths`. Use `--question-index` to select from a summary list. The older raw `dataset/json` tree is kept as source data; new runner inputs should use `dataset/json_clean`.
+
+See [`docs/run_tasks.md`](docs/run_tasks.md) for the per-small-task `--task`, summary JSON, and example `--question-index` mapping.
 
 ### Task Names
 
