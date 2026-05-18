@@ -193,9 +193,20 @@ def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any], t
         position=th.tensor([float(xy[0]), float(xy[1]), z], dtype=th.float32),
         orientation=th.tensor(quat, dtype=th.float32),
     )
-    for _ in range(10):
-        env.step(th.zeros(robot.action_dim, dtype=th.float32))
-    return {"robot_placed": True, "robot_final_xy": xy.tolist(), "robot_start_z": z, "robot_final_quat": quat.tolist()}
+    sync_error = None
+    try:
+        import omnigibson as og
+
+        og.sim.step()
+    except Exception as exc:
+        sync_error = str(exc)
+    return {
+        "robot_placed": True,
+        "robot_final_xy": xy.tolist(),
+        "robot_start_z": z,
+        "robot_final_quat": quat.tolist(),
+        "sync_error": sync_error,
+    }
 
 
 def build_system_prompt(

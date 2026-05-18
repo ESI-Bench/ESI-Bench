@@ -196,12 +196,11 @@ def _reference_image_paths(payload: dict[str, Any], source_json: Path, config=No
         return [], None, "missing_phase_reference_images"
     path1 = resolve_path(image1.get("image_path"), source_json, data_root=data_root)
     path2 = resolve_path(image2.get("image_path"), source_json, data_root=data_root)
-    if path1 is None or path2 is None:
-        return [], None, "unresolved_phase_reference_images"
     pose = image2.get("camera_pose")
     if not pose or not pose.get("position") or not pose.get("quaternion_xyzw"):
         return [], None, "missing_phase2_camera_pose"
-    return [path1, path2], pose, None
+    paths = [path for path in (path1, path2) if path is not None]
+    return paths, pose, None
 
 
 def preprocess(payload: dict[str, Any], source_json: Path, config=None) -> dict[str, Any]:
@@ -273,6 +272,10 @@ def get_context(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def has_reference_images(task_state: dict[str, Any] | None) -> bool:
+    return bool((task_state or {}).get("reference_image_paths"))
+
+
 def build_system_prompt(
     payload: dict[str, Any],
     threshold: float,
@@ -295,16 +298,24 @@ def build_system_prompt(
     if ctx["boxes"]:
         box_line = ", ".join(f"{item['label']} ({item['container_category'] or 'box'})" for item in ctx["boxes"])
         lines.append(f"Box identities in the scene: {box_line}")
+    lines.extend(["", "Important scene setup:"])
+    if has_reference_images(task_state):
+        lines.extend([
+            "  - The first reference image is the original Phase 1 image.",
+            "  - The second reference image is the original Phase 2 image.",
+            "  - The reference images are authoritative for the before/after change.",
+            "  - The simulator view is extra spatial context and may not contain generated hidden contents.",
+            "",
+            "You will receive those two reference images plus recent exploration views, with the CURRENT view always last.",
+            "Use the reference images to understand the before/after change, and use exploration views only when they add useful spatial context.",
+        ])
+    else:
+        lines.extend([
+            "  - Phase reference image files are unavailable in this local dataset copy.",
+            "  - Use the question, options, phase descriptions, and box metadata as authoritative evidence.",
+            "  - The simulator view is extra spatial context and may not contain generated hidden contents.",
+        ])
     lines.extend([
-        "",
-        "Important scene setup:",
-        "  - The first reference image is the original Phase 1 image.",
-        "  - The second reference image is the original Phase 2 image.",
-        "  - The reference images are authoritative for the before/after change.",
-        "  - The simulator view is extra spatial context and may not contain generated hidden contents.",
-        "",
-        "You will receive those two reference images plus recent exploration views, with the CURRENT view always last.",
-        "Use the reference images to understand the before/after change, and use exploration views only when they add useful spatial context.",
         "",
         "Output EXACTLY one JSON object and nothing else:",
         "{",
@@ -336,8 +347,13 @@ def build_force_choice_prompt(
     lines = ["Exploration budget is exhausted.", f"Question: {ctx['question']}"]
     if ctx["options"]:
         lines.append("Options: " + ", ".join(ctx["options"]))
+    evidence = (
+        "the Phase 1 image, the Phase 2 image, and the exploration evidence"
+        if has_reference_images(task_state)
+        else "the phase descriptions, box metadata, and exploration evidence"
+    )
     lines.extend([
-        "Choose the single best option using the Phase 1 image, the Phase 2 image, and the exploration evidence.",
+        f"Choose the single best option using {evidence}.",
         "Do not answer 'not sure'.",
         "Output EXACTLY one JSON object and nothing else:",
         '{"answer": "<one listed option exactly as written>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',

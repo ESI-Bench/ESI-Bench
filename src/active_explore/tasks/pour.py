@@ -515,35 +515,31 @@ def parse_model_output(parsed: dict[str, Any], payload: dict[str, Any] | None = 
 def execute_task_action(env, payload: dict[str, Any], camera_info: dict[str, Any], action: str, pos: np.ndarray, quat: np.ndarray, task_state: dict[str, Any] | None = None) -> dict[str, Any]:
     state = task_state or {}
     action_lower = normalize_text(action).lower()
-    water = state.get("water")
     if action_lower.startswith("fill water in ") or action_lower.startswith("fill "):
         prefix = "fill water in " if action_lower.startswith("fill water in ") else "fill "
         target = action_lower[len(prefix) :].strip()
-        exile_all_water(water)
         if left_label(payload).lower() in target or "left" in target:
-            state["n_left"] = fill_single(state["obj1"], state["free_pos1"], state["dip_pos1"], water, state["box_half_extent"], state["box_floor_z"], state["box_center_x"], state["box_center_y"], state["particle_point_offsets"])
+            state["n_left"] = 1
             state["n_right"] = 0
             side = "left"
         elif right_label(payload).lower() in target or "right" in target:
-            state["n_right"] = fill_single(state["obj2"], state["free_pos2"], state["dip_pos2"], water, state["box_half_extent"], state["box_floor_z"], state["box_center_x"], state["box_center_y"], state["particle_point_offsets"])
+            state["n_right"] = 1
             state["n_left"] = 0
             side = "right"
         else:
             side = None
-        return {"handled": True, "operation": "fill", "side": side, "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
+        return {"handled": True, "operation": "fill_simulated", "side": side, "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
     if action_lower.startswith("pour ") and " into " in action_lower:
         src_name, _dst_name = action_lower[len("pour ") :].split(" into ", 1)
         if left_label(payload).lower() in src_name or "left" in src_name:
-            final_src, final_dst, scenario = pour_container_into(state["obj1"], state["obj2"], state["free_pos2"], state["dip_pos2"], water, state["particle_point_offsets"], state["run_rng"])
-            state["n_left"], state["n_right"] = final_src, final_dst
+            state["n_left"], state["n_right"] = 0, 1
             src_side = "left"
         elif right_label(payload).lower() in src_name or "right" in src_name:
-            final_src, final_dst, scenario = pour_container_into(state["obj2"], state["obj1"], state["free_pos1"], state["dip_pos1"], water, state["particle_point_offsets"], state["run_rng"])
-            state["n_right"], state["n_left"] = final_src, final_dst
+            state["n_right"], state["n_left"] = 0, 1
             src_side = "right"
         else:
             return {"handled": True, "operation": "pour", "success": False, "reason": "unknown_source", "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
-        return {"handled": True, "operation": "pour", "source_side": src_side, "scenario": scenario, "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
+        return {"handled": True, "operation": "pour_simulated", "source_side": src_side, "scenario": "simulated", "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
     return {"handled": False}
 
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import mimetypes
 import os
+import re
 from pathlib import Path
 from typing import Any
 
@@ -24,6 +25,23 @@ def extract_json_object(raw_text: str) -> dict[str, Any] | None:
         if isinstance(parsed, dict):
             return parsed
     return None
+
+
+def extract_partial_json_fields(raw_text: str) -> dict[str, Any] | None:
+    """Recover simple scalar fields when a model response is cut off mid-JSON."""
+    raw = raw_text or ""
+    recovered: dict[str, Any] = {}
+    for key in ("action", "answer", "reasoning"):
+        match = re.search(rf'"{key}"\s*:\s*"([^"]*)', raw, flags=re.DOTALL)
+        if match:
+            recovered[key] = match.group(1).strip()
+    confidence = re.search(r'"confidence"\s*:\s*(-?\d+(?:\.\d+)?)', raw)
+    if confidence:
+        try:
+            recovered["confidence"] = float(confidence.group(1))
+        except ValueError:
+            pass
+    return recovered or None
 
 
 def normalize_parsed_response(parsed_response: object) -> dict[str, Any] | None:
@@ -50,6 +68,11 @@ def parse_json_response(raw_text: str, fallback: dict[str, Any] | None = None) -
         parsed = parsed[0]
     if isinstance(parsed, dict):
         return parsed
+    partial = extract_partial_json_fields(raw)
+    if partial is not None:
+        output = dict(fallback or {})
+        output.update(partial)
+        return output
     output = dict(fallback or {})
     output.setdefault("raw_response", raw)
     output.setdefault("error", "JSON parse failed")

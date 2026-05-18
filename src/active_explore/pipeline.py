@@ -165,7 +165,13 @@ def decode_json_field(value: Any) -> Any:
 
 
 def is_hf_question_row(value: Any) -> bool:
-    return isinstance(value, dict) and "metadata_json" in value and "big_task" in value and "small_task" in value
+    return (
+        isinstance(value, dict)
+        and "metadata_json" in value
+        and "big_task" in value
+        and "small_task" in value
+        and ("question" in value or "runner_task" in value)
+    )
 
 
 def payload_from_hf_row(row: dict[str, Any]) -> dict[str, Any]:
@@ -466,8 +472,8 @@ def force_final_choice(
     parsed, raw_text, _ = model_client.generate_json(
         contents=collect_contents(image_path, history, prompt, reference_image_paths=reference_image_paths),
         system_instruction="Return exactly one valid JSON object and nothing else.",
-        response_schema=getattr(task_module, "FINAL_RESPONSE_SCHEMA", None),
-        max_output_tokens=max(96, min(config.max_new_tokens, 192)),
+        response_schema=None,
+        max_output_tokens=max(256, min(config.max_new_tokens, 512)),
         temperature=0.0,
         top_p=1.0,
         fallback={"answer": "not sure", "confidence": 0.0, "reasoning": "forced choice parse fallback"},
