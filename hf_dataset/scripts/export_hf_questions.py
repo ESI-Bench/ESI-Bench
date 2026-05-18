@@ -122,9 +122,12 @@ def answer_type(answer: Any, options: list[Any]) -> str:
 def collect_image_paths(payload: dict[str, Any]) -> list[str]:
     paths: list[str] = []
 
+    def clean_path(value: str) -> str:
+        return Path(value).name if "/" in value or "\\" in value else value
+
     def add(value: Any) -> None:
         if isinstance(value, str) and value:
-            paths.append(value)
+            paths.append(clean_path(value))
         elif isinstance(value, list):
             for item in value:
                 add(item)
