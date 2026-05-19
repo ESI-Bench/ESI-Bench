@@ -3,7 +3,7 @@
 <h1>ESI-Bench: Towards Embodied Spatial Intelligence<br>that Closes the Perception-Action Loop</h1>
 
 <p>
-  <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://arxiv.org/pdf/2605.18746"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
   <a href="https://esi-bench.github.io/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
   <a href="https://huggingface.co/datasets/esi-bench/ESI-Bench"><img src="https://img.shields.io/badge/🤗-Dataset-yellow.svg" alt="Dataset"></a>
   <a href="https://github.com/esi-bench/esi-bench/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
