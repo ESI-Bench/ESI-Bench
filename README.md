@@ -10,8 +10,8 @@
 </p>
 
 <p>
-  <strong>Yining Hong</strong><sup>1</sup> &nbsp;
-  <strong>Jiageng Liu</strong><sup>2</sup> &nbsp;
+  <strong>Yining Hong*</strong><sup>1</sup> &nbsp;
+  <strong>Jiageng Liu*</strong><sup>2</sup> &nbsp;
   <strong>Han Yin</strong><sup>1</sup> &nbsp;
   <strong>Manling Li</strong><sup>3</sup> &nbsp;
   <strong>Leonidas Guibas</strong><sup>1</sup> &nbsp;
