@@ -1016,7 +1016,7 @@
     "path_world": null,
     "phase_description": null,
     "placement": null,
-    "question": "Are corridor_1 and corridor_2 connected?",
+    "question": "Are corridor_1 and corridor_2 adjacent, with a direct connection between them?",
     "question_case_id": null,
     "question_format": null,
     "question_metadata": null,
@@ -3151,13 +3151,16 @@
           -7.0
         ]
       },
-      "via_region_on_shortest_path": null
+      "via_region_on_shortest_path": null,
+      "directly_adjacent": true,
+      "answer_criterion": "directly_adjacent: true iff the shortest region path contains exactly the two queried regions"
     },
     "via_region": null,
     "via_room_type": null,
     "visualization": {
       "map_path": "/home/jliu/Desktop/project/BEHAVIOR-NEW/dataset/render/cognitivemap/Topological Connectivity/school_geography/full_scene/pair_connectivity__corridor_1__corridor_2.png"
-    }
+    },
+    "answer_criterion": "directly_adjacent: true iff the shortest region path contains exactly the two queried regions"
   },
   "question_id": "Topological Connectivity/q_002",
   "question_index": 2,

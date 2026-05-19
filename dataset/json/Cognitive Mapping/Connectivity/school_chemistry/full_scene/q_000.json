@@ -596,7 +596,7 @@
     "path_world": null,
     "phase_description": null,
     "placement": null,
-    "question": "Are bathroom_0 and corridor_1 connected?",
+    "question": "Are bathroom_0 and corridor_1 adjacent, with a direct connection between them?",
     "question_case_id": null,
     "question_format": null,
     "question_metadata": null,
@@ -2011,13 +2011,16 @@
           3.0
         ]
       },
-      "via_region_on_shortest_path": null
+      "via_region_on_shortest_path": null,
+      "directly_adjacent": true,
+      "answer_criterion": "directly_adjacent: true iff the shortest region path contains exactly the two queried regions"
     },
     "via_region": null,
     "via_room_type": null,
     "visualization": {
       "map_path": "/home/jliu/Desktop/project/BEHAVIOR-NEW/dataset/render/cognitivemap/Topological Connectivity/school_chemistry/full_scene/pair_connectivity__bathroom_0__corridor_1.png"
-    }
+    },
+    "answer_criterion": "directly_adjacent: true iff the shortest region path contains exactly the two queried regions"
   },
   "question_id": "Topological Connectivity/q_000",
   "question_index": 0,
