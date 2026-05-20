@@ -31,7 +31,7 @@ metadata_json
 
 `options_json`, `image_paths_json`, and `metadata_json` are JSON-encoded strings. `metadata_json` stores the task payload needed by the original runner, with duplicated top-level row fields and empty values removed.
 
-The mirrored local files under `dataset/json_clean` use this same top-level schema. The older `dataset/json` tree is the raw source used to regenerate this table.
+The mirrored local files under `dataset/json_clean` use this same top-level schema.
 
 ## Task Taxonomy
 

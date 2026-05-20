@@ -136,7 +136,7 @@ python src/main.py \
   --overwrite
 ```
 
-`--metadata` can be a single canonical question JSON under `dataset/json_clean`, or a big-task summary JSON such as `dataset/json_clean/Cognitive Mapping.json` containing `json_paths`. Use `--question-index` to select from a summary list. The older raw `dataset/json` tree is kept as source data; new runner inputs should use `dataset/json_clean`.
+`--metadata` can be a single canonical question JSON under `dataset/json_clean`, or a big-task summary JSON such as `dataset/json_clean/Cognitive Mapping.json` containing `json_paths`. Use `--question-index` to select from a summary list.
 
 See [`docs/run_tasks.md`](docs/run_tasks.md) for the per-small-task `--task`, summary JSON, and example `--question-index` mapping.
 
