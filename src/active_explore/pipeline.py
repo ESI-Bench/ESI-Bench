@@ -239,7 +239,7 @@ def apply_camera_action(pos: np.ndarray, quat: np.ndarray, action: str) -> tuple
     quat = quat.copy()
     right = rotate_vec(np.array([1.0, 0.0, 0.0]), quat)
     up = np.array([0.0, 0.0, 1.0])
-    forward = np.cross(right, up)
+    forward = np.cross(up, right)
 
     def flat(vec):
         out = vec.copy()
