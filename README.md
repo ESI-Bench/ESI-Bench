@@ -101,6 +101,21 @@ export GEMINI_API_KEY=...
 
 OmniGibson and BEHAVIOR-1K assets are expected to be available from the conda environment and local machine setup.
 
+#### Special OmniGibson Setting
+
+Remove walls from the OmniGibson generated maps before running ESI-Bench. In your local OmniGibson source tree, edit `./asset_pipeline/b1k_pipeline/usd_conversion/make_maps.py` so that `NEEDED_STRUCTURE_CATEGORIES` only includes floor categories:
+
+```python
+WALL_CATEGORIES = ["walls", "rail_fence"]
+FLOOR_CATEGORIES = ["floors", "driveway", "lawn"]
+DOOR_CATEGORIES = ["door", "sliding_door", "garage_door", "gate"]
+IGNORE_CATEGORIES = ["carpet"]
+# NEEDED_STRUCTURE_CATEGORIES = FLOOR_CATEGORIES + WALL_CATEGORIES
+NEEDED_STRUCTURE_CATEGORIES = FLOOR_CATEGORIES
+```
+
+See [issue #1](https://github.com/ESI-Bench/ESI-Bench/issues/1).
+
 ### Running the Explorer
 
 Run from the repository root:
