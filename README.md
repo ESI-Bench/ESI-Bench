@@ -84,7 +84,7 @@ esi-bench/
 The active exploration module loads an OmniGibson scene, captures step images, calls a GPT or Gemini model, and writes an `answer.json`.
 
 ### Environment Setup
-**Note that the same as [BEHAVIOR-1K](https://github.com/StanfordVL/BEHAVIOR-1K), the simulator only works for graphical cards <= 40 series (e.g., 20 / 30 / 40 series), and if you use 50-series or blackwell GPUs and rendering results will be very bad. **
+**Note that the same as [BEHAVIOR-1K](https://github.com/StanfordVL/BEHAVIOR-1K), the simulator only works for graphical cards <= 40 series (e.g., 20 / 30 / 40 series), and if you use 50-series or blackwell GPUs and rendering results will be very bad.**
 
 Use the existing `behavior` conda environment:
 
