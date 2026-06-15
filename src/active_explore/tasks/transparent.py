@@ -3,15 +3,19 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+import cv2
 import numpy as np
 import omnigibson as og
 import torch as th
+from scipy.spatial.transform import Rotation
 
 
 TASK_NAME = "transparent"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
-VALID_ACTIONS = {
+VALID_ACTIONS = [
+    "pickup",
+    "pour",
     "move_forward",
     "move_backward",
     "move_left",
@@ -22,10 +26,8 @@ VALID_ACTIONS = {
     "turn_right",
     "turn_up",
     "turn_down",
-    "pickup",
-    "pour",
     "stop",
-}
+]
 
 ACTION_RESPONSE_SCHEMA = {
     "type": "object",
@@ -89,6 +91,105 @@ def scale_list(value: Any) -> list[float]:
     if isinstance(value, list):
         return [float(item) for item in value]
     return [1.0, 1.0, 1.0]
+
+
+def look_at_quat(eye, target, up=np.array([0.0, 0.0, 1.0])) -> np.ndarray:
+    fwd = np.array(target, dtype=float) - np.array(eye, dtype=float)
+    norm = np.linalg.norm(fwd)
+    if norm < 1e-8:
+        return np.array([0.0, 0.0, 0.0, 1.0])
+    fwd /= norm
+    right = np.cross(fwd, up)
+    if np.linalg.norm(right) < 1e-6:
+        up = np.array([0.0, 1.0, 0.0])
+        right = np.cross(fwd, up)
+    right /= np.linalg.norm(right)
+    cam_up = np.cross(right, fwd)
+    cam_up /= np.linalg.norm(cam_up)
+    return Rotation.from_matrix(np.column_stack([right, cam_up, -fwd])).as_quat()
+
+
+def aabb_numpy(obj) -> tuple[np.ndarray, np.ndarray]:
+    bmin, bmax = obj.aabb
+    bmin = bmin.cpu().numpy() if hasattr(bmin, "cpu") else np.asarray(bmin)
+    bmax = bmax.cpu().numpy() if hasattr(bmax, "cpu") else np.asarray(bmax)
+    return bmin.astype(float), bmax.astype(float)
+
+
+def object_pose(obj) -> tuple[np.ndarray, np.ndarray]:
+    pos, quat = obj.get_position_orientation()
+    pos = pos.cpu().numpy() if hasattr(pos, "cpu") else np.asarray(pos)
+    quat = quat.cpu().numpy() if hasattr(quat, "cpu") else np.asarray(quat)
+    return pos.astype(float), quat.astype(float)
+
+
+def set_object_pose(obj, pos: np.ndarray, quat: np.ndarray, visual_only: bool = True) -> None:
+    if visual_only:
+        try:
+            obj.visual_only = True
+        except Exception:
+            pass
+    obj.set_position_orientation(
+        position=th.tensor(np.asarray(pos, dtype=float), dtype=th.float32),
+        orientation=th.tensor(np.asarray(quat, dtype=float), dtype=th.float32),
+    )
+    try:
+        obj.keep_still()
+    except Exception:
+        pass
+
+
+def small_object_inside_container(obj_small, obj_container, margin: float = 0.01) -> bool:
+    c_bmin, c_bmax = aabb_numpy(obj_container)
+    s_bmin, s_bmax = aabb_numpy(obj_small)
+    s_center = (s_bmin + s_bmax) / 2.0
+    inside_xy = bool(
+        c_bmin[0] - margin <= s_center[0] <= c_bmax[0] + margin
+        and c_bmin[1] - margin <= s_center[1] <= c_bmax[1] + margin
+    )
+    inside_z = bool(c_bmin[2] - margin <= s_center[2] <= c_bmax[2] + margin)
+    return inside_xy and inside_z
+
+
+def make_action_camera(obj_container, obj_small) -> dict[str, list[float]]:
+    c_bmin, c_bmax = aabb_numpy(obj_container)
+    s_bmin, s_bmax = aabb_numpy(obj_small)
+    bmin = np.minimum(c_bmin, s_bmin)
+    bmax = np.maximum(c_bmax, s_bmax)
+    center = (bmin + bmax) / 2.0
+    span = np.maximum(bmax - bmin, 0.05)
+    distance = max(0.70, float(max(span[0], span[1])) * 5.0)
+    eye = np.array(
+        [
+            center[0] + distance * 0.35,
+            center[1] - distance,
+            max(bmax[2] + 0.75, center[2] + 0.65),
+        ],
+        dtype=float,
+    )
+    target = np.array([center[0], center[1], min(bmax[2], center[2] + 0.08)], dtype=float)
+    quat = look_at_quat(eye, target)
+    return {"position": eye.tolist(), "quaternion_xyzw": quat.tolist(), "target": target.tolist()}
+
+
+def set_viewer_camera(camera: dict[str, Any] | None) -> None:
+    if not camera:
+        return
+    og.sim._viewer_camera.set_position_orientation(
+        position=np.array(camera["position"], dtype=float),
+        orientation=np.array(camera["quaternion_xyzw"], dtype=float),
+    )
+    for _ in range(4):
+        og.sim.render()
+
+
+def capture_viewer_image(path: Path) -> str:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    for _ in range(3):
+        og.sim.render()
+    rgb = og.sim._viewer_camera.get_obs()[0]["rgb"].cpu().numpy()[:, :, :3].astype(np.uint8)
+    cv2.imwrite(str(path), cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR))
+    return str(path)
 
 
 def objects_map(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -159,6 +260,22 @@ def initial_camera(payload: dict[str, Any]) -> tuple[np.ndarray, np.ndarray, dic
         np.array(pose["quaternion_xyzw"], dtype=float),
         {"view": pose, "selection": "0.png_or_first_camera_pose"},
     )
+
+
+def postprocess_env(
+    env,
+    payload: dict[str, Any],
+    camera_info: dict[str, Any],
+    task_state: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    obj_container = env.scene.object_registry("name", "obj_container")
+    obj_small = env.scene.object_registry("name", "obj_small")
+    if obj_container is None or obj_small is None:
+        return {}
+    action_camera = make_action_camera(obj_container, obj_small)
+    state = task_state if task_state is not None else {}
+    state["action_camera"] = action_camera
+    return {"camera_override": action_camera, "action_camera": action_camera}
 
 
 def build_system_prompt(
@@ -268,52 +385,61 @@ def needs_force_final_choice(answer: str, stop_reason: str) -> bool:
     return normalize_answer(answer) == "not sure"
 
 
-def _pickup_container(obj_container) -> dict[str, Any]:
-    lift_step = 0.02
+def _pickup_container(obj_container, obj_small) -> dict[str, Any]:
+    start_pos, quat = object_pose(obj_container)
+    small_start_pos, small_quat = object_pose(obj_small)
+    _, s_bmax = aabb_numpy(obj_small)
     lift_total = 0.30
-    steps = int(lift_total / lift_step)
-    for _ in range(steps):
-        pos, ori = obj_container.get_position_orientation()
-        new_z = float(pos.cpu().numpy()[2] if hasattr(pos, "cpu") else pos[2]) + lift_step
-        obj_container.set_position_orientation(
-            position=th.tensor([pos[0], pos[1], new_z], dtype=th.float32),
-            orientation=ori,
-        )
+    end_pos = start_pos.copy()
+    end_pos[2] = max(start_pos[2] + lift_total, float(s_bmax[2]) + 0.18)
+    lift_delta = end_pos - start_pos
+    small_inside = small_object_inside_container(obj_small, obj_container)
+    small_end_pos = small_start_pos + lift_delta if small_inside else small_start_pos.copy()
+    set_object_pose(obj_container, end_pos, quat, visual_only=True)
+    if small_inside:
+        set_object_pose(obj_small, small_end_pos, small_quat, visual_only=True)
+    for _ in range(8):
         og.sim.step()
-    return {"handled": True, "operation": "pickup_container", "success": True, "lift_m": lift_total}
+        set_object_pose(obj_container, end_pos, quat, visual_only=True)
+        if small_inside:
+            set_object_pose(obj_small, small_end_pos, small_quat, visual_only=True)
+    return {
+        "handled": True,
+        "operation": "pickup_container",
+        "success": True,
+        "lift_m": float(end_pos[2] - start_pos[2]),
+        "start_position": start_pos.tolist(),
+        "end_position": end_pos.tolist(),
+        "small_object_inside_before_pickup": small_inside,
+        "small_object_start_position": small_start_pos.tolist(),
+        "small_object_end_position": small_end_pos.tolist(),
+        "small_object_lifted": small_inside,
+    }
 
 
 def _pour_small_obj(obj_small, obj_container) -> dict[str, Any]:
-    lift_step = 0.02
-    c_bmin, c_bmax = [value.cpu().numpy() if hasattr(value, "cpu") else np.array(value) for value in obj_container.aabb]
-    cont_top_z = float(c_bmax[2])
-    cleared = False
-    for _ in range(300):
-        pos, ori = obj_small.get_position_orientation()
-        s_bmin, _s_bmax = [value.cpu().numpy() if hasattr(value, "cpu") else np.array(value) for value in obj_small.aabb]
-        if float(s_bmin[2]) >= cont_top_z:
-            cleared = True
-            break
-        new_z = float(pos.cpu().numpy()[2] if hasattr(pos, "cpu") else pos[2]) + lift_step
-        obj_small.set_position_orientation(
-            position=th.tensor([pos[0], pos[1], new_z], dtype=th.float32),
-            orientation=ori,
-        )
+    start_pos, start_quat = object_pose(obj_small)
+    c_bmin, c_bmax = aabb_numpy(obj_container)
+    s_bmin, s_bmax = aabb_numpy(obj_small)
+    obj_half_width = max(0.03, float(max(s_bmax[0] - s_bmin[0], s_bmax[1] - s_bmin[1])) / 2.0)
+    end_pos = start_pos.copy()
+    end_pos[0] = float(c_bmax[0]) + obj_half_width + 0.08
+    end_pos[1] = float((c_bmin[1] + c_bmax[1]) / 2.0)
+    end_pos[2] = float(c_bmax[2]) + max(0.08, float(s_bmax[2] - s_bmin[2]) / 2.0)
+    set_object_pose(obj_small, end_pos, start_quat, visual_only=True)
+    for _ in range(8):
         og.sim.step()
-        current_z = float(obj_small.get_position_orientation()[0][2])
-        if abs(current_z - new_z) > lift_step * 0.5:
-            break
-
-    pos, _ori = obj_small.get_position_orientation()
-    s_bmin, s_bmax = [value.cpu().numpy() if hasattr(value, "cpu") else np.array(value) for value in obj_small.aabb]
-    if float(s_bmin[2]) >= cont_top_z:
-        place_x = float(c_bmax[0]) + 0.02 + float(s_bmax[0] - s_bmin[0]) / 2.0
-        obj_small.set_position_orientation(
-            position=th.tensor([place_x, pos[1], pos[2]], dtype=th.float32),
-            orientation=th.tensor([0.0, 0.0, 0.0, 1.0], dtype=th.float32),
-        )
-        cleared = True
-    return {"handled": True, "operation": "pour_small_obj", "success": cleared}
+        set_object_pose(obj_small, end_pos, start_quat, visual_only=True)
+    final_bmin, _final_bmax = aabb_numpy(obj_small)
+    cleared = bool(final_bmin[2] > c_bmax[2] and end_pos[0] > c_bmax[0])
+    return {
+        "handled": True,
+        "operation": "pour_small_obj",
+        "success": cleared,
+        "start_position": start_pos.tolist(),
+        "end_position": end_pos.tolist(),
+        "container_top_z": float(c_bmax[2]),
+    }
 
 
 def execute_task_action(
@@ -329,17 +455,47 @@ def execute_task_action(
 ) -> dict[str, Any]:
     action = normalize_text(action).lower()
     scene = env.scene
+    state = task_state if task_state is not None else {}
     if action == "pickup":
         obj_container = scene.object_registry("name", "obj_container")
-        if obj_container is None:
+        obj_small = scene.object_registry("name", "obj_small")
+        if obj_container is None or obj_small is None:
             return {"handled": True, "operation": "pickup_container", "success": False, "error": "missing_obj_container"}
-        return _pickup_container(obj_container)
+        action_camera = state.get("action_camera") or make_action_camera(obj_container, obj_small)
+        set_viewer_camera(action_camera)
+        extra_paths = []
+        if step_image_dir is not None:
+            extra_paths.append(capture_viewer_image(Path(step_image_dir) / f"action_step_{int(step or 0):03d}_pickup_before.png"))
+        result = _pickup_container(obj_container, obj_small)
+        set_viewer_camera(action_camera)
+        if step_image_dir is not None:
+            extra_paths.append(capture_viewer_image(Path(step_image_dir) / f"action_step_{int(step or 0):03d}_pickup_after.png"))
+        return {
+            **result,
+            "position": action_camera["position"],
+            "quaternion_xyzw": action_camera["quaternion_xyzw"],
+            "extra_image_paths": extra_paths,
+        }
     if action == "pour":
         obj_container = scene.object_registry("name", "obj_container")
         obj_small = scene.object_registry("name", "obj_small")
         if obj_container is None or obj_small is None:
             return {"handled": True, "operation": "pour_small_obj", "success": False, "error": "missing_object"}
-        return _pour_small_obj(obj_small, obj_container)
+        action_camera = state.get("action_camera") or make_action_camera(obj_container, obj_small)
+        set_viewer_camera(action_camera)
+        extra_paths = []
+        if step_image_dir is not None:
+            extra_paths.append(capture_viewer_image(Path(step_image_dir) / f"action_step_{int(step or 0):03d}_pour_before.png"))
+        result = _pour_small_obj(obj_small, obj_container)
+        set_viewer_camera(action_camera)
+        if step_image_dir is not None:
+            extra_paths.append(capture_viewer_image(Path(step_image_dir) / f"action_step_{int(step or 0):03d}_pour_after.png"))
+        return {
+            **result,
+            "position": action_camera["position"],
+            "quaternion_xyzw": action_camera["quaternion_xyzw"],
+            "extra_image_paths": extra_paths,
+        }
     return {"handled": False}
 
 

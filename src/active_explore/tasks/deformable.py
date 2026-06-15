@@ -4,6 +4,7 @@ import math
 import os
 import shutil
 import time
+import traceback
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -495,14 +496,21 @@ def capture_image(
     cam = _prepare_capture_camera(state)
     _set_capture_camera_pose(cam, pos, quat)
     last_exc = None
+    last_traceback = None
     for attempt in range(1, VIEWER_FRAME_MAX_RETRIES + 1):
         try:
             _warmup_render_pipeline(steps=2, renders=VIEWER_FRAME_RENDER_STEPS)
+            state.pop("last_capture_error", None)
+            state.pop("last_capture_traceback", None)
             return _write_rgb(Path(image_path), _camera_rgb_obs(cam))
         except Exception as exc:
             last_exc = exc
+            last_traceback = traceback.format_exc()
             if attempt < VIEWER_FRAME_MAX_RETRIES:
                 time.sleep(VIEWER_FRAME_RETRY_SLEEP_SEC)
+    if last_exc is not None:
+        state["last_capture_error"] = f"{type(last_exc).__name__}: {last_exc}"
+        state["last_capture_traceback"] = last_traceback
     fallback = state.get("reference_image_path")
     if fallback:
         fallback_path = Path(fallback)
@@ -511,6 +519,7 @@ def capture_image(
             output_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(fallback_path, output_path)
             return output_path
+        state["reference_image_missing"] = str(fallback_path)
     return _write_placeholder_observation(Path(image_path))
 
 
@@ -619,13 +628,11 @@ def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any] | 
         _set_capture_camera_pose(capture_cam, main_pos, main_quat)
     except Exception:
         pass
-    try:
-        og.sim.stop()
-    except Exception:
-        pass
+    _render_only(2)
 
     dynamic_names = [item_name, cloth_name]
     task_state["dynamic_object_names"] = dynamic_names
+    task_state["created_objects"] = {item_name: item_obj, cloth_name: cloth_obj}
     return {
         "dynamic_object_names": dynamic_names,
         "floor_name": floor_record.name,

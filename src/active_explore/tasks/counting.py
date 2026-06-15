@@ -8,6 +8,7 @@ import numpy as np
 import omnigibson as og
 import omnigibson.object_states as object_states
 import torch as th
+import yaml
 
 
 TASK_NAME = "counting"
@@ -225,6 +226,31 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
                 "visual_only": True,
             })
     return output
+
+
+def build_env_config(
+    scene_name: str,
+    room_name: str | None,
+    robot: str,
+    objects: list[dict[str, Any]] | None = None,
+    full_scene: bool = False,
+) -> dict[str, Any]:
+    cfg_file = Path(og.example_config_path) / f"{robot.lower()}_primitives.yaml"
+    with cfg_file.open("r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+    config.setdefault("scene", {})
+    config["scene"]["scene_model"] = scene_name
+    if room_name and not full_scene:
+        config["scene"]["load_room_instances"] = [str(room_name)]
+    else:
+        config["scene"].pop("load_room_instances", None)
+        config["scene"].pop("load_room_types", None)
+    # Counting sweeps only need the generated target/confuser objects on the room floor.
+    # Loading all room clutter can initialize unrelated object-state emitters that crash OG.
+    config["scene"]["load_object_categories"] = ["floors"]
+    config["scene"]["not_load_object_categories"] = None
+    config["objects"] = objects or []
+    return config
 
 
 def tensor_to_tuple3(value) -> tuple[float, float, float]:

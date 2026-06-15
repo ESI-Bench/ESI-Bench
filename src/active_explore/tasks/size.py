@@ -334,6 +334,22 @@ def rotate_vec(vec: np.ndarray, quat_xyzw: np.ndarray) -> np.ndarray:
     return Rotation.from_quat(quat_xyzw).apply(vec)
 
 
+def look_at_quat(eye, target, up=np.array([0.0, 0.0, 1.0])) -> np.ndarray:
+    forward = np.array(target, dtype=float) - np.array(eye, dtype=float)
+    norm = np.linalg.norm(forward)
+    if norm < 1e-8:
+        return np.array([0.0, 0.0, 0.0, 1.0])
+    forward /= norm
+    right = np.cross(forward, up)
+    if np.linalg.norm(right) < 1e-6:
+        up = np.array([0.0, 1.0, 0.0])
+        right = np.cross(forward, up)
+    right /= np.linalg.norm(right)
+    camera_up = np.cross(right, forward)
+    camera_up /= np.linalg.norm(camera_up)
+    return Rotation.from_matrix(np.column_stack([right, camera_up, -forward])).as_quat()
+
+
 def move_forward(pos: np.ndarray, quat: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     pos = pos.copy()
     right = rotate_vec(np.array([1.0, 0.0, 0.0]), quat)
@@ -434,6 +450,23 @@ def capture_robot_eye(robot, run_dir: Path, label: str) -> str | None:
     return str(path)
 
 
+def capture_viewer_image(run_dir: Path, label: str, focus_pos: Any | None = None) -> str | None:
+    try:
+        if focus_pos is not None:
+            focus = np.asarray(focus_pos, dtype=float)
+            eye = focus + np.array([0.55, -0.75, 0.45])
+            og.sim._viewer_camera.set_position_orientation(position=eye, orientation=look_at_quat(eye, focus))
+        for _ in range(10):
+            og.sim.render()
+        image = og.sim._viewer_camera.get_obs()[0]["rgb"].cpu().numpy()[:, :, :3].astype(np.uint8)
+    except Exception:
+        return None
+    run_dir.mkdir(parents=True, exist_ok=True)
+    path = run_dir / f"viewer_{label}.png"
+    cv2.imwrite(str(path), cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    return str(path)
+
+
 def execute_task_action(
     env,
     payload: dict[str, Any],
@@ -490,6 +523,7 @@ def execute_task_action(
 
     robot_pos_before, robot_ori_before = robot.get_position_orientation()
     robot_eye_path = None
+    viewer_held_path = None
     nav_ok = grasp_ok = False
     saved_obj_pos = saved_obj_ori = None
     try:
@@ -498,6 +532,8 @@ def execute_task_action(
             grasp_ok, saved_obj_pos, saved_obj_ori = mock_grasp(robot, target_obj)
             if grasp_ok:
                 label = f"step_{int(step or 0):03d}_{target_name}"
+                held_pos, _held_ori = target_obj.get_position_orientation()
+                viewer_held_path = capture_viewer_image(step_image_dir or Path("."), f"{label}_held", held_pos)
                 robot_eye_path = capture_robot_eye(robot, step_image_dir or Path("."), label)
                 mock_put_down(target_obj, saved_obj_pos, saved_obj_ori)
     finally:
@@ -514,10 +550,12 @@ def execute_task_action(
         "pair_index": pair_index,
         "object": target_name,
         "reference": ref_name,
+        "object_category": normalize_text(object_entry(payload, target_name).get("category")),
+        "reference_category": normalize_text(object_entry(payload, ref_name).get("category")),
         "success": bool(robot_eye_path),
         "navigation_success": nav_ok,
         "grasp_success": grasp_ok,
-        "extra_image_paths": [robot_eye_path] if robot_eye_path else [],
+        "extra_image_paths": [path for path in (viewer_held_path, robot_eye_path) if path],
         "position": pos.tolist(),
         "quaternion_xyzw": quat.tolist(),
     }

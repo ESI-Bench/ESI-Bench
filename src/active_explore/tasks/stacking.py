@@ -387,6 +387,7 @@ def resolve_object_name(text: str, payload: dict[str, Any]) -> str | None:
 
 def mock_grasp(robot, obj) -> bool:
     global AG_JOINT_PRIM
+    detach_grasp()
     grasp_point = robot.get_eef_position(robot.default_arm)
     obj.visual_only = True
     obj.set_position_orientation(grasp_point, SQUARE_ORI)
@@ -406,12 +407,33 @@ def mock_grasp(robot, obj) -> bool:
     return True
 
 
-def mock_release(obj) -> None:
+def detach_grasp() -> None:
     global AG_JOINT_PRIM
     if AG_JOINT_PRIM is not None:
         delete_or_deactivate_prim(str(AG_JOINT_PRIM.GetPrimPath()))
         AG_JOINT_PRIM = None
-    obj.set_position_orientation([100.0, 100.0, 100.0], SQUARE_ORI)
+
+
+def attach_current_grasp(robot, obj) -> bool:
+    global AG_JOINT_PRIM
+    detach_grasp()
+    try:
+        joint_prim_path = f"{robot.eef_links[robot.default_arm].prim_path}/ag_constraint"
+        AG_JOINT_PRIM = create_joint(
+            prim_path=joint_prim_path,
+            joint_type="FixedJoint",
+            body0=robot.eef_links[robot.default_arm].prim_path,
+            body1=obj.root_link.prim_path,
+            enabled=True,
+            exclude_from_articulation=True,
+        )
+    except Exception:
+        return False
+    return True
+
+
+def mock_release(obj) -> None:
+    detach_grasp()
     obj.visual_only = False
     obj.keep_still()
     for _ in range(10):
@@ -419,18 +441,32 @@ def mock_release(obj) -> None:
 
 
 def place_on_top(obj, target_obj) -> bool:
+    original_pos, original_quat = obj.get_position_orientation()
+    original_pos = original_pos.cpu().numpy().copy() if hasattr(original_pos, "cpu") else np.asarray(original_pos).copy()
+    original_quat = original_quat.cpu().numpy().copy() if hasattr(original_quat, "cpu") else np.asarray(original_quat).copy()
+    original_visual_only = bool(getattr(obj, "visual_only", False))
     mock_release(obj)
     ok = False
     for _attempt in range(PLACEMENT_RETRIES):
         try:
             ok = sample_kinematics("onTop", obj, target_obj, use_last_ditch_effort=True, use_trav_map=False)
             if ok:
-                break
+                obj.keep_still()
+                for _ in range(SETTLE_STEPS):
+                    og.sim.step()
+                if is_on_top(obj, target_obj) and tilt_check(obj)[0]:
+                    return True
         except Exception:
             pass
-    for _ in range(SETTLE_STEPS):
+    obj.set_position_orientation(
+        position=th.tensor(original_pos, dtype=th.float32),
+        orientation=th.tensor(original_quat, dtype=th.float32),
+    )
+    obj.visual_only = original_visual_only
+    obj.keep_still()
+    for _ in range(10):
         og.sim.step()
-    return bool(ok)
+    return False
 
 
 def capture_robot_eye(robot, eye_camera_key: str, path: Path) -> str | None:
@@ -582,6 +618,7 @@ def execute_task_action(
         target_name = resolve_object_name(target_part.strip(), payload)
         obj = objs_by_name.get(obj_name)
         target = objs_by_name.get(target_name)
+        was_held = bool(state.get("held_obj_name") == obj_name)
         success = bool(obj is not None and target is not None and place_on_top(obj, target))
         if success:
             state["held_obj_name"] = None
@@ -595,6 +632,12 @@ def execute_task_action(
             state["current_stack"] = current_stack
             if len(current_stack) == 3:
                 try_expand_gt(state, payload)
+        elif was_held and robot is not None and obj is not None:
+            obj.visual_only = True
+            if attach_current_grasp(robot, obj):
+                state["held_obj_name"] = obj_name
+                for _ in range(5):
+                    og.sim.step()
         return {
             "handled": True,
             "operation": "place_on_top",

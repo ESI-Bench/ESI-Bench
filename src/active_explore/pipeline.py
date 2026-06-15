@@ -22,6 +22,7 @@ import torch as th
 import yaml
 from omnigibson.macros import gm
 from omnigibson.utils.object_state_utils import sample_kinematics
+from omnigibson.utils.usd_utils import create_joint, delete_or_deactivate_prim
 from scipy.spatial.transform import Rotation
 
 from models.gemini import GeminiModel
@@ -38,6 +39,7 @@ TURN_STEP = 15.0
 SQUARE_ORI = [0.0, 0.0, 0.0, 1.0]
 SETTLE_STEPS = 60
 PLACEMENT_RETRIES = 5
+XY_IOU_TOL = 0.1
 CAMERA_ACTIONS = {
     "move_forward",
     "move_backward",
@@ -345,9 +347,30 @@ def collect_contents(
 ) -> list[Any]:
     contents: list[Any] = []
     if history:
+        def summarize_action_result(result: Any) -> str:
+            if not isinstance(result, dict) or not result:
+                return "{}"
+            keys = [
+                "handled",
+                "operation",
+                "action",
+                "success",
+                "error",
+                "reason",
+                "object",
+                "target",
+                "container",
+                "physical_state",
+                "attempts",
+                "current_stack",
+            ]
+            compact = {key: result[key] for key in keys if key in result}
+            return json.dumps(compact, ensure_ascii=True)
+
         summary = "\n".join(
             f"Step {item['step']}: action={item['action']} answer={item['answer']} "
-            f"conf={item['confidence']:.2f} reasoning={item['reasoning']}"
+            f"conf={item['confidence']:.2f} result={summarize_action_result(item.get('action_result'))} "
+            f"reasoning={item['reasoning']}"
             for item in history
         )
         contents.append("Action history so far:\n" + summary)
@@ -553,7 +576,164 @@ def step_env(env, n: int = 10) -> None:
         env.step(idle)
 
 
+def step_sim(n: int = 10) -> None:
+    for _ in range(int(n)):
+        og.sim.step()
+
+
+def _as_numpy(value) -> np.ndarray:
+    if hasattr(value, "detach") and hasattr(value, "cpu"):
+        return value.detach().cpu().numpy()
+    if hasattr(value, "cpu"):
+        return value.cpu().numpy()
+    return np.asarray(value)
+
+
+def keyed_list_to_map(items: object) -> dict[str, Any]:
+    if isinstance(items, dict):
+        return {normalize_text(key): value for key, value in items.items() if normalize_text(key)}
+    output = {}
+    if isinstance(items, list):
+        for item in items:
+            if isinstance(item, dict) and normalize_text(item.get("_key")):
+                output[normalize_text(item["_key"])] = item
+    return output
+
+
+def object_pose(obj) -> tuple[np.ndarray, np.ndarray, bool]:
+    pos, quat = obj.get_position_orientation()
+    visual_only = bool(getattr(obj, "visual_only", False))
+    return _as_numpy(pos).copy(), _as_numpy(quat).copy(), visual_only
+
+
+def set_object_pose(obj, pos, quat, visual_only: bool | None = None) -> None:
+    obj.set_position_orientation(
+        position=th.tensor(pos, dtype=th.float32),
+        orientation=th.tensor(quat, dtype=th.float32),
+    )
+    if visual_only is not None:
+        obj.visual_only = bool(visual_only)
+    obj.keep_still()
+
+
+def get_aabb(obj) -> tuple[np.ndarray, np.ndarray]:
+    bmin, bmax = obj.aabb
+    return _as_numpy(bmin).copy(), _as_numpy(bmax).copy()
+
+
+def xy_iou(bmin_a: np.ndarray, bmax_a: np.ndarray, bmin_b: np.ndarray, bmax_b: np.ndarray) -> float:
+    ix_min = max(float(bmin_a[0]), float(bmin_b[0]))
+    ix_max = min(float(bmax_a[0]), float(bmax_b[0]))
+    iy_min = max(float(bmin_a[1]), float(bmin_b[1]))
+    iy_max = min(float(bmax_a[1]), float(bmax_b[1]))
+    inter = max(0.0, ix_max - ix_min) * max(0.0, iy_max - iy_min)
+    area_a = max(0.0, float(bmax_a[0] - bmin_a[0])) * max(0.0, float(bmax_a[1] - bmin_a[1]))
+    area_b = max(0.0, float(bmax_b[0] - bmin_b[0])) * max(0.0, float(bmax_b[1] - bmin_b[1]))
+    union = area_a + area_b - inter
+    return inter / union if union > 1e-8 else 0.0
+
+
+def object_is_on_top(obj, target) -> bool:
+    try:
+        obj_min, obj_max = get_aabb(obj)
+        target_min, target_max = get_aabb(target)
+    except Exception:
+        return False
+    z_ok = float(obj_min[2]) >= float(target_min[2]) and float(obj_max[2]) > float(target_max[2])
+    xy_ok = xy_iou(obj_min, obj_max, target_min, target_max) >= XY_IOU_TOL
+    return z_ok and xy_ok
+
+
+def detach_held_object(task_state: dict[str, Any]) -> None:
+    joint_path = task_state.pop("physical_action_joint_prim_path", None)
+    if joint_path:
+        try:
+            delete_or_deactivate_prim(joint_path)
+        except Exception:
+            pass
+
+
+def attach_object_to_robot(env, obj, task_state: dict[str, Any]) -> bool:
+    if not getattr(env, "robots", None):
+        return False
+    robot = env.robots[0]
+    joint_prim_path = f"{robot.eef_links[robot.default_arm].prim_path}/ag_constraint"
+    try:
+        joint = create_joint(
+            prim_path=joint_prim_path,
+            joint_type="FixedJoint",
+            body0=robot.eef_links[robot.default_arm].prim_path,
+            body1=obj.root_link.prim_path,
+            enabled=True,
+            exclude_from_articulation=True,
+        )
+    except Exception:
+        return False
+    task_state["physical_action_joint_prim_path"] = str(joint.GetPrimPath())
+    task_state["held_obj_name"] = obj.name
+    return True
+
+
+def held_pose_near_object(obj) -> tuple[np.ndarray, np.ndarray]:
+    pos, quat, _visual_only = object_pose(obj)
+    try:
+        bmin, bmax = get_aabb(obj)
+        object_height = max(0.0, float(bmax[2] - bmin[2]))
+    except Exception:
+        object_height = 0.2
+    held_pos = pos.copy()
+    held_pos[2] += max(0.35, object_height + 0.15)
+    return held_pos, quat
+
+
+def pick_up_object(env, obj, task_state: dict[str, Any]) -> tuple[bool, str | None]:
+    if obj is None:
+        return False, "unknown_object"
+    if not getattr(env, "robots", None):
+        return False, "missing_robot"
+    held_name = normalize_text(task_state.get("held_obj_name"))
+    if held_name == obj.name:
+        return True, None
+    if held_name and held_name != obj.name:
+        held_obj = env.scene.object_registry("name", held_name) if getattr(env, "scene", None) else None
+        held_pose_info = task_state.get("held_obj_pose_before_pickup")
+        detach_held_object(task_state)
+        if held_obj is not None and isinstance(held_pose_info, dict) and held_pose_info.get("object") == held_name:
+            held_pose = held_pose_info.get("pose")
+            if held_pose:
+                set_object_pose(held_obj, held_pose[0], held_pose[1], held_pose[2])
+        task_state.pop("held_obj_name", None)
+        task_state.pop("held_obj_pose_before_pickup", None)
+        task_state.pop("held_obj_pose", None)
+    original_pose = object_pose(obj)
+    held_pos, held_quat = held_pose_near_object(obj)
+    task_state["held_obj_pose_before_pickup"] = {
+        "object": obj.name,
+        "pose": original_pose,
+    }
+    task_state["held_obj_pose"] = {
+        "object": obj.name,
+        "position": held_pos,
+        "orientation": held_quat,
+    }
+    try:
+        obj.visual_only = True
+        set_object_pose(obj, held_pos, held_quat)
+        step_sim(1)
+        task_state["held_obj_name"] = obj.name
+        step_sim(5)
+    except Exception as exc:
+        set_object_pose(obj, original_pose[0], original_pose[1], original_pose[2])
+        task_state.pop("held_obj_name", None)
+        task_state.pop("held_obj_pose_before_pickup", None)
+        task_state.pop("held_obj_pose", None)
+        return False, f"{type(exc).__name__}: {exc}"
+    return True, None
+
+
 def place_on_top(obj, target, env) -> bool:
+    original_pose = object_pose(obj)
+    obj.visual_only = False
     square_ori = th.tensor(SQUARE_ORI, dtype=th.float32)
     for _attempt in range(PLACEMENT_RETRIES):
         try:
@@ -562,10 +742,13 @@ def place_on_top(obj, target, env) -> bool:
                 pos, _ = obj.get_position_orientation()
                 obj.set_position_orientation(position=pos, orientation=square_ori)
                 obj.keep_still()
-                step_env(env, SETTLE_STEPS)
-                return True
+                step_sim(SETTLE_STEPS)
+                if object_is_on_top(obj, target):
+                    return True
         except Exception:
             pass
+    set_object_pose(obj, original_pose[0], original_pose[1], original_pose[2])
+    step_sim(10)
     return False
 
 
@@ -607,14 +790,27 @@ def resolve_scene_object_name(task_module, text: str, payload: dict[str, Any], c
     return None
 
 
-def execute_physical_action(task_module, env, payload: dict[str, Any], camera_info: dict[str, Any], action: str) -> dict[str, Any]:
+def execute_physical_action(
+    task_module,
+    env,
+    payload: dict[str, Any],
+    camera_info: dict[str, Any],
+    action: str,
+    task_state: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     scene = env.scene
     action_lower = action.lower().strip()
-    initial_poses = payload.get("initial_poses") or {}
+    task_state = task_state if task_state is not None else {}
+    initial_poses = keyed_list_to_map(payload.get("initial_poses"))
 
     if action_lower.startswith("pick up "):
         obj_name = resolve_scene_object_name(task_module, action_lower[len("pick up "):], payload, camera_info)
-        return {"handled": True, "operation": "pick_up", "object": obj_name}
+        obj = scene.object_registry("name", obj_name) if obj_name else None
+        success, error = pick_up_object(env, obj, task_state)
+        result = {"handled": True, "operation": "pick_up", "object": obj_name, "success": success}
+        if error:
+            result["error"] = error
+        return result
 
     if "place" in action_lower and "on top of" in action_lower:
         left, right = action_lower.split("on top of", 1)
@@ -622,19 +818,42 @@ def execute_physical_action(task_module, env, payload: dict[str, Any], camera_in
         target_name = resolve_scene_object_name(task_module, right.strip(), payload, camera_info)
         obj = scene.object_registry("name", obj_name) if obj_name else None
         target = scene.object_registry("name", target_name) if target_name else None
+        was_held = bool(task_state.get("held_obj_name") == obj_name)
+        if was_held:
+            detach_held_object(task_state)
         success = bool(obj is not None and target is not None and place_on_top(obj, target, env))
+        if success:
+            task_state["held_obj_name"] = None
+            task_state.pop("held_obj_pose_before_pickup", None)
+            task_state.pop("held_obj_pose", None)
+        elif was_held and obj is not None:
+            held_pose = task_state.get("held_obj_pose") or {}
+            held_pos = held_pose.get("position")
+            held_quat = held_pose.get("orientation")
+            if held_pose.get("object") == obj_name and held_pos is not None and held_quat is not None:
+                set_object_pose(obj, held_pos, held_quat, True)
+            else:
+                obj.visual_only = True
+            step_sim(5)
         return {
             "handled": True,
             "operation": "place_on_top",
             "object": obj_name,
             "target": target_name,
             "success": success,
+            "held_object": task_state.get("held_obj_name"),
         }
 
     if action_lower.startswith("put back "):
         obj_name = resolve_scene_object_name(task_module, action_lower[len("put back "):], payload, camera_info)
         obj = scene.object_registry("name", obj_name) if obj_name else None
+        if task_state.get("held_obj_name") == obj_name:
+            detach_held_object(task_state)
         success = bool(obj is not None and reset_object_to_pose(obj, initial_poses.get(obj_name), env))
+        if success:
+            task_state["held_obj_name"] = None
+            task_state.pop("held_obj_pose_before_pickup", None)
+            task_state.pop("held_obj_pose", None)
         return {"handled": True, "operation": "put_back", "object": obj_name, "success": success}
 
     return {"handled": False}
@@ -652,6 +871,7 @@ def execute_action(
     step: int | None = None,
     step_image_dir: Path | None = None,
 ):
+    runtime_state = task_state if task_state is not None else {}
     task_action = getattr(task_module, "execute_task_action", None)
     if task_action is not None:
         result = call_with_supported_args(
@@ -662,7 +882,7 @@ def execute_action(
             action,
             pos=pos,
             quat=quat,
-            task_state=task_state or {},
+            task_state=runtime_state,
             step=step,
             step_image_dir=step_image_dir,
         )
@@ -673,7 +893,7 @@ def execute_action(
     if action in CAMERA_ACTIONS:
         next_pos, next_quat = apply_camera_action(pos, quat, action)
         return next_pos, next_quat, {"handled": True, "operation": "camera", "action": action}
-    info = execute_physical_action(task_module, env, payload, camera_info, action)
+    info = execute_physical_action(task_module, env, payload, camera_info, action, task_state=runtime_state)
     if info.get("handled"):
         return pos, quat, info
     return pos, quat, {"handled": False, "operation": "noop", "action": action}

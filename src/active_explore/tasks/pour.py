@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import random
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,23 @@ TASK_NAME = "pour"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 MAX_BBOX = 0.3
 OBJECT_GAP = 0.3
+VALID_ACTIONS = [
+    "fill left",
+    "fill right",
+    "pour left into right",
+    "pour right into left",
+    "move_forward",
+    "move_backward",
+    "move_left",
+    "move_right",
+    "move_up",
+    "move_down",
+    "turn_left",
+    "turn_right",
+    "turn_up",
+    "turn_down",
+    "stop",
+]
 
 
 def normalize_text(value: Any) -> str:
@@ -513,33 +531,145 @@ def parse_model_output(parsed: dict[str, Any], payload: dict[str, Any] | None = 
 
 
 def execute_task_action(env, payload: dict[str, Any], camera_info: dict[str, Any], action: str, pos: np.ndarray, quat: np.ndarray, task_state: dict[str, Any] | None = None) -> dict[str, Any]:
-    state = task_state or {}
+    state = task_state if task_state is not None else {}
     action_lower = normalize_text(action).lower()
+    use_physical_actions = os.environ.get("ESI_POUR_PHYSICAL_ACTIONS") == "1"
+
+    def side_from_text(text: str) -> str | None:
+        if left_label(payload).lower() in text or "left" in text:
+            return "left"
+        if right_label(payload).lower() in text or "right" in text:
+            return "right"
+        return None
+
+    def physical_state_ready() -> bool:
+        return all(
+            key in state
+            for key in (
+                "obj1",
+                "obj2",
+                "water",
+                "free_pos1",
+                "free_pos2",
+                "dip_pos1",
+                "dip_pos2",
+                "box_half_extent",
+                "box_floor_z",
+                "box_center_x",
+                "box_center_y",
+                "particle_point_offsets",
+            )
+        )
+
+    def side_objects(side: str):
+        if side == "left":
+            return state["obj1"], state["free_pos1"], state["dip_pos1"]
+        return state["obj2"], state["free_pos2"], state["dip_pos2"]
+
     if action_lower.startswith("fill water in ") or action_lower.startswith("fill "):
         prefix = "fill water in " if action_lower.startswith("fill water in ") else "fill "
         target = action_lower[len(prefix) :].strip()
-        if left_label(payload).lower() in target or "left" in target:
+        side = side_from_text(target)
+        if side and use_physical_actions and physical_state_ready():
+            try:
+                water = state["water"]
+                exile_all_water(water)
+                obj, free_pos, dip_pos = side_objects(side)
+                n_particles = fill_single(
+                    obj,
+                    free_pos,
+                    dip_pos,
+                    water,
+                    state["box_half_extent"],
+                    state["box_floor_z"],
+                    state["box_center_x"],
+                    state["box_center_y"],
+                    state["particle_point_offsets"],
+                )
+                state["n_left"] = n_particles if side == "left" else 0
+                state["n_right"] = n_particles if side == "right" else 0
+                return {
+                    "handled": True,
+                    "operation": "fill_physical",
+                    "side": side,
+                    "success": True,
+                    "n_left": state.get("n_left"),
+                    "n_right": state.get("n_right"),
+                    "position": pos.tolist(),
+                    "quaternion_xyzw": quat.tolist(),
+                }
+            except Exception as exc:
+                return {
+                    "handled": True,
+                    "operation": "fill_physical",
+                    "side": side,
+                    "success": False,
+                    "error": repr(exc),
+                    "position": pos.tolist(),
+                    "quaternion_xyzw": quat.tolist(),
+                }
+        if side == "left":
             state["n_left"] = 1
             state["n_right"] = 0
-            side = "left"
-        elif right_label(payload).lower() in target or "right" in target:
+        elif side == "right":
             state["n_right"] = 1
             state["n_left"] = 0
-            side = "right"
-        else:
-            side = None
         return {"handled": True, "operation": "fill_simulated", "side": side, "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
     if action_lower.startswith("pour ") and " into " in action_lower:
-        src_name, _dst_name = action_lower[len("pour ") :].split(" into ", 1)
-        if left_label(payload).lower() in src_name or "left" in src_name:
-            state["n_left"], state["n_right"] = 0, 1
-            src_side = "left"
-        elif right_label(payload).lower() in src_name or "right" in src_name:
-            state["n_right"], state["n_left"] = 0, 1
-            src_side = "right"
-        else:
+        src_name, dst_name = action_lower[len("pour ") :].split(" into ", 1)
+        src_side = side_from_text(src_name)
+        dst_side = side_from_text(dst_name)
+        if src_side is None:
             return {"handled": True, "operation": "pour", "success": False, "reason": "unknown_source", "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
-        return {"handled": True, "operation": "pour_simulated", "source_side": src_side, "scenario": "simulated", "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
+        if dst_side is None:
+            dst_side = "right" if src_side == "left" else "left"
+        if src_side == dst_side:
+            return {"handled": True, "operation": "pour", "success": False, "reason": "same_source_and_destination", "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
+        if use_physical_actions and physical_state_ready():
+            try:
+                src_obj, _src_free_pos, _src_dip_pos = side_objects(src_side)
+                dst_obj, dst_free_pos, dst_dip_pos = side_objects(dst_side)
+                final_src, final_dst, scenario = pour_container_into(
+                    src_obj,
+                    dst_obj,
+                    dst_free_pos,
+                    dst_dip_pos,
+                    state["water"],
+                    state["particle_point_offsets"],
+                    state.get("run_rng") or random.Random(int(payload.get("run_idx", 0)) + 42),
+                )
+                if src_side == "left":
+                    state["n_left"], state["n_right"] = final_src, final_dst
+                else:
+                    state["n_right"], state["n_left"] = final_src, final_dst
+                return {
+                    "handled": True,
+                    "operation": "pour_physical",
+                    "source_side": src_side,
+                    "destination_side": dst_side,
+                    "scenario": scenario,
+                    "success": True,
+                    "n_left": state.get("n_left"),
+                    "n_right": state.get("n_right"),
+                    "position": pos.tolist(),
+                    "quaternion_xyzw": quat.tolist(),
+                }
+            except Exception as exc:
+                return {
+                    "handled": True,
+                    "operation": "pour_physical",
+                    "source_side": src_side,
+                    "destination_side": dst_side,
+                    "success": False,
+                    "error": repr(exc),
+                    "position": pos.tolist(),
+                    "quaternion_xyzw": quat.tolist(),
+                }
+        if src_side == "left":
+            state["n_left"], state["n_right"] = 0, 1
+        else:
+            state["n_right"], state["n_left"] = 0, 1
+        return {"handled": True, "operation": "pour_simulated", "source_side": src_side, "destination_side": dst_side, "scenario": "simulated", "n_left": state.get("n_left"), "n_right": state.get("n_right"), "position": pos.tolist(), "quaternion_xyzw": quat.tolist()}
     return {"handled": False}
 
 

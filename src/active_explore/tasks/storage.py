@@ -440,6 +440,7 @@ def _mock_grasp(env, obj, task_state: dict[str, Any]) -> dict[str, Any]:
     if not env.robots:
         return {"handled": True, "operation": "pick_up", "success": False, "error": "missing_robot"}
     robot = env.robots[0]
+    _detach_grasp(task_state)
     grasp_point = robot.get_eef_position(robot.default_arm)
     obj.visual_only = True
     obj.set_position_orientation(grasp_point, SQUARE_ORI)
@@ -459,14 +460,56 @@ def _mock_grasp(env, obj, task_state: dict[str, Any]) -> dict[str, Any]:
     return {"handled": True, "operation": "pick_up", "object": obj.name, "success": True}
 
 
-def _mock_release(obj, task_state: dict[str, Any]) -> None:
+def _object_pose(obj) -> tuple[np.ndarray, np.ndarray, bool]:
+    pos, quat = obj.get_position_orientation()
+    pos_np = pos.cpu().numpy().copy() if hasattr(pos, "cpu") else np.asarray(pos).copy()
+    quat_np = quat.cpu().numpy().copy() if hasattr(quat, "cpu") else np.asarray(quat).copy()
+    return pos_np, quat_np, bool(getattr(obj, "visual_only", False))
+
+
+def _restore_object_pose(obj, pose: tuple[np.ndarray, np.ndarray, bool]) -> None:
+    pos, quat, visual_only = pose
+    obj.set_position_orientation(
+        position=th.tensor(pos, dtype=th.float32),
+        orientation=th.tensor(quat, dtype=th.float32),
+    )
+    obj.visual_only = visual_only
+    obj.keep_still()
+    _step_sim(10)
+
+
+def _detach_grasp(task_state: dict[str, Any]) -> None:
     joint_path = task_state.pop("ag_joint_prim_path", None)
     if joint_path:
         try:
             delete_or_deactivate_prim(joint_path)
         except Exception:
             pass
-    obj.set_position_orientation([100.0, 100.0, 100.0], SQUARE_ORI)
+
+
+def _attach_current_grasp(env, obj, task_state: dict[str, Any]) -> bool:
+    if not env.robots:
+        return False
+    robot = env.robots[0]
+    _detach_grasp(task_state)
+    try:
+        joint_prim_path = f"{robot.eef_links[robot.default_arm].prim_path}/ag_constraint"
+        joint = create_joint(
+            prim_path=joint_prim_path,
+            joint_type="FixedJoint",
+            body0=robot.eef_links[robot.default_arm].prim_path,
+            body1=obj.root_link.prim_path,
+            enabled=True,
+            exclude_from_articulation=True,
+        )
+    except Exception:
+        return False
+    task_state["ag_joint_prim_path"] = str(joint.GetPrimPath())
+    return True
+
+
+def _mock_release(obj, task_state: dict[str, Any]) -> None:
+    _detach_grasp(task_state)
     obj.visual_only = False
     obj.keep_still()
     _step_sim(10)
@@ -540,6 +583,8 @@ def execute_task_action(
         cont = scene.object_registry("name", cont_name) if cont_name else None
         success = False
         attempts = 0
+        was_held = bool(task_state.get("ag_joint_prim_path"))
+        restore_pose = _object_pose(obj) if obj is not None else None
         if obj is not None and cont is not None:
             _mock_release(obj, task_state)
             for attempts in range(1, PLACEMENT_RETRIES + 1):
@@ -554,6 +599,12 @@ def execute_task_action(
                 obj.set_position_orientation([300.0, 310.0, 100.0], SQUARE_ORI)
                 obj.keep_still()
                 _step_sim(5)
+            if not success and restore_pose is not None:
+                _restore_object_pose(obj, restore_pose)
+                if was_held:
+                    obj.visual_only = True
+                    if _attach_current_grasp(env, obj, task_state):
+                        _step_sim(5)
         if step_image_dir is not None:
             eye_path = _capture_robot_eye(env, task_state, step_image_dir / f"step_{step:03d}_robot_eye_place.png")
             if eye_path:
