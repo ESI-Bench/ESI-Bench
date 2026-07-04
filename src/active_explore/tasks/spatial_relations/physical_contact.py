@@ -7,9 +7,8 @@ import numpy as np
 import torch as th
 
 
-TASK_NAME = "triangle"
+TASK_NAME = "physical_contact"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
-VALID_ANSWERS = {"equilateral", "isosceles", "random triangle"}
 
 VALID_ACTIONS = {
     "move_forward",
@@ -31,15 +30,17 @@ def normalize_text(value: Any) -> str:
 
 
 def normalize_answer(value: Any) -> str:
-    text = normalize_text(value).lower().replace("_", " ").replace("-", " ")
-    if text in VALID_ANSWERS:
-        return text
-    if "equilateral" in text:
-        return "equilateral"
-    if "isosceles" in text:
-        return "isosceles"
-    if "random" in text or "scalene" in text or "all three distances are different" in text:
-        return "random triangle"
+    text = normalize_text(value).lower().replace("_", " ")
+    if text in {"yes", "y", "true", "touching", "physical contact"}:
+        return "yes"
+    if text in {"no", "n", "false", "not touching", "separate", "not in contact"}:
+        return "no"
+    if "not sure" in text or "unsure" in text or "unknown" in text or not text:
+        return "not sure"
+    if "not touching" in text or "not in contact" in text or "separate" in text:
+        return "no"
+    if "touching" in text or "contact" in text:
+        return "yes"
     return "not sure"
 
 
@@ -74,16 +75,27 @@ def pose_records(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def task_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
     objects = objects_map(payload)
     output = []
-    for key in ("obj1", "obj2", "obj3"):
+    for key in ("obj1", "obj2"):
         obj = objects.get(key)
         if not obj:
-            raise ValueError(f"Missing {key} in triangle JSON")
+            raise ValueError(f"Missing {key} in touching JSON")
         output.append(obj)
     return output
 
 
 def object_labels(payload: dict[str, Any]) -> list[str]:
     return [display_category(obj.get("category")) for obj in task_objects(payload)]
+
+
+def preprocess(payload: dict[str, Any], source_json: Path | None = None, config: Any | None = None) -> dict[str, Any]:
+    if normalize_answer(payload.get("_ground_truth")) not in {"yes", "no"}:
+        return {"skip_reason": "missing_or_invalid_ground_truth"}
+    if len(pose_records(payload)) == 0:
+        return {"skip_reason": "missing_camera_poses"}
+    objects = objects_map(payload)
+    if "obj1" not in objects or "obj2" not in objects:
+        return {"skip_reason": "missing_obj1_or_obj2"}
+    return {}
 
 
 ACTION_RESPONSE_SCHEMA = {
@@ -109,7 +121,7 @@ FINAL_RESPONSE_SCHEMA = {
 
 
 def scene_room(payload: dict[str, Any]) -> tuple[str, str]:
-    return payload["scene"], payload["room"]
+    return normalize_text(payload.get("scene")) or "unknown_scene", normalize_text(payload.get("room")) or "unknown_room"
 
 
 def question_id(payload: dict[str, Any], source_path: Path) -> str:
@@ -118,7 +130,7 @@ def question_id(payload: dict[str, Any], source_path: Path) -> str:
 
 def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
     output = []
-    for key, obj in zip(("obj1", "obj2", "obj3"), task_objects(payload), strict=True):
+    for key, obj in zip(("obj1", "obj2"), task_objects(payload), strict=True):
         spec = {
             "type": "DatasetObject",
             "name": normalize_text(obj.get("name")) or key,
@@ -139,28 +151,18 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def initial_camera(payload: dict[str, Any]) -> tuple[np.ndarray, np.ndarray, dict[str, Any]]:
     poses = pose_records(payload)
     if not poses:
-        raise ValueError("Missing camera_poses in triangle JSON")
-    chosen_index = 0
-    for index, pose in enumerate(poses):
-        position = pose.get("position") or [0.0, 0.0, 999.0]
-        if len(position) >= 3 and float(position[2]) < 0.1:
-            chosen_index = index
-            break
-    pose = poses[chosen_index]
+        raise ValueError("Missing camera_poses in touching JSON")
+    pose = poses[0]
     return (
         np.array(pose["position"], dtype=float),
         np.array(pose["quaternion_xyzw"], dtype=float),
-        {
-            "view_index": chosen_index,
-            "view": pose,
-            "selection": "first_floor_pose" if chosen_index != 0 else "first_pose",
-        },
+        {"view_index": 0, "view": pose, "selection": "first_camera_pose"},
     )
 
 
 def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any], task_state: dict[str, Any] | None = None) -> dict[str, Any]:
     restored = []
-    for key, obj_meta in zip(("obj1", "obj2", "obj3"), task_objects(payload), strict=True):
+    for key, obj_meta in zip(("obj1", "obj2"), task_objects(payload), strict=True):
         obj = env.scene.object_registry("name", key)
         if obj is None:
             continue
@@ -179,35 +181,32 @@ def build_system_prompt(
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
 ) -> str:
-    obj1, obj2, obj3 = object_labels(payload)
+    obj1, obj2 = object_labels(payload)
     return "\n".join(
         [
-            "You are an embodied spatial reasoning expert controlling a camera in a 3D indoor scene.",
-            f"TASK: Determine whether the {obj1}, {obj2}, and {obj3} form an equilateral triangle, an isosceles triangle, or a random triangle on the floor.",
+            "You are an embodied spatial reasoning agent exploring a 3D indoor scene.",
+            f"TASK: Determine whether the {obj1} and the {obj2} are touching each other.",
             "",
-            "Definitions:",
-            "  - equilateral: all three distances between objects are equal.",
-            "  - isosceles: exactly two distances are equal.",
-            "  - random triangle: all three distances are clearly different.",
-            "",
-            "Rules:",
-            "  - A top-down view is most reliable; use move_up with turn_down when useful.",
-            "  - Verify from multiple distinct viewpoints before committing.",
-            "  - Treat slight distance differences as equal; only choose random triangle when differences are obvious.",
-            "  - If you need more evidence, answer 'not sure' and keep exploring.",
-            "",
+            "You will receive up to 5 recent views followed by the CURRENT view.",
             "Output EXACTLY one valid JSON object and nothing else:",
             "{",
             '  "action": "<action_name>",',
-            '  "answer": "<equilateral, isosceles, random triangle, or not sure>",',
-            '  "reasoning": "<brief explanation>",',
+            '  "answer": "<yes, no, or not sure>",',
+            '  "reasoning": "<one sentence>",',
             '  "confidence": <float 0.0-1.0>',
             "}",
             "",
-            "Available camera actions:",
+            "Available actions:",
             "  move_forward | move_backward | move_left | move_right | move_up | move_down",
             "  turn_left | turn_right | turn_up | turn_down | stop",
-            f"Confidence threshold to conclude: {threshold:.2f}.",
+            "",
+            "Rules:",
+            "  - Verify from multiple viewpoints before committing.",
+            "  - Actively seek views that could disprove your current answer.",
+            "  - Do not judge from shadows or floor tiles.",
+            "  - Yes means physical contact between the two objects.",
+            "  - No means an actual visible gap separates the two objects.",
+            f"  - If confidence reaches {threshold:.2f}, you may stop with a conclusive yes/no answer.",
         ]
     )
 
@@ -217,14 +216,13 @@ def build_force_choice_prompt(
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
 ) -> str:
-    obj1, obj2, obj3 = object_labels(payload)
+    obj1, obj2 = object_labels(payload)
     return "\n".join(
         [
             "Exploration budget is exhausted.",
-            f"You must decide what triangle type is formed by the {obj1}, {obj2}, and {obj3}.",
+            f"You must decide whether the {obj1} and the {obj2} are touching.",
             "Do not answer 'not sure'.",
-            "Valid answers: equilateral, isosceles, random triangle.",
-            'Output EXACTLY: {"answer": "<triangle type>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',
+            'Output EXACTLY: {"answer": "<yes or no>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',
         ]
     )
 
@@ -248,7 +246,7 @@ def parse_model_output(
         **parsed,
         "action": action,
         "answer": answer,
-        "conclusive": answer in VALID_ANSWERS,
+        "conclusive": answer in {"yes", "no"},
         "confidence": max(0.0, min(1.0, confidence)),
         "reasoning": normalize_text(parsed.get("reasoning")) or "no reasoning provided",
     }
@@ -274,7 +272,7 @@ def should_stop(
 def resolve_final_answer(history: list[dict[str, Any]]) -> tuple[str, int]:
     for item in reversed(history):
         answer = normalize_answer(item.get("answer"))
-        if answer in VALID_ANSWERS:
+        if answer in {"yes", "no"}:
             return answer, int(item["step"])
     return "not sure", int(history[-1]["step"]) if history else -1
 
@@ -291,11 +289,12 @@ def score(
 ) -> dict[str, Any]:
     predicted = normalize_answer((final_answer or {}).get("answer"))
     target = normalize_answer(payload.get("_ground_truth"))
+    labels = object_labels(payload) if "obj1" in objects_map(payload) and "obj2" in objects_map(payload) else []
     return {
-        "task_type": "triangle",
+        "task_type": "touching",
         "question": normalize_text(payload.get("_question")),
-        "objects": object_labels(payload),
+        "objects": labels,
         "predicted_answer": predicted if predicted != "not sure" else None,
         "ground_truth": target,
-        "correct": predicted == target if predicted in VALID_ANSWERS and target in VALID_ANSWERS else None,
+        "correct": predicted == target if predicted in {"yes", "no"} and target in {"yes", "no"} else None,
     }

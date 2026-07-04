@@ -11,7 +11,6 @@ from omnigibson.objects.dataset_object import DatasetObject
 from utils import compute_exact_match, normalize_answer_for_eval, normalize_options, normalize_text
 
 
-TASK_NAME = "mirror"
 FULL_SCENE = True
 DEFAULT_MODEL = "gemini-2.5-flash"
 
@@ -172,10 +171,16 @@ def initial_camera(payload: dict[str, Any]) -> tuple[np.ndarray, np.ndarray, dic
     )
 
 
-def get_allowed_answers(payload: dict[str, Any]) -> list[str]:
+def small_task_label(payload: dict[str, Any], fallback: str = "Specular Reflection") -> str:
+    return normalize_text(payload.get("small_task") or payload.get("_hf_small_task") or fallback)
+
+
+def get_allowed_answers(payload: dict[str, Any], fallback_answers: list[str] | None = None) -> list[str]:
     options = _question_data(payload).get("options") or []
     if options:
         return [normalize_text(option) for option in options if normalize_text(option)]
+    if fallback_answers:
+        return [normalize_text(option) for option in fallback_answers if normalize_text(option)]
     task_type = normalize_text(payload.get("task_type"))
     if task_type == "mirror_object_reality":
         return ["Yes", "No"]
@@ -184,30 +189,43 @@ def get_allowed_answers(payload: dict[str, Any]) -> list[str]:
     return []
 
 
-def get_task_context(payload: dict[str, Any]) -> dict[str, Any]:
+def get_task_context(
+    payload: dict[str, Any],
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    fallback_answers: list[str] | None = None,
+) -> dict[str, Any]:
     qd = _question_data(payload)
+    label = normalize_text(task_label) or small_task_label(payload)
     return {
-        "task_type": normalize_text(payload.get("task_type")),
+        "task_type": normalize_text(payload.get("task_type") or label),
+        "small_task": label,
+        "task_focus": normalize_text(task_focus),
         "question": normalize_text(qd.get("question")),
         "options": qd.get("options"),
-        "allowed_answers": get_allowed_answers(payload),
+        "allowed_answers": get_allowed_answers(payload, fallback_answers=fallback_answers),
         "ground_truth": qd.get("answer"),
     }
 
 
-def build_system_prompt(
+def build_system_prompt_for_task(
     payload: dict[str, Any],
     threshold: float,
     min_steps: int,
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    fallback_answers: list[str] | None = None,
 ) -> str:
-    ctx = get_task_context(payload)
+    ctx = get_task_context(payload, task_label=task_label, task_focus=task_focus, fallback_answers=fallback_answers)
     lines = [
         "You are an embodied spatial reasoning agent exploring a 3D indoor scene with a mirror.",
-        f"Task type: {ctx['task_type']}",
+        f"Small task: {ctx['small_task']}",
         f"Question: {ctx['question']}",
     ]
+    if ctx["task_focus"]:
+        lines.append(f"Focus: {ctx['task_focus']}")
     if ctx["allowed_answers"]:
         lines.append("Options: " + ", ".join(ctx["allowed_answers"]))
     lines.extend([
@@ -233,12 +251,25 @@ def build_system_prompt(
     return "\n".join(lines)
 
 
-def build_force_choice_prompt(
+def build_system_prompt(
     payload: dict[str, Any],
+    threshold: float,
+    min_steps: int,
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
 ) -> str:
-    ctx = get_task_context(payload)
+    return build_system_prompt_for_task(payload, threshold, min_steps, camera_info, task_state)
+
+
+def build_force_choice_prompt_for_task(
+    payload: dict[str, Any],
+    camera_info: dict[str, Any] | None = None,
+    task_state: dict[str, Any] | None = None,
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    fallback_answers: list[str] | None = None,
+) -> str:
+    ctx = get_task_context(payload, task_label=task_label, task_focus=task_focus, fallback_answers=fallback_answers)
     lines = ["Exploration budget is exhausted.", f"Question: {ctx['question']}"]
     if ctx["allowed_answers"]:
         lines.append("You must choose exactly one final answer from: " + ", ".join(ctx["allowed_answers"]))
@@ -252,6 +283,14 @@ def build_force_choice_prompt(
         "}",
     ])
     return "\n".join(lines)
+
+
+def build_force_choice_prompt(
+    payload: dict[str, Any],
+    camera_info: dict[str, Any] | None = None,
+    task_state: dict[str, Any] | None = None,
+) -> str:
+    return build_force_choice_prompt_for_task(payload, camera_info, task_state)
 
 
 def parse_model_output(parsed: dict[str, Any]) -> dict[str, Any]:
@@ -295,19 +334,23 @@ def needs_force_final_choice(answer: str, stop_reason: str) -> bool:
     return normalize_text(answer).lower() in {"", "not sure", "unsure", "unknown"}
 
 
-def score(
+def score_for_task(
     payload: dict[str, Any],
     final_answer: dict[str, Any],
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    fallback_answers: list[str] | None = None,
 ) -> dict[str, Any]:
-    ctx = get_task_context(payload)
+    ctx = get_task_context(payload, task_label=task_label, task_focus=task_focus, fallback_answers=fallback_answers)
     prediction = (final_answer or {}).get("answer")
     ground_truth = ctx["ground_truth"]
     options = ctx["options"]
     exact_match = compute_exact_match(prediction, ground_truth, options)
     return {
         "task_type": ctx["task_type"],
+        "small_task": ctx["small_task"],
         "question": ctx["question"],
         "options": options,
         "ground_truth": ground_truth,
@@ -316,3 +359,12 @@ def score(
         "exact_match": exact_match,
         "correct": bool(exact_match),
     }
+
+
+def score(
+    payload: dict[str, Any],
+    final_answer: dict[str, Any],
+    camera_info: dict[str, Any] | None = None,
+    task_state: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    return score_for_task(payload, final_answer, camera_info, task_state)

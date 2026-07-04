@@ -12,7 +12,7 @@ from omnigibson.utils.usd_utils import create_joint, delete_or_deactivate_prim
 from scipy.spatial.transform import Rotation
 
 
-TASK_NAME = "stacking"
+TASK_NAME = "stacking_stability"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 SQUARE_ORI = [0.0, 0.0, 0.0, 1.0]

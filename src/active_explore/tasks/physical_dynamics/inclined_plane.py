@@ -9,7 +9,7 @@ import omnigibson as og
 import torch as th
 
 
-TASK_NAME = "slope"
+TASK_NAME = "inclined_plane"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 NUM_STEPS = 30

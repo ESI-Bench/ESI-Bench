@@ -8,7 +8,7 @@ from typing import Any
 import numpy as np
 
 
-TASK_NAME = "distance"
+TASK_NAME = "spatial_distance"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 VALID_ACTIONS = {

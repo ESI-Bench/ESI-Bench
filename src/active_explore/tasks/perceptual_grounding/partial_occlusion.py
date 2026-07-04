@@ -1,12 +1,13 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 
 
-TASK_NAME = "angle_confusion"
+TASK_NAME = "partial_occlusion"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 VALID_ACTIONS = {
@@ -22,82 +23,6 @@ VALID_ACTIONS = {
     "turn_down",
     "stop",
 }
-
-
-def normalize_text(value: Any) -> str:
-    return "" if value is None else str(value).strip()
-
-
-def normalize_category(value: Any) -> str:
-    return normalize_text(value).lower().replace(" ", "_")
-
-
-def display_category(value: Any) -> str:
-    return normalize_text(value).replace("_", " ")
-
-
-def keyed_list_to_map(items: object) -> dict[str, Any]:
-    output = {}
-    if isinstance(items, list):
-        for item in items:
-            if isinstance(item, dict) and normalize_text(item.get("_key")):
-                output[normalize_text(item.get("_key"))] = item
-    return output
-
-
-def objects_map(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    return keyed_list_to_map(payload.get("objects"))
-
-
-def view_records(payload: dict[str, Any]) -> list[dict[str, Any]]:
-    views = payload.get("views") or []
-    return [view for view in views if isinstance(view, dict)]
-
-
-def visibility_values(payload: dict[str, Any]) -> dict[int, bool]:
-    output = {}
-    for item in payload.get("exist_target_obj") or []:
-        if not isinstance(item, dict):
-            continue
-        indices = item.get("_indices") or []
-        if not indices:
-            continue
-        output[int(indices[0])] = bool(item.get("value"))
-    return output
-
-
-def target_object(payload: dict[str, Any]) -> dict[str, Any]:
-    target = objects_map(payload).get("target")
-    if not target:
-        raise ValueError("Missing target object in angle_confusion JSON")
-    return target
-
-
-def choices(payload: dict[str, Any], include_not_sure: bool = True) -> list[dict[str, str]]:
-    target = normalize_category(payload.get("_ground_truth") or target_object(payload).get("category"))
-    distractors = [normalize_category(item) for item in payload.get("target_confusable_with") or [] if normalize_text(item)]
-    categories = [target]
-    if distractors:
-        categories.append(distractors[0])
-    elif normalize_text(payload.get("_question")):
-        parts = normalize_text(payload["_question"]).split(":", 1)[-1].replace("?", "").split(" or ")
-        for part in parts:
-            cat = normalize_category(part)
-            if cat and cat not in categories:
-                categories.append(cat)
-            if len(categories) >= 2:
-                break
-    categories = categories[:2]
-    if len(categories) < 2:
-        raise ValueError("Missing angle_confusion answer choices")
-    base = [
-        {"letter": chr(ord("A") + index), "category": category, "display": display_category(category)}
-        for index, category in enumerate(categories)
-    ]
-    if include_not_sure:
-        base.append({"letter": chr(ord("A") + len(base)), "category": "not_sure", "display": "not sure"})
-    return base
-
 
 ACTION_RESPONSE_SCHEMA = {
     "type": "object",
@@ -122,51 +47,145 @@ FINAL_RESPONSE_SCHEMA = {
 }
 
 
+def normalize_text(value: Any) -> str:
+    return "" if value is None else str(value).strip()
+
+
+def normalize_category(value: Any) -> str:
+    return normalize_text(value).lower().replace(" ", "_")
+
+
+def display_category(value: Any) -> str:
+    return normalize_text(value).replace("_", " ")
+
+
+def keyed_list_to_map(items: object) -> dict[str, Any]:
+    if isinstance(items, dict):
+        return {normalize_text(key): value for key, value in items.items() if normalize_text(key)}
+    output = {}
+    if isinstance(items, list):
+        for item in items:
+            if isinstance(item, dict) and normalize_text(item.get("_key")):
+                output[normalize_text(item["_key"])] = item
+    return output
+
+
+def objects_map(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return keyed_list_to_map(payload.get("objects"))
+
+
+def view_records(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    views = payload.get("views") or []
+    if isinstance(views, dict):
+        return [value for value in views.values() if isinstance(value, dict)]
+    return [view for view in views if isinstance(view, dict)]
+
+
+def target_object(payload: dict[str, Any]) -> dict[str, Any]:
+    target = objects_map(payload).get("target")
+    if not target:
+        raise ValueError("Missing target object in occlusion JSON")
+    return target
+
+
+def occluder_object(payload: dict[str, Any]) -> dict[str, Any]:
+    occluder = objects_map(payload).get("occluder")
+    if not occluder:
+        raise ValueError("Missing occluder object in occlusion JSON")
+    return occluder
+
+
+def target_category(payload: dict[str, Any]) -> str:
+    return normalize_category(payload.get("_ground_truth") or target_object(payload).get("requested_category") or target_object(payload).get("category"))
+
+
+def _choices_from_question(question: str) -> list[str]:
+    text = normalize_text(question)
+    if not text:
+        return []
+    tail = text.split(":", 1)[-1]
+    tail = re.sub(r"\?$", "", tail).strip()
+    parts = re.split(r"\s+or\s+", tail, flags=re.IGNORECASE)
+    output = []
+    for part in parts:
+        cleaned = normalize_category(re.sub(r"^[^A-Za-z0-9_]+|[^A-Za-z0-9_]+$", "", part))
+        if cleaned and cleaned not in output:
+            output.append(cleaned)
+    return output[:2]
+
+
+def choice_categories(payload: dict[str, Any]) -> list[str]:
+    target = target_category(payload)
+    categories = _choices_from_question(normalize_text(payload.get("_question")))
+    if target and target not in categories:
+        categories.insert(0, target)
+
+    for distractor in payload.get("target_confusable_with") or []:
+        category = normalize_category(distractor)
+        if category and category != target and category not in categories:
+            categories.append(category)
+            break
+
+    categories = categories[:2]
+    if target and target not in categories:
+        categories = [target] + categories[:1]
+    if len(categories) < 2:
+        raise ValueError("Missing occlusion answer choices")
+    return categories
+
+
+def choices(payload: dict[str, Any], include_not_sure: bool = True) -> list[dict[str, str]]:
+    base = [
+        {"letter": chr(ord("A") + index), "category": category, "display": display_category(category)}
+        for index, category in enumerate(choice_categories(payload))
+    ]
+    if include_not_sure:
+        base.append({"letter": chr(ord("A") + len(base)), "category": "not_sure", "display": "not sure"})
+    return base
+
+
 def scene_room(payload: dict[str, Any]) -> tuple[str, str]:
     return payload["scene"], payload["room"]
 
 
 def question_id(payload: dict[str, Any], source_path: Path) -> str:
-    return source_path.stem
+    return normalize_text(payload.get("question_id")) or source_path.stem
 
 
 def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
-    target = target_object(payload)
-    return [
-        {
+    output = []
+    for key, fallback_name in (("target", "target_obj"), ("occluder", "occluder_obj")):
+        obj = objects_map(payload).get(key)
+        if not obj:
+            raise ValueError(f"Missing {key} object in occlusion JSON")
+        spec = {
             "type": "DatasetObject",
-            "name": "target_obj",
-            "category": target.get("requested_category") or target["category"],
-            "model": target["model"],
-            "position": target["position"],
-            "orientation": target["quaternion_xyzw"],
-            "scale": target.get("scale") or [1, 1, 1],
+            "name": normalize_text(obj.get("name")) or fallback_name,
+            "category": obj.get("requested_category") or obj["category"],
+            "model": obj["model"],
+            "position": obj["position"],
+            "orientation": obj["quaternion_xyzw"],
         }
-    ]
+        scale = obj.get("applied_scale") or obj.get("scale")
+        if scale is not None:
+            spec["scale"] = scale
+        output.append(spec)
+    return output
 
 
 def initial_camera(payload: dict[str, Any]) -> tuple[np.ndarray, np.ndarray, dict[str, Any]]:
-    visibility = visibility_values(payload)
     records = view_records(payload)
-    chosen_index = None
-    for index, view in enumerate(records):
-        if view.get("type") == "topdown":
-            continue
-        if visibility.get(index, False):
-            chosen_index = index
-            break
-    if chosen_index is None:
-        for index, view in enumerate(records):
-            if view.get("type") != "topdown":
-                chosen_index = index
-                break
-    if chosen_index is None:
-        raise ValueError("Missing non-topdown initial view in angle_confusion JSON")
-    view = records[chosen_index]
+    if not records:
+        raise ValueError("Missing views in occlusion JSON")
+    view = records[0]
     return (
         np.array(view["position"], dtype=float),
         np.array(view["quaternion_xyzw"], dtype=float),
-        {"view_index": chosen_index, "view": view},
+        {
+            "view_index": 0,
+            "view": view,
+            "selection": "first_view",
+        },
     )
 
 
@@ -178,12 +197,13 @@ def build_system_prompt(
     task_state: dict[str, Any] | None = None,
 ) -> str:
     choice_lines = "\n".join(f"{item['letter']}. {item['display']}" for item in choices(payload, include_not_sure=True))
+    occluder_display = display_category(occluder_object(payload).get("requested_category") or occluder_object(payload).get("category"))
     return "\n".join(
         [
             "You are an embodied visual recognition agent controlling a camera in a 3D indoor scene.",
-            "TASK: Identify the category of the target object near the center of the initial view.",
-            "This is a viewpoint-disambiguation task: actively explore different viewpoints of the same object.",
-            "Keep tracking that same central object region across steps.",
+            "TASK: Identify the category of the partially occluded target object.",
+            f"A {occluder_display} partially blocks the target near the center of the initial view.",
+            "Track that same central target region across steps and identify the hidden object, not the foreground blocker.",
             "",
             "You will receive up to 5 recent past views and then the CURRENT view (always last).",
             "At every step, choose ONE camera action and provide your current best answer.",
@@ -208,9 +228,11 @@ def build_system_prompt(
             "  - Always include all five fields.",
             "  - Pick exactly one listed choice.",
             f"  - If confidence reaches or exceeds {threshold:.2f}, the episode may stop after this step.",
-            "  - Prefer small turns and lateral moves to inspect multiple sides of the object.",
-            "  - Keep the target object in frame; if it leaves, recover it immediately.",
+            "  - Prefer small lateral moves and turns to reveal more of the occluded target.",
+            "  - Keep the target region in frame; if it leaves, recover it immediately.",
+            "  - Avoid repeating the same action back-to-back without a meaningful viewpoint change.",
             "  - Base your reasoning on the observed views, not on prior assumptions.",
+            "  - You may say 'not sure' if genuinely uncertain. Continue exploring to gather evidence.",
         ]
     )
 
@@ -224,7 +246,7 @@ def build_force_choice_prompt(
     return "\n".join(
         [
             "Exploration budget is exhausted.",
-            "You must commit to one of the target category choices.",
+            "You must identify the partially occluded target object.",
             "Do not answer 'not sure'.",
             "Answer choices:",
             choice_lines,
@@ -271,8 +293,17 @@ def parse_model_output(
     }
 
 
-def should_stop(parsed: dict[str, Any], history: list[dict[str, Any]], step: int, max_steps: int, min_steps: int, threshold: float) -> tuple[bool, str]:
-    if float(parsed.get("confidence", 0.0)) >= threshold:
+def should_stop(
+    parsed: dict[str, Any],
+    history: list[dict[str, Any]],
+    step: int,
+    max_steps: int,
+    min_steps: int,
+    threshold: float,
+) -> tuple[bool, str]:
+    confidence = float(parsed.get("confidence", 0.0))
+    answer = normalize_category(parsed.get("answer"))
+    if confidence >= threshold and answer != "not_sure":
         return True, "confidence_threshold"
     if step == max_steps:
         return True, "max_steps"
@@ -297,13 +328,16 @@ def score(
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    target = normalize_category(payload.get("_ground_truth") or target_object(payload).get("category"))
+    target = target_category(payload)
     predicted = normalize_category((final_answer or {}).get("answer"))
+    distractors = [category for category in choice_categories(payload) if category != target]
     return {
-        "task_type": "angle_confusion",
+        "task_type": "occlusion",
         "question": normalize_text(payload.get("_question")),
         "target_category": target,
-        "distractor_categories": [normalize_category(item) for item in payload.get("target_confusable_with") or []],
+        "occluder_category": normalize_category(occluder_object(payload).get("requested_category") or occluder_object(payload).get("category")),
+        "distractor_category": distractors[0] if distractors else None,
+        "choices": choices(payload, include_not_sure=False),
         "predicted_category": predicted if predicted != "not_sure" else None,
         "correct": predicted == target if predicted and predicted != "not_sure" else None,
     }

@@ -10,7 +10,7 @@ import torch as th
 from scipy.spatial.transform import Rotation
 
 
-TASK_NAME = "transparent"
+TASK_NAME = "material_transparency"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 VALID_ACTIONS = [

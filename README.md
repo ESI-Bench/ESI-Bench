@@ -70,7 +70,7 @@ esi-bench/
 ├── src/
 │   ├── active_explore/                # Active exploration runner
 │   │   ├── main.py
-│   │   └── tasks/                     # Per-task modules
+│   │   └── tasks/                     # Active task modules grouped by benchmark category
 │   └── dataset_generation/            # Dataset construction scripts
 │       └── (see Dataset Generation section below)
 ├── outputs/                           # Results and step images (git-ignored)
@@ -123,7 +123,7 @@ Run from the repository root:
 
 ```bash
 python src/main.py \
-  --task counting \
+  --task spatial_segmentation \
   --metadata "dataset/json_clean/Enumerative Perception/Spatial Segmentation/Merom_0_int/living_room_0/q_000.json" \
   --provider gemini \
   --model gemini-3.1-pro-preview \
@@ -139,7 +139,7 @@ For GPT:
 
 ```bash
 python src/main.py \
-  --task cognitivemap \
+  --task connectivity \
   --metadata "dataset/json_clean/Cognitive Mapping.json" \
   --question-index 0 \
   --provider gpt \
@@ -154,17 +154,20 @@ python src/main.py \
 
 `--metadata` can be a single canonical question JSON under `dataset/json_clean`, or a big-task summary JSON such as `dataset/json_clean/Cognitive Mapping.json` containing `json_paths`. Use `--question-index` to select from a summary list.
 
-See [`docs/run_tasks.md`](docs/run_tasks.md) for the per-small-task `--task`, summary JSON, and example `--question-index` mapping.
+See [`docs/run_tasks.md`](docs/run_tasks.md) for the full per-small-task `--task` list, summary JSON inputs, and example mappings.
 
 ### Task Names
 
-`--task` names are the module names under `src/active_explore/tasks`:
+`--task` names are now the 29 small-task names. For example:
 
 ```text
-action, angle_confusion, cognitivemap, counting, deformable, distance,
-line, mirror, multiagent, occlusion, pour, size, slope, stacking,
-storage, touching, transparent, triangle, unobserved_changes
+action_order_inference, connectivity, long_term_navigation,
+category_ambiguity, spatial_segmentation, dimensional_size,
+material_transparency, rigid_containment, geometric_configuration,
+correspondence, agent_observation, unobserved_change
 ```
+
+The legacy runner names from older scripts, such as `counting`, `cognitivemap`, or `mirror`, are still accepted as compatibility aliases, but new commands should use the small-task names. When a question JSON is provided, the runner also validates the JSON's `big_task` / `small_task` metadata and dispatches to the matching module under `src/active_explore/tasks/<category>/<small_task>.py`.
 
 The input JSON directories follow the ESI-Bench table categories:
 

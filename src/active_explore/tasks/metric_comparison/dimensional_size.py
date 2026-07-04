@@ -12,7 +12,7 @@ from omnigibson.utils.usd_utils import create_joint, delete_or_deactivate_prim
 from scipy.spatial.transform import Rotation
 
 
-TASK_NAME = "size"
+TASK_NAME = "dimensional_size"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 MOVE_STEP = 0.25

@@ -4,10 +4,12 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+import torch as th
 
 
-TASK_NAME = "line"
+TASK_NAME = "geometric_configuration"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
+VALID_ANSWERS = {"equilateral", "isosceles", "random triangle"}
 
 VALID_ACTIONS = {
     "move_forward",
@@ -29,17 +31,15 @@ def normalize_text(value: Any) -> str:
 
 
 def normalize_answer(value: Any) -> str:
-    text = normalize_text(value).lower().replace("_", " ")
-    if text in {"yes", "y", "true", "in a line", "collinear"}:
-        return "yes"
-    if text in {"no", "n", "false", "not in a line", "not collinear", "non-collinear", "non collinear"}:
-        return "no"
-    if "not sure" in text or "unsure" in text or "unknown" in text or not text:
-        return "not sure"
-    if "not collinear" in text or "not in a line" in text:
-        return "no"
-    if "collinear" in text or "in a line" in text or "straight line" in text:
-        return "yes"
+    text = normalize_text(value).lower().replace("_", " ").replace("-", " ")
+    if text in VALID_ANSWERS:
+        return text
+    if "equilateral" in text:
+        return "equilateral"
+    if "isosceles" in text:
+        return "isosceles"
+    if "random" in text or "scalene" in text or "all three distances are different" in text:
+        return "random triangle"
     return "not sure"
 
 
@@ -77,7 +77,7 @@ def task_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
     for key in ("obj1", "obj2", "obj3"):
         obj = objects.get(key)
         if not obj:
-            raise ValueError(f"Missing {key} in line JSON")
+            raise ValueError(f"Missing {key} in triangle JSON")
         output.append(obj)
     return output
 
@@ -127,8 +127,11 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
             "position": obj["position"],
             "orientation": obj["quaternion_xyzw"],
         }
-        if obj.get("scale") is not None:
-            spec["scale"] = obj["scale"]
+        scale = obj.get("scale")
+        if isinstance(scale, (int, float)):
+            spec["scale"] = [scale, scale, scale]
+        elif scale is not None:
+            spec["scale"] = scale
         output.append(spec)
     return output
 
@@ -136,17 +139,37 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def initial_camera(payload: dict[str, Any]) -> tuple[np.ndarray, np.ndarray, dict[str, Any]]:
     poses = pose_records(payload)
     if not poses:
-        raise ValueError("Missing camera_poses in line JSON")
-    pose = poses[0]
+        raise ValueError("Missing camera_poses in triangle JSON")
+    chosen_index = 0
+    for index, pose in enumerate(poses):
+        position = pose.get("position") or [0.0, 0.0, 999.0]
+        if len(position) >= 3 and float(position[2]) < 0.1:
+            chosen_index = index
+            break
+    pose = poses[chosen_index]
     return (
         np.array(pose["position"], dtype=float),
         np.array(pose["quaternion_xyzw"], dtype=float),
         {
-            "view_index": 0,
+            "view_index": chosen_index,
             "view": pose,
-            "selection": "first_camera_pose",
+            "selection": "first_floor_pose" if chosen_index != 0 else "first_pose",
         },
     )
+
+
+def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any], task_state: dict[str, Any] | None = None) -> dict[str, Any]:
+    restored = []
+    for key, obj_meta in zip(("obj1", "obj2", "obj3"), task_objects(payload), strict=True):
+        obj = env.scene.object_registry("name", key)
+        if obj is None:
+            continue
+        obj.set_position_orientation(
+            position=th.tensor(obj_meta["position"], dtype=th.float32),
+            orientation=th.tensor(obj_meta["quaternion_xyzw"], dtype=th.float32),
+        )
+        restored.append(key)
+    return {"restored_objects": restored}
 
 
 def build_system_prompt(
@@ -160,20 +183,23 @@ def build_system_prompt(
     return "\n".join(
         [
             "You are an embodied spatial reasoning expert controlling a camera in a 3D indoor scene.",
-            f"TASK: Determine whether the {obj1}, {obj2}, and {obj3} are arranged in a straight line on the floor.",
+            f"TASK: Determine whether the {obj1}, {obj2}, and {obj3} form an equilateral triangle, an isosceles triangle, or a random triangle on the floor.",
             "",
-            "STRICT RULES:",
-            "1. Visual parallax can make objects appear collinear from one angle but not another.",
-            "2. Actively verify from multiple distinct viewpoints before committing.",
-            "3. Use move_up with turn_down for a more top-down view when useful.",
-            "4. Answer yes only if the three object centers appear collinear on the floor.",
-            "5. Answer no if one object is clearly off the line formed by the other two.",
-            "6. If you need more evidence, answer 'not sure' and keep exploring.",
+            "Definitions:",
+            "  - equilateral: all three distances between objects are equal.",
+            "  - isosceles: exactly two distances are equal.",
+            "  - random triangle: all three distances are clearly different.",
+            "",
+            "Rules:",
+            "  - A top-down view is most reliable; use move_up with turn_down when useful.",
+            "  - Verify from multiple distinct viewpoints before committing.",
+            "  - Treat slight distance differences as equal; only choose random triangle when differences are obvious.",
+            "  - If you need more evidence, answer 'not sure' and keep exploring.",
             "",
             "Output EXACTLY one valid JSON object and nothing else:",
             "{",
             '  "action": "<action_name>",',
-            '  "answer": "<yes, no, or not sure>",',
+            '  "answer": "<equilateral, isosceles, random triangle, or not sure>",',
             '  "reasoning": "<brief explanation>",',
             '  "confidence": <float 0.0-1.0>',
             "}",
@@ -181,9 +207,7 @@ def build_system_prompt(
             "Available camera actions:",
             "  move_forward | move_backward | move_left | move_right | move_up | move_down",
             "  turn_left | turn_right | turn_up | turn_down | stop",
-            "",
             f"Confidence threshold to conclude: {threshold:.2f}.",
-            "Use stop only when you are ready to finish with a conclusive yes/no answer.",
         ]
     )
 
@@ -197,9 +221,10 @@ def build_force_choice_prompt(
     return "\n".join(
         [
             "Exploration budget is exhausted.",
-            f"You must decide whether the {obj1}, {obj2}, and {obj3} are in a straight line on the floor.",
+            f"You must decide what triangle type is formed by the {obj1}, {obj2}, and {obj3}.",
             "Do not answer 'not sure'.",
-            'Output EXACTLY: {"answer": "<yes or no>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',
+            "Valid answers: equilateral, isosceles, random triangle.",
+            'Output EXACTLY: {"answer": "<triangle type>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',
         ]
     )
 
@@ -223,7 +248,7 @@ def parse_model_output(
         **parsed,
         "action": action,
         "answer": answer,
-        "conclusive": answer in {"yes", "no"},
+        "conclusive": answer in VALID_ANSWERS,
         "confidence": max(0.0, min(1.0, confidence)),
         "reasoning": normalize_text(parsed.get("reasoning")) or "no reasoning provided",
     }
@@ -249,7 +274,7 @@ def should_stop(
 def resolve_final_answer(history: list[dict[str, Any]]) -> tuple[str, int]:
     for item in reversed(history):
         answer = normalize_answer(item.get("answer"))
-        if answer in {"yes", "no"}:
+        if answer in VALID_ANSWERS:
             return answer, int(item["step"])
     return "not sure", int(history[-1]["step"]) if history else -1
 
@@ -267,10 +292,10 @@ def score(
     predicted = normalize_answer((final_answer or {}).get("answer"))
     target = normalize_answer(payload.get("_ground_truth"))
     return {
-        "task_type": "line",
+        "task_type": "triangle",
         "question": normalize_text(payload.get("_question")),
         "objects": object_labels(payload),
         "predicted_answer": predicted if predicted != "not sure" else None,
         "ground_truth": target,
-        "correct": predicted == target if predicted in {"yes", "no"} and target in {"yes", "no"} else None,
+        "correct": predicted == target if predicted in VALID_ANSWERS and target in VALID_ANSWERS else None,
     }

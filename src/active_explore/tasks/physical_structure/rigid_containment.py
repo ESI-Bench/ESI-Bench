@@ -11,7 +11,7 @@ from omnigibson.utils.object_state_utils import sample_kinematics
 from omnigibson.utils.usd_utils import create_joint, delete_or_deactivate_prim
 
 
-TASK_NAME = "storage"
+TASK_NAME = "rigid_containment"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 SQUARE_ORI = [0.0, 0.0, 0.0, 1.0]

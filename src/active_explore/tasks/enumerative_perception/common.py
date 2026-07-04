@@ -11,7 +11,6 @@ import torch as th
 import yaml
 
 
-TASK_NAME = "counting"
 DEFAULT_MODEL = "gemini-2.5-flash"
 SOFTACC_K = 3
 
@@ -69,35 +68,78 @@ def normalize_count_answer(value: Any, allow_not_sure: bool = True) -> str:
     return text
 
 
-def get_context(payload: dict[str, Any]) -> dict[str, Any]:
+def small_task_label(payload: dict[str, Any], fallback: str = "Enumerative Perception") -> str:
+    return normalize_text(payload.get("small_task") or payload.get("_hf_small_task") or fallback)
+
+
+def get_context(
+    payload: dict[str, Any],
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    task_case: str | None = None,
+) -> dict[str, Any]:
     question_data = payload.get("question_data", {})
     render = question_data.get("render", {})
     count_object = question_data.get("count_object") or {}
+    label = normalize_text(task_label) or small_task_label(payload)
+    case_name = normalize_text(task_case) or normalize_text(question_data.get("task_type") or payload.get("task_type"))
     return {
         "question": normalize_text(question_data.get("question")),
         "count_target": normalize_text(question_data.get("count_target") or count_object.get("category")),
         "count_target_display": normalize_text(count_object.get("display_name") or question_data.get("count_target")),
         "render_target_category": normalize_text(render.get("target_category")),
-        "task_type": normalize_text(payload.get("task_type") or question_data.get("task_type")),
+        "task_type": normalize_text(payload.get("task_type") or question_data.get("task_type") or case_name or label),
+        "small_task": label,
+        "task_case": case_name,
+        "task_focus": normalize_text(task_focus),
         "options": [normalize_text(opt) for opt in question_data.get("options", []) if normalize_text(opt)],
     }
 
 
-def build_system_prompt(
+def normalized_task_rules(task_rules: list[str] | tuple[str, ...] | None = None) -> list[str]:
+    return [normalize_text(rule) for rule in (task_rules or []) if normalize_text(rule)]
+
+
+def resolved_object_counts(payload: dict[str, Any]) -> dict[str, int]:
+    resolved = payload.get("question_data", {}).get("render", {}).get("resolved_objects") or {}
+    return {
+        group_name: len(resolved.get(group_name) or [])
+        for group_name in ("targets", "confusers", "containers")
+        if resolved.get(group_name)
+    }
+
+
+def build_system_prompt_for_task(
     payload: dict[str, Any],
     threshold: float,
     min_steps: int,
     camera_info: dict[str, Any] | None = None,
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    task_case: str | None = None,
+    task_rules: list[str] | tuple[str, ...] | None = None,
 ) -> str:
-    ctx = get_context(payload)
+    ctx = get_context(payload, task_label=task_label, task_focus=task_focus, task_case=task_case)
     semantic_target = ctx["count_target_display"] or ctx["count_target"]
+    object_counts = resolved_object_counts(payload)
     lines = [
         "You are an embodied visual counting agent exploring a 3D indoor scene.",
-        f"Task type: {ctx['task_type']}",
+        f"Small task: {ctx['small_task']}",
         f"Question: {ctx['question']}",
     ]
+    if ctx["task_focus"]:
+        lines.append(f"Focus: {ctx['task_focus']}")
+    if ctx["task_case"]:
+        lines.append(f"Case: {ctx['task_case']}")
+    for rule in normalized_task_rules(task_rules):
+        lines.append(f"Task rule: {rule}")
     if semantic_target:
         lines.append(f"Requested semantic target category: {semantic_target}")
+    if object_counts:
+        lines.append(
+            "Resolved object groups in this generated case: "
+            + ", ".join(f"{name}={count}" for name, count in sorted(object_counts.items()))
+        )
     if semantic_target and ctx["render_target_category"] and ctx["render_target_category"] != ctx["count_target"]:
         lines.append(
             "Important: in this simulator reconstruction, the visible proxy asset category for the target is "
@@ -129,14 +171,34 @@ def build_system_prompt(
     return "\n".join(lines)
 
 
-def build_force_choice_prompt(payload: dict[str, Any], camera_info: dict[str, Any] | None = None) -> str:
-    ctx = get_context(payload)
+def build_system_prompt(
+    payload: dict[str, Any],
+    threshold: float,
+    min_steps: int,
+    camera_info: dict[str, Any] | None = None,
+) -> str:
+    return build_system_prompt_for_task(payload, threshold, min_steps, camera_info)
+
+
+def build_force_choice_prompt_for_task(
+    payload: dict[str, Any],
+    camera_info: dict[str, Any] | None = None,
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    task_case: str | None = None,
+    task_rules: list[str] | tuple[str, ...] | None = None,
+) -> str:
+    ctx = get_context(payload, task_label=task_label, task_focus=task_focus, task_case=task_case)
     semantic_target = ctx["count_target_display"] or ctx["count_target"]
     lines = ["Exploration budget is exhausted.", f"Question: {ctx['question']}"]
     if semantic_target:
         lines.append(f"Count target: {semantic_target}")
     if semantic_target and ctx["render_target_category"] and ctx["render_target_category"] != ctx["count_target"]:
         lines.append(f"Visible proxy asset category: {ctx['render_target_category']}")
+    if ctx["task_case"]:
+        lines.append(f"Case: {ctx['task_case']}")
+    for rule in normalized_task_rules(task_rules):
+        lines.append(f"Task rule: {rule}")
     lines.extend([
         "You must output one final positive integer count.",
         "Do not answer 0.",
@@ -145,6 +207,10 @@ def build_force_choice_prompt(payload: dict[str, Any], camera_info: dict[str, An
         '{"answer": "<positive integer>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',
     ])
     return "\n".join(lines)
+
+
+def build_force_choice_prompt(payload: dict[str, Any], camera_info: dict[str, Any] | None = None) -> str:
+    return build_force_choice_prompt_for_task(payload, camera_info)
 
 
 def parse_model_output(parsed: dict[str, Any]) -> dict[str, Any]:
@@ -521,6 +587,7 @@ def score(
     final_answer: dict[str, Any],
     camera_info: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    ctx = get_context(payload)
     pred = finalize_answer((final_answer or {}).get("answer"))
     gt = ground_truth(payload)
     pred_num = int(pred) if re.fullmatch(r"-?\d+", pred or "") else None
@@ -528,6 +595,8 @@ def score(
     abs_error = abs(pred_num - gt_num) if pred_num is not None and gt_num is not None else None
     soft_score = max(0.0, 1.0 - abs_error / float(SOFTACC_K)) if abs_error is not None else None
     return {
+        "task_type": ctx["task_type"],
+        "small_task": ctx["small_task"],
         "ground_truth": gt,
         "ground_truth_number": gt_num,
         "predicted_number": pred_num,
@@ -535,3 +604,22 @@ def score(
         "soft_score": soft_score,
         "correct": pred == gt if pred else None,
     }
+
+
+def score_for_task(
+    payload: dict[str, Any],
+    final_answer: dict[str, Any],
+    camera_info: dict[str, Any] | None = None,
+    task_label: str | None = None,
+    task_focus: str | None = None,
+    task_case: str | None = None,
+    task_rules: list[str] | tuple[str, ...] | None = None,
+) -> dict[str, Any]:
+    result = score(payload, final_answer, camera_info)
+    ctx = get_context(payload, task_label=task_label, task_focus=task_focus, task_case=task_case)
+    result["task_type"] = ctx["task_type"]
+    result["small_task"] = ctx["small_task"]
+    result["task_case"] = ctx["task_case"]
+    result["task_rules"] = normalized_task_rules(task_rules)
+    result["resolved_object_counts"] = resolved_object_counts(payload)
+    return result

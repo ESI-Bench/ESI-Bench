@@ -27,6 +27,7 @@ from scipy.spatial.transform import Rotation
 
 from models.gemini import GeminiModel
 from models.gpt import GPTModel
+from tasks._registry import module_for_name, module_for_payload
 
 
 gm.ENABLE_FLATCACHE = False
@@ -88,7 +89,7 @@ def normalize_text(value: Any) -> str:
 
 def parse_args(argv: list[str] | None = None) -> ActiveExploreConfig:
     parser = argparse.ArgumentParser(description="Unified BEHAVIOR-NEW active exploration pipeline.")
-    parser.add_argument("--task", required=True, help="Task module name under active_explore/tasks, e.g. counting or action.")
+    parser.add_argument("--task", required=True, help="Small-task name, e.g. spatial_segmentation or rigid_containment.")
     parser.add_argument("--metadata", type=Path, required=True, help="Metadata JSON containing json_paths, or a single question JSON.")
     parser.add_argument("--question-index", type=int, default=0, help="Question index for metadata json_paths.")
     parser.add_argument("--json-root", type=Path, default=None, help="Optional root used to resolve relative json_paths.")
@@ -128,7 +129,12 @@ def parse_args(argv: list[str] | None = None) -> ActiveExploreConfig:
 
 
 def load_task_module(task_name: str):
-    return importlib.import_module(f"tasks.{task_name}")
+    return importlib.import_module(module_for_name(task_name))
+
+
+def load_task_module_for_payload(task_name: str, payload: dict[str, Any]):
+    module_name = module_for_payload(payload) or module_for_name(task_name)
+    return importlib.import_module(module_name)
 
 
 def build_model_client(provider: str, api_key: str | None, model: str):
@@ -935,11 +941,11 @@ def task_cleanup_runtime(task_module, env, payload: dict[str, Any], task_state: 
 
 
 def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
-    task_module = load_task_module(config.task)
     selected_question = select_question(config.metadata, config.question_index, config.json_root)
     question_json = selected_question.source_path
     source_label = selected_question.source_label
     payload = selected_question.payload
+    task_module = load_task_module_for_payload(config.task, payload)
 
     output_path = output_path_for(task_module, payload, question_json, config.results_root)
     if output_path.exists() and not config.overwrite:

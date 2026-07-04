@@ -4,10 +4,9 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-import torch as th
 
 
-TASK_NAME = "touching"
+TASK_NAME = "linear_alignment"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 VALID_ACTIONS = {
@@ -31,15 +30,15 @@ def normalize_text(value: Any) -> str:
 
 def normalize_answer(value: Any) -> str:
     text = normalize_text(value).lower().replace("_", " ")
-    if text in {"yes", "y", "true", "touching", "physical contact"}:
+    if text in {"yes", "y", "true", "in a line", "collinear"}:
         return "yes"
-    if text in {"no", "n", "false", "not touching", "separate", "not in contact"}:
+    if text in {"no", "n", "false", "not in a line", "not collinear", "non-collinear", "non collinear"}:
         return "no"
     if "not sure" in text or "unsure" in text or "unknown" in text or not text:
         return "not sure"
-    if "not touching" in text or "not in contact" in text or "separate" in text:
+    if "not collinear" in text or "not in a line" in text:
         return "no"
-    if "touching" in text or "contact" in text:
+    if "collinear" in text or "in a line" in text or "straight line" in text:
         return "yes"
     return "not sure"
 
@@ -75,27 +74,16 @@ def pose_records(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def task_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
     objects = objects_map(payload)
     output = []
-    for key in ("obj1", "obj2"):
+    for key in ("obj1", "obj2", "obj3"):
         obj = objects.get(key)
         if not obj:
-            raise ValueError(f"Missing {key} in touching JSON")
+            raise ValueError(f"Missing {key} in line JSON")
         output.append(obj)
     return output
 
 
 def object_labels(payload: dict[str, Any]) -> list[str]:
     return [display_category(obj.get("category")) for obj in task_objects(payload)]
-
-
-def preprocess(payload: dict[str, Any], source_json: Path | None = None, config: Any | None = None) -> dict[str, Any]:
-    if normalize_answer(payload.get("_ground_truth")) not in {"yes", "no"}:
-        return {"skip_reason": "missing_or_invalid_ground_truth"}
-    if len(pose_records(payload)) == 0:
-        return {"skip_reason": "missing_camera_poses"}
-    objects = objects_map(payload)
-    if "obj1" not in objects or "obj2" not in objects:
-        return {"skip_reason": "missing_obj1_or_obj2"}
-    return {}
 
 
 ACTION_RESPONSE_SCHEMA = {
@@ -121,7 +109,7 @@ FINAL_RESPONSE_SCHEMA = {
 
 
 def scene_room(payload: dict[str, Any]) -> tuple[str, str]:
-    return normalize_text(payload.get("scene")) or "unknown_scene", normalize_text(payload.get("room")) or "unknown_room"
+    return payload["scene"], payload["room"]
 
 
 def question_id(payload: dict[str, Any], source_path: Path) -> str:
@@ -130,7 +118,7 @@ def question_id(payload: dict[str, Any], source_path: Path) -> str:
 
 def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
     output = []
-    for key, obj in zip(("obj1", "obj2"), task_objects(payload), strict=True):
+    for key, obj in zip(("obj1", "obj2", "obj3"), task_objects(payload), strict=True):
         spec = {
             "type": "DatasetObject",
             "name": normalize_text(obj.get("name")) or key,
@@ -139,11 +127,8 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
             "position": obj["position"],
             "orientation": obj["quaternion_xyzw"],
         }
-        scale = obj.get("scale")
-        if isinstance(scale, (int, float)):
-            spec["scale"] = [scale, scale, scale]
-        elif scale is not None:
-            spec["scale"] = scale
+        if obj.get("scale") is not None:
+            spec["scale"] = obj["scale"]
         output.append(spec)
     return output
 
@@ -151,27 +136,17 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def initial_camera(payload: dict[str, Any]) -> tuple[np.ndarray, np.ndarray, dict[str, Any]]:
     poses = pose_records(payload)
     if not poses:
-        raise ValueError("Missing camera_poses in touching JSON")
+        raise ValueError("Missing camera_poses in line JSON")
     pose = poses[0]
     return (
         np.array(pose["position"], dtype=float),
         np.array(pose["quaternion_xyzw"], dtype=float),
-        {"view_index": 0, "view": pose, "selection": "first_camera_pose"},
+        {
+            "view_index": 0,
+            "view": pose,
+            "selection": "first_camera_pose",
+        },
     )
-
-
-def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any], task_state: dict[str, Any] | None = None) -> dict[str, Any]:
-    restored = []
-    for key, obj_meta in zip(("obj1", "obj2"), task_objects(payload), strict=True):
-        obj = env.scene.object_registry("name", key)
-        if obj is None:
-            continue
-        obj.set_position_orientation(
-            position=th.tensor(obj_meta["position"], dtype=th.float32),
-            orientation=th.tensor(obj_meta["quaternion_xyzw"], dtype=th.float32),
-        )
-        restored.append(key)
-    return {"restored_objects": restored}
 
 
 def build_system_prompt(
@@ -181,32 +156,34 @@ def build_system_prompt(
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
 ) -> str:
-    obj1, obj2 = object_labels(payload)
+    obj1, obj2, obj3 = object_labels(payload)
     return "\n".join(
         [
-            "You are an embodied spatial reasoning agent exploring a 3D indoor scene.",
-            f"TASK: Determine whether the {obj1} and the {obj2} are touching each other.",
+            "You are an embodied spatial reasoning expert controlling a camera in a 3D indoor scene.",
+            f"TASK: Determine whether the {obj1}, {obj2}, and {obj3} are arranged in a straight line on the floor.",
             "",
-            "You will receive up to 5 recent views followed by the CURRENT view.",
+            "STRICT RULES:",
+            "1. Visual parallax can make objects appear collinear from one angle but not another.",
+            "2. Actively verify from multiple distinct viewpoints before committing.",
+            "3. Use move_up with turn_down for a more top-down view when useful.",
+            "4. Answer yes only if the three object centers appear collinear on the floor.",
+            "5. Answer no if one object is clearly off the line formed by the other two.",
+            "6. If you need more evidence, answer 'not sure' and keep exploring.",
+            "",
             "Output EXACTLY one valid JSON object and nothing else:",
             "{",
             '  "action": "<action_name>",',
             '  "answer": "<yes, no, or not sure>",',
-            '  "reasoning": "<one sentence>",',
+            '  "reasoning": "<brief explanation>",',
             '  "confidence": <float 0.0-1.0>',
             "}",
             "",
-            "Available actions:",
+            "Available camera actions:",
             "  move_forward | move_backward | move_left | move_right | move_up | move_down",
             "  turn_left | turn_right | turn_up | turn_down | stop",
             "",
-            "Rules:",
-            "  - Verify from multiple viewpoints before committing.",
-            "  - Actively seek views that could disprove your current answer.",
-            "  - Do not judge from shadows or floor tiles.",
-            "  - Yes means physical contact between the two objects.",
-            "  - No means an actual visible gap separates the two objects.",
-            f"  - If confidence reaches {threshold:.2f}, you may stop with a conclusive yes/no answer.",
+            f"Confidence threshold to conclude: {threshold:.2f}.",
+            "Use stop only when you are ready to finish with a conclusive yes/no answer.",
         ]
     )
 
@@ -216,11 +193,11 @@ def build_force_choice_prompt(
     camera_info: dict[str, Any] | None = None,
     task_state: dict[str, Any] | None = None,
 ) -> str:
-    obj1, obj2 = object_labels(payload)
+    obj1, obj2, obj3 = object_labels(payload)
     return "\n".join(
         [
             "Exploration budget is exhausted.",
-            f"You must decide whether the {obj1} and the {obj2} are touching.",
+            f"You must decide whether the {obj1}, {obj2}, and {obj3} are in a straight line on the floor.",
             "Do not answer 'not sure'.",
             'Output EXACTLY: {"answer": "<yes or no>", "confidence": <float 0.0-1.0>, "reasoning": "<brief explanation>"}',
         ]
@@ -289,11 +266,10 @@ def score(
 ) -> dict[str, Any]:
     predicted = normalize_answer((final_answer or {}).get("answer"))
     target = normalize_answer(payload.get("_ground_truth"))
-    labels = object_labels(payload) if "obj1" in objects_map(payload) and "obj2" in objects_map(payload) else []
     return {
-        "task_type": "touching",
+        "task_type": "line",
         "question": normalize_text(payload.get("_question")),
-        "objects": labels,
+        "objects": object_labels(payload),
         "predicted_answer": predicted if predicted != "not sure" else None,
         "ground_truth": target,
         "correct": predicted == target if predicted in {"yes", "no"} and target in {"yes", "no"} else None,

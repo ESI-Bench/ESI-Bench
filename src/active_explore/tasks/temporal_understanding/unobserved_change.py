@@ -9,7 +9,7 @@ import numpy as np
 from utils import normalize_text, resolve_path
 
 
-TASK_NAME = "unobserved_changes"
+TASK_NAME = "unobserved_change"
 FULL_SCENE = True
 DEFAULT_MODEL = "gemini-2.5-flash"
 

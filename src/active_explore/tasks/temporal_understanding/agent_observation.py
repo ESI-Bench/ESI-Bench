@@ -8,7 +8,7 @@ import numpy as np
 import torch as th
 
 
-TASK_NAME = "multiagent"
+TASK_NAME = "agent_observation"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 
 VALID_ACTIONS = {

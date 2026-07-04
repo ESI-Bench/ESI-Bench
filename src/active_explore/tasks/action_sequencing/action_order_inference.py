@@ -8,7 +8,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 
 
-TASK_NAME = "action"
+TASK_NAME = "action_order_inference"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 SQUARE_ORI = [0.0, 0.0, 0.0, 1.0]
 

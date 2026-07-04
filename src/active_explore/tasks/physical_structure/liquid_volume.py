@@ -23,7 +23,7 @@ gm.USE_ENCRYPTED_ASSETS = True
 gm.USE_GPU_DYNAMICS = True
 gm.ENABLE_FLATCACHE = False
 
-TASK_NAME = "pour"
+TASK_NAME = "liquid_volume"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 MAX_BBOX = 0.3
 OBJECT_GAP = 0.3
