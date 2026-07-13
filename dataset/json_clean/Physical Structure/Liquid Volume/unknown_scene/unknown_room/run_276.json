@@ -10,5 +10,115 @@
   "answer_type": "choice",
   "options_json": "[\"bowl\",\"mug\"]",
   "image_paths_json": "[]",
-  "metadata_json": "{\"answer\":\"obj1 poured into obj2 but obj1 still has leftover water\",\"capacity_diff_measured\":94,\"final_particles_obj\":[{\"_indices\":[1],\"_key\":\"final_particles_obj1\",\"value\":94},{\"_indices\":[2],\"_key\":\"final_particles_obj2\",\"value\":114}],\"obj\":[{\"_indices\":[1],\"_key\":\"obj1\",\"capacity_from_json\":217,\"capacity_measured\":208,\"category\":\"bowl\",\"model\":\"szgdpc\",\"side\":\"left\"},{\"_indices\":[2],\"_key\":\"obj2\",\"capacity_from_json\":117,\"capacity_measured\":114,\"category\":\"mug\",\"model\":\"fapsrj\",\"side\":\"right\"}],\"run_idx\":276,\"obj1\":{\"category\":\"bowl\",\"model\":\"szgdpc\",\"side\":\"left\",\"capacity_from_json\":217,\"capacity_measured\":208},\"obj2\":{\"category\":\"mug\",\"model\":\"fapsrj\",\"side\":\"right\",\"capacity_from_json\":117,\"capacity_measured\":114},\"left_category\":\"bowl\",\"left_model\":\"szgdpc\",\"right_category\":\"mug\",\"right_model\":\"fapsrj\",\"gt_larger\":\"left\",\"final_particles_obj1\":94,\"final_particles_obj2\":114,\"fixed_env\":{\"scene\":\"Rs_int\",\"room\":\"living_room_0\"}}"
+  "metadata_json": "{\"answer\":\"obj1 poured into obj2 but obj1 still has leftover water\",\"capacity_diff_measured\":94,\"final_particles_obj\":[{\"_indices\":[1],\"_key\":\"final_particles_obj1\",\"value\":94},{\"_indices\":[2],\"_key\":\"final_particles_obj2\",\"value\":114}],\"obj\":[{\"_indices\":[1],\"_key\":\"obj1\",\"capacity_from_json\":217,\"capacity_measured\":208,\"category\":\"bowl\",\"model\":\"szgdpc\",\"side\":\"left\"},{\"_indices\":[2],\"_key\":\"obj2\",\"capacity_from_json\":117,\"capacity_measured\":114,\"category\":\"mug\",\"model\":\"fapsrj\",\"side\":\"right\"}],\"run_idx\":276,\"obj1\":{\"category\":\"bowl\",\"model\":\"szgdpc\",\"side\":\"left\",\"capacity_from_json\":217,\"capacity_measured\":208},\"obj2\":{\"category\":\"mug\",\"model\":\"fapsrj\",\"side\":\"right\",\"capacity_from_json\":117,\"capacity_measured\":114},\"left_category\":\"bowl\",\"left_model\":\"szgdpc\",\"right_category\":\"mug\",\"right_model\":\"fapsrj\",\"gt_larger\":\"left\",\"final_particles_obj1\":94,\"final_particles_obj2\":114,\"fixed_env\":{\"scene\":\"Rs_int\",\"room\":\"living_room_0\"}}",
+  "gt_camera_poses": [
+    {
+      "view_id": "pour_trajectory/00_before_fill_left.png",
+      "group": "pour_trajectory",
+      "role": "gt_dynamics",
+      "metadata_pointer": "/regeneration_contract/before_fill_left",
+      "original_image_path": "00_before_fill_left.png",
+      "camera_pose": null,
+      "camera_pose_rule": {
+        "rule": "side_camera_from_live_pair_aabb",
+        "implementation": "BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py:set_side_camera",
+        "inputs": [
+          "obj1.aabb",
+          "obj2.aabb"
+        ],
+        "position_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y) - 1.0, max(center1.z, center2.z) + 0.1]",
+        "target_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y), max(center1.z, center2.z) + 0.1]",
+        "quaternion_rule": "look_at_quaternion(position, target)",
+        "quaternion_order": "xyzw",
+        "coordinate_frame": "world"
+      },
+      "fov_deg": null,
+      "phase": "before_fill_left",
+      "state_key": "pour:before_fill_left",
+      "render_mode": "full_regeneration",
+      "pose_source": "live_AABB_in_BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py",
+      "baseline_selected": true
+    },
+    {
+      "view_id": "pour_trajectory/01_after_fill_left.png",
+      "group": "pour_trajectory",
+      "role": "gt_dynamics",
+      "metadata_pointer": "/regeneration_contract/after_fill_left",
+      "original_image_path": "01_after_fill_left.png",
+      "camera_pose": null,
+      "camera_pose_rule": {
+        "rule": "side_camera_from_live_pair_aabb",
+        "implementation": "BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py:set_side_camera",
+        "inputs": [
+          "obj1.aabb",
+          "obj2.aabb"
+        ],
+        "position_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y) - 1.0, max(center1.z, center2.z) + 0.1]",
+        "target_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y), max(center1.z, center2.z) + 0.1]",
+        "quaternion_rule": "look_at_quaternion(position, target)",
+        "quaternion_order": "xyzw",
+        "coordinate_frame": "world"
+      },
+      "fov_deg": null,
+      "phase": "after_fill_left",
+      "state_key": "pour:after_fill_left",
+      "render_mode": "full_regeneration",
+      "pose_source": "live_AABB_in_BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py",
+      "baseline_selected": true
+    },
+    {
+      "view_id": "pour_trajectory/02_after_fill_right.png",
+      "group": "pour_trajectory",
+      "role": "gt_dynamics",
+      "metadata_pointer": "/regeneration_contract/after_fill_right",
+      "original_image_path": "02_after_fill_right.png",
+      "camera_pose": null,
+      "camera_pose_rule": {
+        "rule": "side_camera_from_live_pair_aabb",
+        "implementation": "BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py:set_side_camera",
+        "inputs": [
+          "obj1.aabb",
+          "obj2.aabb"
+        ],
+        "position_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y) - 1.0, max(center1.z, center2.z) + 0.1]",
+        "target_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y), max(center1.z, center2.z) + 0.1]",
+        "quaternion_rule": "look_at_quaternion(position, target)",
+        "quaternion_order": "xyzw",
+        "coordinate_frame": "world"
+      },
+      "fov_deg": null,
+      "phase": "after_fill_right",
+      "state_key": "pour:after_fill_right",
+      "render_mode": "full_regeneration",
+      "pose_source": "live_AABB_in_BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py",
+      "baseline_selected": true
+    },
+    {
+      "view_id": "pour_trajectory/03_final.png",
+      "group": "pour_trajectory",
+      "role": "gt_dynamics",
+      "metadata_pointer": "/regeneration_contract/final",
+      "original_image_path": "03_final.png",
+      "camera_pose": null,
+      "camera_pose_rule": {
+        "rule": "side_camera_from_live_pair_aabb",
+        "implementation": "BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py:set_side_camera",
+        "inputs": [
+          "obj1.aabb",
+          "obj2.aabb"
+        ],
+        "position_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y) - 1.0, max(center1.z, center2.z) + 0.1]",
+        "target_formula": "[mean(center1.x, center2.x), mean(center1.y, center2.y), max(center1.z, center2.z) + 0.1]",
+        "quaternion_rule": "look_at_quaternion(position, target)",
+        "quaternion_order": "xyzw",
+        "coordinate_frame": "world"
+      },
+      "fov_deg": null,
+      "phase": "final",
+      "state_key": "pour:final",
+      "render_mode": "full_regeneration",
+      "pose_source": "live_AABB_in_BEHAVIOR-ESI/tasks/task_capacity/batch_pour.py",
+      "baseline_selected": true
+    }
+  ]
 }
