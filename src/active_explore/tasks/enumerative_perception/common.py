@@ -79,7 +79,6 @@ def get_context(
     task_case: str | None = None,
 ) -> dict[str, Any]:
     question_data = payload.get("question_data", {})
-    render = question_data.get("render", {})
     count_object = question_data.get("count_object") or {}
     label = normalize_text(task_label) or small_task_label(payload)
     case_name = normalize_text(task_case) or normalize_text(question_data.get("task_type") or payload.get("task_type"))
@@ -87,7 +86,6 @@ def get_context(
         "question": normalize_text(question_data.get("question")),
         "count_target": normalize_text(question_data.get("count_target") or count_object.get("category")),
         "count_target_display": normalize_text(count_object.get("display_name") or question_data.get("count_target")),
-        "render_target_category": normalize_text(render.get("target_category")),
         "task_type": normalize_text(payload.get("task_type") or question_data.get("task_type") or case_name or label),
         "small_task": label,
         "task_case": case_name,
@@ -98,6 +96,26 @@ def get_context(
 
 def normalized_task_rules(task_rules: list[str] | tuple[str, ...] | None = None) -> list[str]:
     return [normalize_text(rule) for rule in (task_rules or []) if normalize_text(rule)]
+
+
+def anchor_object_categories(payload: dict[str, Any]) -> list[str]:
+    """Return original-scene categories used as task-defining anchors."""
+    question_data = payload.get("question_data", {}) or {}
+    case_name = normalize_text(question_data.get("case") or question_data.get("task_type"))
+    if case_name not in {"hidden_by_others", "observation_divided"}:
+        return []
+
+    categories = set()
+    case_metadata = question_data.get("case_metadata") or {}
+    for source_entry in case_metadata.get("source_entries") or []:
+        if not isinstance(source_entry, dict):
+            continue
+        metadata = source_entry.get("metadata") or {}
+        anchor = metadata.get("anchor_object") or source_entry.get("anchor_object") or {}
+        category = normalize_text(anchor.get("category")) if isinstance(anchor, dict) else ""
+        if category:
+            categories.add(category)
+    return sorted(categories)
 
 
 def resolved_object_counts(payload: dict[str, Any]) -> dict[str, int]:
@@ -121,7 +139,6 @@ def build_system_prompt_for_task(
 ) -> str:
     ctx = get_context(payload, task_label=task_label, task_focus=task_focus, task_case=task_case)
     semantic_target = ctx["count_target_display"] or ctx["count_target"]
-    object_counts = resolved_object_counts(payload)
     lines = [
         "You are an embodied visual counting agent exploring a 3D indoor scene.",
         f"Small task: {ctx['small_task']}",
@@ -135,16 +152,6 @@ def build_system_prompt_for_task(
         lines.append(f"Task rule: {rule}")
     if semantic_target:
         lines.append(f"Requested semantic target category: {semantic_target}")
-    if object_counts:
-        lines.append(
-            "Resolved object groups in this generated case: "
-            + ", ".join(f"{name}={count}" for name, count in sorted(object_counts.items()))
-        )
-    if semantic_target and ctx["render_target_category"] and ctx["render_target_category"] != ctx["count_target"]:
-        lines.append(
-            "Important: in this simulator reconstruction, the visible proxy asset category for the target is "
-            f"'{ctx['render_target_category']}', while the question category is '{semantic_target}'."
-        )
     if ctx["options"]:
         lines.append("Dataset options (for reference only): " + ", ".join(ctx["options"]))
     lines.extend([
@@ -193,8 +200,6 @@ def build_force_choice_prompt_for_task(
     lines = ["Exploration budget is exhausted.", f"Question: {ctx['question']}"]
     if semantic_target:
         lines.append(f"Count target: {semantic_target}")
-    if semantic_target and ctx["render_target_category"] and ctx["render_target_category"] != ctx["count_target"]:
-        lines.append(f"Visible proxy asset category: {ctx['render_target_category']}")
     if ctx["task_case"]:
         lines.append(f"Case: {ctx['task_case']}")
     for rule in normalized_task_rules(task_rules):
@@ -300,6 +305,7 @@ def build_env_config(
     robot: str,
     objects: list[dict[str, Any]] | None = None,
     full_scene: bool = False,
+    payload: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     cfg_file = Path(og.example_config_path) / f"{robot.lower()}_primitives.yaml"
     with cfg_file.open("r", encoding="utf-8") as f:
@@ -311,9 +317,11 @@ def build_env_config(
     else:
         config["scene"].pop("load_room_instances", None)
         config["scene"].pop("load_room_types", None)
-    # Counting sweeps only need the generated target/confuser objects on the room floor.
-    # Loading all room clutter can initialize unrelated object-state emitters that crash OG.
-    config["scene"]["load_object_categories"] = ["floors"]
+    # Most counting sweeps only need generated objects on the floor. The two
+    # anchor-dependent cases must additionally restore the original furniture
+    # categories used to define occlusion / spatial segmentation geometry.
+    anchor_categories = anchor_object_categories(payload or {})
+    config["scene"]["load_object_categories"] = ["floors", *anchor_categories]
     config["scene"]["not_load_object_categories"] = None
     config["objects"] = objects or []
     return config

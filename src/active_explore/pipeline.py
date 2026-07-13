@@ -324,6 +324,7 @@ def task_build_env_config(
     robot: str,
     objects: list[dict[str, Any]],
     full_scene: bool = False,
+    payload: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     hook = getattr(task_module, "build_env_config", None)
     if hook is not None:
@@ -334,6 +335,7 @@ def task_build_env_config(
             robot,
             objects,
             full_scene=full_scene,
+            payload=payload,
         )
     return build_env_config(scene_name, room_name, robot, objects, full_scene=full_scene)
 
@@ -980,7 +982,17 @@ def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
 
     try:
         full_scene = bool(getattr(task_module, "FULL_SCENE", False))
-        env = og.Environment(configs=task_build_env_config(task_module, scene_name, room_name, config.robot, objects, full_scene=full_scene))
+        env = og.Environment(
+            configs=task_build_env_config(
+                task_module,
+                scene_name,
+                room_name,
+                config.robot,
+                objects,
+                full_scene=full_scene,
+                payload=payload,
+            )
+        )
         if not getattr(task_module, "DISABLE_VIEWER_CAMERA_MODALITIES", False):
             for modality in ["seg_semantic", "seg_instance", "seg_instance_id"]:
                 try:
