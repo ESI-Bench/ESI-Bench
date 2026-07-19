@@ -8,7 +8,6 @@ import json
 
 import numpy as np
 import omnigibson as og
-import omnigibson.object_states as object_states
 import omnigibson.lazy as lazy
 import omnigibson.utils.transform_utils as T
 import torch as th
@@ -19,14 +18,34 @@ from omnigibson.utils.asset_utils import decrypted
 from scipy.spatial.transform import Rotation
 
 
-gm.USE_ENCRYPTED_ASSETS = True
-gm.USE_GPU_DYNAMICS = True
-gm.ENABLE_FLATCACHE = False
+with gm.unlocked():
+    gm.USE_ENCRYPTED_ASSETS = True
+    gm.USE_GPU_DYNAMICS = True
+    gm.ENABLE_FLATCACHE = False
 
 TASK_NAME = "liquid_volume"
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 MAX_BBOX = 0.3
 OBJECT_GAP = 0.3
+STAGING_Z = 1.0
+FLOOR_CLEARANCE = 0.04
+SCENE_CLUTTER_CATEGORIES = [
+    "pot_plant",
+    "coffee_table",
+    "sofa",
+    "breakfast_table",
+    "straight_chair",
+    "floor_lamp",
+    "table_lamp",
+    "swivel_chair",
+    "bookcase",
+    "standing_tv",
+    "laptop",
+    "picture",
+    "countertop",
+    "ottoman",
+    "bottom_cabinet",
+]
 VALID_ACTIONS = [
     "fill left",
     "fill right",
@@ -118,13 +137,43 @@ def scene_room(payload: dict[str, Any]) -> tuple[str, str]:
     return normalize_text(payload.get("scene")) or "unknown_scene", normalize_text(payload.get("room")) or "unknown_room"
 
 
+def build_env_config(
+    scene_name: str,
+    room_name: str,
+    robot: str,
+    objects: list[dict[str, Any]],
+    full_scene: bool = False,
+    payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Match the original liquid generator's isolated, robot-free scene."""
+    return {
+        "render": {"viewer_width": 1280, "viewer_height": 720},
+        "scene": {
+            "type": "InteractiveTraversableScene",
+            "scene_model": scene_name,
+            "not_load_object_categories": SCENE_CLUTTER_CATEGORIES,
+            "load_room_instances": [room_name],
+        },
+        "robots": [],
+        "objects": objects,
+    }
+
+
 def question_id(payload: dict[str, Any], source_path: Path) -> str:
     return normalize_text(payload.get("question_id")) or f"run_{int(payload.get('run_idx', 0)):03d}"
 
 
 def get_scale(category: str, model: str) -> float:
-    inventory_path = Path(__file__).resolve().parents[1] / "bddl3" / "bddl" / "generated_data" / "object_inventory.json"
-    if inventory_path.exists():
+    inventory_paths = [Path(__file__).resolve().parents[1] / "bddl3" / "bddl" / "generated_data" / "object_inventory.json"]
+    try:
+        import bddl
+
+        inventory_paths.insert(0, Path(bddl.__file__).resolve().parent / "generated_data" / "object_inventory.json")
+    except ImportError:
+        pass
+    for inventory_path in inventory_paths:
+        if not inventory_path.exists():
+            continue
         with inventory_path.open("r", encoding="utf-8") as f:
             sizes = json.load(f).get("bounding_box_sizes", {})
         bbox = sizes.get(model)
@@ -158,7 +207,10 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
                 "kinematic_only": False,
                 "fixed_base": True,
                 "scale": [scale, scale, scale],
-                "position": [0.0 if side == "left" else 1.0, 0.0, 50.0],
+                # Keep the objects clear of the scene while it loads, but do not
+                # stage them tens of metres above the room. postprocess_env
+                # deterministically lowers both objects onto the selected floor.
+                "position": [0.0 if side == "left" else 1.0, 0.0, STAGING_Z],
                 "orientation": [0.0, 0.0, 0.0, 1.0],
             }
         )
@@ -264,6 +316,26 @@ def side_camera(obj1, obj2) -> tuple[list[float], list[float]]:
     return cam_eye.tolist(), look_at_quaternion(cam_eye, cam_target).tolist()
 
 
+def place_object_bottom_at(obj, x: float, y: float, bottom_z: float, settle_steps: int = 30) -> th.Tensor:
+    """Place an object at an exact XY and bottom height without state sampling."""
+    current_pos = th.as_tensor(obj.get_position_orientation()[0], dtype=th.float32).clone()
+    current_bottom_z = float(obj.aabb[0][2].item())
+    target_pos = current_pos.clone()
+    target_pos[0] = float(x)
+    target_pos[1] = float(y)
+    target_pos[2] += float(bottom_z) - current_bottom_z
+    obj.set_position_orientation(target_pos, th.tensor([0.0, 0.0, 0.0, 1.0]))
+    for _ in range(settle_steps):
+        og.sim.step()
+    actual_bottom_z = float(obj.aabb[0][2].item())
+    if abs(actual_bottom_z - float(bottom_z)) > 0.02:
+        raise RuntimeError(
+            f"Failed to place {obj.name} on the floor: "
+            f"target_bottom_z={bottom_z:.4f}, actual_bottom_z={actual_bottom_z:.4f}"
+        )
+    return th.as_tensor(obj.get_position_orientation()[0], dtype=th.float32).clone()
+
+
 def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any], task_state: dict[str, Any] | None = None) -> dict[str, Any]:
     task_state = task_state or {}
     obj1 = env.scene.object_registry("name", "obj1")
@@ -273,38 +345,33 @@ def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any], t
     if obj1 is None or obj2 is None or floor is None or water is None:
         raise ValueError("Pour environment missing obj1/obj2/floor/water")
 
-    obj1.states[object_states.OnTop].set_value(floor, True)
-    for _ in range(30):
-        og.sim.step()
+    floor_top_z = float(floor.aabb[1][2].item())
+    obj1_initial_pos = th.as_tensor(obj1.get_position_orientation()[0], dtype=th.float32)
+    obj1_pos = place_object_bottom_at(
+        obj1,
+        x=float(obj1_initial_pos[0].item()),
+        y=float(obj1_initial_pos[1].item()),
+        bottom_z=floor_top_z + FLOOR_CLEARANCE,
+    )
     aabb_extent1 = th.tensor(obj1.aabb_extent)
     obj_bbox_center1 = th.tensor(obj1.aabb_center)
     obj_bbox_bottom1 = obj_bbox_center1 - th.tensor([0, 0, aabb_extent1[2] / 2])
     floor_z1 = obj_bbox_bottom1[2].item() + 0.05
     bmin1, bmax1 = [x.cpu().numpy() if hasattr(x, "cpu") else x.numpy() for x in obj1.aabb]
     half_x1 = (bmax1[0] - bmin1[0]) / 2.0
-    pos1_settled = th.tensor(obj1.get_position_orientation()[0])
-    obj_current_pos1 = th.tensor(obj1.get_position_orientation()[0])
-
-    obj2.states[object_states.OnTop].set_value(floor, True)
-    for _ in range(30):
-        og.sim.step()
     aabb_extent2 = th.tensor(obj2.aabb_extent)
+    bmin2, bmax2 = [x.cpu().numpy() if hasattr(x, "cpu") else x.numpy() for x in obj2.aabb]
+    half_x2 = (bmax2[0] - bmin2[0]) / 2.0
+    obj2_x = obj1_pos[0].item() + half_x1 + OBJECT_GAP + half_x2
+    obj2_pos = place_object_bottom_at(
+        obj2,
+        x=obj2_x,
+        y=float(obj1_pos[1].item()),
+        bottom_z=floor_top_z + FLOOR_CLEARANCE,
+    )
     obj_bbox_center2 = th.tensor(obj2.aabb_center)
     obj_bbox_bottom2 = obj_bbox_center2 - th.tensor([0, 0, aabb_extent2[2] / 2])
     floor_z2 = obj_bbox_bottom2[2].item() + 0.05
-    bmin2, bmax2 = [x.cpu().numpy() if hasattr(x, "cpu") else x.numpy() for x in obj2.aabb]
-    half_x2 = (bmax2[0] - bmin2[0]) / 2.0
-    pos2_settled = th.tensor(obj2.get_position_orientation()[0])
-
-    obj1_pos = th.tensor([obj_current_pos1[0].item(), obj_current_pos1[1].item(), pos1_settled[2].item() + 0.04])
-    obj1.set_position_orientation(obj1_pos, th.tensor([0, 0, 0, 1]))
-    for _ in range(30):
-        og.sim.step()
-    obj2_x = obj_current_pos1[0].item() + half_x1 + OBJECT_GAP + half_x2
-    obj2_pos = th.tensor([obj2_x, obj_current_pos1[1].item(), pos2_settled[2].item() + 0.04])
-    obj2.set_position_orientation(obj2_pos, th.tensor([0, 0, 0, 1]))
-    for _ in range(30):
-        og.sim.step()
 
     particle_point_offsets = th.stack([e * side * water.particle_radius for e in th.eye(3) for side in [-1, 1]] + [th.zeros(3)])
     aabb_ext1 = th.tensor(obj1.aabb_extent)
@@ -533,7 +600,9 @@ def parse_model_output(parsed: dict[str, Any], payload: dict[str, Any] | None = 
 def execute_task_action(env, payload: dict[str, Any], camera_info: dict[str, Any], action: str, pos: np.ndarray, quat: np.ndarray, task_state: dict[str, Any] | None = None) -> dict[str, Any]:
     state = task_state if task_state is not None else {}
     action_lower = normalize_text(action).lower()
-    use_physical_actions = os.environ.get("ESI_POUR_PHYSICAL_ACTIONS") == "1"
+    # Physical liquid interaction is the benchmark behavior. Keep an explicit
+    # opt-out for fast smoke tests, rather than silently disabling the signal.
+    use_physical_actions = os.environ.get("ESI_POUR_PHYSICAL_ACTIONS", "1") == "1"
 
     def side_from_text(text: str) -> str | None:
         if left_label(payload).lower() in text or "left" in text:
