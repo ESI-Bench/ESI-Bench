@@ -65,7 +65,19 @@ def build_env_objects(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any] | None = None) -> dict[str, Any]:
-    return {}
+    raw_objects = getattr(env.scene, "objects", [])
+    objects = list(raw_objects.values()) if isinstance(raw_objects, dict) else list(raw_objects)
+    category_counts: dict[str, int] = {}
+    for obj in objects:
+        category = normalize_text(getattr(obj, "category", None)) or "unknown"
+        category_counts[category] = category_counts.get(category, 0) + 1
+    return {
+        "loaded_wall_count": category_counts.get("walls", 0),
+        "loaded_structure_counts": {
+            category: category_counts.get(category, 0)
+            for category in ("floors", "walls", "ceilings")
+        },
+    }
 
 
 def extract_primary_camera_pose(payload: dict[str, Any]) -> dict[str, Any]:

@@ -2,6 +2,7 @@ from .common import *  # noqa: F401,F403
 from . import common
 
 TASK_NAME = "counting_w_occlusion"
+FULL_SCENE = True
 TASK_LABEL = "Counting w Occlusion"
 TASK_CASE = "hidden_by_others"
 TASK_FOCUS = "Recover targets hidden behind other objects by checking alternative viewpoints and occlusion boundaries."

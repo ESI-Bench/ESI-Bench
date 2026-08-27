@@ -2,6 +2,7 @@ from .common import *  # noqa: F401,F403
 from . import common
 
 TASK_NAME = "merged_observation"
+FULL_SCENE = True
 TASK_LABEL = "Merged Observation"
 TASK_CASE = "observation_merged"
 TASK_FOCUS = "Merge partially overlapping views into a single object set while avoiding duplicate target instances."

@@ -2,6 +2,7 @@ from .common import *  # noqa: F401,F403
 from . import common
 
 TASK_NAME = "structural_enclosure"
+FULL_SCENE = True
 TASK_LABEL = "Structural Enclosure"
 TASK_CASE = "hidden_in_box"
 TASK_FOCUS = "Inspect boxes, microwaves, and other enclosures that can contain hidden target objects."

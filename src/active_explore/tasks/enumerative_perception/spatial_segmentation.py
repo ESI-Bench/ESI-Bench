@@ -2,6 +2,7 @@ from .common import *  # noqa: F401,F403
 from . import common
 
 TASK_NAME = "spatial_segmentation"
+FULL_SCENE = True
 TASK_LABEL = "Spatial Segmentation"
 TASK_CASE = "observation_divided"
 TASK_FOCUS = "Count targets distributed across divided spatial regions, keeping adjacent groups separated."

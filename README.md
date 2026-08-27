@@ -6,6 +6,7 @@
   <a href="https://arxiv.org/pdf/2605.18746"><img src="https://img.shields.io/badge/arXiv-2605.18746-b31b1b.svg" alt="arXiv"></a>
   <a href="https://esi-bench.github.io/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
   <a href="https://huggingface.co/datasets/esi-bench/ESI-Bench"><img src="https://img.shields.io/badge/🤗-Dataset-yellow.svg" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/ESI-Bench/esi-bench-passive-single"><img src="https://img.shields.io/badge/🤗-Passive_Single-yellow.svg" alt="Passive Single Dataset"></a>
   <a href="https://github.com/esi-bench/esi-bench/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
@@ -48,6 +49,19 @@ Spatial intelligence unfolds through a perception-action loop: agents act to acq
 - **Most failures stem from action blindness**: poor action choices lead to poor observations, which drive cascading errors.
 - **Explicit 3D grounding stabilizes reasoning** on depth-sensitive tasks, but imperfect reconstruction proves more harmful than 2D baselines.
 - **Models exhibit a metacognitive gap**: unlike humans who seek falsifying viewpoints and revise beliefs under contradiction, models commit prematurely with high confidence regardless of evidence quality.
+
+---
+
+## Datasets
+
+- [ESI-Bench](https://huggingface.co/datasets/esi-bench/ESI-Bench): benchmark questions and metadata.
+- [ESI-Bench Passive Single-View Renders](https://huggingface.co/datasets/ESI-Bench/esi-bench-passive-single): 3,423 passive single-view images paired with questions and answers.
+
+```python
+from datasets import load_dataset
+
+passive_single = load_dataset("ESI-Bench/esi-bench-passive-single", split="all")
+```
 
 ---
 

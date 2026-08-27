@@ -2,6 +2,7 @@ from .common import *  # noqa: F401,F403
 from . import common
 
 TASK_NAME = "illumination_variability"
+FULL_SCENE = True
 TASK_LABEL = "Illumination Variability"
 TASK_CASE = "light_change"
 TASK_FOCUS = "Track the same target instances across normal and changed lighting without creating duplicate counts."

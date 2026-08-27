@@ -24,6 +24,7 @@ with gm.unlocked():
     gm.ENABLE_FLATCACHE = False
 
 TASK_NAME = "liquid_volume"
+DISABLE_VIEWER_CAMERA_MODALITIES = True
 DEFAULT_MODEL = "gemini-3.1-pro-preview"
 MAX_BBOX = 0.3
 OBJECT_GAP = 0.3

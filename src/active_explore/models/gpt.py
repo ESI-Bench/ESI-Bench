@@ -87,11 +87,11 @@ def image_url_part(image_path: str | Path) -> dict[str, Any]:
 
 
 class GPTModel:
-    def __init__(self, api_key: str | None = None, model: str = "gpt-5"):
+    def __init__(self, api_key: str | None = None, model: str = "gpt-5", base_url: str | None = None):
         key = api_key if api_key is not None else os.environ.get("OPENAI_API_KEY", "")
         if not key:
             raise ValueError("Missing OpenAI API key. Set OPENAI_API_KEY or pass api_key.")
-        self.client = OpenAI(api_key=key)
+        self.client = OpenAI(api_key=key, base_url=base_url) if base_url else OpenAI(api_key=key)
         self.model = model
 
     def _convert_contents(self, contents: list[Any]) -> list[dict[str, Any]]:

@@ -321,7 +321,7 @@ def build_env_config(
     # anchor-dependent cases must additionally restore the original furniture
     # categories used to define occlusion / spatial segmentation geometry.
     anchor_categories = anchor_object_categories(payload or {})
-    config["scene"]["load_object_categories"] = ["floors", *anchor_categories]
+    config["scene"]["load_object_categories"] = ["floors", "walls", *anchor_categories]
     config["scene"]["not_load_object_categories"] = None
     config["objects"] = objects or []
     return config
@@ -540,10 +540,16 @@ def postprocess_env(env, payload: dict[str, Any], camera_info: dict[str, Any] | 
             og.sim.step()
     for _ in range(10):
         og.sim.step()
+    scene_objects = list(getattr(scene, "objects", []) or [])
     return {
         "visual_only_objects": sorted(created_objects),
         "inside_edges": inside_edges,
         "hidden_reveal_links": len(hidden_links),
+        "loaded_wall_count": sum(
+            str(getattr(obj, "category", "") or "").lower() == "walls"
+            for obj in scene_objects
+        ),
+        "loaded_scene_object_count": len(scene_objects),
     }
 
 

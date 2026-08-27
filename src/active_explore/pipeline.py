@@ -66,6 +66,8 @@ class ActiveExploreConfig:
     provider: str
     model: str | None
     api_key: str | None
+    base_url: str | None
+    history_image_window: int
     max_steps: int
     min_steps: int
     threshold: float
@@ -95,9 +97,11 @@ def parse_args(argv: list[str] | None = None) -> ActiveExploreConfig:
     parser.add_argument("--json-root", type=Path, default=None, help="Optional root used to resolve relative json_paths.")
     parser.add_argument("--results-root", type=Path, default=Path("BEHAVIOR-NEW/active_results"))
     parser.add_argument("--step-image-root", type=Path, default=Path("BEHAVIOR-NEW/active_steps"))
-    parser.add_argument("--provider", choices=["gemini", "gpt"], default="gemini")
+    parser.add_argument("--provider", choices=["gemini", "gpt", "qwen"], default="gemini")
     parser.add_argument("--model", default=None)
     parser.add_argument("--api-key", default=None)
+    parser.add_argument("--base-url", default=None, help="OpenAI-compatible base URL for local providers.")
+    parser.add_argument("--history-image-window", type=int, default=5, help="Number of past step images included per request.")
     parser.add_argument("--max-steps", type=int, default=30)
     parser.add_argument("--min-steps", type=int, default=3)
     parser.add_argument("--threshold", type=float, default=0.8)
@@ -117,6 +121,8 @@ def parse_args(argv: list[str] | None = None) -> ActiveExploreConfig:
         provider=args.provider,
         model=args.model,
         api_key=args.api_key,
+        base_url=args.base_url,
+        history_image_window=max(0, args.history_image_window),
         max_steps=args.max_steps,
         min_steps=args.min_steps,
         threshold=args.threshold,
@@ -137,11 +143,17 @@ def load_task_module_for_payload(task_name: str, payload: dict[str, Any]):
     return importlib.import_module(module_name)
 
 
-def build_model_client(provider: str, api_key: str | None, model: str):
+def build_model_client(provider: str, api_key: str | None, model: str, base_url: str | None = None):
     if provider == "gemini":
         return GeminiModel(api_key=api_key, model=model)
     if provider == "gpt":
-        return GPTModel(api_key=api_key, model=model)
+        return GPTModel(api_key=api_key, model=model, base_url=base_url)
+    if provider == "qwen":
+        return GPTModel(
+            api_key=api_key or os.environ.get("QWEN_VL_API_KEY") or "EMPTY",
+            model=model,
+            base_url=base_url or os.environ.get("QWEN_VL_BASE_URL") or "http://127.0.0.1:8000/v1",
+        )
     raise ValueError(f"Unsupported provider: {provider}")
 
 
@@ -310,7 +322,7 @@ def build_env_config(
         config = {"scene": {"type": "InteractiveTraversableScene"}, "robots": [], "objects": []}
     config.setdefault("scene", {})
     config["scene"]["scene_model"] = scene_name
-    config["scene"]["not_load_object_categories"] = ["ceilings", "carpet", "walls"]
+    config["scene"]["not_load_object_categories"] = ["ceilings", "carpet"]
     if room_name and not full_scene:
         config["scene"]["load_room_instances"] = [room_name]
     config["objects"] = objects
@@ -352,6 +364,7 @@ def collect_contents(
     prompt: str,
     reference_image_paths: list[Path] | None = None,
     reference_image_path: Path | None = None,
+    history_image_window: int = 5,
 ) -> list[Any]:
     contents: list[Any] = []
     if history:
@@ -390,7 +403,7 @@ def collect_contents(
             label = "[QUESTION REFERENCE IMAGE - dataset render]" if len(references) == 1 else f"[QUESTION REFERENCE IMAGE {index}]"
             contents.append(label)
             contents.append(reference)
-    recent = history[-5:]
+    recent = history[-history_image_window:] if history_image_window > 0 else []
     for item in recent:
         past = image_path.parent / item["image"]
         if past.exists():
@@ -501,7 +514,13 @@ def force_final_choice(
 ) -> dict[str, Any]:
     prompt = task_build_force_choice_prompt(task_module, payload, camera_info, task_state)
     parsed, raw_text, _ = model_client.generate_json(
-        contents=collect_contents(image_path, history, prompt, reference_image_paths=reference_image_paths),
+        contents=collect_contents(
+            image_path,
+            history,
+            prompt,
+            reference_image_paths=reference_image_paths,
+            history_image_window=config.history_image_window,
+        ),
         system_instruction="Return exactly one valid JSON object and nothing else.",
         response_schema=None,
         max_output_tokens=max(256, min(config.max_new_tokens, 512)),
@@ -976,9 +995,14 @@ def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
     final_answer: dict[str, Any] | None = None
     env_postprocess: dict[str, Any] = {}
     step_image_dir = step_image_dir_for(task_module, payload, question_json, config.step_image_root)
-    default_model = "gpt-5" if config.provider == "gpt" else getattr(task_module, "DEFAULT_MODEL", "gemini-2.5-flash")
+    if config.provider == "gpt":
+        default_model = "gpt-5"
+    elif config.provider == "qwen":
+        default_model = "qwen3-vl-camera-lora"
+    else:
+        default_model = getattr(task_module, "DEFAULT_MODEL", "gemini-2.5-flash")
     model_name = config.model or default_model
-    model_client = build_model_client(config.provider, config.api_key, model_name)
+    model_client = build_model_client(config.provider, config.api_key, model_name, config.base_url)
 
     try:
         full_scene = bool(getattr(task_module, "FULL_SCENE", False))
@@ -1022,7 +1046,13 @@ def run_one(config: ActiveExploreConfig) -> dict[str, Any]:
             )
             prompt = task_build_system_prompt(task_module, payload, config.threshold, config.min_steps, camera_info, task_state)
             parsed, raw_text, finish_reason = model_client.generate_json(
-                contents=collect_contents(image_path, history, prompt, reference_image_paths=reference_image_paths),
+                contents=collect_contents(
+                    image_path,
+                    history,
+                    prompt,
+                    reference_image_paths=reference_image_paths,
+                    history_image_window=config.history_image_window,
+                ),
                 system_instruction="Return exactly one valid JSON object and nothing else.",
                 response_schema=getattr(task_module, "ACTION_RESPONSE_SCHEMA", None),
                 max_output_tokens=config.max_new_tokens,
