@@ -55,7 +55,7 @@ Spatial intelligence unfolds through a perception-action loop: agents act to acq
 ## Datasets
 
 - [ESI-Bench](https://huggingface.co/datasets/esi-bench/ESI-Bench): benchmark questions and metadata.
-- [ESI-Bench Passive Single-View Renders](https://huggingface.co/datasets/ESI-Bench/esi-bench-passive-single): 3,423 passive single-view images paired with questions and answers.
+- [ESI-Bench Passive Single-View Renders](https://huggingface.co/datasets/ESI-Bench/esi-bench-passive-single): passive single-view images paired with questions and answers.
 
 ```python
 from datasets import load_dataset

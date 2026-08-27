@@ -12,6 +12,8 @@ BEHAVIOR ESI-Bench is a question dataset for evaluating embodied spatial intelli
 
 Each row is one valid question instance. The table is intentionally flattened for Hugging Face Dataset Viewer and Croissant compatibility.
 
+The corresponding passive single-view images are available in [ESI-Bench Passive Single-View Renders](https://huggingface.co/datasets/ESI-Bench/esi-bench-passive-single).
+
 ## Schema
 
 ```text
